@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 CinemaProject/CinemaDatabase/App.Config
 CinemaProject/CinemaManager/App.config
+CinemaProject/CinemaModel/App.Config

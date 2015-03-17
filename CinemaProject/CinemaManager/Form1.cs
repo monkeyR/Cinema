@@ -15,6 +15,16 @@ namespace CinemaManager
         public Form1()
         {
             InitializeComponent();
+
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var employees = ctx.Employeers;
+
+                foreach (var employee in employees)
+                {
+                    textBox1.Text += string.Format("{0} {1}\r\n", employee.name, employee.surname);
+                }
+            }
         }
     }
 }
