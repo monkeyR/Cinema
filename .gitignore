@@ -217,3 +217,5 @@ pip-log.txt
 CinemaProject/CinemaDatabase/App.Config
 CinemaProject/CinemaManager/App.config
 CinemaProject/CinemaModel/App.Config
+CinemaProject/CinemaDisplay/App.config
+CinemaProject/CinemaSales/App.config
