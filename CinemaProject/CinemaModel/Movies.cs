@@ -24,7 +24,7 @@ namespace CinemaModel
         public string title { get; set; }
         public decimal price { get; set; }
         public int duration { get; set; }
-        public int director { get; set; }
+        public string director { get; set; }
         public string description { get; set; }
     
         public virtual ICollection<MovieSales> MovieSales { get; set; }

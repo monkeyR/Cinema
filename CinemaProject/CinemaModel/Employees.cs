@@ -12,12 +12,20 @@ namespace CinemaModel
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Employees
     {
+        public Employees()
+        {
+            this.Shifts = new HashSet<Shifts>();
+        }
+    
+        public int employeeID { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
         public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string surname { get; set; }
+        public int position { get; set; }
+    
+        public virtual ICollection<Shifts> Shifts { get; set; }
     }
 }

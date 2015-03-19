@@ -18,7 +18,7 @@ namespace CinemaSales
         public void onLoginActionRequest(String login, String password)
         {
             Cursor.Current = Cursors.WaitCursor;
-            CinemaModel.Employeers user = findUser(login, password);
+            CinemaModel.Employees user = findUser(login, password);
             Cursor.Current = Cursors.Default;
 
             if (user == null)
@@ -30,9 +30,9 @@ namespace CinemaSales
             Utils.ScenesCustomization sceneCustomization = new Utils.ScenesCustomization();
         }*/
 
-        private CinemaModel.Employeers findUser(String login, String password)
+        private CinemaModel.Employees findUser(String login, String password)
         {
-            CinemaModel.Employeers user = null;
+            CinemaModel.Employees user = null;
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 user = Queries.findUser(login, password, ctx);

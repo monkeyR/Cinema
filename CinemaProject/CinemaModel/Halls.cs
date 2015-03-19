@@ -22,7 +22,7 @@ namespace CinemaModel
     
         public int hallID { get; set; }
         public int number { get; set; }
-        public int title { get; set; }
+        public string title { get; set; }
         public string matrix { get; set; }
     
         public virtual ICollection<MovieSales> MovieSales { get; set; }

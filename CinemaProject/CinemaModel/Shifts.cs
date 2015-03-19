@@ -16,11 +16,11 @@ namespace CinemaModel
     {
         public int shiftID { get; set; }
         public int workpositionID { get; set; }
-        public int employeerID { get; set; }
+        public int employeeID { get; set; }
         public System.DateTime dateShift { get; set; }
         public int typeShift { get; set; }
     
-        public virtual Employeers Employeers { get; set; }
+        public virtual Employees Employees { get; set; }
         public virtual Workpositions Workpositions { get; set; }
     }
 }

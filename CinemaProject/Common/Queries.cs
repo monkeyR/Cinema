@@ -8,11 +8,11 @@ namespace Common
 {
     public class Queries
     {
-        public static CinemaModel.Employeers findUser(String login, String password, CinemaModel.CinemaDatabaseEntities ctx)
+        public static CinemaModel.Employees findUser(String login, String password, CinemaModel.CinemaDatabaseEntities ctx)
         {
-            CinemaModel.Employeers user = null;
+            CinemaModel.Employees user = null;
 
-            var users = (from t in ctx.Employeers
+            var users = (from t in ctx.Employees
                          where t.login.Equals(login)
                          && t.password.Equals(password)
                          select t);

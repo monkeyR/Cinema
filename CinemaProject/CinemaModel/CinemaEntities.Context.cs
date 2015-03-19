@@ -25,7 +25,7 @@ namespace CinemaModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Employeers> Employeers { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Halls> Halls { get; set; }
         public virtual DbSet<Movies> Movies { get; set; }
         public virtual DbSet<MovieSales> MovieSales { get; set; }
@@ -33,7 +33,6 @@ namespace CinemaModel
         public virtual DbSet<ProductSales> ProductSales { get; set; }
         public virtual DbSet<Shifts> Shifts { get; set; }
         public virtual DbSet<Shows> Shows { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Workpositions> Workpositions { get; set; }
     }
 }

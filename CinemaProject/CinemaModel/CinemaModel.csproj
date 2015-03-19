@@ -63,7 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CinemaEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Employeers.cs">
+    <Compile Include="Employees.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Halls.cs">
@@ -86,9 +86,6 @@
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Shows.cs">
-      <DependentUpon>CinemaEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Workpositions.cs">
