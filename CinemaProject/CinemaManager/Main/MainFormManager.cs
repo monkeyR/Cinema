@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManager.Pages;
 
 namespace CinemaManager.Main
 {
     public partial class MainFormManager : Form
     {
-        private Button currentSelectedPageButton = null;
-
         public MainFormManager()
         {
             InitializeComponent();
         }
 
-        private void selectPage(Form page, Button pageButton)
+        private void selectPage(Form page)
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -30,28 +29,12 @@ namespace CinemaManager.Main
             page.Dock = DockStyle.Fill;
             page.Show();
 
-            switchButton(pageButton);
-            currentSelectedPageButton = pageButton;
-
             Cursor.Current = Cursors.Default;
         }
 
-        private void switchButton(Button newButton)
+        private void HallCreatorButton_Click(object sender, EventArgs e)
         {
-            if (currentSelectedPageButton != null)
-            {
-                currentSelectedPageButton.Enabled = false;
-                currentSelectedPageButton.BackColor = Color.White;
-            }
-
-            newButton.Enabled = true;
-            newButton.BackColor = Color.Red;
-        }
-
-        private void SalesStatisticsButton_Click(object sender, EventArgs e)
-        {
-            switchButton((Button)sender);
-            //selectPage
+            selectPage(new HallCreatorForm());
         }
     }
 }

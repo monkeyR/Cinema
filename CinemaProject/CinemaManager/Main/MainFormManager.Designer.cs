@@ -43,9 +43,10 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Location = new System.Drawing.Point(294, 12);
+            this.MainPanel.Location = new System.Drawing.Point(220, 10);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(852, 639);
+            this.MainPanel.Size = new System.Drawing.Size(752, 592);
             this.MainPanel.TabIndex = 0;
             // 
             // ButtonGroup
@@ -58,92 +59,103 @@
             this.ButtonGroup.Controls.Add(this.EmployeesButton);
             this.ButtonGroup.Controls.Add(this.MovieStatisticsButton);
             this.ButtonGroup.Controls.Add(this.SalesStatisticsButton);
-            this.ButtonGroup.Location = new System.Drawing.Point(12, 12);
+            this.ButtonGroup.Location = new System.Drawing.Point(9, 10);
+            this.ButtonGroup.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonGroup.Name = "ButtonGroup";
-            this.ButtonGroup.Size = new System.Drawing.Size(266, 639);
+            this.ButtonGroup.Padding = new System.Windows.Forms.Padding(2);
+            this.ButtonGroup.Size = new System.Drawing.Size(200, 519);
             this.ButtonGroup.TabIndex = 1;
             this.ButtonGroup.TabStop = false;
             // 
             // ProductsButton
             // 
-            this.ProductsButton.Location = new System.Drawing.Point(7, 462);
+            this.ProductsButton.Location = new System.Drawing.Point(5, 375);
+            this.ProductsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(253, 56);
+            this.ProductsButton.Size = new System.Drawing.Size(190, 46);
             this.ProductsButton.TabIndex = 7;
             this.ProductsButton.Text = "Produkty ";
             this.ProductsButton.UseVisualStyleBackColor = true;
             // 
             // HallCreatorButton
             // 
-            this.HallCreatorButton.Location = new System.Drawing.Point(7, 399);
+            this.HallCreatorButton.Location = new System.Drawing.Point(5, 324);
+            this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(2);
             this.HallCreatorButton.Name = "HallCreatorButton";
-            this.HallCreatorButton.Size = new System.Drawing.Size(253, 56);
+            this.HallCreatorButton.Size = new System.Drawing.Size(190, 46);
             this.HallCreatorButton.TabIndex = 6;
             this.HallCreatorButton.Text = "Kreator sal";
             this.HallCreatorButton.UseVisualStyleBackColor = true;
+            this.HallCreatorButton.Click += new System.EventHandler(this.HallCreatorButton_Click);
             // 
             // MovieButton
             // 
-            this.MovieButton.Location = new System.Drawing.Point(7, 336);
+            this.MovieButton.Location = new System.Drawing.Point(5, 273);
+            this.MovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieButton.Name = "MovieButton";
-            this.MovieButton.Size = new System.Drawing.Size(253, 56);
+            this.MovieButton.Size = new System.Drawing.Size(190, 46);
             this.MovieButton.TabIndex = 5;
             this.MovieButton.Text = "Filmy";
             this.MovieButton.UseVisualStyleBackColor = true;
             // 
             // MovieHallsButton
             // 
-            this.MovieHallsButton.Location = new System.Drawing.Point(7, 272);
+            this.MovieHallsButton.Location = new System.Drawing.Point(5, 221);
+            this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieHallsButton.Name = "MovieHallsButton";
-            this.MovieHallsButton.Size = new System.Drawing.Size(253, 57);
+            this.MovieHallsButton.Size = new System.Drawing.Size(190, 46);
             this.MovieHallsButton.TabIndex = 4;
             this.MovieHallsButton.Text = "Sale";
             this.MovieHallsButton.UseVisualStyleBackColor = true;
             // 
             // ShiftsAndPositionsButton
             // 
-            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(7, 209);
+            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(5, 170);
+            this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShiftsAndPositionsButton.Name = "ShiftsAndPositionsButton";
-            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(253, 56);
+            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(190, 46);
             this.ShiftsAndPositionsButton.TabIndex = 3;
             this.ShiftsAndPositionsButton.Text = "Stanowiska i dyżury";
             this.ShiftsAndPositionsButton.UseVisualStyleBackColor = true;
             // 
             // EmployeesButton
             // 
-            this.EmployeesButton.Location = new System.Drawing.Point(7, 147);
+            this.EmployeesButton.Location = new System.Drawing.Point(5, 119);
+            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Size = new System.Drawing.Size(253, 55);
+            this.EmployeesButton.Size = new System.Drawing.Size(190, 45);
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Pracownicy";
             this.EmployeesButton.UseVisualStyleBackColor = true;
             // 
             // MovieStatisticsButton
             // 
-            this.MovieStatisticsButton.Location = new System.Drawing.Point(7, 89);
+            this.MovieStatisticsButton.Location = new System.Drawing.Point(5, 72);
+            this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieStatisticsButton.Name = "MovieStatisticsButton";
-            this.MovieStatisticsButton.Size = new System.Drawing.Size(253, 51);
+            this.MovieStatisticsButton.Size = new System.Drawing.Size(190, 41);
             this.MovieStatisticsButton.TabIndex = 1;
             this.MovieStatisticsButton.Text = "Statystyki filmów";
             this.MovieStatisticsButton.UseVisualStyleBackColor = true;
             // 
             // SalesStatisticsButton
             // 
-            this.SalesStatisticsButton.Location = new System.Drawing.Point(7, 31);
+            this.SalesStatisticsButton.Location = new System.Drawing.Point(5, 25);
+            this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.SalesStatisticsButton.Name = "SalesStatisticsButton";
-            this.SalesStatisticsButton.Size = new System.Drawing.Size(253, 51);
+            this.SalesStatisticsButton.Size = new System.Drawing.Size(190, 41);
             this.SalesStatisticsButton.TabIndex = 0;
             this.SalesStatisticsButton.Text = "Statystyki sprzedaży";
             this.SalesStatisticsButton.UseVisualStyleBackColor = true;
-            this.SalesStatisticsButton.Click += new System.EventHandler(this.SalesStatisticsButton_Click);
             // 
             // MainFormManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 663);
+            this.ClientSize = new System.Drawing.Size(983, 613);
             this.Controls.Add(this.ButtonGroup);
             this.Controls.Add(this.MainPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainFormManager";
             this.Text = "MainFormMenager";
             this.ButtonGroup.ResumeLayout(false);

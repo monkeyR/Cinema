@@ -60,10 +60,19 @@
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pages\HallCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HallCreatorForm.Designer.cs">
+      <DependentUpon>HallCreatorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HallCreatorForm.resx">
+      <DependentUpon>HallCreatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,9 +110,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
