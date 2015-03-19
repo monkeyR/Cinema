@@ -33,18 +33,12 @@ namespace CinemaSales
         private CinemaModel.Employeers findUser(String login, String password)
         {
             CinemaModel.Employeers user = null;
-
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-
-                var users = (from t in ctx.Employeers
-                             where t.login.Equals(login)
-                             && t.password.Equals(password)
-                             select t);
-
-                user = users.FirstOrDefault();
+                user = Queries.findUser(login, password, ctx);
             }
             return user;
         }
+
     }
 }
