@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 using Common;
 
-namespace CinemaSales
+namespace CinemaSales.Main
 {
     public class MyLoginForm : LoginForm
     {
@@ -23,6 +23,8 @@ namespace CinemaSales
 
             if (user == null)
                 MessageBox.Show(new MessageStrings().NoSuchUser);
+            else
+                showMainForm();
         }
 
         /*private void test()
@@ -40,5 +42,20 @@ namespace CinemaSales
             return user;
         }
 
+        private void showMainForm()
+        {
+            try
+            {
+                MainFormSales mainForm = new MainFormSales();
+                this.Hide();
+                mainForm.ShowDialog();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                String message = "Wystąpił nieobsłużony błąd: " + Environment.NewLine + ex.Message;
+                MessageBox.Show(message);
+            }
+        }
     }
 }

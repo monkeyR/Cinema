@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaSales
+namespace CinemaSales.Main
 {
     static class Program
     {

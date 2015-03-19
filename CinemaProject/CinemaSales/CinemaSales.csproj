@@ -52,12 +52,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\BuyProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\BuyProductsForm.Designer.cs">
+      <DependentUpon>BuyProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\BuyTicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\BuyTicketsForm.Designer.cs">
+      <DependentUpon>BuyTicketsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainFormSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainFormSales.Designer.cs">
+      <DependentUpon>MainFormSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SceneCustomization.cs" />
+    <EmbeddedResource Include="Main\BuyProductsForm.resx">
+      <DependentUpon>BuyProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\BuyTicketsForm.resx">
+      <DependentUpon>BuyTicketsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainFormSales.resx">
+      <DependentUpon>MainFormSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
