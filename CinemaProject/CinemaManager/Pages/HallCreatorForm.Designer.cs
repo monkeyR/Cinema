@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.HallCreatorRowsNumberTextBox = new System.Windows.Forms.TextBox();
-            this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.HallCreatorHallNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
+            this.HallCreatorRowsNumberTextBox = new System.Windows.Forms.TextBox();
             this.HallNameOKLabel = new System.Windows.Forms.Label();
             this.HallCteatorHowManyRowsLabel = new System.Windows.Forms.Label();
             this.HallCteatorHowManyCollumnsLabel = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             // 
             this.CreateHallONButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CreateHallONButton.Location = new System.Drawing.Point(146, 167);
-            this.CreateHallONButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateHallONButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateHallONButton.Name = "CreateHallONButton";
             this.CreateHallONButton.Size = new System.Drawing.Size(100, 32);
             this.CreateHallONButton.TabIndex = 0;
@@ -87,19 +87,12 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // HallCreatorRowsNumberTextBox
+            // HallCreatorHallNameTextBox
             // 
-            this.HallCreatorRowsNumberTextBox.Location = new System.Drawing.Point(146, 47);
-            this.HallCreatorRowsNumberTextBox.Name = "HallCreatorRowsNumberTextBox";
-            this.HallCreatorRowsNumberTextBox.Size = new System.Drawing.Size(100, 22);
-            this.HallCreatorRowsNumberTextBox.TabIndex = 3;
-            // 
-            // HallCreatorColumsNumberTextBox
-            // 
-            this.HallCreatorColumsNumberTextBox.Location = new System.Drawing.Point(146, 87);
-            this.HallCreatorColumsNumberTextBox.Name = "HallCreatorColumsNumberTextBox";
-            this.HallCreatorColumsNumberTextBox.Size = new System.Drawing.Size(100, 22);
-            this.HallCreatorColumsNumberTextBox.TabIndex = 4;
+            this.HallCreatorHallNameTextBox.Location = new System.Drawing.Point(146, 127);
+            this.HallCreatorHallNameTextBox.Name = "HallCreatorHallNameTextBox";
+            this.HallCreatorHallNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HallCreatorHallNameTextBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -110,12 +103,19 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Nazwa sali:";
             // 
-            // HallCreatorHallNameTextBox
+            // HallCreatorColumsNumberTextBox
             // 
-            this.HallCreatorHallNameTextBox.Location = new System.Drawing.Point(146, 127);
-            this.HallCreatorHallNameTextBox.Name = "HallCreatorHallNameTextBox";
-            this.HallCreatorHallNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.HallCreatorHallNameTextBox.TabIndex = 6;
+            this.HallCreatorColumsNumberTextBox.Location = new System.Drawing.Point(146, 87);
+            this.HallCreatorColumsNumberTextBox.Name = "HallCreatorColumsNumberTextBox";
+            this.HallCreatorColumsNumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HallCreatorColumsNumberTextBox.TabIndex = 4;
+            // 
+            // HallCreatorRowsNumberTextBox
+            // 
+            this.HallCreatorRowsNumberTextBox.Location = new System.Drawing.Point(146, 47);
+            this.HallCreatorRowsNumberTextBox.Name = "HallCreatorRowsNumberTextBox";
+            this.HallCreatorRowsNumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HallCreatorRowsNumberTextBox.TabIndex = 3;
             // 
             // HallNameOKLabel
             // 
@@ -151,7 +151,7 @@
             this.Controls.Add(this.HallNameOKLabel);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HallCreatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HallCreatorForm";

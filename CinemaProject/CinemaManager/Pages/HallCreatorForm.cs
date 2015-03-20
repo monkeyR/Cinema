@@ -22,7 +22,7 @@ namespace CinemaManager.Pages
         private void CreateHallONButton_Click(object sender, EventArgs e)
         {
             int rows = 0;
-            int colums = 0;
+            int columns = 0;
             string hallName = null;
 
             if (String.IsNullOrEmpty(HallCreatorColumsNumberTextBox.Text) || String.IsNullOrEmpty(HallCreatorRowsNumberTextBox.Text) || String.IsNullOrEmpty(HallCreatorHallNameTextBox.Text))
@@ -42,16 +42,43 @@ namespace CinemaManager.Pages
                 {
                     hallName = HallCreatorHallNameTextBox.Text;
                     rows = Convert.ToInt32(HallCreatorRowsNumberTextBox.Text);
-                    colums = Convert.ToInt32(HallCreatorColumsNumberTextBox.Text);
+                    columns = Convert.ToInt32(HallCreatorColumsNumberTextBox.Text);
                     //MessageBox.Show("Nazwa sali: " + hallName + "ilość rzędów:" + rows.ToString());
 
                     HallNameOKLabel.Text = "Nazwa sali:    " + hallName;
                     HallCteatorHowManyRowsLabel.Text = "Ilość rzędów: " + rows;
-                    HallCteatorHowManyCollumnsLabel.Text = "Ilość kolumn: " + colums;
+                    HallCteatorHowManyCollumnsLabel.Text = "Ilość kolumn: " + columns;
+                    HallCreateGenetrateMatrix(rows, columns);
+
+
+
+
+
+
                 }
-
-
             }
+
+        }
+
+        private void HallCreateGenetrateMatrix(int rows, int columns)
+        {
+            // generate of matrix with place
+            
+               
+             int top = 50;
+             int left = 100;
+
+             for (int i = 0; i < 10; i++)     
+             {         
+                  Button button = new Button();   
+                  button.Left = left;
+                  button.Top = top;
+                  this.Controls.Add(button);      
+                  top += button.Height + 2;
+     
+        }
+
+
         }
     }
 }
