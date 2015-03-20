@@ -17,5 +17,20 @@ namespace Common
         {
             get { return "Brak uprawnień dostępu"; }
         }
+
+        public String NoFillAllTextBox
+        {
+            get { return "Wypełnij wszystkie pola"; }
+        }
+
+        public String NoNumberValue
+        {
+            get { return "Niepoprawny format danych"; }
+        }
+
+        public String HallNameAlreadyExist
+        {
+            get { return "Taka sala już istnieje! Podaj inną nazwę. "; }
+        }
     }
 }
