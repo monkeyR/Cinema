@@ -42,5 +42,14 @@ namespace Common
 
         public abstract void onLoginActionRequest(String login, String password);
 
+        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (preValidate())
+                    onLoginActionRequest(loginTextBox.Text, passwordTextBox.Text);
+            }
+        }
+
     }
 }

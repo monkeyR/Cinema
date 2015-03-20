@@ -61,6 +61,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(150, 21);
             this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             // 
             // loginTextBox
             // 
