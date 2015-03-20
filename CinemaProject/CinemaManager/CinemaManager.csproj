@@ -60,6 +60,12 @@
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pages\EmployeesManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\EmployeesManagementForm.Designer.cs">
+      <DependentUpon>EmployeesManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HallCreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\EmployeesManagementForm.resx">
+      <DependentUpon>EmployeesManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\HallCreatorForm.resx">
       <DependentUpon>HallCreatorForm.cs</DependentUpon>

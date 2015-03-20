@@ -36,5 +36,10 @@ namespace CinemaManager.Main
         {
             selectPage(new HallCreatorForm());
         }
+
+        private void EmployeesButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new EmployeesManagementForm());
+        }
     }
 }

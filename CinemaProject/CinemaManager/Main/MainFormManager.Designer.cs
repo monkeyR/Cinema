@@ -43,10 +43,10 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Location = new System.Drawing.Point(293, 12);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MainPanel.Location = new System.Drawing.Point(234, 10);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1003, 729);
+            this.MainPanel.Size = new System.Drawing.Size(802, 583);
             this.MainPanel.TabIndex = 0;
             // 
             // ButtonGroup
@@ -59,30 +59,30 @@
             this.ButtonGroup.Controls.Add(this.EmployeesButton);
             this.ButtonGroup.Controls.Add(this.MovieStatisticsButton);
             this.ButtonGroup.Controls.Add(this.SalesStatisticsButton);
-            this.ButtonGroup.Location = new System.Drawing.Point(12, 12);
-            this.ButtonGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonGroup.Location = new System.Drawing.Point(10, 10);
+            this.ButtonGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonGroup.Name = "ButtonGroup";
-            this.ButtonGroup.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ButtonGroup.Size = new System.Drawing.Size(267, 639);
+            this.ButtonGroup.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonGroup.Size = new System.Drawing.Size(214, 511);
             this.ButtonGroup.TabIndex = 1;
             this.ButtonGroup.TabStop = false;
             // 
             // ProductsButton
             // 
-            this.ProductsButton.Location = new System.Drawing.Point(7, 462);
-            this.ProductsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ProductsButton.Location = new System.Drawing.Point(6, 370);
+            this.ProductsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(253, 57);
+            this.ProductsButton.Size = new System.Drawing.Size(202, 46);
             this.ProductsButton.TabIndex = 7;
             this.ProductsButton.Text = "Produkty ";
             this.ProductsButton.UseVisualStyleBackColor = true;
             // 
             // HallCreatorButton
             // 
-            this.HallCreatorButton.Location = new System.Drawing.Point(7, 399);
-            this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HallCreatorButton.Location = new System.Drawing.Point(6, 319);
+            this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HallCreatorButton.Name = "HallCreatorButton";
-            this.HallCreatorButton.Size = new System.Drawing.Size(253, 57);
+            this.HallCreatorButton.Size = new System.Drawing.Size(202, 46);
             this.HallCreatorButton.TabIndex = 6;
             this.HallCreatorButton.Text = "Kreator sal";
             this.HallCreatorButton.UseVisualStyleBackColor = true;
@@ -90,74 +90,75 @@
             // 
             // MovieButton
             // 
-            this.MovieButton.Location = new System.Drawing.Point(7, 336);
-            this.MovieButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MovieButton.Location = new System.Drawing.Point(6, 269);
+            this.MovieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MovieButton.Name = "MovieButton";
-            this.MovieButton.Size = new System.Drawing.Size(253, 57);
+            this.MovieButton.Size = new System.Drawing.Size(202, 46);
             this.MovieButton.TabIndex = 5;
             this.MovieButton.Text = "Filmy";
             this.MovieButton.UseVisualStyleBackColor = true;
             // 
             // MovieHallsButton
             // 
-            this.MovieHallsButton.Location = new System.Drawing.Point(7, 272);
-            this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MovieHallsButton.Location = new System.Drawing.Point(6, 218);
+            this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MovieHallsButton.Name = "MovieHallsButton";
-            this.MovieHallsButton.Size = new System.Drawing.Size(253, 57);
+            this.MovieHallsButton.Size = new System.Drawing.Size(202, 46);
             this.MovieHallsButton.TabIndex = 4;
             this.MovieHallsButton.Text = "Sale";
             this.MovieHallsButton.UseVisualStyleBackColor = true;
             // 
             // ShiftsAndPositionsButton
             // 
-            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(7, 209);
-            this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(6, 167);
+            this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ShiftsAndPositionsButton.Name = "ShiftsAndPositionsButton";
-            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(253, 57);
+            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(202, 46);
             this.ShiftsAndPositionsButton.TabIndex = 3;
             this.ShiftsAndPositionsButton.Text = "Stanowiska i dyżury";
             this.ShiftsAndPositionsButton.UseVisualStyleBackColor = true;
             // 
             // EmployeesButton
             // 
-            this.EmployeesButton.Location = new System.Drawing.Point(7, 146);
-            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmployeesButton.Location = new System.Drawing.Point(6, 117);
+            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Size = new System.Drawing.Size(253, 55);
+            this.EmployeesButton.Size = new System.Drawing.Size(202, 44);
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Pracownicy";
             this.EmployeesButton.UseVisualStyleBackColor = true;
+            this.EmployeesButton.Click += new System.EventHandler(this.EmployeesButton_Click);
             // 
             // MovieStatisticsButton
             // 
-            this.MovieStatisticsButton.Location = new System.Drawing.Point(7, 89);
-            this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MovieStatisticsButton.Location = new System.Drawing.Point(6, 71);
+            this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MovieStatisticsButton.Name = "MovieStatisticsButton";
-            this.MovieStatisticsButton.Size = new System.Drawing.Size(253, 50);
+            this.MovieStatisticsButton.Size = new System.Drawing.Size(202, 40);
             this.MovieStatisticsButton.TabIndex = 1;
             this.MovieStatisticsButton.Text = "Statystyki filmów";
             this.MovieStatisticsButton.UseVisualStyleBackColor = true;
             // 
             // SalesStatisticsButton
             // 
-            this.SalesStatisticsButton.Location = new System.Drawing.Point(7, 31);
-            this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SalesStatisticsButton.Location = new System.Drawing.Point(6, 25);
+            this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SalesStatisticsButton.Name = "SalesStatisticsButton";
-            this.SalesStatisticsButton.Size = new System.Drawing.Size(253, 50);
+            this.SalesStatisticsButton.Size = new System.Drawing.Size(202, 40);
             this.SalesStatisticsButton.TabIndex = 0;
             this.SalesStatisticsButton.Text = "Statystyki sprzedaży";
             this.SalesStatisticsButton.UseVisualStyleBackColor = true;
             // 
             // MainFormManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1311, 754);
+            this.ClientSize = new System.Drawing.Size(1049, 603);
             this.Controls.Add(this.ButtonGroup);
             this.Controls.Add(this.MainPanel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainFormManager";
             this.Text = "MainFormMenager";
             this.ButtonGroup.ResumeLayout(false);
