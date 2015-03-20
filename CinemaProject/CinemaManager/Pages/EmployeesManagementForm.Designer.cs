@@ -37,12 +37,12 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addNewEmployeeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.firedListView = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(696, 263);
+            this.panel2.Size = new System.Drawing.Size(762, 263);
             this.panel2.TabIndex = 17;
             // 
             // employeeListView
@@ -72,7 +72,7 @@
             this.employeeListView.Location = new System.Drawing.Point(3, 51);
             this.employeeListView.MultiSelect = false;
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(690, 207);
+            this.employeeListView.Size = new System.Drawing.Size(757, 207);
             this.employeeListView.TabIndex = 6;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
@@ -111,7 +111,7 @@
             // 
             // addNewEmployeeButton
             // 
-            this.addNewEmployeeButton.Location = new System.Drawing.Point(603, 2);
+            this.addNewEmployeeButton.Location = new System.Drawing.Point(670, 2);
             this.addNewEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
             this.addNewEmployeeButton.Name = "addNewEmployeeButton";
             this.addNewEmployeeButton.Size = new System.Drawing.Size(90, 44);
@@ -123,31 +123,42 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Controls.Add(this.firedListView);
+            this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 281);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 223);
+            this.panel1.Size = new System.Drawing.Size(762, 223);
             this.panel1.TabIndex = 19;
             // 
-            // firedListView
+            // label1
             // 
-            this.firedListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firedListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Lista zwolnionych";
+            // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.firedListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.firedListView.FullRowSelect = true;
-            this.firedListView.GridLines = true;
-            this.firedListView.Location = new System.Drawing.Point(3, 51);
-            this.firedListView.MultiSelect = false;
-            this.firedListView.Name = "firedListView";
-            this.firedListView.Size = new System.Drawing.Size(690, 169);
-            this.firedListView.TabIndex = 6;
-            this.firedListView.UseCompatibleStateImageBehavior = false;
-            this.firedListView.View = System.Windows.Forms.View.Details;
+            this.listView1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(8, 37);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(752, 183);
+            this.listView1.TabIndex = 19;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -169,22 +180,11 @@
             this.columnHeader8.Text = "Login";
             this.columnHeader8.Width = 140;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Lista zwolnionych";
-            // 
             // EmployeesManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 516);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(786, 545);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "EmployeesManagementForm";
@@ -208,12 +208,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addNewEmployeeButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView firedListView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label label1;
 
     }
 }
