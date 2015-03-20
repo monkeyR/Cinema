@@ -38,6 +38,7 @@
             this.EmployeesButton = new System.Windows.Forms.Button();
             this.MovieStatisticsButton = new System.Windows.Forms.Button();
             this.SalesStatisticsButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.ButtonGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // 
             // ButtonGroup
             // 
+            this.ButtonGroup.Controls.Add(this.LogoutButton);
             this.ButtonGroup.Controls.Add(this.ProductsButton);
             this.ButtonGroup.Controls.Add(this.HallCreatorButton);
             this.ButtonGroup.Controls.Add(this.MovieButton);
@@ -149,6 +151,15 @@
             this.SalesStatisticsButton.Text = "Statystyki sprzedaży";
             this.SalesStatisticsButton.UseVisualStyleBackColor = true;
             // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(6, 578);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(253, 56);
+            this.LogoutButton.TabIndex = 8;
+            this.LogoutButton.Text = "Wyloguj";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            // 
             // MainFormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -178,5 +189,6 @@
         private System.Windows.Forms.Button EmployeesButton;
         private System.Windows.Forms.Button MovieStatisticsButton;
         private System.Windows.Forms.Button SalesStatisticsButton;
+        private System.Windows.Forms.Button LogoutButton;
     }
 }
