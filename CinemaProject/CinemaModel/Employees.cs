@@ -25,6 +25,8 @@ namespace CinemaModel
         public string name { get; set; }
         public string surname { get; set; }
         public int position { get; set; }
+        public Nullable<bool> isFired { get; set; }
+        public Nullable<System.DateTime> firedDate { get; set; }
     
         public virtual ICollection<Shifts> Shifts { get; set; }
     }

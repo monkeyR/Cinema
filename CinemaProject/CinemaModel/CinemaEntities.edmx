@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employeeID" />
@@ -15,6 +15,8 @@
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="surname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="position" Type="int" Nullable="false" />
+          <Property Name="isFired" Type="bit" />
+          <Property Name="firedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Halls">
           <Key>
@@ -214,60 +216,24 @@
             <End Role="Shows" EntitySet="Shows" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CinemaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CinemaDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Employees" EntityType="CinemaDatabaseModel.Employees" />
-          <EntitySet Name="Halls" EntityType="CinemaDatabaseModel.Halls" />
-          <EntitySet Name="Movies" EntityType="CinemaDatabaseModel.Movies" />
-          <EntitySet Name="MovieSales" EntityType="CinemaDatabaseModel.MovieSales" />
-          <EntitySet Name="Products" EntityType="CinemaDatabaseModel.Products" />
-          <EntitySet Name="ProductSales" EntityType="CinemaDatabaseModel.ProductSales" />
-          <EntitySet Name="Shifts" EntityType="CinemaDatabaseModel.Shifts" />
-          <EntitySet Name="Shows" EntityType="CinemaDatabaseModel.Shows" />
-          <EntitySet Name="Workpositions" EntityType="CinemaDatabaseModel.Workpositions" />
-          <AssociationSet Name="FK__Shifts__employee__2A4B4B5E" Association="CinemaDatabaseModel.FK__Shifts__employee__2A4B4B5E">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="Shifts" EntitySet="Shifts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MovieSale__hallI__182C9B23" Association="CinemaDatabaseModel.FK__MovieSale__hallI__182C9B23">
-            <End Role="Halls" EntitySet="Halls" />
-            <End Role="MovieSales" EntitySet="MovieSales" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shows__hallID__267ABA7A" Association="CinemaDatabaseModel.FK__Shows__hallID__267ABA7A">
-            <End Role="Halls" EntitySet="Halls" />
-            <End Role="Shows" EntitySet="Shows" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MovieSale__posit__173876EA" Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="MovieSales" EntitySet="MovieSales" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shows__movieID__25869641" Association="CinemaDatabaseModel.FK__Shows__movieID__25869641">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="Shows" EntitySet="Shows" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ProductSa__sales__1DE57479" Association="CinemaDatabaseModel.FK__ProductSa__sales__1DE57479">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ProductSales" EntitySet="ProductSales" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shifts__typeShif__29572725" Association="CinemaDatabaseModel.FK__Shifts__typeShif__29572725">
-            <End Role="Workpositions" EntitySet="Workpositions" />
-            <End Role="Shifts" EntitySet="Shifts" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employeeID" />
           </Key>
           <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="position" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Shifts" Relationship="CinemaDatabaseModel.FK__Shifts__employee__2A4B4B5E" FromRole="Employees" ToRole="Shifts" />
+          <Property Name="isFired" Type="Boolean" />
+          <Property Name="firedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Shifts" Relationship="Self.FK__Shifts__employee__2A4B4B5E" FromRole="Employees" ToRole="Shifts" />
         </EntityType>
         <EntityType Name="Halls">
           <Key>
@@ -276,22 +242,22 @@
           <Property Name="hallID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="number" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="matrix" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="MovieSales" Relationship="CinemaDatabaseModel.FK__MovieSale__hallI__182C9B23" FromRole="Halls" ToRole="MovieSales" />
-          <NavigationProperty Name="Shows" Relationship="CinemaDatabaseModel.FK__Shows__hallID__267ABA7A" FromRole="Halls" ToRole="Shows" />
+          <Property Name="matrix" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MovieSales" Relationship="Self.FK__MovieSale__hallI__182C9B23" FromRole="Halls" ToRole="MovieSales" />
+          <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__hallID__267ABA7A" FromRole="Halls" ToRole="Shows" />
         </EntityType>
         <EntityType Name="Movies">
           <Key>
             <PropertyRef Name="movieID" />
           </Key>
           <Property Name="movieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
           <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="MovieSales" Relationship="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" FromRole="Movies" ToRole="MovieSales" />
-          <NavigationProperty Name="Shows" Relationship="CinemaDatabaseModel.FK__Shows__movieID__25869641" FromRole="Movies" ToRole="Shows" />
+          <NavigationProperty Name="MovieSales" Relationship="Self.FK__MovieSale__posit__173876EA" FromRole="Movies" ToRole="MovieSales" />
+          <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__movieID__25869641" FromRole="Movies" ToRole="Shows" />
         </EntityType>
         <EntityType Name="MovieSales">
           <Key>
@@ -301,19 +267,19 @@
           <Property Name="movieID" Type="Int32" Nullable="false" />
           <Property Name="hallID" Type="Int32" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="position" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Halls" Relationship="CinemaDatabaseModel.FK__MovieSale__hallI__182C9B23" FromRole="MovieSales" ToRole="Halls" />
-          <NavigationProperty Name="Movies" Relationship="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" FromRole="MovieSales" ToRole="Movies" />
+          <Property Name="position" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Halls" Relationship="Self.FK__MovieSale__hallI__182C9B23" FromRole="MovieSales" ToRole="Halls" />
+          <NavigationProperty Name="Movies" Relationship="Self.FK__MovieSale__posit__173876EA" FromRole="MovieSales" ToRole="Movies" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="productID" />
           </Key>
           <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="ProductSales" Relationship="CinemaDatabaseModel.FK__ProductSa__sales__1DE57479" FromRole="Products" ToRole="ProductSales" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="ProductSales" Relationship="Self.FK__ProductSa__sales__1DE57479" FromRole="Products" ToRole="ProductSales" />
         </EntityType>
         <EntityType Name="ProductSales">
           <Key>
@@ -323,7 +289,7 @@
           <Property Name="productID" Type="Int32" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="salesDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Products" Relationship="CinemaDatabaseModel.FK__ProductSa__sales__1DE57479" FromRole="ProductSales" ToRole="Products" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__ProductSa__sales__1DE57479" FromRole="ProductSales" ToRole="Products" />
         </EntityType>
         <EntityType Name="Shifts">
           <Key>
@@ -334,8 +300,8 @@
           <Property Name="employeeID" Type="Int32" Nullable="false" />
           <Property Name="dateShift" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="typeShift" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Employees" Relationship="CinemaDatabaseModel.FK__Shifts__employee__2A4B4B5E" FromRole="Shifts" ToRole="Employees" />
-          <NavigationProperty Name="Workpositions" Relationship="CinemaDatabaseModel.FK__Shifts__typeShif__29572725" FromRole="Shifts" ToRole="Workpositions" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Shifts__employee__2A4B4B5E" FromRole="Shifts" ToRole="Employees" />
+          <NavigationProperty Name="Workpositions" Relationship="Self.FK__Shifts__typeShif__29572725" FromRole="Shifts" ToRole="Workpositions" />
         </EntityType>
         <EntityType Name="Shows">
           <Key>
@@ -346,20 +312,20 @@
           <Property Name="hallID" Type="Int32" Nullable="false" />
           <Property Name="dateStart" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateEnd" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Halls" Relationship="CinemaDatabaseModel.FK__Shows__hallID__267ABA7A" FromRole="Shows" ToRole="Halls" />
-          <NavigationProperty Name="Movies" Relationship="CinemaDatabaseModel.FK__Shows__movieID__25869641" FromRole="Shows" ToRole="Movies" />
+          <NavigationProperty Name="Halls" Relationship="Self.FK__Shows__hallID__267ABA7A" FromRole="Shows" ToRole="Halls" />
+          <NavigationProperty Name="Movies" Relationship="Self.FK__Shows__movieID__25869641" FromRole="Shows" ToRole="Movies" />
         </EntityType>
         <EntityType Name="Workpositions">
           <Key>
             <PropertyRef Name="workpositionID" />
           </Key>
           <Property Name="workpositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Shifts" Relationship="CinemaDatabaseModel.FK__Shifts__typeShif__29572725" FromRole="Workpositions" ToRole="Shifts" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Shifts" Relationship="Self.FK__Shifts__typeShif__29572725" FromRole="Workpositions" ToRole="Shifts" />
         </EntityType>
         <Association Name="FK__Shifts__employee__2A4B4B5E">
-          <End Type="CinemaDatabaseModel.Employees" Role="Employees" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.Shifts" Role="Shifts" Multiplicity="*" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Shifts" Type="Self.Shifts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="employeeID" />
@@ -370,8 +336,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MovieSale__hallI__182C9B23">
-          <End Type="CinemaDatabaseModel.Halls" Role="Halls" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.MovieSales" Role="MovieSales" Multiplicity="*" />
+          <End Role="Halls" Type="Self.Halls" Multiplicity="1" />
+          <End Role="MovieSales" Type="Self.MovieSales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Halls">
               <PropertyRef Name="hallID" />
@@ -382,8 +348,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shows__hallID__267ABA7A">
-          <End Type="CinemaDatabaseModel.Halls" Role="Halls" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.Shows" Role="Shows" Multiplicity="*" />
+          <End Role="Halls" Type="Self.Halls" Multiplicity="1" />
+          <End Role="Shows" Type="Self.Shows" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Halls">
               <PropertyRef Name="hallID" />
@@ -394,8 +360,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MovieSale__posit__173876EA">
-          <End Type="CinemaDatabaseModel.Movies" Role="Movies" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.MovieSales" Role="MovieSales" Multiplicity="*" />
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+          <End Role="MovieSales" Type="Self.MovieSales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Movies">
               <PropertyRef Name="movieID" />
@@ -406,8 +372,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shows__movieID__25869641">
-          <End Type="CinemaDatabaseModel.Movies" Role="Movies" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.Shows" Role="Shows" Multiplicity="*" />
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+          <End Role="Shows" Type="Self.Shows" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Movies">
               <PropertyRef Name="movieID" />
@@ -418,8 +384,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ProductSa__sales__1DE57479">
-          <End Type="CinemaDatabaseModel.Products" Role="Products" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.ProductSales" Role="ProductSales" Multiplicity="*" />
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductSales" Type="Self.ProductSales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="productID" />
@@ -430,8 +396,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shifts__typeShif__29572725">
-          <End Type="CinemaDatabaseModel.Workpositions" Role="Workpositions" Multiplicity="1" />
-          <End Type="CinemaDatabaseModel.Shifts" Role="Shifts" Multiplicity="*" />
+          <End Role="Workpositions" Type="Self.Workpositions" Multiplicity="1" />
+          <End Role="Shifts" Type="Self.Shifts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Workpositions">
               <PropertyRef Name="workpositionID" />
@@ -441,7 +407,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+        <EntityContainer Name="CinemaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="Halls" EntityType="Self.Halls" />
+          <EntitySet Name="Movies" EntityType="Self.Movies" />
+          <EntitySet Name="MovieSales" EntityType="Self.MovieSales" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="ProductSales" EntityType="Self.ProductSales" />
+          <EntitySet Name="Shifts" EntityType="Self.Shifts" />
+          <EntitySet Name="Shows" EntityType="Self.Shows" />
+          <EntitySet Name="Workpositions" EntityType="Self.Workpositions" />
+          <AssociationSet Name="FK__Shifts__employee__2A4B4B5E" Association="Self.FK__Shifts__employee__2A4B4B5E">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Shifts" EntitySet="Shifts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MovieSale__hallI__182C9B23" Association="Self.FK__MovieSale__hallI__182C9B23">
+            <End Role="Halls" EntitySet="Halls" />
+            <End Role="MovieSales" EntitySet="MovieSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shows__hallID__267ABA7A" Association="Self.FK__Shows__hallID__267ABA7A">
+            <End Role="Halls" EntitySet="Halls" />
+            <End Role="Shows" EntitySet="Shows" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MovieSale__posit__173876EA" Association="Self.FK__MovieSale__posit__173876EA">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="MovieSales" EntitySet="MovieSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shows__movieID__25869641" Association="Self.FK__Shows__movieID__25869641">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Shows" EntitySet="Shows" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductSa__sales__1DE57479" Association="Self.FK__ProductSa__sales__1DE57479">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSales" EntitySet="ProductSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shifts__typeShif__29572725" Association="Self.FK__Shifts__typeShif__29572725">
+            <End Role="Workpositions" EntitySet="Workpositions" />
+            <End Role="Shifts" EntitySet="Shifts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -450,95 +455,97 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Employees">
               <MappingFragment StoreEntitySet="Employees">
-                <ScalarProperty Name="position" ColumnName="position" />
-                <ScalarProperty Name="surname" ColumnName="surname" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="isFired" ColumnName="isFired" />
+                <ScalarProperty Name="firedDate" ColumnName="firedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Halls">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Halls">
               <MappingFragment StoreEntitySet="Halls">
-                <ScalarProperty Name="matrix" ColumnName="matrix" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="number" ColumnName="number" />
                 <ScalarProperty Name="hallID" ColumnName="hallID" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="matrix" ColumnName="matrix" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Movies">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Movies">
               <MappingFragment StoreEntitySet="Movies">
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="director" ColumnName="director" />
-                <ScalarProperty Name="duration" ColumnName="duration" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="movieID" ColumnName="movieID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="director" ColumnName="director" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MovieSales">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.MovieSales">
               <MappingFragment StoreEntitySet="MovieSales">
-                <ScalarProperty Name="position" ColumnName="position" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="hallID" ColumnName="hallID" />
-                <ScalarProperty Name="movieID" ColumnName="movieID" />
                 <ScalarProperty Name="moviesalesID" ColumnName="moviesalesID" />
+                <ScalarProperty Name="movieID" ColumnName="movieID" />
+                <ScalarProperty Name="hallID" ColumnName="hallID" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="position" ColumnName="position" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Products">
               <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="price" ColumnName="price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductSales">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.ProductSales">
               <MappingFragment StoreEntitySet="ProductSales">
-                <ScalarProperty Name="salesDate" ColumnName="salesDate" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="productsaleID" ColumnName="productsaleID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="salesDate" ColumnName="salesDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shifts">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Shifts">
               <MappingFragment StoreEntitySet="Shifts">
-                <ScalarProperty Name="typeShift" ColumnName="typeShift" />
-                <ScalarProperty Name="dateShift" ColumnName="dateShift" />
-                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
-                <ScalarProperty Name="workpositionID" ColumnName="workpositionID" />
                 <ScalarProperty Name="shiftID" ColumnName="shiftID" />
+                <ScalarProperty Name="workpositionID" ColumnName="workpositionID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="dateShift" ColumnName="dateShift" />
+                <ScalarProperty Name="typeShift" ColumnName="typeShift" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shows">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Shows">
               <MappingFragment StoreEntitySet="Shows">
-                <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
-                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
-                <ScalarProperty Name="hallID" ColumnName="hallID" />
-                <ScalarProperty Name="movieID" ColumnName="movieID" />
                 <ScalarProperty Name="showID" ColumnName="showID" />
+                <ScalarProperty Name="movieID" ColumnName="movieID" />
+                <ScalarProperty Name="hallID" ColumnName="hallID" />
+                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+                <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Workpositions">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Workpositions">
               <MappingFragment StoreEntitySet="Workpositions">
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="workpositionID" ColumnName="workpositionID" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -556,7 +563,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
