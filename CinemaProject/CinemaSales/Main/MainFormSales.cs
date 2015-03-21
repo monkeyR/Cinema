@@ -37,9 +37,10 @@ namespace CinemaSales.Main
             selectPage(new BuyTicketsForm());
         }
 
-        private void barTabButton_Click(object sender, EventArgs e)
+        private void BarTabButton_Click(object sender, EventArgs e)
         {
             selectPage(new BuyProductsForm());
         }
+
     }
 }
