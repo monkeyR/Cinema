@@ -26,8 +26,7 @@ namespace Common
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (preValidate())
-                onLoginActionRequest(loginTextBox.Text, passwordTextBox.Text);
+            loginMethod();
         }
 
         private bool preValidate()
@@ -46,9 +45,17 @@ namespace Common
         {
             if (e.KeyChar == (char)13)
             {
-                if (preValidate())
-                    onLoginActionRequest(loginTextBox.Text, passwordTextBox.Text);
+                loginMethod();
             }
+        }
+
+        private void loginMethod()
+        {
+
+            loginButton.Enabled = false;
+            if (preValidate())
+                onLoginActionRequest(loginTextBox.Text, passwordTextBox.Text);
+            loginButton.Enabled = true;
         }
 
     }
