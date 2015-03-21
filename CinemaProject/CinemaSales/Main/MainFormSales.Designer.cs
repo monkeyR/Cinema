@@ -124,12 +124,12 @@
             // 
             // FinalButton
             // 
-            this.FinalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(244)))), ((int)(((byte)(99)))));
+            this.FinalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.FinalButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FinalButton.FlatAppearance.BorderSize = 0;
             this.FinalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FinalButton.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinalButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            this.FinalButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.FinalButton.Location = new System.Drawing.Point(3, 500);
             this.FinalButton.Name = "FinalButton";
             this.FinalButton.Size = new System.Drawing.Size(151, 40);
