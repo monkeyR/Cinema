@@ -63,16 +63,20 @@ namespace CinemaManager.Pages
                     }
                     listItem.Add(employee.login);
 
-                    ListViewItem item = new ListViewItem(listItem.ToArray());
+                    
 
                     if ((bool)employee.isFired)
                     {
+                        listItem.Add(employee.firedDate.Value.ToLocalTime().ToShortDateString().ToString());
+                        ListViewItem item = new ListViewItem(listItem.ToArray());
+
                         Common.UISynchronizer.synchronizeWithUI(firedListView, x => firedListView.Items.Add(x), item);
                         Common.UISynchronizer.synchronizeWithUI(firedListView,
                             id => firedListView.Items[firedListView.Items.Count - 1].Tag = id, employee.employeeID);
                     }
                     else
                     {
+                        ListViewItem item = new ListViewItem(listItem.ToArray());
                         Common.UISynchronizer.synchronizeWithUI(employeeListView, x => employeeListView.Items.Add(x), item);
                         Common.UISynchronizer.synchronizeWithUI(employeeListView,
                             id => employeeListView.Items[employeeListView.Items.Count - 1].Tag = id, employee.employeeID);

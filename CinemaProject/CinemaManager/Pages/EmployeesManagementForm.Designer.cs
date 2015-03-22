@@ -42,6 +42,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,12 +103,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Stanowisko";
-            this.columnHeader3.Width = 173;
+            this.columnHeader3.Width = 214;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Login";
-            this.columnHeader4.Width = 140;
+            this.columnHeader4.Width = 167;
             // 
             // label2
             // 
@@ -137,7 +138,8 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader9});
             this.firedListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firedListView.FullRowSelect = true;
             this.firedListView.GridLines = true;
@@ -163,12 +165,17 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Stanowisko";
-            this.columnHeader7.Width = 173;
+            this.columnHeader7.Width = 143;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Login";
-            this.columnHeader8.Width = 140;
+            this.columnHeader8.Width = 121;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Data zwolnienia";
+            this.columnHeader9.Width = 111;
             // 
             // label1
             // 
@@ -215,6 +222,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
 
     }
 }

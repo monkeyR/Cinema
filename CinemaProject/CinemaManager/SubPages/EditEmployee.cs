@@ -49,6 +49,7 @@ namespace CinemaManager.SubPages
             Common.UISynchronizer.synchronizeWithUI(nameTextbox, x => nameTextbox.Text = x, employee.name);
             Common.UISynchronizer.synchronizeWithUI(surnameTextbox, x => surnameTextbox.Text = x, employee.surname);
             Common.UISynchronizer.synchronizeWithUI(loginTextbox, x => loginTextbox.Text = x, employee.login);
+            Common.UISynchronizer.synchronizeWithUI(passwordTextbox, x => passwordTextbox.Text = x, employee.password);
 
             fillPositions();
         }
@@ -78,6 +79,7 @@ namespace CinemaManager.SubPages
                 editedEmployee.surname = surnameTextbox.Text;
                 editedEmployee.login = loginTextbox.Text;
                 editedEmployee.position = (int)(Common.EmployeeTypes.Types)Enum.Parse(typeof(Common.EmployeeTypes.Types), positionsCombobox.Text);
+                editedEmployee.password = passwordTextbox.Text;
 
                 if (!checkIfEquals(editedEmployee))
                 {
@@ -109,7 +111,8 @@ namespace CinemaManager.SubPages
             if (employee.name == editedEmployee.name &&
                 employee.surname == editedEmployee.surname &&
                 employee.position == editedEmployee.position &&
-                employee.login == editedEmployee.login)
+                employee.login == editedEmployee.login &&
+                employee.password == editedEmployee.password)
                 return true;
             return false;
         }
@@ -119,7 +122,8 @@ namespace CinemaManager.SubPages
             if (nameTextbox.Text == string.Empty ||
                 surnameTextbox.Text == string.Empty ||
                 loginTextbox.Text == string.Empty ||
-                positionsCombobox.Text == string.Empty)
+                positionsCombobox.Text == string.Empty ||
+                passwordTextbox.Text == string.Empty)
                 return false;
             return true;
         }
@@ -130,6 +134,7 @@ namespace CinemaManager.SubPages
             this.employee.surname = editedEmployee.surname;
             this.employee.login = editedEmployee.login;
             this.employee.position = editedEmployee.position;
+            this.employee.password = editedEmployee.password;
         }
     }
 }
