@@ -63,20 +63,7 @@ namespace CinemaManager.Pages
         private void HallCreateGenetrateMatrix(int rows, int columns)
         {
             // generate of matrix with place
-            
-               
-             int top = 50;
-             int left = 100;
-
-             for (int i = 0; i < 10; i++)     
-             {         
-                  Button button = new Button();   
-                  button.Left = left;
-                  button.Top = top;
-                  this.Controls.Add(button);      
-                  top += button.Height + 2;
-     
-        }
+          
 
 
         }
