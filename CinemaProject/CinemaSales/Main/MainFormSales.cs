@@ -24,7 +24,7 @@ namespace CinemaSales.Main
             page.TopLevel = false;
             MainSalesPanel.Controls.Clear();
             MainSalesPanel.Controls.Add(page);
-            page.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //page.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             page.Dock = DockStyle.Fill;
             page.Show();
 
@@ -40,6 +40,16 @@ namespace CinemaSales.Main
         private void BarTabButton_Click(object sender, EventArgs e)
         {
             selectPage(new BuyProductsForm());
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     }

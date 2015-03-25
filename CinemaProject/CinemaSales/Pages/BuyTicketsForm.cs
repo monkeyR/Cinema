@@ -16,5 +16,11 @@ namespace CinemaSales.Main
         {
             InitializeComponent();
         }
+
+        private void BuyTicketsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

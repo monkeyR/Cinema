@@ -52,16 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main\BuyProductsForm.cs">
+    <Compile Include="Pages\BuyProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\BuyProductsForm.Designer.cs">
+    <Compile Include="Pages\BuyProductsForm.Designer.cs">
       <DependentUpon>BuyProductsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\BuyTicketsForm.cs">
+    <Compile Include="Pages\BuyTicketsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\BuyTicketsForm.Designer.cs">
+    <Compile Include="Pages\BuyTicketsForm.Designer.cs">
       <DependentUpon>BuyTicketsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\MainFormSales.cs">
@@ -76,10 +76,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SceneCustomization.cs" />
-    <EmbeddedResource Include="Main\BuyProductsForm.resx">
+    <EmbeddedResource Include="Pages\BuyProductsForm.resx">
       <DependentUpon>BuyProductsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\BuyTicketsForm.resx">
+    <EmbeddedResource Include="Pages\BuyTicketsForm.resx">
       <DependentUpon>BuyTicketsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\MainFormSales.resx">
@@ -120,9 +120,7 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
