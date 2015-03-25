@@ -41,5 +41,10 @@ namespace CinemaManager.Main
         {
             selectPage(new EmployeesManagementForm());
         }
+
+        private void MovieButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new MoviesManagementForm());
+        }
     }
 }
