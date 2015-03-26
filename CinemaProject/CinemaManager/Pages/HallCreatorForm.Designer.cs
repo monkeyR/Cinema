@@ -36,10 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
             this.HallCreatorRowsNumberTextBox = new System.Windows.Forms.TextBox();
-            this.HallNameOKLabel = new System.Windows.Forms.Label();
+            this.HallCreatorNmeOfHallLabel = new System.Windows.Forms.Label();
             this.HallCteatorHowManyRowsLabel = new System.Windows.Forms.Label();
             this.HallCteatorHowManyCollumnsLabel = new System.Windows.Forms.Label();
+            this.HallCreateTable = new System.Windows.Forms.TableLayoutPanel();
+            this.HallCreatePanel = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.HallCreatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CreateHallONButton
@@ -81,7 +84,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.CreateHallONButton);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(28, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(265, 216);
             this.groupBox1.TabIndex = 3;
@@ -117,13 +120,14 @@
             this.HallCreatorRowsNumberTextBox.Size = new System.Drawing.Size(100, 22);
             this.HallCreatorRowsNumberTextBox.TabIndex = 3;
             // 
-            // HallNameOKLabel
+            // HallCreatorNmeOfHallLabel
             // 
-            this.HallNameOKLabel.AutoSize = true;
-            this.HallNameOKLabel.Location = new System.Drawing.Point(359, 32);
-            this.HallNameOKLabel.Name = "HallNameOKLabel";
-            this.HallNameOKLabel.Size = new System.Drawing.Size(0, 17);
-            this.HallNameOKLabel.TabIndex = 4;
+            this.HallCreatorNmeOfHallLabel.AutoSize = true;
+            this.HallCreatorNmeOfHallLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HallCreatorNmeOfHallLabel.Location = new System.Drawing.Point(359, 12);
+            this.HallCreatorNmeOfHallLabel.Name = "HallCreatorNmeOfHallLabel";
+            this.HallCreatorNmeOfHallLabel.Size = new System.Drawing.Size(0, 25);
+            this.HallCreatorNmeOfHallLabel.TabIndex = 7;
             // 
             // HallCteatorHowManyRowsLabel
             // 
@@ -141,14 +145,41 @@
             this.HallCteatorHowManyCollumnsLabel.Size = new System.Drawing.Size(0, 17);
             this.HallCteatorHowManyCollumnsLabel.TabIndex = 6;
             // 
+            // HallCreateTable
+            // 
+            this.HallCreateTable.AutoScroll = true;
+            this.HallCreateTable.ColumnCount = 1;
+            this.HallCreateTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.52475F));
+            this.HallCreateTable.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.HallCreateTable.Location = new System.Drawing.Point(3, 3);
+            this.HallCreateTable.Name = "HallCreateTable";
+            this.HallCreateTable.RowCount = 1;
+            this.HallCreateTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.HallCreateTable.Size = new System.Drawing.Size(843, 366);
+            this.HallCreateTable.TabIndex = 0;
+            this.HallCreateTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // HallCreatePanel
+            // 
+            this.HallCreatePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HallCreatePanel.AutoScroll = true;
+            this.HallCreatePanel.Controls.Add(this.HallCreateTable);
+            this.HallCreatePanel.Location = new System.Drawing.Point(12, 234);
+            this.HallCreatePanel.Name = "HallCreatePanel";
+            this.HallCreatePanel.Size = new System.Drawing.Size(957, 436);
+            this.HallCreatePanel.TabIndex = 8;
+            // 
             // HallCreatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 682);
+            this.Controls.Add(this.HallCreatePanel);
+            this.Controls.Add(this.HallCreatorNmeOfHallLabel);
             this.Controls.Add(this.HallCteatorHowManyCollumnsLabel);
             this.Controls.Add(this.HallCteatorHowManyRowsLabel);
-            this.Controls.Add(this.HallNameOKLabel);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -157,6 +188,7 @@
             this.Text = "HallCreatorForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.HallCreatePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,8 +204,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox HallCreatorColumsNumberTextBox;
         private System.Windows.Forms.TextBox HallCreatorRowsNumberTextBox;
-        private System.Windows.Forms.Label HallNameOKLabel;
+        private System.Windows.Forms.Label HallCreatorNmeOfHallLabel;
         private System.Windows.Forms.Label HallCteatorHowManyRowsLabel;
         private System.Windows.Forms.Label HallCteatorHowManyCollumnsLabel;
+        private System.Windows.Forms.TableLayoutPanel HallCreateTable;
+        private System.Windows.Forms.Panel HallCreatePanel;
     }
 }

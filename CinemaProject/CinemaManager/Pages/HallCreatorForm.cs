@@ -12,12 +12,14 @@ using Common;
 
 namespace CinemaManager.Pages
 {
+
     public partial class HallCreatorForm : Form
     {
         public HallCreatorForm()
         {
             InitializeComponent();
         }
+
 
         private void CreateHallONButton_Click(object sender, EventArgs e)
         {
@@ -32,29 +34,36 @@ namespace CinemaManager.Pages
             }
             else if (!String.IsNullOrEmpty(HallCreatorColumsNumberTextBox.Text) || !String.IsNullOrEmpty(HallCreatorRowsNumberTextBox.Text) || !String.IsNullOrEmpty(HallCreatorHallNameTextBox.Text))
             {
-                int number;
-                if (!int.TryParse(HallCreatorColumsNumberTextBox.Text, out number) || !int.TryParse(HallCreatorRowsNumberTextBox.Text, out number))
+                if (!int.TryParse(HallCreatorColumsNumberTextBox.Text, out columns) || !int.TryParse(HallCreatorRowsNumberTextBox.Text, out rows))
                 {
                     MessageBox.Show(new MessageStrings().NoNumberValue);
                     return;
                 }
                 else
                 {
+                    bool IfHallNameExist = false ;
                     hallName = HallCreatorHallNameTextBox.Text;
-                    rows = Convert.ToInt32(HallCreatorRowsNumberTextBox.Text);
-                    columns = Convert.ToInt32(HallCreatorColumsNumberTextBox.Text);
-                    //MessageBox.Show("Nazwa sali: " + hallName + "ilość rzędów:" + rows.ToString());
+                    using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                    {
+                        
+                        var halls = (from t in ctx.Halls
+                                     where t.title.Equals(hallName)
+                                     select t);
+                            IfHallNameExist = (halls.Count() > 0);
+                    }
 
-                    HallNameOKLabel.Text = "Nazwa sali:    " + hallName;
-                    HallCteatorHowManyRowsLabel.Text = "Ilość rzędów: " + rows;
-                    HallCteatorHowManyCollumnsLabel.Text = "Ilość kolumn: " + columns;
-                    HallCreateGenetrateMatrix(rows, columns);
+                    if (IfHallNameExist)
+                    {
+                        MessageBox.Show("Sala kinowa o takiej nazwie juz istnieje.");
+                    }
+                    else
+                    {
+                        HallCreatorNmeOfHallLabel.Text = hallName;
+                        HallCteatorHowManyRowsLabel.Text = "Ilość rzędów: " + rows;
+                        HallCteatorHowManyCollumnsLabel.Text = "Ilość kolumn: " + columns;
+                        HallCreateGenetrateMatrix(rows, columns);
 
-
-
-
-
-
+                    }
                 }
             }
 
@@ -62,9 +71,30 @@ namespace CinemaManager.Pages
 
         private void HallCreateGenetrateMatrix(int rows, int columns)
         {
-            // generate of matrix with place
-          
+            TableLayoutPanel tlp = new TableLayoutPanel();
+            int i = 0;
+            int sizeOfCell = 30;
+            HallCreateTable.BackColor = Color.Beige;
+            this.HallCreateTable.Size = new System.Drawing.Size((columns * sizeOfCell)+columns-1, (rows * sizeOfCell)+rows-1);
+            
+            this.HallCreateTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;    
+           
+            this.HallCreateTable.ColumnCount = columns;
+            for (i = 0; i <= columns; i++)
+            {
+                this.HallCreateTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, sizeOfCell)); 
+            }
 
+            this.HallCreateTable.RowCount = rows;
+            for (i = 0; i <= rows; i++)
+            {
+                this.HallCreateTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, sizeOfCell));
+            }
+           
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

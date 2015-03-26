@@ -44,11 +44,16 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.AutoScroll = true;
             this.MainPanel.Location = new System.Drawing.Point(292, 12);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1002, 729);
             this.MainPanel.TabIndex = 0;
+            
             // 
             // ButtonGroup
             // 
@@ -72,7 +77,7 @@
             // LogoutButton
             // 
             this.LogoutButton.Location = new System.Drawing.Point(8, 722);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(316, 70);
             this.LogoutButton.TabIndex = 8;
