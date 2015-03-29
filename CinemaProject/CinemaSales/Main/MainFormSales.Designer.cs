@@ -45,7 +45,7 @@
             this.TicketTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TicketTabButton.FlatAppearance.BorderSize = 0;
             this.TicketTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketTabButton.ForeColor = System.Drawing.Color.White;
             this.TicketTabButton.Location = new System.Drawing.Point(0, 0);
             this.TicketTabButton.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -62,7 +62,7 @@
             this.BarTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BarTabButton.FlatAppearance.BorderSize = 0;
             this.BarTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BarTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BarTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BarTabButton.ForeColor = System.Drawing.Color.White;
             this.BarTabButton.Location = new System.Drawing.Point(305, 0);
             this.BarTabButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
