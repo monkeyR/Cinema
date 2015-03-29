@@ -16,5 +16,15 @@ namespace CinemaSales.Main
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,15 +58,6 @@
             this.button3.Text = "Słodycze";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 97);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Jedzenie";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(3, 3);
@@ -75,6 +66,15 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Napoje";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 103);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 97);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Jedzenie";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // BuyProductsForm
             // 
