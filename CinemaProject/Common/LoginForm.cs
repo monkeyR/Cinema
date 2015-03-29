@@ -58,5 +58,15 @@ namespace Common
             loginButton.Enabled = true;
         }
 
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            loginTextBox.Focus();
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.Focus();
+        }
+
     }
 }

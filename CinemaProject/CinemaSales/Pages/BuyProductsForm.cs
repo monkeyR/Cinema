@@ -12,9 +12,16 @@ namespace CinemaSales.Main
 {
     public partial class BuyProductsForm : Form
     {
+
+
         public BuyProductsForm()
         {
             InitializeComponent();
+        }
+
+        private void AddToBin(object sender, EventArgs e)
+        {
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -23,6 +30,11 @@ namespace CinemaSales.Main
         }
 
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
 
         }
