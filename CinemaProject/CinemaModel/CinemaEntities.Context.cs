@@ -29,10 +29,11 @@ namespace CinemaModel
         public virtual DbSet<Halls> Halls { get; set; }
         public virtual DbSet<Movies> Movies { get; set; }
         public virtual DbSet<MovieSales> MovieSales { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
-        public virtual DbSet<ProductSales> ProductSales { get; set; }
         public virtual DbSet<Shifts> Shifts { get; set; }
         public virtual DbSet<Shows> Shows { get; set; }
         public virtual DbSet<Workpositions> Workpositions { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<ProductSales> ProductSales { get; set; }
     }
 }

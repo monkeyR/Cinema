@@ -12,23 +12,21 @@ namespace CinemaModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Products
+    public partial class Categories
     {
-        public Products()
+        public Categories()
         {
-            this.ProductSales = new HashSet<ProductSales>();
+            this.Products = new HashSet<Products>();
+            this.Products1 = new HashSet<Products>();
         }
     
-        public int productID { get; set; }
+        public int categoryID { get; set; }
         public string name { get; set; }
-        public int amount { get; set; }
-        public decimal price { get; set; }
-        public int main_category { get; set; }
-        public int sub_category { get; set; }
         public string slug { get; set; }
+        public bool mainCat { get; set; }
+        public int parentCat { get; set; }
     
-        public virtual Categories Categories { get; set; }
-        public virtual Categories Categories1 { get; set; }
-        public virtual ICollection<ProductSales> ProductSales { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Products> Products1 { get; set; }
     }
 }

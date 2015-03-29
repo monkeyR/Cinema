@@ -123,8 +123,15 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\coca-cola.jpg" />
+    <None Include="Resources\coca-cola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coca-colaXL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coca-colaXXL.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

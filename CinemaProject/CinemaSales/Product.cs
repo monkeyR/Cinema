@@ -10,10 +10,12 @@ namespace CinemaSales
     {
         private string name;
         private int amount;
-        private float cost;
+        private float price;
 
-        public Product(){
-
+        public Product(string n, int a, float p){
+            this.name = n;
+            this.amount = a;
+            this.price = p;
         }
 
         public string Name
@@ -28,10 +30,10 @@ namespace CinemaSales
             set { amount = value; }
         }
 
-        public float Cost
+        public float Price
         {
-            get { return cost; }
-            set { cost = value; }
+            get { return price; }
+            set { price = value; }
         }
     }
 }
