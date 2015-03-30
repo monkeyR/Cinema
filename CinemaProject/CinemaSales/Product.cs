@@ -8,14 +8,15 @@ namespace CinemaSales
 {
     class Product
     {
+        private int id;
         private string name;
-        private int amount;
         private float price;
-
-        public Product(string n, int a, float p){
+        private int count = 0;
+        public Product(int i, string n, float p, bool inc = false){
+            this.id = i;
             this.name = n;
-            this.amount = a;
             this.price = p;
+            if (inc) this.Increment();
         }
 
         public string Name
@@ -24,16 +25,36 @@ namespace CinemaSales
             set { name = value; }
         }
 
-        public int Amount
+        public int ID
         {
-            get { return amount; }
-            set { amount = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         public float Price
         {
             get { return price; }
             set { price = value; }
+        }
+
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
+        public string show()
+        {
+            return this.Count.ToString() + " x " + this.name.ToString();
+        }
+
+        public void Decrement()
+        {
+            if (this.count > 0) this.count--;
+        }
+        public void Increment()
+        {
+            this.count++;
         }
     }
 }

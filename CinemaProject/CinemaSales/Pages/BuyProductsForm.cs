@@ -16,12 +16,15 @@ namespace CinemaSales.Main
 
         public IDictionary<string, string> MainCategories = new Dictionary<string, string>();
         public int CurrentCategory;
+        private Bin MainBin;
 
-        public BuyProductsForm()
+        public BuyProductsForm(Bin B)
         {
             InitializeComponent();
+            this.MainBin = B;
             this.DisplayCategories();
             this.DisplayProductsLayout();
+            
             //this.TEST();
         }
 
@@ -152,9 +155,6 @@ namespace CinemaSales.Main
         private System.Windows.Forms.Button CreateProductButton(CinemaModel.Products product, int tabi)
         {
             System.Windows.Forms.Button ButtonProduct = new System.Windows.Forms.Button();
-
-            //ButtonProduct.BackgroundImage = global::CinemaSales.Properties.Resources.coca_cola;
-
             ButtonProduct.BackgroundImage = Common.ResourcesApp.GetImg(product.slug);
             ButtonProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             //ButtonProduct.Text = product.name;
@@ -166,8 +166,9 @@ namespace CinemaSales.Main
             ButtonProduct.TabIndex = tabi;
             ButtonProduct.UseVisualStyleBackColor = true;
             ButtonProduct.Tag = product;
+            ButtonProduct.Click += new System.EventHandler(MainBin.AddProduct);
             return ButtonProduct;
-            //ButtonProduct.Click += new System.EventHandler(this.button4_Click_1);
+            
         }
 
         private void AddProductsToLayoutPanel(System.Windows.Forms.FlowLayoutPanel FLP)

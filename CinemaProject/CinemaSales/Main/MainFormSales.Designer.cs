@@ -35,8 +35,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.FinalButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.BinPanel = new System.Windows.Forms.Panel();
+            this.BinListBox = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.BinPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TicketTabButton
@@ -110,6 +114,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.FinalButton, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.BinPanel, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(618, 9);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -149,6 +154,48 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Dane\r\n     Sprzedawcy";
             // 
+            // BinPanel
+            // 
+            this.BinPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BinPanel.Controls.Add(this.label2);
+            this.BinPanel.Controls.Add(this.BinListBox);
+            this.BinPanel.Location = new System.Drawing.Point(0, 120);
+            this.BinPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.BinPanel.Name = "BinPanel";
+            this.BinPanel.Size = new System.Drawing.Size(157, 377);
+            this.BinPanel.TabIndex = 5;
+            // 
+            // BinListBox
+            // 
+            this.BinListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BinListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            this.BinListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BinListBox.Font = new System.Drawing.Font("Modern No. 20", 9.75F);
+            this.BinListBox.ForeColor = System.Drawing.Color.White;
+            this.BinListBox.FormattingEnabled = true;
+            this.BinListBox.ItemHeight = 15;
+            this.BinListBox.Location = new System.Drawing.Point(6, 35);
+            this.BinListBox.Margin = new System.Windows.Forms.Padding(5);
+            this.BinListBox.Name = "BinListBox";
+            this.BinListBox.Size = new System.Drawing.Size(146, 285);
+            this.BinListBox.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Wybrane produkty :";
+            // 
             // MainFormSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -165,6 +212,8 @@
             this.Text = "Panel sprzedawcy";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.BinPanel.ResumeLayout(false);
+            this.BinPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +227,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button FinalButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel BinPanel;
+        private System.Windows.Forms.ListBox BinListBox;
+        private System.Windows.Forms.Label label2;
     }
 }

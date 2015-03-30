@@ -12,9 +12,14 @@ namespace CinemaSales.Main
 {
     public partial class MainFormSales : Form
     {
+        public Bin MBin;
+
         public MainFormSales()
         {
             InitializeComponent();
+
+            this.MBin = new Bin();
+            this.MBin.SetListProducts(this.BinListBox);
         }
 
         private void selectPage(Form page)
@@ -39,7 +44,7 @@ namespace CinemaSales.Main
 
         private void BarTabButton_Click(object sender, EventArgs e)
         {
-            selectPage(new BuyProductsForm());
+            selectPage(new BuyProductsForm(this.MBin));
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
