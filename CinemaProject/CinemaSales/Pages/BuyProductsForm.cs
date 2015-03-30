@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CinemaSales.Main
 {
@@ -15,7 +16,6 @@ namespace CinemaSales.Main
 
         public IDictionary<string, string> MainCategories = new Dictionary<string, string>();
         public int CurrentCategory;
-        //public IDictionary<int, Product> CurrentProducts = new Dictionary<int, Product>();
 
         public BuyProductsForm()
         {
@@ -154,14 +154,16 @@ namespace CinemaSales.Main
             System.Windows.Forms.Button ButtonProduct = new System.Windows.Forms.Button();
 
             //ButtonProduct.BackgroundImage = global::CinemaSales.Properties.Resources.coca_cola;
-            //ButtonProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+
+            ButtonProduct.BackgroundImage = Common.ResourcesApp.GetImg(product.slug);
+            ButtonProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            //ButtonProduct.Text = product.name;
             ButtonProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             ButtonProduct.FlatAppearance.BorderColor = System.Drawing.Color.White;
             ButtonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ButtonProduct.Name = product.slug;
             ButtonProduct.Size = new System.Drawing.Size(100, 100);
             ButtonProduct.TabIndex = tabi;
-            ButtonProduct.Text = product.name;
             ButtonProduct.UseVisualStyleBackColor = true;
             ButtonProduct.Tag = product;
             return ButtonProduct;
