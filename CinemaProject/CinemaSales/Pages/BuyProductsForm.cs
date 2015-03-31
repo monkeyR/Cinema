@@ -89,25 +89,39 @@ namespace CinemaSales.Main
 
         }
 
+        private void ActiveButton(object sender, EventArgs e)
+        {
+
+            foreach (var item in this.CategoriesPanel.Controls)
+	        {
+                ((Button)item).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+	        }
+
+            ((Button)sender).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(98)))));
+        }
+
         private System.Windows.Forms.Button CreateButtonCategory(string name, string slug, int ID){
 
             System.Windows.Forms.Button ButtonCat = new System.Windows.Forms.Button();
             ButtonCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             ButtonCat.FlatAppearance.BorderSize = 0;
             ButtonCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ButtonCat.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ButtonCat.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             ButtonCat.ForeColor = System.Drawing.Color.White;
             ButtonCat.Margin = new System.Windows.Forms.Padding(0);
             ButtonCat.Name = slug+"Button";
             ButtonCat.Size = new System.Drawing.Size(100, 60);
             ButtonCat.TabIndex = CategoriesPanel.Controls.Count;
             ButtonCat.Text = name;
+            ButtonCat.Cursor = System.Windows.Forms.Cursors.Hand;
             ButtonCat.Tag = ID;
             ButtonCat.UseVisualStyleBackColor = false;
             ButtonCat.Click += new System.EventHandler(DisplayProducts);
-
+            ButtonCat.Click += new System.EventHandler(ActiveButton);
             return ButtonCat;
         }
+
+
 
         private void DisplayProducts(object sender, EventArgs e)
         {

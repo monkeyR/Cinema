@@ -13,13 +13,20 @@ namespace CinemaSales.Main
     public partial class MainFormSales : Form
     {
         public Bin MBin;
-
+        private BuyTicketsForm TicketsForm = null;
+        private BuyProductsForm ProductsForm = null;
         public MainFormSales()
         {
             InitializeComponent();
 
             this.MBin = new Bin();
             this.MBin.SetListProducts(this.BinListBox);
+
+            this.TicketsForm = new BuyTicketsForm();
+            this.ProductsForm = new BuyProductsForm(this.MBin);
+
+            this.BarTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(98)))));
+            selectPage(this.ProductsForm);
         }
 
         private void selectPage(Form page)
@@ -29,7 +36,6 @@ namespace CinemaSales.Main
             page.TopLevel = false;
             MainSalesPanel.Controls.Clear();
             MainSalesPanel.Controls.Add(page);
-            //page.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             page.Dock = DockStyle.Fill;
             page.Show();
 
@@ -39,12 +45,24 @@ namespace CinemaSales.Main
 
         private void ticketTabButton_Click(object sender, EventArgs e)
         {
-            selectPage(new BuyTicketsForm());
+            //selectPage(new BuyTicketsForm());
+            SelecButton(((Button)sender));
+            selectPage(this.TicketsForm);
         }
 
         private void BarTabButton_Click(object sender, EventArgs e)
         {
-            selectPage(new BuyProductsForm(this.MBin));
+            //selectPage(new BuyProductsForm(this.MBin));
+            SelecButton(((Button)sender));
+            selectPage(this.ProductsForm);
+        }
+
+        private void SelecButton(Button btn)
+        {
+            this.TicketTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BarTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(98)))));
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
