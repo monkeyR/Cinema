@@ -9,8 +9,6 @@
         <EntityTypeShape EntityType="CinemaDatabaseModel.Halls" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Movies" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.MovieSales" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinemaDatabaseModel.Products" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinemaDatabaseModel.ProductSales" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Shifts" Width="1.5" PointX="5" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Shows" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Workpositions" Width="1.5" PointX="2.75" PointY="11.5" IsExpanded="true" />
@@ -19,8 +17,13 @@
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__hallID__267ABA7A" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__movieID__25869641" ManuallyRouted="false" />
-        <AssociationConnector Association="CinemaDatabaseModel.FK__ProductSa__sales__1DE57479" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shifts__typeShif__29572725" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.Categories" Width="1.5" PointX="7.375" PointY="6.375" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.Products" Width="1.5" PointX="9.625" PointY="6" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.ProductSales" Width="1.5" PointX="11.875" PointY="6.5" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__Products__sub_ca__6B24EA82" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__Products__sub_ca__6C190EBB" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__ProductSa__sales__6FE99F9F" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="slug" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mainCat" Type="bit" Nullable="false" />
+          <Property Name="parentCat" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employeeID" />
@@ -56,6 +66,9 @@
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
           <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="main_category" Type="int" Nullable="false" />
+          <Property Name="sub_category" Type="int" Nullable="false" />
+          <Property Name="slug" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductSales">
           <Key>
@@ -117,7 +130,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductSa__sales__1DE57479">
+        <Association Name="FK__Products__sub_ca__6B24EA82">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="main_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__sub_ca__6C190EBB">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="sub_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductSa__sales__6FE99F9F">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
           <End Role="ProductSales" Type="Self.ProductSales" Multiplicity="*" />
           <ReferentialConstraint>
@@ -178,6 +215,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CinemaDatabaseModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Halls" EntityType="Self.Halls" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
@@ -195,7 +233,15 @@
             <End Role="Movies" EntitySet="Movies" />
             <End Role="MovieSales" EntitySet="MovieSales" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductSa__sales__1DE57479" Association="Self.FK__ProductSa__sales__1DE57479">
+          <AssociationSet Name="FK__Products__sub_ca__6B24EA82" Association="Self.FK__Products__sub_ca__6B24EA82">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__sub_ca__6C190EBB" Association="Self.FK__Products__sub_ca__6C190EBB">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductSa__sales__6FE99F9F" Association="Self.FK__ProductSa__sales__6FE99F9F">
             <End Role="Products" EntitySet="Products" />
             <End Role="ProductSales" EntitySet="ProductSales" />
           </AssociationSet>
@@ -216,8 +262,7 @@
             <End Role="Shows" EntitySet="Shows" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CinemaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -270,26 +315,6 @@
           <Property Name="position" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Halls" Relationship="Self.FK__MovieSale__hallI__182C9B23" FromRole="MovieSales" ToRole="Halls" />
           <NavigationProperty Name="Movies" Relationship="Self.FK__MovieSale__posit__173876EA" FromRole="MovieSales" ToRole="Movies" />
-        </EntityType>
-        <EntityType Name="Products">
-          <Key>
-            <PropertyRef Name="productID" />
-          </Key>
-          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="ProductSales" Relationship="Self.FK__ProductSa__sales__1DE57479" FromRole="Products" ToRole="ProductSales" />
-        </EntityType>
-        <EntityType Name="ProductSales">
-          <Key>
-            <PropertyRef Name="productsaleID" />
-          </Key>
-          <Property Name="productsaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productID" Type="Int32" Nullable="false" />
-          <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="salesDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__ProductSa__sales__1DE57479" FromRole="ProductSales" ToRole="Products" />
         </EntityType>
         <EntityType Name="Shifts">
           <Key>
@@ -383,18 +408,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductSa__sales__1DE57479">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="ProductSales" Type="Self.ProductSales" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="productID" />
-            </Principal>
-            <Dependent Role="ProductSales">
-              <PropertyRef Name="productID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Shifts__typeShif__29572725">
           <End Role="Workpositions" Type="Self.Workpositions" Multiplicity="1" />
           <End Role="Shifts" Type="Self.Shifts" Multiplicity="*" />
@@ -412,8 +425,6 @@
           <EntitySet Name="Halls" EntityType="Self.Halls" />
           <EntitySet Name="Movies" EntityType="Self.Movies" />
           <EntitySet Name="MovieSales" EntityType="Self.MovieSales" />
-          <EntitySet Name="Products" EntityType="Self.Products" />
-          <EntitySet Name="ProductSales" EntityType="Self.ProductSales" />
           <EntitySet Name="Shifts" EntityType="Self.Shifts" />
           <EntitySet Name="Shows" EntityType="Self.Shows" />
           <EntitySet Name="Workpositions" EntityType="Self.Workpositions" />
@@ -437,15 +448,99 @@
             <End Role="Movies" EntitySet="Movies" />
             <End Role="Shows" EntitySet="Shows" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductSa__sales__1DE57479" Association="Self.FK__ProductSa__sales__1DE57479">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ProductSales" EntitySet="ProductSales" />
-          </AssociationSet>
           <AssociationSet Name="FK__Shifts__typeShif__29572725" Association="Self.FK__Shifts__typeShif__29572725">
             <End Role="Workpositions" EntitySet="Workpositions" />
             <End Role="Shifts" EntitySet="Shifts" />
           </AssociationSet>
+          <EntitySet Name="Categories" EntityType="CinemaDatabaseModel.Categories" />
+          <EntitySet Name="Products" EntityType="CinemaDatabaseModel.Products" />
+          <EntitySet Name="ProductSales" EntityType="CinemaDatabaseModel.ProductSales" />
+          <AssociationSet Name="FK__Products__sub_ca__6B24EA82" Association="CinemaDatabaseModel.FK__Products__sub_ca__6B24EA82">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__sub_ca__6C190EBB" Association="CinemaDatabaseModel.FK__Products__sub_ca__6C190EBB">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductSa__sales__6FE99F9F" Association="CinemaDatabaseModel.FK__ProductSa__sales__6FE99F9F">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSales" EntitySet="ProductSales" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="slug" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mainCat" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="CinemaDatabaseModel.FK__Products__sub_ca__6B24EA82" FromRole="Categories" ToRole="Products" />
+          <NavigationProperty Name="Products1" Relationship="CinemaDatabaseModel.FK__Products__sub_ca__6C190EBB" FromRole="Categories" ToRole="Products" />
+          <Property Name="parentCat" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="main_category" Type="Int32" Nullable="false" />
+          <Property Name="sub_category" Type="Int32" Nullable="false" />
+          <Property Name="slug" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Categories" Relationship="CinemaDatabaseModel.FK__Products__sub_ca__6B24EA82" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="Categories1" Relationship="CinemaDatabaseModel.FK__Products__sub_ca__6C190EBB" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="ProductSales" Relationship="CinemaDatabaseModel.FK__ProductSa__sales__6FE99F9F" FromRole="Products" ToRole="ProductSales" />
+        </EntityType>
+        <EntityType Name="ProductSales">
+          <Key>
+            <PropertyRef Name="productsaleID" />
+          </Key>
+          <Property Name="productsaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productID" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="salesDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Products" Relationship="CinemaDatabaseModel.FK__ProductSa__sales__6FE99F9F" FromRole="ProductSales" ToRole="Products" />
+        </EntityType>
+        <Association Name="FK__Products__sub_ca__6B24EA82">
+          <End Type="CinemaDatabaseModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="main_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__sub_ca__6C190EBB">
+          <End Type="CinemaDatabaseModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="sub_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductSa__sales__6FE99F9F">
+          <End Type="CinemaDatabaseModel.Products" Role="Products" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.ProductSales" Role="ProductSales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="productID" />
+            </Principal>
+            <Dependent Role="ProductSales">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -499,26 +594,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="CinemaDatabaseModel.Products">
-              <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="productID" ColumnName="productID" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="price" ColumnName="price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductSales">
-            <EntityTypeMapping TypeName="CinemaDatabaseModel.ProductSales">
-              <MappingFragment StoreEntitySet="ProductSales">
-                <ScalarProperty Name="productsaleID" ColumnName="productsaleID" />
-                <ScalarProperty Name="productID" ColumnName="productID" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="salesDate" ColumnName="salesDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Shifts">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Shifts">
               <MappingFragment StoreEntitySet="Shifts">
@@ -546,6 +621,40 @@
               <MappingFragment StoreEntitySet="Workpositions">
                 <ScalarProperty Name="workpositionID" ColumnName="workpositionID" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="CinemaDatabaseModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="parentCat" ColumnName="parentCat" />
+                <ScalarProperty Name="mainCat" ColumnName="mainCat" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="CinemaDatabaseModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="sub_category" ColumnName="sub_category" />
+                <ScalarProperty Name="main_category" ColumnName="main_category" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSales">
+            <EntityTypeMapping TypeName="CinemaDatabaseModel.ProductSales">
+              <MappingFragment StoreEntitySet="ProductSales">
+                <ScalarProperty Name="salesDate" ColumnName="salesDate" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productsaleID" ColumnName="productsaleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
