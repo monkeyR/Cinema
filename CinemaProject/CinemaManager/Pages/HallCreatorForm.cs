@@ -28,6 +28,9 @@ namespace CinemaManager.Pages
         private void CreateHallONButton_Click(object sender, EventArgs e)
         {
             HallInfo.Show();
+            HallNameLabel.Text = HallNameLabel.Text.ToString() + " " + HallCreatorHallNameTextBox.Text;
+            RowsLabel.Text = RowsLabel.Text + " " + HallCreatorRowsNumberTextBox.Text;
+            ColumnsLabel.Text = ColumnsLabel.Text + " " + HallCreatorColumsNumberTextBox.Text;
             int rows = 0;
             int columns = 0;
             string hallName = null;
@@ -253,12 +256,14 @@ namespace CinemaManager.Pages
                 else
                 {
                     //zaznaczanie rzędami
+                    MessageBox.Show("rowsCount: " + rowsCount.ToString()+"/nColumnCount: "+columnCount);
+
                     for (int d = 0; d < rowsCount; d++)
                     {
 
                         if (buttons[d][0].BackColor == Color.Crimson && buttons[d][0].Name == nb.Name)
                         {
-                            for (int i = 1; i < rowsCount - 2; i++)
+                            for (int i = 1; i < columnCount - 1; i++)
                             {
                                 (buttons[d][i]).BackColor = Color.LavenderBlush;
                             }
@@ -267,7 +272,7 @@ namespace CinemaManager.Pages
                         }
                         else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60) && buttons[d][0].Name == nb.Name)
                         {
-                            for (int i = 1; i < rowsCount - 2; i++)
+                            for (int i = 1; i < columnCount - 1; i++)
                             {
                                 (buttons[d][i]).BackColor = Color.Gray;
                             }
@@ -360,6 +365,16 @@ namespace CinemaManager.Pages
             HallInfo.Hide();
             HallCreatePanel.Show();
             
+        }
+
+        private void HallCreateAddHallButton_Click(object sender, EventArgs e)
+        {
+            HallCreateTableGenerateFinishedTable();
+        }
+
+        private void HallCreateTableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
           /* sprawdzenie, która komórka tableLayoutPanel została kliknięta

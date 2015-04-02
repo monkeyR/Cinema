@@ -31,23 +31,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.HallInfo = new System.Windows.Forms.Panel();
+            this.ColumnsLabel = new System.Windows.Forms.Label();
+            this.RowsLabel = new System.Windows.Forms.Label();
+            this.HallNameLabel = new System.Windows.Forms.Label();
             this.HallCreatorHallNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
+            this.HallCreateAddHallButton = new System.Windows.Forms.Button();
             this.HallCreatorRowsNumberTextBox = new System.Windows.Forms.TextBox();
+            this.CreateHallONButton = new System.Windows.Forms.Button();
             this.HallCreatePanel = new System.Windows.Forms.Panel();
             this.HallCreateTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.AddHall = new System.Windows.Forms.Button();
-            this.HallCreateAddHallButton = new System.Windows.Forms.Button();
-            this.CreateHallONButton = new System.Windows.Forms.Button();
-            this.HallInfo = new System.Windows.Forms.Panel();
-            this.HallNameLabel = new System.Windows.Forms.Label();
-            this.RowsLabel = new System.Windows.Forms.Label();
-            this.ColumnsLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.HallCreatePanel.SuspendLayout();
             this.HallInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +85,44 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // HallInfo
+            // 
+            this.HallInfo.BackColor = System.Drawing.Color.Silver;
+            this.HallInfo.Controls.Add(this.ColumnsLabel);
+            this.HallInfo.Controls.Add(this.RowsLabel);
+            this.HallInfo.Controls.Add(this.HallNameLabel);
+            this.HallInfo.Location = new System.Drawing.Point(252, 18);
+            this.HallInfo.Name = "HallInfo";
+            this.HallInfo.Size = new System.Drawing.Size(279, 121);
+            this.HallInfo.TabIndex = 7;
+            // 
+            // ColumnsLabel
+            // 
+            this.ColumnsLabel.AutoSize = true;
+            this.ColumnsLabel.Location = new System.Drawing.Point(7, 46);
+            this.ColumnsLabel.Name = "ColumnsLabel";
+            this.ColumnsLabel.Size = new System.Drawing.Size(66, 17);
+            this.ColumnsLabel.TabIndex = 2;
+            this.ColumnsLabel.Text = "Kolumny:";
+            // 
+            // RowsLabel
+            // 
+            this.RowsLabel.AutoSize = true;
+            this.RowsLabel.Location = new System.Drawing.Point(7, 25);
+            this.RowsLabel.Name = "RowsLabel";
+            this.RowsLabel.Size = new System.Drawing.Size(56, 17);
+            this.RowsLabel.TabIndex = 1;
+            this.RowsLabel.Text = "Rzędy: ";
+            // 
+            // HallNameLabel
+            // 
+            this.HallNameLabel.AutoSize = true;
+            this.HallNameLabel.Location = new System.Drawing.Point(7, 4);
+            this.HallNameLabel.Name = "HallNameLabel";
+            this.HallNameLabel.Size = new System.Drawing.Size(83, 17);
+            this.HallNameLabel.TabIndex = 0;
+            this.HallNameLabel.Text = "Nazwa sali: ";
+            // 
             // HallCreatorHallNameTextBox
             // 
             this.HallCreatorHallNameTextBox.Location = new System.Drawing.Point(145, 99);
@@ -111,6 +148,21 @@
             this.HallCreatorColumsNumberTextBox.TabIndex = 4;
             this.HallCreatorColumsNumberTextBox.Text = "16";
             // 
+            // HallCreateAddHallButton
+            // 
+            this.HallCreateAddHallButton.AutoSize = true;
+            this.HallCreateAddHallButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.HallCreateAddHallButton.Image = global::CinemaManager.Properties.Resources.symbol_check_icon;
+            this.HallCreateAddHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HallCreateAddHallButton.Location = new System.Drawing.Point(537, 18);
+            this.HallCreateAddHallButton.Name = "HallCreateAddHallButton";
+            this.HallCreateAddHallButton.Size = new System.Drawing.Size(88, 121);
+            this.HallCreateAddHallButton.TabIndex = 1;
+            this.HallCreateAddHallButton.Text = "Zatwierdź";
+            this.HallCreateAddHallButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HallCreateAddHallButton.UseVisualStyleBackColor = true;
+            this.HallCreateAddHallButton.Click += new System.EventHandler(this.HallCreateAddHallButton_Click);
+            // 
             // HallCreatorRowsNumberTextBox
             // 
             this.HallCreatorRowsNumberTextBox.Location = new System.Drawing.Point(145, 19);
@@ -119,16 +171,28 @@
             this.HallCreatorRowsNumberTextBox.TabIndex = 3;
             this.HallCreatorRowsNumberTextBox.Text = "12";
             // 
+            // CreateHallONButton
+            // 
+            this.CreateHallONButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CreateHallONButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CreateHallONButton.Image = global::CinemaManager.Properties.Resources.arrow_right_icon;
+            this.CreateHallONButton.Location = new System.Drawing.Point(3, 139);
+            this.CreateHallONButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateHallONButton.Name = "CreateHallONButton";
+            this.CreateHallONButton.Size = new System.Drawing.Size(622, 81);
+            this.CreateHallONButton.TabIndex = 0;
+            this.CreateHallONButton.UseVisualStyleBackColor = true;
+            this.CreateHallONButton.Click += new System.EventHandler(this.CreateHallONButton_Click);
+            // 
             // HallCreatePanel
             // 
             this.HallCreatePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HallCreatePanel.AutoScroll = true;
-            this.HallCreatePanel.Controls.Add(this.HallCreateTableLayoutPanel);
-            this.HallCreatePanel.Location = new System.Drawing.Point(12, 234);
+            this.HallCreatePanel.Location = new System.Drawing.Point(12, 256);
             this.HallCreatePanel.Name = "HallCreatePanel";
-            this.HallCreatePanel.Size = new System.Drawing.Size(957, 436);
+            this.HallCreatePanel.Size = new System.Drawing.Size(957, 341);
             this.HallCreatePanel.TabIndex = 8;
             // 
             // HallCreateTableLayoutPanel
@@ -137,13 +201,13 @@
             this.HallCreateTableLayoutPanel.AutoSize = true;
             this.HallCreateTableLayoutPanel.ColumnCount = 1;
             this.HallCreateTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(12, 259);
             this.HallCreateTableLayoutPanel.Name = "HallCreateTableLayoutPanel";
             this.HallCreateTableLayoutPanel.RowCount = 1;
             this.HallCreateTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(957, 436);
+            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(954, 335);
             this.HallCreateTableLayoutPanel.TabIndex = 0;
+            this.HallCreateTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.HallCreateTableLayoutPanel_Paint);
             // 
             // comboBox1
             // 
@@ -178,76 +242,12 @@
             this.AddHall.UseVisualStyleBackColor = true;
             this.AddHall.Click += new System.EventHandler(this.AddHall_Click);
             // 
-            // HallCreateAddHallButton
-            // 
-            this.HallCreateAddHallButton.AutoSize = true;
-            this.HallCreateAddHallButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.HallCreateAddHallButton.Image = global::CinemaManager.Properties.Resources.symbol_check_icon;
-            this.HallCreateAddHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HallCreateAddHallButton.Location = new System.Drawing.Point(537, 18);
-            this.HallCreateAddHallButton.Name = "HallCreateAddHallButton";
-            this.HallCreateAddHallButton.Size = new System.Drawing.Size(88, 121);
-            this.HallCreateAddHallButton.TabIndex = 1;
-            this.HallCreateAddHallButton.Text = "Zatwierdź";
-            this.HallCreateAddHallButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HallCreateAddHallButton.UseVisualStyleBackColor = true;
-            // 
-            // CreateHallONButton
-            // 
-            this.CreateHallONButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CreateHallONButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CreateHallONButton.Image = global::CinemaManager.Properties.Resources.arrow_right_icon;
-            this.CreateHallONButton.Location = new System.Drawing.Point(3, 139);
-            this.CreateHallONButton.Margin = new System.Windows.Forms.Padding(4);
-            this.CreateHallONButton.Name = "CreateHallONButton";
-            this.CreateHallONButton.Size = new System.Drawing.Size(622, 81);
-            this.CreateHallONButton.TabIndex = 0;
-            this.CreateHallONButton.UseVisualStyleBackColor = true;
-            this.CreateHallONButton.Click += new System.EventHandler(this.CreateHallONButton_Click);
-            // 
-            // HallInfo
-            // 
-            this.HallInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.HallInfo.Controls.Add(this.ColumnsLabel);
-            this.HallInfo.Controls.Add(this.RowsLabel);
-            this.HallInfo.Controls.Add(this.HallNameLabel);
-            this.HallInfo.Location = new System.Drawing.Point(252, 18);
-            this.HallInfo.Name = "HallInfo";
-            this.HallInfo.Size = new System.Drawing.Size(279, 121);
-            this.HallInfo.TabIndex = 7;
-            // 
-            // HallNameLabel
-            // 
-            this.HallNameLabel.AutoSize = true;
-            this.HallNameLabel.Location = new System.Drawing.Point(7, 4);
-            this.HallNameLabel.Name = "HallNameLabel";
-            this.HallNameLabel.Size = new System.Drawing.Size(83, 17);
-            this.HallNameLabel.TabIndex = 0;
-            this.HallNameLabel.Text = "Nazwa sali: ";
-            // 
-            // RowsLabel
-            // 
-            this.RowsLabel.AutoSize = true;
-            this.RowsLabel.Location = new System.Drawing.Point(7, 25);
-            this.RowsLabel.Name = "RowsLabel";
-            this.RowsLabel.Size = new System.Drawing.Size(56, 17);
-            this.RowsLabel.TabIndex = 1;
-            this.RowsLabel.Text = "Rzędy: ";
-            // 
-            // ColumnsLabel
-            // 
-            this.ColumnsLabel.AutoSize = true;
-            this.ColumnsLabel.Location = new System.Drawing.Point(7, 46);
-            this.ColumnsLabel.Name = "ColumnsLabel";
-            this.ColumnsLabel.Size = new System.Drawing.Size(62, 17);
-            this.ColumnsLabel.TabIndex = 2;
-            this.ColumnsLabel.Text = "Kolumny";
-            // 
             // HallCreatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 682);
+            this.ClientSize = new System.Drawing.Size(981, 609);
+            this.Controls.Add(this.HallCreateTableLayoutPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AddHall);
@@ -260,11 +260,10 @@
             this.Text = "HallCreatorForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.HallCreatePanel.ResumeLayout(false);
-            this.HallCreatePanel.PerformLayout();
             this.HallInfo.ResumeLayout(false);
             this.HallInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
