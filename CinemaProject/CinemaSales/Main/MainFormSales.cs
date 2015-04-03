@@ -42,7 +42,6 @@ namespace CinemaSales.Main
             MainSalesPanel.Controls.Add(page);
             page.Dock = DockStyle.Fill;
             page.Show();
-
             Cursor.Current = Cursors.Default;
 
         }
@@ -73,6 +72,13 @@ namespace CinemaSales.Main
         {
 
         }
+
+        private void FinalButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
 
 
 

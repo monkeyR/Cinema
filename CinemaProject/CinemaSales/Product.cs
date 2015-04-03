@@ -10,9 +10,9 @@ namespace CinemaSales
     {
         private int id;
         private string name;
-        private float price;
+        private decimal price;
         private int count = 0;
-        public Product(int i, string n, float p, bool inc = false){
+        public Product(int i, string n, decimal p, bool inc = false){
             this.id = i;
             this.name = n;
             this.price = p;
@@ -31,7 +31,7 @@ namespace CinemaSales
             set { id = value; }
         }
 
-        public float Price
+        public decimal Price
         {
             get { return price; }
             set { price = value; }

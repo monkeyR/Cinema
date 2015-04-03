@@ -135,6 +135,7 @@
             // FinalButton
             // 
             this.FinalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.FinalButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FinalButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FinalButton.FlatAppearance.BorderSize = 0;
             this.FinalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -147,6 +148,7 @@
             this.FinalButton.TabIndex = 1;
             this.FinalButton.Text = "SUMA";
             this.FinalButton.UseVisualStyleBackColor = false;
+            this.FinalButton.Click += new System.EventHandler(this.FinalButton_Click);
             // 
             // label1
             // 
@@ -181,6 +183,7 @@
             // ClearBinButtton
             // 
             this.ClearBinButtton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.ClearBinButtton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearBinButtton.FlatAppearance.BorderSize = 0;
             this.ClearBinButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearBinButtton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -195,6 +198,7 @@
             // BackLastOperationButton
             // 
             this.BackLastOperationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackLastOperationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackLastOperationButton.FlatAppearance.BorderSize = 0;
             this.BackLastOperationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackLastOperationButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

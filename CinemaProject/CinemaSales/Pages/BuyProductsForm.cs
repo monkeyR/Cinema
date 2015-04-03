@@ -175,6 +175,7 @@ namespace CinemaSales.Main
             ButtonProduct.FlatAppearance.BorderColor = System.Drawing.Color.White;
             ButtonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             ButtonProduct.Name = product.slug;
+            ButtonProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             ButtonProduct.Size = new System.Drawing.Size(100, 100);
             ButtonProduct.TabIndex = tabi;
             ButtonProduct.UseVisualStyleBackColor = true;
