@@ -36,8 +36,12 @@
             this.FinalButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BinPanel = new System.Windows.Forms.Panel();
-            this.BinListBox = new System.Windows.Forms.ListBox();
+            this.ClearBinButtton = new System.Windows.Forms.Button();
+            this.BackLastOperationButton = new System.Windows.Forms.Button();
+            this.AllCostLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BinListBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.BinPanel.SuspendLayout();
@@ -46,10 +50,11 @@
             // TicketTabButton
             // 
             this.TicketTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.TicketTabButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TicketTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TicketTabButton.FlatAppearance.BorderSize = 0;
             this.TicketTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketTabButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TicketTabButton.ForeColor = System.Drawing.Color.White;
             this.TicketTabButton.Location = new System.Drawing.Point(0, 0);
             this.TicketTabButton.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -63,10 +68,11 @@
             // BarTabButton
             // 
             this.BarTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BarTabButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BarTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BarTabButton.FlatAppearance.BorderSize = 0;
             this.BarTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BarTabButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BarTabButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BarTabButton.ForeColor = System.Drawing.Color.White;
             this.BarTabButton.Location = new System.Drawing.Point(305, 0);
             this.BarTabButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -132,18 +138,19 @@
             this.FinalButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FinalButton.FlatAppearance.BorderSize = 0;
             this.FinalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FinalButton.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalButton.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FinalButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.FinalButton.Location = new System.Drawing.Point(3, 500);
+            this.FinalButton.Location = new System.Drawing.Point(0, 497);
+            this.FinalButton.Margin = new System.Windows.Forms.Padding(0);
             this.FinalButton.Name = "FinalButton";
-            this.FinalButton.Size = new System.Drawing.Size(151, 40);
+            this.FinalButton.Size = new System.Drawing.Size(157, 46);
             this.FinalButton.TabIndex = 1;
             this.FinalButton.Text = "SUMA";
             this.FinalButton.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
@@ -159,6 +166,10 @@
             this.BinPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.BinPanel.Controls.Add(this.ClearBinButtton);
+            this.BinPanel.Controls.Add(this.BackLastOperationButton);
+            this.BinPanel.Controls.Add(this.AllCostLabel);
+            this.BinPanel.Controls.Add(this.label3);
             this.BinPanel.Controls.Add(this.label2);
             this.BinPanel.Controls.Add(this.BinListBox);
             this.BinPanel.Location = new System.Drawing.Point(0, 120);
@@ -167,6 +178,70 @@
             this.BinPanel.Size = new System.Drawing.Size(157, 377);
             this.BinPanel.TabIndex = 5;
             // 
+            // ClearBinButtton
+            // 
+            this.ClearBinButtton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.ClearBinButtton.FlatAppearance.BorderSize = 0;
+            this.ClearBinButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBinButtton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ClearBinButtton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.ClearBinButtton.Location = new System.Drawing.Point(0, 344);
+            this.ClearBinButtton.Name = "ClearBinButtton";
+            this.ClearBinButtton.Size = new System.Drawing.Size(157, 29);
+            this.ClearBinButtton.TabIndex = 5;
+            this.ClearBinButtton.Text = "Wyczyść wszystko";
+            this.ClearBinButtton.UseVisualStyleBackColor = false;
+            // 
+            // BackLastOperationButton
+            // 
+            this.BackLastOperationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackLastOperationButton.FlatAppearance.BorderSize = 0;
+            this.BackLastOperationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackLastOperationButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BackLastOperationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.BackLastOperationButton.Location = new System.Drawing.Point(0, 309);
+            this.BackLastOperationButton.Name = "BackLastOperationButton";
+            this.BackLastOperationButton.Size = new System.Drawing.Size(157, 29);
+            this.BackLastOperationButton.TabIndex = 4;
+            this.BackLastOperationButton.Text = "Cofnij ostatnią operacje";
+            this.BackLastOperationButton.UseVisualStyleBackColor = false;
+            // 
+            // AllCostLabel
+            // 
+            this.AllCostLabel.AutoSize = true;
+            this.AllCostLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllCostLabel.ForeColor = System.Drawing.Color.White;
+            this.AllCostLabel.Location = new System.Drawing.Point(79, 279);
+            this.AllCostLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.AllCostLabel.Name = "AllCostLabel";
+            this.AllCostLabel.Size = new System.Drawing.Size(31, 22);
+            this.AllCostLabel.TabIndex = 3;
+            this.AllCostLabel.Text = "0zł";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(5, 279);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 22);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Razem:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Wybrane produkty:";
+            // 
             // BinListBox
             // 
             this.BinListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -174,27 +249,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BinListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.BinListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BinListBox.Font = new System.Drawing.Font("Modern No. 20", 9.75F);
+            this.BinListBox.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
             this.BinListBox.ForeColor = System.Drawing.Color.White;
             this.BinListBox.FormattingEnabled = true;
-            this.BinListBox.ItemHeight = 15;
+            this.BinListBox.ItemHeight = 18;
             this.BinListBox.Location = new System.Drawing.Point(6, 35);
             this.BinListBox.Margin = new System.Windows.Forms.Padding(5);
             this.BinListBox.Name = "BinListBox";
-            this.BinListBox.Size = new System.Drawing.Size(146, 285);
+            this.BinListBox.Size = new System.Drawing.Size(146, 234);
             this.BinListBox.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 5);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Wybrane produkty :";
             // 
             // MainFormSales
             // 
@@ -230,5 +293,9 @@
         private System.Windows.Forms.Panel BinPanel;
         private System.Windows.Forms.ListBox BinListBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label AllCostLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BackLastOperationButton;
+        private System.Windows.Forms.Button ClearBinButtton;
     }
 }

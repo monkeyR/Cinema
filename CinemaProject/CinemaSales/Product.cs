@@ -37,7 +37,7 @@ namespace CinemaSales
             set { price = value; }
         }
 
-        public int Count
+        public int Amount
         {
             get { return count; }
             set { count = value; }
@@ -45,7 +45,7 @@ namespace CinemaSales
 
         public string show()
         {
-            return this.Count.ToString() + " x " + this.name.ToString();
+            return this.count.ToString() + " x " + this.name.ToString();
         }
 
         public void Decrement()

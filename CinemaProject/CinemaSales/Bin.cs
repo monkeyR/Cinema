@@ -7,13 +7,31 @@ using System.Windows.Forms;
 
 namespace CinemaSales
 {
+    enum TypeBin {
+        Products = 1,
+        Tickets
+    }
+
+    class HistoryItem {
+        public int ID;
+        public TypeBin Type;
+
+        public HistoryItem(int ID, TypeBin Type){
+            this.ID = ID;
+            this.Type = Type;
+        }
+    }
     public class Bin
     {
         private List<Product> Products;
+        private List<HistoryItem> HistoryOperation;
         private System.Windows.Forms.ListBox ListProducts;
+        private System.Windows.Forms.Label AllCostLabel;
+        private float CurrentCost = 0;
         public Bin()
         {
             Products = new List<Product>();
+            HistoryOperation = new List<HistoryItem>();
         }
 
         public void SetListProducts(System.Windows.Forms.ListBox l)
@@ -21,15 +39,53 @@ namespace CinemaSales
             this.ListProducts = l;
         }
 
+        public void SetCostLabel(System.Windows.Forms.Label l)
+        {
+            this.AllCostLabel = l;
+            
+        }
+        public void ClearLastOperation(object sender, EventArgs e)
+        {
+            try
+            {
+                if (HistoryOperation.Count > 0)
+                {
+                    if (HistoryOperation[HistoryOperation.Count - 1].Type == TypeBin.Products)
+                    {
+                        this.RemoveProduct(HistoryOperation[HistoryOperation.Count - 1].ID);
+                        HistoryOperation.RemoveAt(HistoryOperation.Count-1);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd przy usuwaniu ostatniej operacji.");
+                
+            }
+
+            this.RefreshBin();
+            
+        }
+
+        public void ClearBin(object sender, EventArgs e)
+        {
+            Products.Clear();
+            HistoryOperation.Clear();
+            CurrentCost = 0;
+            HistoryOperation.Clear();
+            RefreshBin();
+        }
+
         public void AddProduct(object sender, EventArgs e)
         {
-            System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
-            CinemaModel.Products p = (CinemaModel.Products)btn.Tag;
+            CinemaModel.Products p = (CinemaModel.Products)((System.Windows.Forms.Button)sender).Tag;
             if (!CheckExist(p.productID))
             {
-                Products.Add(new Product(p.productID, p.name, (float)p.price, true)); 
+                Products.Add(new Product(p.productID, p.name, (float)p.price, true));
+                this.CurrentCost += (float)p.price;
+                HistoryOperation.Add(new HistoryItem(p.productID, TypeBin.Products));
             }
-            Display();
+            RefreshBin();
         }
 
         public void Display()
@@ -41,6 +97,17 @@ namespace CinemaSales
             }
         }
 
+        private void RefreshBin()
+        {
+            Display();
+            DisplayCost();
+        }
+
+        public void DisplayCost()
+        {
+            this.AllCostLabel.Text = this.CurrentCost.ToString();
+        }
+
         private bool CheckExist(int ID)
         {
             foreach (var item in Products)
@@ -48,26 +115,47 @@ namespace CinemaSales
                 if (ID == item.ID)
                 {
                     item.Increment();
+                    this.CurrentCost += item.Price;
+                    HistoryOperation.Add(new HistoryItem(item.ID, TypeBin.Products));
                     return true;
                 }
             }
             
             return false;
         }
-        //public void AddProduct(Product P)
-        //{
-        //    Products.Add(P);
-        //}
 
+        
         public void RemoveLastProduct()
         {
             if(Products.Count > 0)
                 Products.RemoveAt(Products.Count - 1);
         }
 
+        private Product getProduct(int ID)
+        {
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].ID == ID) return Products[i];
+            }
+            return null;
+        }
+
         public void RemoveProduct(int i)
         {
-            Products.RemoveAt(i);
+            Product p = getProduct(i);
+            if(p != null){
+                if (p.Amount > 1)
+                {
+                    Products[i].Decrement();
+                }
+                else
+                {
+                    Products.Remove(p);
+                }
+            }
+            
+            
         }
+         
     }
 }

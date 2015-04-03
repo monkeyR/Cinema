@@ -49,8 +49,7 @@ namespace CinemaSales.Main
 
             this.MainProductsPanel.Controls.Add(LayoutProductsPanel);
 
-            LayoutProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            LayoutProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             //this.flowLayoutPanel1.Controls.Add(this.button4);
             LayoutProductsPanel.Location = new System.Drawing.Point(0, MainProductsPanel.Controls.Count * 111);
@@ -205,10 +204,9 @@ namespace CinemaSales.Main
 
             System.Windows.Forms.FlowLayoutPanel LayoutProductsPanel = new System.Windows.Forms.FlowLayoutPanel();
             LayoutProductsPanel.SuspendLayout();
-            
 
-            LayoutProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+
+            LayoutProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             LayoutProductsPanel.Location = new System.Drawing.Point(0, MainProductsPanel.Controls.Count * 111);
             LayoutProductsPanel.Margin = new System.Windows.Forms.Padding(0);

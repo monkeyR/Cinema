@@ -21,6 +21,10 @@ namespace CinemaSales.Main
 
             this.MBin = new Bin();
             this.MBin.SetListProducts(this.BinListBox);
+            this.MBin.SetCostLabel(this.AllCostLabel);
+
+            this.ClearBinButtton.Click += new System.EventHandler(MBin.ClearBin);
+            this.BackLastOperationButton.Click += new System.EventHandler(MBin.ClearLastOperation);
 
             this.TicketsForm = new BuyTicketsForm();
             this.ProductsForm = new BuyProductsForm(this.MBin);
@@ -69,6 +73,7 @@ namespace CinemaSales.Main
         {
 
         }
+
 
 
 
