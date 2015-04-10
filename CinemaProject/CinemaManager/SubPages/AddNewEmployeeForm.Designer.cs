@@ -61,17 +61,20 @@
             this.panel1.Controls.Add(this.nameLabel);
             this.panel1.Controls.Add(this.positionsCombobox);
             this.panel1.Controls.Add(this.nameTextbox);
-            this.panel1.Location = new System.Drawing.Point(12, 1);
+            this.panel1.Location = new System.Drawing.Point(16, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 313);
+            this.panel1.Size = new System.Drawing.Size(347, 385);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // passwordTextbox
             // 
             this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.passwordTextbox.Location = new System.Drawing.Point(103, 167);
+            this.passwordTextbox.Location = new System.Drawing.Point(137, 206);
+            this.passwordTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTextbox.Name = "passwordTextbox";
-            this.passwordTextbox.Size = new System.Drawing.Size(121, 26);
+            this.passwordTextbox.Size = new System.Drawing.Size(160, 30);
             this.passwordTextbox.TabIndex = 24;
             // 
             // label5
@@ -79,18 +82,21 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(39, 169);
+            this.label5.Location = new System.Drawing.Point(52, 208);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
+            this.label5.Size = new System.Drawing.Size(64, 28);
             this.label5.TabIndex = 23;
             this.label5.Text = "Hasło";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // loginTextbox
             // 
             this.loginTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.loginTextbox.Location = new System.Drawing.Point(103, 128);
+            this.loginTextbox.Location = new System.Drawing.Point(137, 158);
+            this.loginTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginTextbox.Name = "loginTextbox";
-            this.loginTextbox.Size = new System.Drawing.Size(121, 26);
+            this.loginTextbox.Size = new System.Drawing.Size(160, 30);
             this.loginTextbox.TabIndex = 22;
             // 
             // label4
@@ -98,18 +104,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 207);
+            this.label4.Location = new System.Drawing.Point(36, 255);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 21);
+            this.label4.Size = new System.Drawing.Size(78, 28);
             this.label4.TabIndex = 21;
             this.label4.Text = "Pozycja";
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(168, 263);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Location = new System.Drawing.Point(224, 324);
+            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(90, 44);
+            this.addButton.Size = new System.Drawing.Size(120, 54);
             this.addButton.TabIndex = 20;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
@@ -117,10 +124,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(2, 263);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelButton.Location = new System.Drawing.Point(3, 324);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(90, 44);
+            this.cancelButton.Size = new System.Drawing.Size(120, 54);
             this.cancelButton.TabIndex = 19;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -131,9 +138,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 130);
+            this.label3.Location = new System.Drawing.Point(53, 160);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 21);
+            this.label3.Size = new System.Drawing.Size(63, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Login";
             // 
@@ -142,9 +150,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 25);
+            this.label2.Size = new System.Drawing.Size(305, 32);
             this.label2.TabIndex = 6;
             this.label2.Text = "Dodaj nowego pracownika";
             // 
@@ -153,18 +162,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 91);
+            this.label1.Location = new System.Drawing.Point(17, 112);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.Size = new System.Drawing.Size(98, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nazwisko";
             // 
             // surnameTextbox
             // 
             this.surnameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.surnameTextbox.Location = new System.Drawing.Point(103, 89);
+            this.surnameTextbox.Location = new System.Drawing.Point(137, 110);
+            this.surnameTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.surnameTextbox.Name = "surnameTextbox";
-            this.surnameTextbox.Size = new System.Drawing.Size(121, 26);
+            this.surnameTextbox.Size = new System.Drawing.Size(160, 30);
             this.surnameTextbox.TabIndex = 5;
             // 
             // nameLabel
@@ -172,9 +183,10 @@
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(49, 54);
+            this.nameLabel.Location = new System.Drawing.Point(65, 66);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(42, 21);
+            this.nameLabel.Size = new System.Drawing.Size(52, 28);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Imię";
             // 
@@ -183,25 +195,29 @@
             this.positionsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.positionsCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.positionsCombobox.FormattingEnabled = true;
-            this.positionsCombobox.Location = new System.Drawing.Point(103, 205);
+            this.positionsCombobox.Location = new System.Drawing.Point(137, 252);
+            this.positionsCombobox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.positionsCombobox.Name = "positionsCombobox";
-            this.positionsCombobox.Size = new System.Drawing.Size(121, 28);
+            this.positionsCombobox.Size = new System.Drawing.Size(160, 33);
             this.positionsCombobox.TabIndex = 3;
+            this.positionsCombobox.SelectedIndexChanged += new System.EventHandler(this.positionsCombobox_SelectedIndexChanged);
             // 
             // nameTextbox
             // 
             this.nameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nameTextbox.Location = new System.Drawing.Point(103, 52);
+            this.nameTextbox.Location = new System.Drawing.Point(137, 64);
+            this.nameTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameTextbox.Name = "nameTextbox";
-            this.nameTextbox.Size = new System.Drawing.Size(121, 26);
+            this.nameTextbox.Size = new System.Drawing.Size(160, 30);
             this.nameTextbox.TabIndex = 1;
             // 
             // AddNewEmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 321);
+            this.ClientSize = new System.Drawing.Size(379, 395);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddNewEmployeeForm";
             this.Text = "Dodaj nowego pracownika";
             this.panel1.ResumeLayout(false);

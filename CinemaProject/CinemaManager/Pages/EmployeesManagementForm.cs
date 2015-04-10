@@ -173,5 +173,15 @@ namespace CinemaManager.Pages
 
             startFilling();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

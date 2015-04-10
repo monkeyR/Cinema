@@ -54,17 +54,19 @@
             this.panel2.Controls.Add(this.addNewEmployeeButton);
             this.panel2.Controls.Add(this.employeeListView);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(15, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 263);
+            this.panel2.Size = new System.Drawing.Size(952, 329);
             this.panel2.TabIndex = 17;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // addNewEmployeeButton
             // 
-            this.addNewEmployeeButton.Location = new System.Drawing.Point(670, 2);
+            this.addNewEmployeeButton.Location = new System.Drawing.Point(838, 2);
             this.addNewEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
             this.addNewEmployeeButton.Name = "addNewEmployeeButton";
-            this.addNewEmployeeButton.Size = new System.Drawing.Size(90, 44);
+            this.addNewEmployeeButton.Size = new System.Drawing.Size(112, 55);
             this.addNewEmployeeButton.TabIndex = 18;
             this.addNewEmployeeButton.Text = "Dodaj nowego";
             this.addNewEmployeeButton.UseVisualStyleBackColor = true;
@@ -81,13 +83,15 @@
             this.employeeListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.employeeListView.FullRowSelect = true;
             this.employeeListView.GridLines = true;
-            this.employeeListView.Location = new System.Drawing.Point(3, 51);
+            this.employeeListView.Location = new System.Drawing.Point(4, 64);
+            this.employeeListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.employeeListView.MultiSelect = false;
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(757, 207);
+            this.employeeListView.Size = new System.Drawing.Size(946, 258);
             this.employeeListView.TabIndex = 6;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
+            this.employeeListView.SelectedIndexChanged += new System.EventHandler(this.employeeListView_SelectedIndexChanged);
             this.employeeListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.employeeListView_MouseUp);
             // 
             // columnHeader1
@@ -115,9 +119,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Location = new System.Drawing.Point(4, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 25);
+            this.label2.Size = new System.Drawing.Size(216, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Lista pracowników";
             // 
@@ -126,9 +131,10 @@
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.firedListView);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 281);
+            this.panel1.Location = new System.Drawing.Point(15, 351);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 252);
+            this.panel1.Size = new System.Drawing.Size(952, 315);
             this.panel1.TabIndex = 19;
             // 
             // firedListView
@@ -143,10 +149,11 @@
             this.firedListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firedListView.FullRowSelect = true;
             this.firedListView.GridLines = true;
-            this.firedListView.Location = new System.Drawing.Point(7, 49);
+            this.firedListView.Location = new System.Drawing.Point(9, 61);
+            this.firedListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firedListView.MultiSelect = false;
             this.firedListView.Name = "firedListView";
-            this.firedListView.Size = new System.Drawing.Size(752, 200);
+            this.firedListView.Size = new System.Drawing.Size(940, 250);
             this.firedListView.TabIndex = 19;
             this.firedListView.UseCompatibleStateImageBehavior = false;
             this.firedListView.View = System.Windows.Forms.View.Details;
@@ -182,19 +189,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(4, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.Size = new System.Drawing.Size(206, 32);
             this.label1.TabIndex = 4;
             this.label1.Text = "Lista zwolnionych";
             // 
             // EmployeesManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(786, 545);
+            this.ClientSize = new System.Drawing.Size(982, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeesManagementForm";
             this.Text = "EmployeesManagementForm";
             this.panel2.ResumeLayout(false);
