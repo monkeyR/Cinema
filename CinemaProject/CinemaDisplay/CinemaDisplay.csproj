@@ -52,11 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\MainFormDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainFormDisplay.Designer.cs">
+      <DependentUpon>MainFormDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main\MainFormDisplay.resx">
+      <DependentUpon>MainFormDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
