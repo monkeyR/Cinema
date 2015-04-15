@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaDisplay", "CinemaDisp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{95DA1941-EAAF-4CA5-93B7-3120875BFC85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaModel", "CinemaModel\CinemaModel.csproj", "{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaModel", "CinemaModel\CinemaModel.csproj", "{4DA6A160-1E15-491A-91E7-52A534930742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{95DA1941-EAAF-4CA5-93B7-3120875BFC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95DA1941-EAAF-4CA5-93B7-3120875BFC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95DA1941-EAAF-4CA5-93B7-3120875BFC85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA6A160-1E15-491A-91E7-52A534930742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA6A160-1E15-491A-91E7-52A534930742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA6A160-1E15-491A-91E7-52A534930742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA6A160-1E15-491A-91E7-52A534930742}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

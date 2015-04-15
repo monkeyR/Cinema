@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCD5EDA7-281D-41B6-AACE-171E3F9048E9}</ProjectGuid>
+    <ProjectGuid>{4DA6A160-1E15-491A-91E7-52A534930742}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CinemaModel</RootNamespace>
@@ -89,6 +89,9 @@
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Shows.cs">
+      <DependentUpon>CinemaEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Workpositions.cs">
