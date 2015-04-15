@@ -45,7 +45,7 @@ namespace CinemaManager.SubPages
         {
             Common.UISynchronizer.synchronizeWithUI(titleTextbox, x => titleTextbox.Text = x, movie.title);
             Common.UISynchronizer.synchronizeWithUI(directorTextbox, x => directorTextbox.Text = x, movie.director);
-            Common.UISynchronizer.synchronizeWithUI(priceTextbox, x => priceTextbox.Text = x, string.Format("{0:0.00}",movie.price));
+            Common.UISynchronizer.synchronizeWithUI(priceTextbox, x => priceTextbox.Text = x, string.Format("{0:0.00}", movie.price));
             Common.UISynchronizer.synchronizeWithUI(durationNumericUpDown, x => durationNumericUpDown.Value = x, movie.duration);
         }
 
@@ -56,7 +56,39 @@ namespace CinemaManager.SubPages
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (movie.title == titleTextbox.Text &&
+                    movie.director == directorTextbox.Text &&
+                    movie.price == Convert.ToDecimal(priceTextbox.Text) &&
+                    movie.duration == Convert.ToInt32(durationNumericUpDown.Value))
+                {
+                    MessageBox.Show("Brak zmian do zapisania", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Cursor.Current = Cursors.WaitCursor;
 
+                    movie.title = titleTextbox.Text;
+                    movie.director = directorTextbox.Text;
+                    movie.price = Convert.ToDecimal(priceTextbox.Text);
+                    movie.duration = Convert.ToInt32(durationNumericUpDown.Value);
+
+                    using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                    {
+                        ctx.Entry(movie).State = System.Data.Entity.EntityState.Modified;
+                        ctx.SaveChanges();
+                    }
+
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Wprowadziłeś złą liczbę", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            this.Close();
         }
     }
 }

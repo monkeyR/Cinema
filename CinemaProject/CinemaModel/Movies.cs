@@ -16,6 +16,7 @@ namespace CinemaModel
     {
         public Movies()
         {
+            this.isAvailable = true;
             this.MovieSales = new HashSet<MovieSales>();
             this.Shows = new HashSet<Shows>();
         }

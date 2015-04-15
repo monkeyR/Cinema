@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.passwordTextbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.loginTextbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
@@ -40,14 +42,12 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.positionsCombobox = new System.Windows.Forms.ComboBox();
             this.nameTextbox = new System.Windows.Forms.TextBox();
-            this.passwordTextbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.passwordTextbox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.loginTextbox);
@@ -65,6 +65,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 301);
             this.panel1.TabIndex = 0;
+            // 
+            // passwordTextbox
+            // 
+            this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.passwordTextbox.Location = new System.Drawing.Point(103, 160);
+            this.passwordTextbox.Name = "passwordTextbox";
+            this.passwordTextbox.Size = new System.Drawing.Size(121, 26);
+            this.passwordTextbox.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(38, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 21);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Hasło";
             // 
             // loginTextbox
             // 
@@ -177,29 +196,11 @@
             this.nameTextbox.Size = new System.Drawing.Size(121, 26);
             this.nameTextbox.TabIndex = 1;
             // 
-            // passwordTextbox
-            // 
-            this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.passwordTextbox.Location = new System.Drawing.Point(103, 160);
-            this.passwordTextbox.Name = "passwordTextbox";
-            this.passwordTextbox.Size = new System.Drawing.Size(121, 26);
-            this.passwordTextbox.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(38, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Hasło";
-            // 
             // EditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(284, 325);
             this.Controls.Add(this.panel1);
             this.Name = "EditEmployee";
