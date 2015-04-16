@@ -12,9 +12,12 @@ namespace CinemaManager.SubPages
 {
     public partial class AddNewMovieForm : Form
     {
+        bool alreadyFocused;
+
         public AddNewMovieForm()
         {
             InitializeComponent();
+            grTextbox.GotFocus += grTextbox_GotFocus;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -30,16 +33,40 @@ namespace CinemaManager.SubPages
                 {
                     try
                     {
-                        CinemaModel.Movies newMovie = new CinemaModel.Movies();
+                        decimal moviePrice = Convert.ToDecimal(string.Format("{0},{1}", zlTextbox.Text, grTextbox.Text));
+                        bool allowTransaction = false;
 
-                        newMovie.title = titleTextbox.Text;
-                        newMovie.price = Convert.ToDecimal(priceTextbox.Text);
-                        newMovie.director = directorTextbox.Text;
-                        newMovie.description = descriptionTextbox.Text;
-                        newMovie.duration = Convert.ToInt32(durationNumericUpDown.Value);
+                        if (moviePrice == 0)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Czy chcesz wprowadzić darmowe bilety?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                allowTransaction = true;
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                MessageBox.Show("Dodawanie filmu wycofano", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else
+                        {
+                            allowTransaction = true;
+                        }
+                        if (allowTransaction)
+                        {
+                            CinemaModel.Movies newMovie = new CinemaModel.Movies();
+                            newMovie.title = titleTextbox.Text;
+                            newMovie.price = moviePrice;
+                            newMovie.director = directorTextbox.Text;
+                            newMovie.description = descriptionTextbox.Text;
+                            newMovie.duration = Convert.ToInt32(durationNumericUpDown.Value);
 
-                        ctx.Movies.Add(newMovie);
-                        ctx.SaveChanges();                        
+                            ctx.Movies.Add(newMovie);
+                            ctx.SaveChanges();
+
+                            this.Close();
+                        }
+                     
                     }
                     catch (FormatException)
                     {
@@ -47,7 +74,7 @@ namespace CinemaManager.SubPages
                     }
                 }
 
-                this.Close();
+                
             }
             else
             {
@@ -58,11 +85,34 @@ namespace CinemaManager.SubPages
         private bool isAnyEmpty()
         {
             if (titleTextbox.Text == string.Empty ||
-                priceTextbox.Text == string.Empty ||
+                zlTextbox.Text == string.Empty ||
                 directorTextbox.Text == string.Empty ||
                 durationNumericUpDown.Value == 0)
                 return true;
             return false;
+        }        
+
+        private void grTextbox_GotFocus(object sender, EventArgs e)
+        {
+            if (MouseButtons == MouseButtons.None)
+            {
+                this.grTextbox.SelectAll();
+                alreadyFocused = true;
+            }
+        }
+
+        private void grTextbox_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!alreadyFocused && this.grTextbox.SelectionLength == 0)
+            {
+                alreadyFocused = true;
+                this.grTextbox.SelectAll();
+            }
+        }
+
+        private void grTextbox_Leave(object sender, EventArgs e)
+        {
+            alreadyFocused = false;
         }
     }
 }

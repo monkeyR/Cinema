@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.grTextbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.descriptionTextbox = new System.Windows.Forms.TextBox();
             this.durationNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.durationLabel = new System.Windows.Forms.Label();
-            this.priceTextbox = new System.Windows.Forms.TextBox();
+            this.zlTextbox = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -40,28 +44,65 @@
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // label4
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.durationNumericUpDown);
-            this.panel1.Controls.Add(this.durationLabel);
-            this.panel1.Controls.Add(this.priceTextbox);
-            this.panel1.Controls.Add(this.priceLabel);
-            this.panel1.Controls.Add(this.editButton);
-            this.panel1.Controls.Add(this.cancelButton);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.directorLabel);
-            this.panel1.Controls.Add(this.directorTextbox);
-            this.panel1.Controls.Add(this.titleLabel);
-            this.panel1.Controls.Add(this.titleTextbox);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 241);
-            this.panel1.TabIndex = 1;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(196, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(22, 19);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "gr";
+            // 
+            // grTextbox
+            // 
+            this.grTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.grTextbox.Location = new System.Drawing.Point(171, 116);
+            this.grTextbox.MaxLength = 2;
+            this.grTextbox.Name = "grTextbox";
+            this.grTextbox.Size = new System.Drawing.Size(25, 26);
+            this.grTextbox.TabIndex = 4;
+            this.grTextbox.Text = "00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(141, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 19);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "zł";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 21);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Opis";
+            // 
+            // descriptionTextbox
+            // 
+            this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.descriptionTextbox.Location = new System.Drawing.Point(17, 213);
+            this.descriptionTextbox.Multiline = true;
+            this.descriptionTextbox.Name = "descriptionTextbox";
+            this.descriptionTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.descriptionTextbox.Size = new System.Drawing.Size(342, 139);
+            this.descriptionTextbox.TabIndex = 6;
             // 
             // durationNumericUpDown
             // 
@@ -74,7 +115,8 @@
             0});
             this.durationNumericUpDown.Name = "durationNumericUpDown";
             this.durationNumericUpDown.Size = new System.Drawing.Size(71, 26);
-            this.durationNumericUpDown.TabIndex = 25;
+            this.durationNumericUpDown.TabIndex = 5;
+            this.durationNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.durationNumericUpDown_KeyPress);
             // 
             // durationLabel
             // 
@@ -87,13 +129,14 @@
             this.durationLabel.TabIndex = 26;
             this.durationLabel.Text = "Długość";
             // 
-            // priceTextbox
+            // zlTextbox
             // 
-            this.priceTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.priceTextbox.Location = new System.Drawing.Point(103, 116);
-            this.priceTextbox.Name = "priceTextbox";
-            this.priceTextbox.Size = new System.Drawing.Size(121, 26);
-            this.priceTextbox.TabIndex = 24;
+            this.zlTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.zlTextbox.Location = new System.Drawing.Point(103, 116);
+            this.zlTextbox.MaxLength = 3;
+            this.zlTextbox.Name = "zlTextbox";
+            this.zlTextbox.Size = new System.Drawing.Size(38, 26);
+            this.zlTextbox.TabIndex = 3;
             // 
             // priceLabel
             // 
@@ -108,22 +151,22 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(168, 191);
+            this.editButton.Location = new System.Drawing.Point(269, 357);
             this.editButton.Margin = new System.Windows.Forms.Padding(2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(90, 44);
-            this.editButton.TabIndex = 20;
+            this.editButton.TabIndex = 7;
             this.editButton.Text = "Zmień";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(2, 191);
+            this.cancelButton.Location = new System.Drawing.Point(17, 357);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(90, 44);
-            this.cancelButton.TabIndex = 19;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -156,7 +199,7 @@
             this.directorTextbox.Location = new System.Drawing.Point(103, 84);
             this.directorTextbox.Name = "directorTextbox";
             this.directorTextbox.Size = new System.Drawing.Size(121, 26);
-            this.directorTextbox.TabIndex = 5;
+            this.directorTextbox.TabIndex = 2;
             // 
             // titleLabel
             // 
@@ -177,27 +220,57 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.grTextbox);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.descriptionTextbox);
+            this.panel1.Controls.Add(this.durationNumericUpDown);
+            this.panel1.Controls.Add(this.durationLabel);
+            this.panel1.Controls.Add(this.zlTextbox);
+            this.panel1.Controls.Add(this.priceLabel);
+            this.panel1.Controls.Add(this.editButton);
+            this.panel1.Controls.Add(this.cancelButton);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.directorLabel);
+            this.panel1.Controls.Add(this.directorTextbox);
+            this.panel1.Controls.Add(this.titleLabel);
+            this.panel1.Controls.Add(this.titleTextbox);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 411);
+            this.panel1.TabIndex = 4;
+            // 
             // EditMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(281, 260);
+            this.ClientSize = new System.Drawing.Size(400, 433);
             this.Controls.Add(this.panel1);
             this.Name = "EditMovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edycja filmu";
+            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox priceTextbox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox grTextbox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox descriptionTextbox;
+        private System.Windows.Forms.NumericUpDown durationNumericUpDown;
+        private System.Windows.Forms.Label durationLabel;
+        private System.Windows.Forms.TextBox zlTextbox;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button cancelButton;
@@ -206,7 +279,7 @@
         private System.Windows.Forms.TextBox directorTextbox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TextBox titleTextbox;
-        private System.Windows.Forms.NumericUpDown durationNumericUpDown;
-        private System.Windows.Forms.Label durationLabel;
+        private System.Windows.Forms.Panel panel1;
+
     }
 }
