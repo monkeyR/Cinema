@@ -48,19 +48,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.AutoScroll = true;
-            this.MainPanel.Location = new System.Drawing.Point(292, 12);
-
             this.MainPanel.Location = new System.Drawing.Point(234, 10);
-
-
-            this.MainPanel.Location = new System.Drawing.Point(234, 10);
-
-
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(802, 583);
             this.MainPanel.TabIndex = 0;
-            
             // 
             // ButtonGroup
             // 
@@ -83,17 +75,8 @@
             // 
             // LogoutButton
             // 
-
-            this.LogoutButton.Location = new System.Drawing.Point(8, 722);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.LogoutButton.Location = new System.Drawing.Point(6, 578);
-
-
-            this.LogoutButton.Location = new System.Drawing.Point(8, 722);
             this.LogoutButton.Margin = new System.Windows.Forms.Padding(4);
-
-            this.LogoutButton.Location = new System.Drawing.Point(6, 578);
-
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(253, 56);
             this.LogoutButton.TabIndex = 8;
@@ -141,6 +124,7 @@
             this.MovieHallsButton.TabIndex = 4;
             this.MovieHallsButton.Text = "Sale";
             this.MovieHallsButton.UseVisualStyleBackColor = true;
+            this.MovieHallsButton.Click += new System.EventHandler(this.MovieHallsButton_Click);
             // 
             // ShiftsAndPositionsButton
             // 

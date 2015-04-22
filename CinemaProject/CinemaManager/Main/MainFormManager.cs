@@ -46,5 +46,10 @@ namespace CinemaManager.Main
         {
             selectPage(new MoviesManagementForm());
         }
+
+        private void MovieHallsButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new ShowManagementForm());
+        }
     }
 }

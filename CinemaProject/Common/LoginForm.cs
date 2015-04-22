@@ -15,8 +15,9 @@ namespace Common
 
         public LoginForm(String formTitle)
         {
-            InitializeComponent();
+            InitializeComponent();    
             SetupTitle(formTitle);
+            loginTextBox.Focus();
         }
 
         private void SetupTitle(String formTitle)
