@@ -548,7 +548,7 @@ namespace CinemaManager.Pages
                     var halls = (from t in ctx.Halls
                                  where t.title==hallNameComboBox.Text
                                  select t);
-                    ctx.Entry(halls).State=EntityState.Deleted;
+                    ctx.Entry(halls).State = System.Data.Entity.EntityState.Deleted;
                     ctx.SaveChanges();
                 }
                 MessageBox.Show("Poprawnie usunięto salę kinową");

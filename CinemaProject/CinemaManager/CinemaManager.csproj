@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -122,7 +123,14 @@
     <Compile Include="SubPages\MovieListElement.Designer.cs">
       <DependentUpon>MovieListElement.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\RemoveShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\RemoveShowForm.Designer.cs">
+      <DependentUpon>RemoveShowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\AvaibleMoviesLoader.cs" />
+    <Compile Include="Utils\ShowModel.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\MovieListElement.resx">
       <DependentUpon>MovieListElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\RemoveShowForm.resx">
+      <DependentUpon>RemoveShowForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

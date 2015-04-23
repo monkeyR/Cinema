@@ -15,18 +15,19 @@ namespace CinemaManager.SubPages
     public partial class AddShowForm : Form
     {
 
-        public event EventHandler showAdded;
+        private Action<CinemaModel.Halls> onShowAdded;
 
         private const int minutesInHour = 60;
 
         private RadioListBox radioListBox;
         private DateTime date;
-        private int hallID;
+        private CinemaModel.Halls hall;
 
-        public AddShowForm(DateTime date, int numberOfHall)
+        public AddShowForm(DateTime date, CinemaModel.Halls hall, Action<CinemaModel.Halls> onShowAdded)
         {
             this.date = date;
-            this.hallID = numberOfHall;
+            this.hall = hall;
+            this.onShowAdded = onShowAdded;
             InitializeComponent();
             setupTimer();
             addRadioListBox();
@@ -118,7 +119,7 @@ namespace CinemaManager.SubPages
             {
                 var shows =
                     (from s in ctx.Shows
-                     where s.hallID.Equals(hallID)
+                     where s.hallID.Equals(hall.hallID)
                      && (
                      (s.dateEnd >= startTime && s.dateEnd <= endTime)
                      || (s.dateStart >= startTime && s.dateStart <= endTime))
@@ -146,14 +147,13 @@ namespace CinemaManager.SubPages
 
                         CinemaModel.Shows show = new CinemaModel.Shows();
                         show.movieID = model.Id;
-                        show.hallID = hallID;
+                        show.hallID = hall.hallID;
                         show.dateStart = startTime;
                         show.dateEnd = endTime;
                         ctx.Shows.Add(show);
                         ctx.SaveChanges();
 
-                        if (showAdded != null)
-                            showAdded(this, new EventArgs());
+                        onShowAdded(hall);
                         this.Close();
                     }
                     catch(Exception ex)
