@@ -54,12 +54,7 @@
             this.panel2.Controls.Add(this.addNewEmployeeButton);
             this.panel2.Controls.Add(this.employeeListView);
             this.panel2.Controls.Add(this.label2);
-<<<<<<< HEAD
-            this.panel2.Location = new System.Drawing.Point(15, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.panel2.Location = new System.Drawing.Point(12, 12);
->>>>>>> origin/master
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(762, 263);
             this.panel2.TabIndex = 17;
@@ -87,12 +82,7 @@
             this.employeeListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.employeeListView.FullRowSelect = true;
             this.employeeListView.GridLines = true;
-<<<<<<< HEAD
-            this.employeeListView.Location = new System.Drawing.Point(4, 64);
-            this.employeeListView.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.employeeListView.Location = new System.Drawing.Point(3, 51);
->>>>>>> origin/master
             this.employeeListView.MultiSelect = false;
             this.employeeListView.Name = "employeeListView";
             this.employeeListView.Size = new System.Drawing.Size(757, 207);
@@ -138,12 +128,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.firedListView);
             this.panel1.Controls.Add(this.label1);
-<<<<<<< HEAD
-            this.panel1.Location = new System.Drawing.Point(15, 351);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.panel1.Location = new System.Drawing.Point(12, 281);
->>>>>>> origin/master
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(762, 252);
             this.panel1.TabIndex = 19;
@@ -160,12 +145,7 @@
             this.firedListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firedListView.FullRowSelect = true;
             this.firedListView.GridLines = true;
-<<<<<<< HEAD
-            this.firedListView.Location = new System.Drawing.Point(9, 61);
-            this.firedListView.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.firedListView.Location = new System.Drawing.Point(7, 49);
->>>>>>> origin/master
             this.firedListView.MultiSelect = false;
             this.firedListView.Name = "firedListView";
             this.firedListView.Size = new System.Drawing.Size(752, 200);
@@ -218,13 +198,8 @@
             this.ClientSize = new System.Drawing.Size(786, 545);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> origin/master
             this.Name = "EmployeesManagementForm";
             this.Text = "EmployeesManagementForm";
-            this.Load += new System.EventHandler(this.EmployeesManagementForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

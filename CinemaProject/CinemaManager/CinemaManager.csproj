@@ -93,13 +93,6 @@
     <Compile Include="SubPages\AddNewEmployeeForm.Designer.cs">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="SubPages\AddNewHall.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubPages\AddNewHall.Designer.cs">
-      <DependentUpon>AddNewHall.cs</DependentUpon>
-=======
     <Compile Include="SubPages\AddNewMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,7 +104,6 @@
     </Compile>
     <Compile Include="SubPages\AddShowForm.Designer.cs">
       <DependentUpon>AddShowForm.cs</DependentUpon>
->>>>>>> origin/master
     </Compile>
     <Compile Include="SubPages\EditEmployee.cs">
       <SubType>Form</SubType>
@@ -167,16 +159,11 @@
     <EmbeddedResource Include="SubPages\AddNewEmployeeForm.resx">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="SubPages\AddNewHall.resx">
-      <DependentUpon>AddNewHall.cs</DependentUpon>
-=======
     <EmbeddedResource Include="SubPages\AddNewMovieForm.resx">
       <DependentUpon>AddNewMovieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\AddShowForm.resx">
       <DependentUpon>AddShowForm.cs</DependentUpon>
->>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>

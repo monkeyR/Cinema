@@ -36,7 +36,6 @@ namespace CinemaManager.Pages
         {
             Common.UISynchronizer.synchronizeWithUI(employeeListView, employeeListView.Items.Clear);
             Common.UISynchronizer.synchronizeWithUI(firedListView, firedListView.Items.Clear);
-            
 
             insertEmployees();
         }
@@ -181,11 +180,6 @@ namespace CinemaManager.Pages
         }
 
         private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmployeesManagementForm_Load(object sender, EventArgs e)
         {
 
         }

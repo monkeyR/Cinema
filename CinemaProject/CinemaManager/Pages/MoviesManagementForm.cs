@@ -73,11 +73,6 @@ namespace CinemaManager.Pages
             }
         }
 
-<<<<<<< HEAD
-        private void MoviesListflowLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-=======
         private void fillExpiredMovies(CinemaModel.Movies movie)
         {
             List<string> listItem = new List<string>(5);
@@ -138,7 +133,6 @@ namespace CinemaManager.Pages
             Cursor.Current = Cursors.Default;
 
             startFilling();
->>>>>>> origin/master
         }
     }
 }
