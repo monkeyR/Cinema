@@ -13,8 +13,8 @@ namespace Common
             CinemaModel.Employees user = null;
 
             var users = (from t in ctx.Employees
-                         where t.login.Equals(login)
-                         && t.password.Equals(password)
+                         where t.login.CompareTo(login) == 0
+                         && t.password.CompareTo(password) == 0
                          select t);
 
             user = users.FirstOrDefault();
