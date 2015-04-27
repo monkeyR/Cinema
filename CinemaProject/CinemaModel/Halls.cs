@@ -24,6 +24,7 @@ namespace CinemaModel
         public int number { get; set; }
         public string title { get; set; }
         public string matrix { get; set; }
+        public Nullable<int> isEnable { get; set; }
     
         public virtual ICollection<MovieSales> MovieSales { get; set; }
         public virtual ICollection<Shows> Shows { get; set; }

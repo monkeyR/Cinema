@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 using System.Windows.Forms;
+using CinemaDisplay.Main;
 
 namespace CinemaDisplay
 {
@@ -23,6 +24,8 @@ namespace CinemaDisplay
 
             if (user == null)
                 MessageBox.Show(new MessageStrings().NoSuchUser);
+            else
+                showMainForm();
         }
 
         private CinemaModel.Employees findUser(String login, String password)
@@ -33,6 +36,22 @@ namespace CinemaDisplay
                 user = Queries.findUser(login, password, ctx);
             }
             return user;
+        }
+
+        private void showMainForm()
+        {
+            try
+            {
+                MainFormDisplay mainForm = new MainFormDisplay();
+                this.Hide();
+                mainForm.ShowDialog();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                String message = "Wystąpił nieobsłużony błąd: " + Environment.NewLine + ex.Message;
+                MessageBox.Show(message);
+            }
         }
     }
 }

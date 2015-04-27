@@ -1,6 +1,6 @@
 ﻿namespace CinemaManager.SubPages
 {
-    partial class EditMovieForm
+    partial class AddNewMovieForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.grTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,10 +45,33 @@
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.grTextbox);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.descriptionTextbox);
+            this.panel1.Controls.Add(this.durationNumericUpDown);
+            this.panel1.Controls.Add(this.durationLabel);
+            this.panel1.Controls.Add(this.zlTextbox);
+            this.panel1.Controls.Add(this.priceLabel);
+            this.panel1.Controls.Add(this.editButton);
+            this.panel1.Controls.Add(this.cancelButton);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.directorLabel);
+            this.panel1.Controls.Add(this.directorTextbox);
+            this.panel1.Controls.Add(this.titleLabel);
+            this.panel1.Controls.Add(this.titleTextbox);
+            this.panel1.Location = new System.Drawing.Point(12, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 411);
+            this.panel1.TabIndex = 3;
             // 
             // label4
             // 
@@ -70,6 +94,8 @@
             this.grTextbox.Size = new System.Drawing.Size(25, 26);
             this.grTextbox.TabIndex = 4;
             this.grTextbox.Text = "00";
+            this.grTextbox.Leave += new System.EventHandler(this.grTextbox_Leave);
+            this.grTextbox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.grTextbox_MouseUp);
             // 
             // label3
             // 
@@ -116,7 +142,6 @@
             this.durationNumericUpDown.Name = "durationNumericUpDown";
             this.durationNumericUpDown.Size = new System.Drawing.Size(71, 26);
             this.durationNumericUpDown.TabIndex = 5;
-            this.durationNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.durationNumericUpDown_KeyPress);
             // 
             // durationLabel
             // 
@@ -178,9 +203,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 25);
+            this.label2.Size = new System.Drawing.Size(153, 25);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Edycja filmu";
+            this.label2.Text = "Dodaj nowy film";
             // 
             // directorLabel
             // 
@@ -220,54 +245,25 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.grTextbox);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.descriptionTextbox);
-            this.panel1.Controls.Add(this.durationNumericUpDown);
-            this.panel1.Controls.Add(this.durationLabel);
-            this.panel1.Controls.Add(this.zlTextbox);
-            this.panel1.Controls.Add(this.priceLabel);
-            this.panel1.Controls.Add(this.editButton);
-            this.panel1.Controls.Add(this.cancelButton);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.directorLabel);
-            this.panel1.Controls.Add(this.directorTextbox);
-            this.panel1.Controls.Add(this.titleLabel);
-            this.panel1.Controls.Add(this.titleTextbox);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 411);
-            this.panel1.TabIndex = 4;
-            // 
-            // EditMovieForm
+            // AddNewMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(400, 433);
+            this.ClientSize = new System.Drawing.Size(396, 433);
             this.Controls.Add(this.panel1);
-            this.Name = "EditMovieForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edycja filmu";
-            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).EndInit();
+            this.Name = "AddNewMovieForm";
+            this.Text = "AddNewMovieForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox grTextbox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox descriptionTextbox;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown durationNumericUpDown;
         private System.Windows.Forms.Label durationLabel;
         private System.Windows.Forms.TextBox zlTextbox;
@@ -279,7 +275,10 @@
         private System.Windows.Forms.TextBox directorTextbox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TextBox titleTextbox;
-        private System.Windows.Forms.Panel panel1;
-
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox descriptionTextbox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox grTextbox;
     }
 }

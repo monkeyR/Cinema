@@ -37,7 +37,11 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.expireMovieButton = new System.Windows.Forms.Button();
+=======
+            this.addMovieButton = new System.Windows.Forms.Button();
+>>>>>>> origin/master
             this.label2 = new System.Windows.Forms.Label();
             this.MoviesListflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
@@ -46,7 +50,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.expiredMoviesListView);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 452);
@@ -75,6 +79,7 @@
             this.expiredMoviesListView.TabIndex = 19;
             this.expiredMoviesListView.UseCompatibleStateImageBehavior = false;
             this.expiredMoviesListView.View = System.Windows.Forms.View.Details;
+            this.expiredMoviesListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.expiredMoviesListView_MouseUp);
             // 
             // columnHeader1
             // 
@@ -115,8 +120,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.expireMovieButton);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel2.Controls.Add(this.addMovieButton);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.MoviesListflowLayoutPanel);
             this.panel2.Location = new System.Drawing.Point(15, 15);
@@ -125,6 +130,7 @@
             this.panel2.Size = new System.Drawing.Size(955, 430);
             this.panel2.TabIndex = 21;
             // 
+<<<<<<< HEAD
             // expireMovieButton
             // 
             this.expireMovieButton.Location = new System.Drawing.Point(836, 11);
@@ -134,6 +140,18 @@
             this.expireMovieButton.TabIndex = 29;
             this.expireMovieButton.Text = "Dodaj nowy";
             this.expireMovieButton.UseVisualStyleBackColor = true;
+=======
+            // addMovieButton
+            // 
+            this.addMovieButton.Location = new System.Drawing.Point(669, 9);
+            this.addMovieButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addMovieButton.Name = "addMovieButton";
+            this.addMovieButton.Size = new System.Drawing.Size(90, 31);
+            this.addMovieButton.TabIndex = 29;
+            this.addMovieButton.Text = "Dodaj nowy";
+            this.addMovieButton.UseVisualStyleBackColor = true;
+            this.addMovieButton.Click += new System.EventHandler(this.addMovieButton_Click);
+>>>>>>> origin/master
             // 
             // label2
             // 
@@ -150,18 +168,30 @@
             // MoviesListflowLayoutPanel
             // 
             this.MoviesListflowLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+<<<<<<< HEAD
             this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(64, 56);
             this.MoviesListflowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MoviesListflowLayoutPanel.Name = "MoviesListflowLayoutPanel";
             this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(839, 370);
             this.MoviesListflowLayoutPanel.TabIndex = 1;
             this.MoviesListflowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MoviesListflowLayoutPanel_Paint);
+=======
+            this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(100, 45);
+            this.MoviesListflowLayoutPanel.Name = "MoviesListflowLayoutPanel";
+            this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(570, 296);
+            this.MoviesListflowLayoutPanel.TabIndex = 1;
+>>>>>>> origin/master
             // 
             // MoviesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(982, 681);
+=======
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(786, 545);
+>>>>>>> origin/master
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -188,7 +218,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel MoviesListflowLayoutPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button expireMovieButton;
+        private System.Windows.Forms.Button addMovieButton;
 
     }
 }

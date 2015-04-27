@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +79,12 @@
     <Compile Include="Pages\MoviesManagementForm.Designer.cs">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShowManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ShowManagementForm.Designer.cs">
+      <DependentUpon>ShowManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubPages\AddNewEmployeeForm.cs">
@@ -86,11 +93,25 @@
     <Compile Include="SubPages\AddNewEmployeeForm.Designer.cs">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="SubPages\AddNewHall.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SubPages\AddNewHall.Designer.cs">
       <DependentUpon>AddNewHall.cs</DependentUpon>
+=======
+    <Compile Include="SubPages\AddNewMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewMovieForm.Designer.cs">
+      <DependentUpon>AddNewMovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddShowForm.Designer.cs">
+      <DependentUpon>AddShowForm.cs</DependentUpon>
+>>>>>>> origin/master
     </Compile>
     <Compile Include="SubPages\EditEmployee.cs">
       <SubType>Form</SubType>
@@ -110,6 +131,14 @@
     <Compile Include="SubPages\MovieListElement.Designer.cs">
       <DependentUpon>MovieListElement.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\RemoveShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\RemoveShowForm.Designer.cs">
+      <DependentUpon>RemoveShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\AvaibleMoviesLoader.cs" />
+    <Compile Include="Utils\ShowModel.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MoviesManagementForm.resx">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ShowManagementForm.resx">
+      <DependentUpon>ShowManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,8 +167,16 @@
     <EmbeddedResource Include="SubPages\AddNewEmployeeForm.resx">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="SubPages\AddNewHall.resx">
       <DependentUpon>AddNewHall.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="SubPages\AddNewMovieForm.resx">
+      <DependentUpon>AddNewMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddShowForm.resx">
+      <DependentUpon>AddShowForm.cs</DependentUpon>
+>>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
@@ -146,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\MovieListElement.resx">
       <DependentUpon>MovieListElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\RemoveShowForm.resx">
+      <DependentUpon>RemoveShowForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
@@ -164,7 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CinemaModel\CinemaModel.csproj">
-      <Project>{dcd5eda7-281d-41b6-aace-171e3f9048e9}</Project>
+      <Project>{4da6a160-1e15-491a-91e7-52a534930742}</Project>
       <Name>CinemaModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">

@@ -7,16 +7,19 @@ using System.Windows.Forms;
 
 namespace CinemaSales
 {
-    enum TypeBin {
+    enum TypeBin
+    {
         Products = 1,
         Tickets
     }
 
-    class HistoryItem {
+    class HistoryItem
+    {
         public int ID;
         public TypeBin Type;
 
-        public HistoryItem(int ID, TypeBin Type){
+        public HistoryItem(int ID, TypeBin Type)
+        {
             this.ID = ID;
             this.Type = Type;
         }
@@ -27,7 +30,7 @@ namespace CinemaSales
         private List<HistoryItem> HistoryOperation;
         private System.Windows.Forms.ListBox ListProducts;
         private System.Windows.Forms.Label AllCostLabel;
-        private float CurrentCost = 0;
+        private decimal CurrentCost = 0;
         public Bin()
         {
             Products = new List<Product>();
@@ -42,7 +45,7 @@ namespace CinemaSales
         public void SetCostLabel(System.Windows.Forms.Label l)
         {
             this.AllCostLabel = l;
-            
+
         }
         public void ClearLastOperation(object sender, EventArgs e)
         {
@@ -53,18 +56,18 @@ namespace CinemaSales
                     if (HistoryOperation[HistoryOperation.Count - 1].Type == TypeBin.Products)
                     {
                         this.RemoveProduct(HistoryOperation[HistoryOperation.Count - 1].ID);
-                        HistoryOperation.RemoveAt(HistoryOperation.Count-1);
+                        HistoryOperation.RemoveAt(HistoryOperation.Count - 1);
                     }
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Błąd przy usuwaniu ostatniej operacji.");
-                
+
             }
 
             this.RefreshBin();
-            
+
         }
 
         public void ClearBin(object sender, EventArgs e)
@@ -81,8 +84,8 @@ namespace CinemaSales
             CinemaModel.Products p = (CinemaModel.Products)((System.Windows.Forms.Button)sender).Tag;
             if (!CheckExist(p.productID))
             {
-                Products.Add(new Product(p.productID, p.name, (float)p.price, true));
-                this.CurrentCost += (float)p.price;
+                Products.Add(new Product(p.productID, p.name, p.price, true));
+                this.CurrentCost += p.price;
                 HistoryOperation.Add(new HistoryItem(p.productID, TypeBin.Products));
             }
             RefreshBin();
@@ -105,7 +108,7 @@ namespace CinemaSales
 
         public void DisplayCost()
         {
-            this.AllCostLabel.Text = this.CurrentCost.ToString();
+            this.AllCostLabel.Text = Math.Round(this.CurrentCost, 2).ToString() + " zł";
         }
 
         private bool CheckExist(int ID)
@@ -120,14 +123,14 @@ namespace CinemaSales
                     return true;
                 }
             }
-            
+
             return false;
         }
 
-        
+
         public void RemoveLastProduct()
         {
-            if(Products.Count > 0)
+            if (Products.Count > 0)
                 Products.RemoveAt(Products.Count - 1);
         }
 
@@ -143,19 +146,21 @@ namespace CinemaSales
         public void RemoveProduct(int i)
         {
             Product p = getProduct(i);
-            if(p != null){
+            if (p != null)
+            {
+                this.CurrentCost -= p.Price;
                 if (p.Amount > 1)
                 {
-                    Products[i].Decrement();
+                    p.Decrement();
                 }
                 else
                 {
                     Products.Remove(p);
                 }
             }
-            
-            
+
+
         }
-         
+
     }
 }

@@ -421,6 +421,7 @@ namespace CinemaManager.Pages
                 using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                 {
                     var halls = (from t in ctx.Halls
+<<<<<<< HEAD
                                  where t.title == hallNameComboBox.Text
                                  select new { t }).Single();
 
@@ -429,6 +430,12 @@ namespace CinemaManager.Pages
                     n = halls.t.number;
                     matrix = halls.t.matrix;
 
+=======
+                                 where t.title==hallNameComboBox.Text
+                                 select t);
+                    ctx.Entry(halls).State = System.Data.Entity.EntityState.Deleted;
+                    ctx.SaveChanges();
+>>>>>>> origin/master
                 }
                 HallNameLabel.Text = "Nazwa sali: " + hallName;
                 NumberOfHallLabel.Text = "Numer sali: " + n.ToString();

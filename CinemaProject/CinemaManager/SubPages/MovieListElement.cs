@@ -12,16 +12,17 @@ namespace CinemaManager.SubPages
 {
     public partial class MovieListElement : UserControl
     {
+        Pages.MoviesManagementForm parentForm;
 
-
-        public MovieListElement(CinemaModel.Movies movie)
+        public MovieListElement(CinemaModel.Movies movie, Pages.MoviesManagementForm parentForm)
         {
             InitializeComponent();
+
+            this.parentForm = parentForm;
 
             Common.UISynchronizer.synchronizeWithUI(descriptionTextbox, x => descriptionTextbox.ScrollBars = x, ScrollBars.Vertical);
 
             setControls(movie);
-
         }
 
         private void setControls(CinemaModel.Movies movie)
@@ -32,6 +33,7 @@ namespace CinemaManager.SubPages
             Common.UISynchronizer.synchronizeWithUI(this.descriptionTextbox, x => this.descriptionTextbox.Text = x, movie.description);
             Common.UISynchronizer.synchronizeWithUI(this.priceLabel, x => this.priceLabel.Text += string.Format("{0:0.00} zł", x), movie.price);
             Common.UISynchronizer.synchronizeWithUI(editButton, x => editButton.Tag = x, movie);
+            Common.UISynchronizer.synchronizeWithUI(expireMovieButton, x => expireMovieButton.Tag = x, movie);
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -41,6 +43,27 @@ namespace CinemaManager.SubPages
 
             EditMovieForm form = new EditMovieForm((CinemaModel.Movies)button.Tag);
             form.ShowDialog();
+
+            Common.UISynchronizer.synchronizeWithUI(parentForm, parentForm.startFilling);
+        }
+
+        private void expireMovieButton_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            Button button = sender as Button;
+
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                ((CinemaModel.Movies)button.Tag).isAvailable = false;
+
+                ctx.Entry(button.Tag).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
+            }
+
+            Cursor.Current = Cursors.Default;
+
+            Common.UISynchronizer.synchronizeWithUI(parentForm, parentForm.startFilling);
         }
     }
 }
