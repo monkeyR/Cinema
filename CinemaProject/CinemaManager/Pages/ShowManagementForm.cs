@@ -178,7 +178,6 @@ namespace CinemaManager.Pages
                         && DbFunctions.TruncateTime(s.dateStart) == DbFunctions.TruncateTime(day)
                         join m in ctx.Movies on s.movieID equals m.movieID
                         join hh in ctx.Halls on h.hallID equals hh.hallID
-                        orderby s.dateStart ascending
                         select new ShowModel() { show = s, movieTitle = m.title, hall = hh });
                 return shows.ToList();
             } 
