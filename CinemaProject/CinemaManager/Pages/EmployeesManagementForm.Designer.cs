@@ -55,7 +55,7 @@
             this.panel2.Controls.Add(this.employeeListView);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(15, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(952, 329);
             this.panel2.TabIndex = 17;
@@ -84,7 +84,7 @@
             this.employeeListView.FullRowSelect = true;
             this.employeeListView.GridLines = true;
             this.employeeListView.Location = new System.Drawing.Point(4, 64);
-            this.employeeListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.employeeListView.Margin = new System.Windows.Forms.Padding(4);
             this.employeeListView.MultiSelect = false;
             this.employeeListView.Name = "employeeListView";
             this.employeeListView.Size = new System.Drawing.Size(946, 258);
@@ -132,7 +132,7 @@
             this.panel1.Controls.Add(this.firedListView);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 351);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(952, 315);
             this.panel1.TabIndex = 19;
@@ -150,7 +150,7 @@
             this.firedListView.FullRowSelect = true;
             this.firedListView.GridLines = true;
             this.firedListView.Location = new System.Drawing.Point(9, 61);
-            this.firedListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firedListView.Margin = new System.Windows.Forms.Padding(4);
             this.firedListView.MultiSelect = false;
             this.firedListView.Name = "firedListView";
             this.firedListView.Size = new System.Drawing.Size(940, 250);
@@ -203,9 +203,10 @@
             this.ClientSize = new System.Drawing.Size(982, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeesManagementForm";
             this.Text = "EmployeesManagementForm";
+            this.Load += new System.EventHandler(this.EmployeesManagementForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -59,5 +59,10 @@ namespace CinemaManager.Pages
                 }
             }
         }
+
+        private void MoviesListflowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
