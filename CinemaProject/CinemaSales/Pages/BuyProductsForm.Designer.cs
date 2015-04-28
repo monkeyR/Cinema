@@ -49,9 +49,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainProductsPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainProductsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainProductsPanel.Name = "MainProductsPanel";
-            this.MainProductsPanel.Size = new System.Drawing.Size(499, 492);
+            this.MainProductsPanel.Size = new System.Drawing.Size(501, 492);
             this.MainProductsPanel.TabIndex = 3;
             // 
             // BuyProductsForm

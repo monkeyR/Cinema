@@ -22,5 +22,27 @@ namespace CinemaSales.Main
 
         }
 
+        private void LoadAllHalls()
+        {
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var Halls = (from t in ctx.Halls
+                                  select t);
+
+
+                /*
+                foreach (var cat in Categories)
+                {
+                    MainCategories.Add(cat.slug, cat.name);
+                    AddButtonToCategoriesPanel(CreateButtonCategory(cat.name, cat.slug, cat.categoryID));
+                }
+                */
+            }
+        }
+
+        private void DisplayHalls(CinemaModel.Halls halls)
+        {
+
+        }
     }
 }
