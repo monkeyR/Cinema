@@ -12,7 +12,7 @@ namespace Common
     {
         public string hallToString = "";
        private List<List<Button>> hallButtonList = new List<List<Button>>();
-        private int ktoreMiejsce = 0;
+        
         private int i = 0;
         private int y = 0;
         private int columnCount = 0;
@@ -41,13 +41,14 @@ namespace Common
         public List<List<Button>> HallStringToListButton(string hallString)
         {
             // wyświetlanie sali ze stringa 
+            int nextButtonInMatrix = 2;
             int rows = 0;
             int columns = 0;
             string[] matrixChar = hallString.Split(',');
             rows = Convert.ToInt32(matrixChar[0]);
             columns = Convert.ToInt32(matrixChar[1]);
             
-            //hallButtonList.Clear();
+            hallButtonList.Clear();
 
          
             // c -> A w kodzie ASCII 
@@ -121,23 +122,28 @@ namespace Common
                                     cmd.BackColor = Color.Crimson;
                                     cmd.Name = ((Char) c).ToString();
                                 }
-                               // c++;
+                               
                             }
 
                         }
                         // Jeśli nie ma nazwy - są to "siedzenia", im nadajemy nazwy 1A,1B itd...
-                        if (cmd.Name == "") cmd.Name = x.ToString() + ((char) c).ToString();
+                        if (cmd.Name == "")
+                        {
+                            cmd.Name = x.ToString() + ((char) c).ToString();
+                            if (matrixChar[nextButtonInMatrix] == 1.ToString())
+                            {
+                                cmd.BackColor = Color.Gray;
+
+                            }
+                            else if (matrixChar[nextButtonInMatrix] == 0.ToString())
+                            {
+                                cmd.BackColor = Color.FromArgb(123, 156, 204);
+                            }
+                            nextButtonInMatrix++;
+                        }
 
                     }
-                    if (matrixChar[ktoreMiejsce] == 1.ToString())
-                    {
-                        cmd.BackColor = Color.Gray;
-
-                    }
-                    else if (matrixChar[ktoreMiejsce] == 0.ToString())
-                    {
-                        cmd.BackColor = Color.FromArgb(123, 156, 204);
-                    }
+                  
                     buttons1.Add(cmd);
                 }
                hallButtonList.Add(buttons1);
