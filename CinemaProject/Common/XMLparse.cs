@@ -44,8 +44,8 @@ namespace Common
             int rows = 0;
             int columns = 0;
             string[] matrixChar = hallString.Split(',');
-            rows = Convert.ToInt32(matrixChar[0]);
-            columns = Convert.ToInt32(matrixChar[1]);
+            rows = Convert.ToInt32(matrixChar[1]);
+            columns = Convert.ToInt32(matrixChar[0]);
             
             //hallButtonList.Clear();
 

@@ -240,11 +240,11 @@ namespace CinemaManager.SubPages
 
                 hall.title = title;
                 hall.matrix = matrix;
-                hall.number = 2;
+                hall.number = 4;
+                hall.isEnable = 1;
 
                 ctx.Halls.Add(hall);
                 ctx.Entry(hall).State = System.Data.Entity.EntityState.Added;
-
                 ctx.SaveChanges();
             }
 

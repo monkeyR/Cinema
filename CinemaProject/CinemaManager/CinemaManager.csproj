@@ -93,6 +93,12 @@
     <Compile Include="SubPages\AddNewEmployeeForm.Designer.cs">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\AddNewHall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewHall.Designer.cs">
+      <DependentUpon>AddNewHall.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubPages\AddNewMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="SubPages\AddNewEmployeeForm.resx">
       <DependentUpon>AddNewEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddNewHall.resx">
+      <DependentUpon>AddNewHall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\AddNewMovieForm.resx">
       <DependentUpon>AddNewMovieForm.cs</DependentUpon>
