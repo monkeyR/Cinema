@@ -11,13 +11,13 @@ namespace Common
    public class XMLparse
     {
         public string hallToString = "";
-        private List<List<Button>> hallButtonList;
+       private List<List<Button>> hallButtonList = new List<List<Button>>();
         private int ktoreMiejsce = 0;
         private int i = 0;
         private int y = 0;
         private int columnCount = 0;
 
-        public string parseToString(List<List<Button>> hall)
+        public string ParseToString(List<List<Button>> hall)
         {
             // zapisywanie sali w bazie danych jako string 
             columnCount = hall[0].Count;
@@ -44,8 +44,8 @@ namespace Common
             int rows = 0;
             int columns = 0;
             string[] matrixChar = hallString.Split(',');
-            rows = Convert.ToInt32(matrixChar[1]);
-            columns = Convert.ToInt32(matrixChar[0]);
+            rows = Convert.ToInt32(matrixChar[0]);
+            columns = Convert.ToInt32(matrixChar[1]);
             
             //hallButtonList.Clear();
 
@@ -81,15 +81,18 @@ namespace Common
                         cmd.Name = "00";
                         cmd.Hide();
                     }
-                    else if (y == 0 && x == columnCount - 1)
+                    //else if (y == 0 && x == columnCount - 1)
+                    else if (y == 0 && x == columns-1 )
                     {
                         // ukrycie komórki [0,columnCount-1]
-                        cmd.Name = "0" + (columnCount - 1).ToString();
+                        cmd.Name = "0" + (columns-1).ToString();
                         cmd.Hide();
                     }
                     else
                     {
-                        if (y == 0 && x != 0 && x != columnCount - 1)
+                        //if (y == 0 && x != 0 && x != columnCount - 1)
+
+                        if (y == 0 && x != 0 && x != columns-1)
                         {
                             // wiersz 0  ( nazwy kolumn )
                             cmd.BackColor = Color.Crimson;
@@ -97,19 +100,19 @@ namespace Common
                             cmd.Name = x.ToString();
                             //nameOfButtonColumnList.Add(cmd.Name.ToString());
                         }
-                        if (x == 0 || x == columnCount - 1)
+                        if (x == 0 || x == columns-1 )
                         {
-                            // kolumna 0 i columnCount-1  ( nazwy wierszy )
+                            // kolumna 0 i columnCount  ( nazwy wierszy )
                             if (y != 0)
                             {
                                 //---------------->     // DODAĆ - co będzie, gdy skńczy się alfabet ? 
-                                if (x == columnCount - 1)
+                                if (x == columns-1 )
                                 {
                                     // ostatnia kolumna 
                                     cmd.Text = ((Char) c).ToString();
                                     cmd.BackColor = Color.Crimson;
                                     cmd.Name = ((Char) c).ToString();
-                                    c++;
+                                   c++;
                                 }
                                 else
                                 {
@@ -118,14 +121,13 @@ namespace Common
                                     cmd.BackColor = Color.Crimson;
                                     cmd.Name = ((Char) c).ToString();
                                 }
-
+                               // c++;
                             }
 
                         }
                         // Jeśli nie ma nazwy - są to "siedzenia", im nadajemy nazwy 1A,1B itd...
                         if (cmd.Name == "") cmd.Name = x.ToString() + ((char) c).ToString();
 
-                      //  cmd.Click += btn_Click;
                     }
                     if (matrixChar[ktoreMiejsce] == 1.ToString())
                     {
@@ -138,9 +140,7 @@ namespace Common
                     }
                     buttons1.Add(cmd);
                 }
-
-                // dodanie listy buttonów (jednego całego wiersza) do <List<List<Buttons>>
-                hallButtonList.Add(buttons1);
+               hallButtonList.Add(buttons1);
 
             }
 

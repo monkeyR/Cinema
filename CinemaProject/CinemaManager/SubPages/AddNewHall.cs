@@ -442,7 +442,7 @@ namespace CinemaManager.SubPages
         private void CreateHallONButton_Click_2(object sender, EventArgs e)
         {
             HallCreatePanel.Show();
-            ScreenLabel.Show();
+         
             // tworzenie szkieletu sali 
 
             HallNameLabel.Refresh();
@@ -450,9 +450,7 @@ namespace CinemaManager.SubPages
             ColumnsLabel.Refresh();
             HallInfo.Show();
             HallCreateAddHallButton.Show();
-            HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
-            RowsLabel.Text = "Liczba wierszy: " + HallCreatorRowsNumberTextBox.Text;
-            ColumnsLabel.Text = "Liczba kolumn: " + HallCreatorColumsNumberTextBox.Text;
+           
             int rows = 0;
             int columns = 0;
             string hallName = null;
@@ -488,7 +486,10 @@ namespace CinemaManager.SubPages
                     }
                     else
                     {
-
+                        HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
+                        RowsLabel.Text = "Liczba wierszy: " + HallCreatorRowsNumberTextBox.Text;
+                        ColumnsLabel.Text = "Liczba kolumn: " + HallCreatorColumsNumberTextBox.Text;
+                        ScreenLabel.Show();
                         GenerateTable(columns + 2, rows + 1);
 
                     }
@@ -503,7 +504,7 @@ namespace CinemaManager.SubPages
             HallCreateTableGenerateFinishedTable();
 
             Common.XMLparse stringParse = new XMLparse();
-            hallString = stringParse.parseToString(buttons);
+            hallString = stringParse.ParseToString(buttons);
             HallCreateSaveToDatabase(HallCreatorHallNameTextBox.Text, hallString);
         }
         

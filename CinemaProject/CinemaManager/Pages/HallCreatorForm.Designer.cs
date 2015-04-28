@@ -235,11 +235,11 @@
             this.HallCreateTableLayoutPanel.AutoSize = true;
             this.HallCreateTableLayoutPanel.ColumnCount = 1;
             this.HallCreateTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(0, 33);
+            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(0, 46);
             this.HallCreateTableLayoutPanel.Name = "HallCreateTableLayoutPanel";
             this.HallCreateTableLayoutPanel.RowCount = 1;
             this.HallCreateTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(821, 439);
+            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(821, 426);
             this.HallCreateTableLayoutPanel.TabIndex = 14;
             // 
             // HallCreatorForm
