@@ -121,11 +121,17 @@
   <data name="Actions-edit-redo-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-redo-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-right-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-right-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sub2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sub2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Actions-edit-redo-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-redo-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,31 +139,52 @@
   <data name="symbol-check-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\symbol-check-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-right-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-right-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Actions-edit-redo-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-redo-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Actions-edit-redo-icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Actions-edit-redo-icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-right-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-right-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Actions-edit-redo-icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-edit-redo-icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Apps-system-software-update-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Apps-system-software-update-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sub1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sub1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sub3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sub3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow-right-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-right-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

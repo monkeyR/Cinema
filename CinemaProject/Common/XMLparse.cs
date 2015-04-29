@@ -12,11 +12,31 @@ namespace Common
     {
         public string hallToString = "";
        private List<List<Button>> hallButtonList = new List<List<Button>>();
-        
+
+       private List<String> nameOfButtonColumnList = new List<string>();
+       private List<String> nameOfButtonRowList = new List<string>();
+
         private int i = 0;
         private int y = 0;
         private int columnCount = 0;
 
+
+       private List<String> returnNameOfColumnsList(String hallString)
+       {
+           //zwraca listę nazw kolumn
+           int rows = 0;
+           int columns = 0;
+           string[] matrixChar = hallString.Split(',');
+           rows = Convert.ToInt32(matrixChar[0]);
+           columns = Convert.ToInt32(matrixChar[1]);
+
+
+           return nameOfButtonColumnList;
+       }
+       private List<String> returnNameOfRowsList(String hallString)
+       {
+           return nameOfButtonRowList;
+       } 
         public string ParseToString(List<List<Button>> hall)
         {
             // zapisywanie sali w bazie danych jako string 
@@ -138,6 +158,7 @@ namespace Common
                             else if (matrixChar[nextButtonInMatrix] == 0.ToString())
                             {
                                 cmd.BackColor = Color.FromArgb(123, 156, 204);
+                                cmd.Hide();
                             }
                             nextButtonInMatrix++;
                         }
@@ -152,6 +173,7 @@ namespace Common
 
             return hallButtonList;
         }
+
 
 
     }

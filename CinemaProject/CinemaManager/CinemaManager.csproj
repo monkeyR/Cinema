@@ -256,6 +256,33 @@
   <ItemGroup>
     <None Include="Resources\Apps-system-software-update-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sub3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add8.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

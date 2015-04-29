@@ -45,11 +45,22 @@
             this.HallCreatePanel = new System.Windows.Forms.Panel();
             this.ScreenLabel = new System.Windows.Forms.Label();
             this.HallCreateTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.HallEditGroupBox = new System.Windows.Forms.GroupBox();
+            this.SubColumnButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.AddColumnButton = new System.Windows.Forms.Button();
+            this.SubtractRowButton = new System.Windows.Forms.Button();
+            this.AddRowButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.HallMenagePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.HallCreatePanel.SuspendLayout();
+            this.HallEditGroupBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +108,7 @@
             // 
             // HallMenagePanel
             // 
+            this.HallMenagePanel.Controls.Add(this.HallEditGroupBox);
             this.HallMenagePanel.Controls.Add(this.panel2);
             this.HallMenagePanel.Controls.Add(this.HallEditButton);
             this.HallMenagePanel.Controls.Add(this.RemoveHallButton);
@@ -118,7 +130,7 @@
             this.panel2.Controls.Add(this.HallNameLabel);
             this.panel2.Location = new System.Drawing.Point(339, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 95);
+            this.panel2.Size = new System.Drawing.Size(488, 148);
             this.panel2.TabIndex = 16;
             // 
             // NumberOfHallLabel
@@ -213,16 +225,16 @@
             this.HallCreatePanel.AutoScroll = true;
             this.HallCreatePanel.Controls.Add(this.ScreenLabel);
             this.HallCreatePanel.Controls.Add(this.HallCreateTableLayoutPanel);
-            this.HallCreatePanel.Location = new System.Drawing.Point(6, 110);
+            this.HallCreatePanel.Location = new System.Drawing.Point(6, 177);
             this.HallCreatePanel.Name = "HallCreatePanel";
-            this.HallCreatePanel.Size = new System.Drawing.Size(824, 475);
+            this.HallCreatePanel.Size = new System.Drawing.Size(824, 408);
             this.HallCreatePanel.TabIndex = 17;
             // 
             // ScreenLabel
             // 
             this.ScreenLabel.AutoSize = true;
             this.ScreenLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScreenLabel.Location = new System.Drawing.Point(0, 0);
+            this.ScreenLabel.Location = new System.Drawing.Point(6, 0);
             this.ScreenLabel.Name = "ScreenLabel";
             this.ScreenLabel.Size = new System.Drawing.Size(81, 23);
             this.ScreenLabel.TabIndex = 0;
@@ -235,12 +247,148 @@
             this.HallCreateTableLayoutPanel.AutoSize = true;
             this.HallCreateTableLayoutPanel.ColumnCount = 1;
             this.HallCreateTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(0, 46);
+            this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(0, 58);
             this.HallCreateTableLayoutPanel.Name = "HallCreateTableLayoutPanel";
             this.HallCreateTableLayoutPanel.RowCount = 1;
             this.HallCreateTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(821, 426);
+            this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(821, 414);
             this.HallCreateTableLayoutPanel.TabIndex = 14;
+            // 
+            // HallEditGroupBox
+            // 
+            this.HallEditGroupBox.Controls.Add(this.button5);
+            this.HallEditGroupBox.Controls.Add(this.tableLayoutPanel1);
+            this.HallEditGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HallEditGroupBox.Location = new System.Drawing.Point(486, 10);
+            this.HallEditGroupBox.Name = "HallEditGroupBox";
+            this.HallEditGroupBox.Size = new System.Drawing.Size(177, 133);
+            this.HallEditGroupBox.TabIndex = 0;
+            this.HallEditGroupBox.TabStop = false;
+            // 
+            // SubColumnButton
+            // 
+            this.SubColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SubColumnButton.BackgroundImage = global::CinemaManager.Properties.Resources.sub3;
+            this.SubColumnButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SubColumnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubColumnButton.Location = new System.Drawing.Point(0, 34);
+            this.SubColumnButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SubColumnButton.Name = "SubColumnButton";
+            this.SubColumnButton.Size = new System.Drawing.Size(42, 34);
+            this.SubColumnButton.TabIndex = 3;
+            this.SubColumnButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 34);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Wiersze";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 34);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Kolumny";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(3, 93);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 37);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Zatwierdź zmiany";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // AddColumnButton
+            // 
+            this.AddColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddColumnButton.BackgroundImage = global::CinemaManager.Properties.Resources.add8;
+            this.AddColumnButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddColumnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddColumnButton.Location = new System.Drawing.Point(127, 34);
+            this.AddColumnButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AddColumnButton.Name = "AddColumnButton";
+            this.AddColumnButton.Size = new System.Drawing.Size(44, 34);
+            this.AddColumnButton.TabIndex = 2;
+            this.AddColumnButton.UseVisualStyleBackColor = true;
+            // 
+            // SubtractRowButton
+            // 
+            this.SubtractRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SubtractRowButton.BackgroundImage = global::CinemaManager.Properties.Resources.sub3;
+            this.SubtractRowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SubtractRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubtractRowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SubtractRowButton.Location = new System.Drawing.Point(0, 0);
+            this.SubtractRowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SubtractRowButton.Name = "SubtractRowButton";
+            this.SubtractRowButton.Size = new System.Drawing.Size(42, 34);
+            this.SubtractRowButton.TabIndex = 1;
+            this.SubtractRowButton.UseVisualStyleBackColor = true;
+            // 
+            // AddRowButton
+            // 
+            this.AddRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddRowButton.AutoSize = true;
+            this.AddRowButton.BackgroundImage = global::CinemaManager.Properties.Resources.add7;
+            this.AddRowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddRowButton.Location = new System.Drawing.Point(127, 0);
+            this.AddRowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AddRowButton.Name = "AddRowButton";
+            this.AddRowButton.Size = new System.Drawing.Size(44, 34);
+            this.AddRowButton.TabIndex = 0;
+            this.AddRowButton.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.AddColumnButton, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.AddRowButton, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SubColumnButton, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.SubtractRowButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(171, 68);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // HallCreatorForm
             // 
@@ -263,6 +411,10 @@
             this.panel2.PerformLayout();
             this.HallCreatePanel.ResumeLayout(false);
             this.HallCreatePanel.PerformLayout();
+            this.HallEditGroupBox.ResumeLayout(false);
+            this.HallEditGroupBox.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,5 +438,14 @@
         private System.Windows.Forms.Panel HallCreatePanel;
         private System.Windows.Forms.Label ScreenLabel;
         private System.Windows.Forms.Label NumberOfHallLabel;
+        private System.Windows.Forms.GroupBox HallEditGroupBox;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SubColumnButton;
+        private System.Windows.Forms.Button AddColumnButton;
+        private System.Windows.Forms.Button SubtractRowButton;
+        private System.Windows.Forms.Button AddRowButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

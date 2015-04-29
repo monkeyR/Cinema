@@ -153,6 +153,46 @@ namespace CinemaManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add5 {
+            get {
+                object obj = ResourceManager.GetObject("add5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add6 {
+            get {
+                object obj = ResourceManager.GetObject("add6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add7 {
+            get {
+                object obj = ResourceManager.GetObject("add7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add8 {
+            get {
+                object obj = ResourceManager.GetObject("add8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Apps_system_software_update_icon {
             get {
                 object obj = ResourceManager.GetObject("Apps-system-software-update-icon", resourceCulture);
@@ -186,6 +226,56 @@ namespace CinemaManager.Properties {
         internal static System.Drawing.Bitmap Close_2_icon {
             get {
                 object obj = ResourceManager.GetObject("Close-2-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key_plus {
+            get {
+                object obj = ResourceManager.GetObject("key_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sub {
+            get {
+                object obj = ResourceManager.GetObject("sub", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sub1 {
+            get {
+                object obj = ResourceManager.GetObject("sub1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sub2 {
+            get {
+                object obj = ResourceManager.GetObject("sub2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sub3 {
+            get {
+                object obj = ResourceManager.GetObject("sub3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
