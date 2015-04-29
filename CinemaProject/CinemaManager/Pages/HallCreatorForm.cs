@@ -53,6 +53,7 @@ namespace CinemaManager.Pages
             InitializeComponent();
            
             ScreenLabel.Hide();
+            HallEditPanel.Hide();
             FIllComboBox();
         }
 
@@ -109,16 +110,17 @@ namespace CinemaManager.Pages
             HallMenagePanel.Refresh();
         }
 
+
+
         private void displayHallButton_Click(object sender, EventArgs e)
         {
             HallCreateTableLayoutPanel.Controls.Clear();
-
             HallCreateTableLayoutPanel.ColumnStyles.Clear();
             HallCreateTableLayoutPanel.RowStyles.Clear();
-             string hallName = "";
-            int n=0;
-            int row = 0;
-            int col = 0;
+
+            string hallName = "";
+            int numberOfHall=0;
+
             string matrix;
 
             if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
@@ -132,45 +134,22 @@ namespace CinemaManager.Pages
 
 
                     hallName = halls.t.title;
-                    n = halls.t.number;
+                    numberOfHall = halls.t.number;
                     matrix = halls.t.matrix;
                    
                 }
                 HallNameLabel.Text = "Nazwa sali: " + hallName;
-                NumberOfHallLabel.Text = "Numer sali: " + n.ToString();
+                NumberOfHallLabel.Text = "Numer sali: " + numberOfHall.ToString();
                 tableOfButtons = matrix.Split(',');
-                row = (Convert.ToInt32(tableOfButtons[0]))-1;
-                col = (Convert.ToInt32(tableOfButtons[1]))-2;
-                NumberOfRowsLabel.Text = "Rzędy " + row;
-                NumberOfColumnsLabel.Text = "Kolumny: " + col;
+            
+                NumberOfRowsLabel.Text = "Rzędy " + (Convert.ToInt32(tableOfButtons[0])-1);;
+                NumberOfColumnsLabel.Text = "Kolumny: " + (Convert.ToInt32(tableOfButtons[1])-2);
                 
                 GenerateTable(matrix);
             }
-            
-
-        }
-        private void GenerateTableWithString(string matrix)
-        {
-            int columnCount = Convert.ToInt32(tableOfButtons[1]);
-            int rowCount = Convert.ToInt32(tableOfButtons[0]);
-            // generowanie sali 
-
            
-            buttons.Clear();
 
-            // wyświetlenie napisu EKRAN na środku wygenerowanej sali
-           DisplayScreenLabel(columnCount);
-
-            // wyczyszczenie poprzednich wyświetleń sali
-           AllClean(columnCount,rowCount);
-
-
-
-            //ChangeNumerationInTable(rowCount, columnCount);
         }
-
-
-
 
 
         private void ChangeNumerationInTable(int rows, int columns)
@@ -218,10 +197,13 @@ namespace CinemaManager.Pages
             HallCreateTableLayoutPanel.ColumnCount = columnCount;
             HallCreateTableLayoutPanel.RowCount = rowCount;
         }
+
         private void GenerateTable( string matrix)
         {
             int columnCount = Convert.ToInt32(tableOfButtons[1]);
             int rowCount = Convert.ToInt32(tableOfButtons[0]);
+            int enableButtonInRowsCount = 0;
+            int enableButtonInColumnsCount = 0;
             buttons.Clear();
 
            Common.XMLparse parseStringToListOfButtons=new XMLparse();
@@ -230,66 +212,107 @@ namespace CinemaManager.Pages
             // wyświetlenie napisu EKRAN na środku wygenerowanej sali
             DisplayScreenLabel(columnCount);
 
-            // wyczyszczenie poprzednich wyświetleń sali
+            List<int> enableRowsList=new List<int>();
+            List<int> enableColmunsList=new List<int>();
+
+
+                // wyczyszczenie poprzednich wyświetleń sali
             AllClean(columnCount, rowCount);
-
-
-            MessageBox.Show("Liczba wierszy:" + buttons.Count);
-
-
-
-
-            // c -> A w kodzie ASCII 
-            //  int c = 65;
-
-
-
-            /* for (int y = 0; y < rowCount; y++)
+            int c = 65; // w ascii A = 65
+            int numberOfColumn = 1;
+            // SPRAWDZENIE, CZY SĄ CAŁE ODZNACZONE WIERSZE + WYŁĄCZENIE MOŻLIWOŚCI KLIKANIA
+            for (int y = 0; y < rowCount; y++)
             {
-               List<Button> buttons1 = new List<Button>();
                 for (int x = 0; x < columnCount; x++)
                 {
-
-                    // tworzenie nowego buttona w tabeli
-                   Button cmd = new Button
-                    {
-                        Text = string.Format(" "),
-                        Width = 27,
-                        Height = 27,
-                        Margin = new System.Windows.Forms.Padding(0, 0, 0, 0),
-                        Padding = new Padding(0, 0, 0, 0),
-                        TextAlign = ContentAlignment.MiddleCenter,
-                        FlatStyle = FlatStyle.Flat,
-                        BackColor = Color.Gray,
-                        Font = new Font(
-                            "Arial",
-                            6)
-                    };
-                    
-
-                    
-                    cmd.Click += btn_Click;
-                    buttons1.Add(cmd);
-                    HallCreateTableLayoutPanel.Controls.Add(cmd, x, y);
+                    HallCreateTableLayoutPanel.Controls.Add(buttons[y][x], x, y);
+                    buttons[y][x].Enabled = false;
+                    if (buttons[y][x].BackColor == Color.Gray) enableButtonInRowsCount++;
                 }
-                if (buttons1[0].Name != "00")
+
+              if (enableButtonInRowsCount ==0) enableRowsList.Add(y);
+                enableButtonInRowsCount = 0;
+            }
+
+
+            // SPRAWDZENIE, CZY SĄ CAŁE ODZNACZONE KOLUMNY
+            for (int y = 0; y < columnCount; y++)
+            {
+                for (int x = 0; x < rowCount; x++)
                 {
-                    // lista stringów potrzebna do wyświetlania text na buttonach 
-                    nameOfButtonRowList.Add(buttons1[0].Name);
-
+                    if (buttons[x][y].BackColor == Color.Gray) enableButtonInColumnsCount++;
                 }
 
+                if (enableButtonInColumnsCount == 0) enableColmunsList.Add(y);
+                enableButtonInColumnsCount = 0;
+            }
 
-                // dodanie listy buttonów (jednego całego wiersza) do <List<List<Buttons>>
-        
-            }*/
+            // próba zmiany numeracji bez użycia funkcji change numeration, gdy wycięta jest cała kolumna
+            for (int y = 0; y < rowCount; y++)
+            {
+                for (int x = 0; x < columnCount; x++)
+                {
+                    if (y == 0)
+                    {
+                        if (!enableColmunsList.Contains(x))
+                        {
+                            buttons[y][x].Text = numberOfColumn.ToString();
+                            numberOfColumn++;
+                        }
+                        else
+                        {
+                            buttons[y][x].Text = " ";
+                            buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
+                            //buttons[y][x].Hide();
+                        }
+                    }
+                    else
+                    {
+                        if (x == 0)
+                        {
+                            if (!enableRowsList.Contains(y))
+                            {
+                                buttons[y][x].Text = ((char)c).ToString();
+                            }
+                            else
+                            {
+                                buttons[y][x].Text = " ";
+                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
+                               // buttons[y][x].Hide();
+                            }
+                        } if (x == columnCount - 1)
+                        {
+                            if (!enableRowsList.Contains(y))
+                            {
+                                buttons[y][x].Text = ((char) c).ToString();
+                                c++;
+                            }
+                            else
+                            {
+                                buttons[y][x].Text = " ";
+                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
+                              //  buttons[y][x].Hide();
+                            }
+                        }
+                    }
+                }
+            }
         }
-
 
         protected void btn_Click(object sender, EventArgs e)
         {
 
             Button nb = (Button)sender;
+            
+            for (int y = 0; y < buttons.Count; y++)
+            {
+                for (int x = 0; x < buttons[0].Count; x++)
+                {
+                    buttons[y][x].Enabled = true;
+                    buttons[y][x].Show();
+                }
+            }
+
 
             //sprawdza numer columny zaznaczonej komórki
             string numerOfColumn = new String(nb.Name.ToCharArray().Where(c => Char.IsDigit(c)).ToArray());
@@ -297,44 +320,42 @@ namespace CinemaManager.Pages
 
             // liczba wierszy i kolumn w macierzy 
             int rowsCount = buttons.Count;
-            int columnCount = 0;
-            for (int h = 0; h < rowsCount; h++)
-            {
-                columnCount = buttons[h].Count;
-            }
-
+            int columnCount =  buttons[0].Count;
+            
             if (nb.Text == string.Format(" "))
             {
-
+                
+                int ifNumber = 0;
+                bool bNum = int.TryParse(nb.Name, out ifNumber);
                 // kliknięcie w pojedyńczą komórkę
-                if (nb.BackColor == Color.LavenderBlush)
+              //  nb.BackColor = nb.BackColor == Color.FromArgb(123,156,204) ? Color.Gray : Color.FromArgb(123, 156, 204);
+                if (nb.BackColor == Color.FromArgb(123, 156, 204))
                 {
-                    nb.BackColor = Color.Gray;
-
+                    if (!bNum)
+                        nb.BackColor = Color.Gray;
+                    else nb.BackColor = Color.Crimson;
                 }
                 else
                 {
-                    nb.BackColor = Color.LavenderBlush;
+                    nb.BackColor = Color.FromArgb(123, 156, 204);
                 }
             }
             else
             {
-
                 int ifNumber = 0;
                 bool bNum = int.TryParse(numerOfColumn, out ifNumber);
                 if (bNum)
                 {
-                    // zaznaczanie kolumnami 
-                    if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.Crimson)
+                    if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.Crimson || buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(123, 156, 204))
                     {
                         for (int i = 1; i < rowsCount; i++)
                         {
-                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.LavenderBlush;
+                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
                         }
                         buttons[0][Convert.ToInt32(numerOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
 
                     }
-                    else if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60))
+                    else if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60) || buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(123,156,204))
                     {
                         for (int i = 1; i < rowsCount; i++)
                         {
@@ -343,6 +364,7 @@ namespace CinemaManager.Pages
                         buttons[0][Convert.ToInt32(numerOfColumn)].BackColor = Color.Crimson;
 
                     }
+
                 }
                 else
                 {
@@ -353,17 +375,22 @@ namespace CinemaManager.Pages
                         {
                             for (int i = 1; i < columnCount - 1; i++)
                             {
-                                (buttons[d][i]).BackColor = Color.LavenderBlush;
+                                (buttons[d][i]).BackColor = Color.FromArgb(123, 156, 204);
                             }
                             buttons[d][0].BackColor = Color.FromArgb(255, 220, 19, 60);
                         }
-                        else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60) && buttons[d][0].Name == nb.Name)
+                        else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60) ||
+                                 buttons[d][0].BackColor == Color.FromArgb(123, 156, 204))
                         {
-                            for (int i = 1; i < columnCount - 1; i++)
+                            if (buttons[d][0].Name == nb.Name)
                             {
-                                (buttons[d][i]).BackColor = Color.Gray;
+
+                                for (int i = 1; i < columnCount - 1; i++)
+                                {
+                                    (buttons[d][i]).BackColor = Color.Gray;
+                                }
+                                buttons[d][0].BackColor = Color.Crimson;
                             }
-                            buttons[d][0].BackColor = Color.Crimson;
                         }
                     }
                 }
@@ -382,69 +409,67 @@ namespace CinemaManager.Pages
 
         private void RemoveHallButton_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć salę " + hallNameComboBox.Text, "Usuwanie sali kinowej ", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
+            else
             {
-
-                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć salę " + hallNameComboBox.Text,
+                    "Usuwanie sali kinowej ", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
 
-                    var halls = (from t in ctx.Halls
-                                 
-                                 where t.title == hallNameComboBox.Text
-                                 select new { t }).Single();
-                    halls.t.isEnable = 0;
-                    ctx.SaveChanges();
+                    using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                    {
+
+                        var halls = (from t in ctx.Halls
+
+                            where t.title == hallNameComboBox.Text
+                            select new {t}).Single();
+                        halls.t.isEnable = 0;
+                        ctx.SaveChanges();
+                    }
+                    MessageBox.Show("Poprawnie usunięto salę kinową");
                 }
-                MessageBox.Show("Poprawnie usunięto salę kinową");
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                MessageBox.Show("Podczas usuwania wystąpił błąd");
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Podczas usuwania wystąpił błąd");
+                }
             }
         }
 
-        private void HallEditButton_Click(object sender, EventArgs e)
+        private void HallEditButton_Click(object sender, EventArgs e )
         {
-            HallCreateTableLayoutPanel.Controls.Clear();
+          
+            //HallCreateTableLayoutPanel.Controls.Clear();
+            //HallCreateTableLayoutPanel.ColumnStyles.Clear();
+            //HallCreateTableLayoutPanel.RowStyles.Clear();
 
-            HallCreateTableLayoutPanel.ColumnStyles.Clear();
-            HallCreateTableLayoutPanel.RowStyles.Clear();
             string hallName = "";
             int n = 0;
             int row = 0;
             int col = 0;
-            string matrix;
 
             if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
             else
             {
-                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                if (buttons.Count != 0)
                 {
-                    var halls = (from t in ctx.Halls
-
-                                 where t.title == hallNameComboBox.Text
-                                 select new { t }).Single();
+                    HallEditPanel.Show();
 
 
-                    hallName = halls.t.title;
-                    n = halls.t.number;
-                    matrix = halls.t.matrix;
+                    for (int y = 0; y < buttons.Count; y++)
+                    {
+                        for (int x = 0; x < buttons[0].Count; x++)
+                        {
+                            buttons[y][x].Enabled = true;
+                            buttons[y][x].Click += btn_Click;
 
-                                
-                    ctx.Entry(halls).State = System.Data.Entity.EntityState.Deleted;
-                    ctx.SaveChanges();
+                        }
 
+                    }
                 }
-                HallNameLabel.Text = "Nazwa sali: " + hallName;
-                NumberOfHallLabel.Text = "Numer sali: " + n.ToString();
-                tableOfButtons = matrix.Split(',');
-                row = (Convert.ToInt32(tableOfButtons[0])) - 1;
-                col = (Convert.ToInt32(tableOfButtons[1])) - 2;
-                NumberOfRowsLabel.Text = "Rzędy " + row;
-                NumberOfColumnsLabel.Text = "Kolumny: " + col;
+                else MessageBox.Show("Aby edytować salę, najpierw ją wyświetl!");
 
-                GenerateTable(matrix);
+
             }
         }
         
