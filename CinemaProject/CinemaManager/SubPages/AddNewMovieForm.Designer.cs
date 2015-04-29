@@ -142,6 +142,7 @@
             this.durationNumericUpDown.Name = "durationNumericUpDown";
             this.durationNumericUpDown.Size = new System.Drawing.Size(71, 26);
             this.durationNumericUpDown.TabIndex = 5;
+            this.durationNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.durationNumericUpDown_KeyPress);
             // 
             // durationLabel
             // 

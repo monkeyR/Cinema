@@ -114,5 +114,13 @@ namespace CinemaManager.SubPages
         {
             alreadyFocused = false;
         }
+
+        private void durationNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < 48 || e.KeyChar > 57)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
