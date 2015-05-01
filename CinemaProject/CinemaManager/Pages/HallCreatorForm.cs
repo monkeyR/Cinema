@@ -252,18 +252,22 @@ namespace CinemaManager.Pages
             {
                 for (int x = 0; x < columnCount; x++)
                 {
+                    // zmiana numeracji 
                     if (y == 0)
                     {
-                        if (!enableColmunsList.Contains(x))
+                        if (buttons[y][x].Name != "00")
                         {
-                            buttons[y][x].Text = numberOfColumn.ToString();
-                            numberOfColumn++;
-                        }
-                        else
-                        {
-                            buttons[y][x].Text = " ";
-                            buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
-                            //buttons[y][x].Hide();
+                            if (!enableColmunsList.Contains(x))
+                            {
+                                buttons[y][x].Text = numberOfColumn.ToString();
+                                numberOfColumn++;
+                            }
+                            else
+                            {
+                                buttons[y][x].Text = " ";
+                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 204);
+                                //buttons[y][x].Hide();
+                            }
                         }
                     }
                     else
@@ -272,15 +276,16 @@ namespace CinemaManager.Pages
                         {
                             if (!enableRowsList.Contains(y))
                             {
-                                buttons[y][x].Text = ((char)c).ToString();
+                                buttons[y][x].Text = ((char) c).ToString();
                             }
                             else
                             {
                                 buttons[y][x].Text = " ";
-                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
-                               // buttons[y][x].Hide();
+                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 204);
+                                // buttons[y][x].Hide();
                             }
-                        } if (x == columnCount - 1)
+                        }
+                        if (x == columnCount - 1)
                         {
                             if (!enableRowsList.Contains(y))
                             {
@@ -290,8 +295,8 @@ namespace CinemaManager.Pages
                             else
                             {
                                 buttons[y][x].Text = " ";
-                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 203);
-                              //  buttons[y][x].Hide();
+                                buttons[y][x].BackColor = Color.FromArgb(123, 156, 204);
+                                //  buttons[y][x].Hide();
                             }
                         }
                     }
@@ -308,60 +313,101 @@ namespace CinemaManager.Pages
             {
                 for (int x = 0; x < buttons[0].Count; x++)
                 {
-                    buttons[y][x].Enabled = true;
-                    buttons[y][x].Show();
+                    if (buttons[y][x].Name != "0" && buttons[y][x].Name != buttons[0].Count.ToString())
+                    {
+                        buttons[y][x].Enabled = true;
+                        buttons[y][x].Show();
+                    }
                 }
             }
 
 
-            //sprawdza numer columny zaznaczonej komórki
-            string numerOfColumn = new String(nb.Name.ToCharArray().Where(c => Char.IsDigit(c)).ToArray());
+            //sprawdza numer kolumny zaznaczonej komórki
+            string numberOfColumn = new String(nb.Name.ToCharArray().Where(c => Char.IsDigit(c)).ToArray());
             string numerOfRow = new String(nb.Name.ToCharArray().Where(c => Char.IsLetter(c)).ToArray());
 
             // liczba wierszy i kolumn w macierzy 
             int rowsCount = buttons.Count;
             int columnCount =  buttons[0].Count;
-            
-            if (nb.Text == string.Format(" "))
+
+            string[] nameOfButton = new string[2];
+
+            int ifNumber = 0;
+            bool bNum = int.TryParse(nb.Name, out ifNumber);
+
+            /* w nameOfButton[0] przechowywany jest nr kolumny 
+               w nameOfButton[1] przechowywany jest nr rzędu*/
+            if (nb.Name.Length==3)
             {
-                
-                int ifNumber = 0;
-                bool bNum = int.TryParse(nb.Name, out ifNumber);
-                // kliknięcie w pojedyńczą komórkę
-              //  nb.BackColor = nb.BackColor == Color.FromArgb(123,156,204) ? Color.Gray : Color.FromArgb(123, 156, 204);
-                if (nb.BackColor == Color.FromArgb(123, 156, 204))
+                nameOfButton[0] = nb.Name[0].ToString() + nb.Name[1].ToString();
+                nameOfButton[1] = nb.Name[2].ToString();
+            }
+            else if(nb.Name.Length==2)
+            {
+                nameOfButton[0] = nb.Name[1].ToString();
+                nameOfButton[1] = nb.Name[0].ToString();
+            }
+            else if (nb.Name.Length == 1)
+            {
+                bool bNum2 = int.TryParse(nb.Name, out ifNumber);
+                if (bNum2)
                 {
-                    if (!bNum)
-                        nb.BackColor = Color.Gray;
-                    else nb.BackColor = Color.Crimson;
+                    nameOfButton[0] = "";
+                    nameOfButton[1] = nb.Name[0].ToString();
                 }
                 else
+                {
+                    nameOfButton[0] = nb.Name[0].ToString();
+                    nameOfButton[1] = "";
+                }
+            }
+
+            
+                
+            if (!bNum && nameOfButton[1]!=" ")
+            {
+                // kliknięcie w pojedyńczą komórkę, która nie jest rzędem lub kolumną 
+                if (nb.BackColor == Color.FromArgb(123, 156, 204) )
+                {
+                   nb.BackColor = Color.Gray;
+                }
+                else if (nb.BackColor == Color.Gray)
                 {
                     nb.BackColor = Color.FromArgb(123, 156, 204);
                 }
             }
             else
             {
-                int ifNumber = 0;
-                bool bNum = int.TryParse(numerOfColumn, out ifNumber);
-                if (bNum)
+               
+                // muszę sprawdzić, czy jest to pojedyńcza komórka, czy nazwa rzędu !!!!!
+
+
+                 // kliknięcie w numer kolumny
+                if(nb.BackColor == Color.FromArgb(123, 156, 204)) 
+                    nb.BackColor =Color.Crimson;
+                else if(nb.BackColor == Color.Crimson)
+                    nb.BackColor = Color.FromArgb(255, 220, 19, 60);
+                else if(nb.BackColor == Color.FromArgb(255, 220, 19, 60))
+                    nb.BackColor = Color.Crimson;
+                                
+                if (!bNum)
                 {
-                    if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.Crimson || buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(123, 156, 204))
+                    if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.Crimson || buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.FromArgb(123, 156, 204))
                     {
                         for (int i = 1; i < rowsCount; i++)
                         {
-                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
                         }
-                        buttons[0][Convert.ToInt32(numerOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
+                        buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
 
                     }
-                    else if (buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60) || buttons[0][Convert.ToInt32(numerOfColumn)].BackColor == Color.FromArgb(123,156,204))
+                    else if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60) || buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.FromArgb(123,156,204))
                     {
                         for (int i = 1; i < rowsCount; i++)
                         {
-                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.Gray;
+                            (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.Gray;
                         }
-                        buttons[0][Convert.ToInt32(numerOfColumn)].BackColor = Color.Crimson;
+                        buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.Crimson;
 
                     }
 
@@ -380,7 +426,7 @@ namespace CinemaManager.Pages
                             buttons[d][0].BackColor = Color.FromArgb(255, 220, 19, 60);
                         }
                         else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60) ||
-                                 buttons[d][0].BackColor == Color.FromArgb(123, 156, 204))
+                                 buttons[d][0].BackColor == Color.FromArgb(123, 156, 205))
                         {
                             if (buttons[d][0].Name == nb.Name)
                             {
@@ -460,6 +506,7 @@ namespace CinemaManager.Pages
                     {
                         for (int x = 0; x < buttons[0].Count; x++)
                         {
+                            
                             buttons[y][x].Enabled = true;
                             buttons[y][x].Click += btn_Click;
 
