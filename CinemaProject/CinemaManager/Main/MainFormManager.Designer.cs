@@ -135,6 +135,7 @@
             this.ShiftsAndPositionsButton.TabIndex = 3;
             this.ShiftsAndPositionsButton.Text = "Stanowiska i dyżury";
             this.ShiftsAndPositionsButton.UseVisualStyleBackColor = true;
+            this.ShiftsAndPositionsButton.Click += new System.EventHandler(this.ShiftsAndPositionsButton_Click);
             // 
             // EmployeesButton
             // 

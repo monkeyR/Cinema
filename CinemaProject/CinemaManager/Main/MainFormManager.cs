@@ -51,5 +51,10 @@ namespace CinemaManager.Main
         {
             selectPage(new ShowManagementForm());
         }
+
+        private void ShiftsAndPositionsButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new ShiftsForm());
+        }
     }
 }

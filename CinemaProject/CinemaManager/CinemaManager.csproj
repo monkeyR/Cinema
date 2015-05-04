@@ -79,6 +79,12 @@
     <Compile Include="Pages\MoviesManagementForm.Designer.cs">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShiftsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ShiftsForm.Designer.cs">
+      <DependentUpon>ShiftsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ShowManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="SubPages\AddNewMovieForm.Designer.cs">
       <DependentUpon>AddNewMovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddShiftForm.Designer.cs">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubPages\AddShowForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +147,12 @@
     <Compile Include="SubPages\RemoveShowForm.Designer.cs">
       <DependentUpon>RemoveShowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\ShiftUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubPages\ShiftUserControl.Designer.cs">
+      <DependentUpon>ShiftUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\AvaibleMoviesLoader.cs" />
     <Compile Include="Utils\ShowModel.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
@@ -148,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MoviesManagementForm.resx">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ShiftsForm.resx">
+      <DependentUpon>ShiftsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ShowManagementForm.resx">
       <DependentUpon>ShowManagementForm.cs</DependentUpon>
@@ -171,6 +192,9 @@
     <EmbeddedResource Include="SubPages\AddNewMovieForm.resx">
       <DependentUpon>AddNewMovieForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddShiftForm.resx">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubPages\AddShowForm.resx">
       <DependentUpon>AddShowForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\RemoveShowForm.resx">
       <DependentUpon>RemoveShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\ShiftUserControl.resx">
+      <DependentUpon>ShiftUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
