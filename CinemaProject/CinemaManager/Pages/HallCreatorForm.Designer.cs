@@ -39,9 +39,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AddColumnButton = new System.Windows.Forms.Button();
             this.AddRowButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SubColumnButton = new System.Windows.Forms.Button();
             this.SubtractRowButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NumberOfHallLabel = new System.Windows.Forms.Label();
             this.NumberOfColumnsLabel = new System.Windows.Forms.Label();
@@ -154,6 +154,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "Zatwierdź zmiany";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -165,10 +166,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.AddColumnButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.AddRowButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.SubColumnButton, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.SubtractRowButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -213,6 +214,19 @@
             this.AddRowButton.UseVisualStyleBackColor = true;
             this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 34);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Wiersze";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SubColumnButton
             // 
             this.SubColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -227,6 +241,7 @@
             this.SubColumnButton.Size = new System.Drawing.Size(49, 34);
             this.SubColumnButton.TabIndex = 3;
             this.SubColumnButton.UseVisualStyleBackColor = true;
+            this.SubColumnButton.Click += new System.EventHandler(this.SubColumnButton_Click);
             // 
             // SubtractRowButton
             // 
@@ -245,26 +260,13 @@
             this.SubtractRowButton.UseVisualStyleBackColor = true;
             this.SubtractRowButton.Click += new System.EventHandler(this.SubtractRowButton_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 34);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Wiersze";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 0);
+            this.label2.Location = new System.Drawing.Point(52, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 34);
             this.label2.TabIndex = 5;

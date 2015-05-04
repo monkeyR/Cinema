@@ -30,6 +30,7 @@ namespace CinemaManager.Pages
         private int numberOfHall=0;
         private string temporaryMatrix;
        private string matrix;
+        private int hallId;
 
         private void FIllComboBox()
         {
@@ -60,31 +61,51 @@ namespace CinemaManager.Pages
         }
 
 
-     
-      private void HallEditSaveToDatabase(int hallID, string matrix)
+        private bool checkIfEquals(CinemaModel.Halls editedHall, string matr)
+        {
+            if (editedHall.matrix == matr)
+               return true;
+            return false;
+        }
+
+
+        private void HallEditSaveToDatabase(int hallID, string hallMatrix)
         {
             // zapis zmian w sali do bazy danych
+            // zapis nowej sali do bazy danych
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                CinemaModel.Halls editHall = new CinemaModel.Halls();
+
+                //editHall.matrix = hallMatrix;
+                editHall.hallID = hallID;
+               
+               
+                if (!checkIfEquals(editHall, hallMatrix))
+                {
+                    if (hallMatrix!="")
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+
+                        editHall.matrix = hallMatrix;
+                        ctx.Entry(hallMatrix).State = System.Data.Entity.EntityState.Modified;
+                        ctx.SaveChanges();
+
+                        MessageBox.Show("Zmiana została wykonana", "Informacja", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        Cursor.Current = Cursors.Default;
+
+                        this.Close();
+                    }
+
+                    else
+                        MessageBox.Show("Błąd podczas zapisu do bazy", "Informacja", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                }
 
 
-        }
-
-        private string HallReadFromDatabase(int hallID)
-        {
-            // wyciągnięcie informacji o sali z bazy danych
-
-            return "";
-        }
-    
-       
-
-        private void AddColumn(int column)
-        {
-            
-        }
-
-        private void AddRow(int row)
-        {
-            
+            }
         }
 
         private void AddHall_Click(object sender, EventArgs e)
@@ -106,14 +127,13 @@ namespace CinemaManager.Pages
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-  private void HallMenageButton_Click(object sender, EventArgs e)
+        private void HallMenageButton_Click(object sender, EventArgs e)
         {
             HallMenagePanel.Show();
             HallMenagePanel.Refresh();
         }
 
-
-      private void Matrix()
+        private void Matrix()
       {
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                 {
@@ -125,7 +145,8 @@ namespace CinemaManager.Pages
                     hallName = halls.t.title;
                     numberOfHall = halls.t.number;
                     matrix = halls.t.matrix;
-      }}
+                    hallId = halls.t.hallID;
+                }}
             
         private void displayHallButton_Click(object sender, EventArgs e)
         {
@@ -154,8 +175,7 @@ namespace CinemaManager.Pages
            
 
         }
-
-
+        
         private void ChangeNumerationInTable(int rows, int columns)
         {
             for (int i = 1; i < rows; i++)
@@ -548,6 +568,64 @@ namespace CinemaManager.Pages
 
         private void AddRowButton_Click(object sender, EventArgs e)
         {
+            // dodawanie wierszy
+            string newMatrix = "";
+            int countOfCharInMatrix = 0;
+
+            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+
+            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) + 1).ToString() + "," + (tableOfButtonsAfterChange[1]);
+            int g = 2;
+
+            for (int u = 2; u < tableOfButtonsAfterChange.Length; u++)
+            {
+                newMatrix += "," + tableOfButtonsAfterChange[u];
+            }
+
+            for (int y = 1; y < buttons[0].Count - 1; y++)
+            {
+
+                newMatrix += ",1";
+
+            }
+
+            temporaryMatrix = newMatrix;
+            GenerateTable(newMatrix);
+            
+            }
+
+        private void HallCreateTableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+           }
+
+        private void SubtractRowButton_Click(object sender, EventArgs e)
+        {
+
+            // usuwanie wierszy
+            string newMatrix = "";
+            int countOfCharInMatrix = 0;
+
+            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+
+            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) - 1).ToString() + "," + (tableOfButtonsAfterChange[1]);
+            int g = 2;
+
+            for (int i = 1; i < buttons.Count - 1; i++)
+            {
+                for (int y = 1; y < buttons[0].Count - 1; y++)
+                {
+                    newMatrix += "," + tableOfButtonsAfterChange[g];
+                    g++;
+                }
+            }
+
+            temporaryMatrix = newMatrix;
+            GenerateTable(newMatrix);
+
+        }
+
+        private void AddColumnButton_Click(object sender, EventArgs e)
+        {
             // dodawanie kolumn
             string newMatrix = "";
             int countOfCharInMatrix = 0;
@@ -565,7 +643,7 @@ namespace CinemaManager.Pages
                         newMatrix += "," + tableOfButtonsAfterChange[g];
                         g++;
                     }
-                    else 
+                    else
                     {
                         newMatrix += ",1";
                     }
@@ -573,13 +651,10 @@ namespace CinemaManager.Pages
             }
             temporaryMatrix = newMatrix;
             GenerateTable(newMatrix);
+        
         }
 
-        private void HallCreateTableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
-        {
-           }
-
-        private void SubtractRowButton_Click(object sender, EventArgs e)
+        private void SubColumnButton_Click(object sender, EventArgs e)
         {
 
             // odejmowanie kolumn
@@ -587,48 +662,26 @@ namespace CinemaManager.Pages
             int countOfCharInMatrix = 0;
             string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
 
-            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) -1);
+            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) - 1);
             int g = 2;
 
             for (int i = 1; i < buttons.Count; i++)
             {
-                for (int y = 1; y < buttons[0].Count-1; y++)
+                for (int y = 1; y < buttons[0].Count - 1; y++)
                 {
                     if (y != buttons[0].Count - 2)
-                    { newMatrix += "," + tableOfButtonsAfterChange[g];}
+                    { newMatrix += "," + tableOfButtonsAfterChange[g]; }
                     g++;
 
                 }
             }
-           temporaryMatrix = newMatrix;
-           GenerateTable(newMatrix);
+            temporaryMatrix = newMatrix;
+            GenerateTable(newMatrix);
         }
 
-        private void AddColumnButton_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            // dodawanie wierszy
-            string newMatrix = "";
-            int countOfCharInMatrix = 0;
-            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
-
-            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) + 1 )+ "," + (tableOfButtonsAfterChange[1]);
-            int g = 2;
-
-            for (int u = 2; u < matrix.Length; u++)
-            {
-                newMatrix += matrix[u];
-            }
-           
-                for (int y = 1; y < buttons[0].Count-1; y++)
-                {
-                    
-                        newMatrix += ",1";
-                    
-                }
-            
-            temporaryMatrix = newMatrix;
-            MessageBox.Show(newMatrix);
-            //GenerateTable(newMatrix);
+            HallEditSaveToDatabase(hallId,temporaryMatrix);
         }
         
     }
