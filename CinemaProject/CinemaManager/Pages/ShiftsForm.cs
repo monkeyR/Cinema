@@ -18,11 +18,16 @@ namespace CinemaManager.Pages
 
             fillWeeks();
 
-            using(CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities()){
+            //DO WYJEBANIA
+            //**************************************************************
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
                 var emp = ctx.Employees.First(x => x.employeeID.Equals(1));
-                shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(false, emp));
+                shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(false, emp, shiftsFlowLayoutPanel));
             }
-            
+            //DO WYJEBANIA
+            //**************************************************************
+
         }
 
         private void fillWeeks()
@@ -32,8 +37,12 @@ namespace CinemaManager.Pages
 
             for (int i = 0; i < 10; i++)
             {
-                this.weeksComboBox.Items.Add(string.Format("{0} - {1}", monday.AddDays(i * 7).ToString("dd.MM.yy"), sunday.AddDays(i * 7).ToString("dd.MM.yy")));
+                ComboboxItem item = new ComboboxItem();
+                item.Text = string.Format("{0} - {1}", monday.AddDays(i * 7).ToString("dd.MM.yy"), sunday.AddDays(i * 7).ToString("dd.MM.yy"));
+                item.Value = monday.AddDays(i * 7);
+                this.weeksComboBox.Items.Add(item);
             }
+            weeksComboBox.SelectedIndex = 0;
         }
 
 
@@ -50,8 +59,19 @@ namespace CinemaManager.Pages
 
         private void addEmployeeButton_Click(object sender, EventArgs e)
         {
-            SubPages.AddShiftForm form = new SubPages.AddShiftForm();
+            SubPages.AddShiftForm form = new SubPages.AddShiftForm(((ComboboxItem)weeksComboBox.SelectedItem).Value);
             form.ShowDialog();
+        }
+
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public DateTime Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
         }
     }
 }

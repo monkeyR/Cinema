@@ -12,14 +12,18 @@ namespace CinemaManager.SubPages
 {
     public partial class ShiftUserControl : UserControl
     {
+        private FlowLayoutPanel parentPanel;
+
         public ShiftUserControl()
         {
             InitializeComponent();
         }
 
-        public ShiftUserControl(bool activated, CinemaModel.Employees emp)
+        public ShiftUserControl(bool activated, CinemaModel.Employees emp, FlowLayoutPanel parentPanel)
         {
             InitializeComponent();
+
+            this.parentPanel = parentPanel;
 
             if (!activated)
             {
@@ -44,7 +48,7 @@ namespace CinemaManager.SubPages
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("guziol");
+            parentPanel.Controls.Remove(this);
         }
 
         public void ChangeLabel(CinemaModel.Employees emp)
