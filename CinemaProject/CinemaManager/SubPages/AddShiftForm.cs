@@ -15,7 +15,7 @@ namespace CinemaManager.SubPages
         CheckBox[,] daysCheckboxes = new CheckBox[7, 2];
         DateTime mondayOfWeek;
         public AddShiftForm(DateTime mondayOfWeek)
-        {            
+        {
             this.mondayOfWeek = mondayOfWeek;
 
             InitializeComponent();
@@ -101,12 +101,27 @@ namespace CinemaManager.SubPages
                 shift.employeeID = ((ComboboxItem)employeesComboBox.SelectedItem).Value;
                 shift.workpositionID = ((ComboboxItem)workpositionComboBox.SelectedItem).Value;
 
+                string types = string.Empty;
                 for (int i = 0; i < 7; i++)
                 {
-                    
+                    if (daysCheckboxes[i, 0].Checked)
+                        types += "M";
+                    else
+                        if (daysCheckboxes[i, 1].Checked)
+                            types += "A";
+                        else
+                            types += "0";
                 }
 
+                shift.typeShift = types;
+                shift.shiftWeek = mondayOfWeek;
+
+                ctx.Shifts.Add(shift);
+                ctx.Entry(shift).State = System.Data.Entity.EntityState.Added;
+
+                ctx.SaveChanges();
             }
+            this.Close();
         }
 
         private void CheckBoxes_CheckedChanged(object sender, EventArgs e)
@@ -127,7 +142,7 @@ namespace CinemaManager.SubPages
                         daysCheckboxes[i, 0].Checked = false;
                         break;
                     }
-                }                
+                }
             }
         }
 
