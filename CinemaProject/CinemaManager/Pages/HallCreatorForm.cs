@@ -7,7 +7,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaModel;
@@ -41,21 +43,24 @@ namespace CinemaManager.Pages
 
                 var halls = (from t in ctx.Halls
                              where t.isEnable==1
-                             select t);
+                             select t );
                 foreach (var hall in halls)
                 {
                     Common.UISynchronizer.synchronizeWithUI(hallNameComboBox, x => hallNameComboBox.Items.Add(x), hall.title);
                 }
+                hallNameComboBox.Sorted = true;
+                hallNameComboBox.SelectedIndex = 0;
             }
+
             
-            
-        
-            
+
+
         }
         public HallCreatorForm()
         {
             InitializeComponent();
-           
+            HallCreatePanel.Refresh();
+            
             ScreenLabel.Hide();
             HallEditPanel.Hide();
             FIllComboBox();
@@ -152,9 +157,7 @@ namespace CinemaManager.Pages
             NumberOfHallLabel.Text = "Sala: " + numberOfHall.ToString() + " - \"" + hallName + "\"";
             tableOfButtons = matrix.Split(',');
 
-            NumberOfRowsLabel.Text = "Rzędy " + (Convert.ToInt32(tableOfButtons[0]) - 1);
-            NumberOfColumnsLabel.Text = "Kolumny: " + (Convert.ToInt32(tableOfButtons[1]) - 2);
-            PlaceCount.Text = "Razem miejsc: " + (Convert.ToInt32(tableOfButtons[0]) - 1) * (Convert.ToInt32(tableOfButtons[1]) - 2);
+           
             DisplayInfoAboutHall(matrix);
             GenerateTable(matrix); 
 
@@ -171,53 +174,47 @@ namespace CinemaManager.Pages
             int availableRowCount = 0;
             int availableColumnCount = 0;
 
-            int u = (Convert.ToInt32(table[0]) - 1);
-            int o = (Convert.ToInt32(table[1])) - 2;
+            int ifOne = 2;
+            int u = (Convert.ToInt32(table[0]) );
+            int o = (Convert.ToInt32(table[1])-1) ;
             // zliczenie realnie dostępnych wierszy 
+
+
             for (var y = 1; y < u; y++)
             {
-                for (var x = 1; x <o ; x++)
+                for (var x = 1; x < o; x++)
                 {
-                    if (buttons[y][x].BackColor != Color.Gray)
+                    if (Convert.ToInt32(table[ifOne]) == 1)
                     {
                         availableRow++;
                         place++;
                     }
-                    else { }
+                    ifOne++;
                 }
+            
 
-                if (availableRow != 0) 
+            if (availableRow != 0) 
                 {
                     availableRowCount++;
                 }
                 availableRow = 0;
 
-            }
+           }
 
+            ifOne = 2;
+            int d = 2;
             // zliczenie realnie dostępnych kolumn
-            for (int y = 1; y < (Convert.ToInt32(table[1]))-1; y++)
-            {
-                for (int x = 1; x < (Convert.ToInt32(table[0])); x++)
-                {
-                    if (buttons[x][y].BackColor == Color.Gray)
-                    {
-                        availableColumn++;
-                    }
-                }
+        
+            //MessageBox.Show("Kolumny: " + availableColumnCount.ToString() + " \n wiersze: " +
+                //            availableRowCount.ToString() + " \nmiejsca:" + place.ToString());
 
-                if (availableColumn != 0)
-                {
-                    availableColumnCount++;
-                }
-                availableColumn = 0;
+            activePlace = place;
+            NumberOfRowsLabel.Text = "Rzędy " + availableRowCount.ToString();
+            NumberOfColumnsLabel.Text = "Kolumny: ";
+            PlaceCount.Text = "Razem miejsc: " + activePlace;
 
-            }
-
-            MessageBox.Show("Kolumny: " + availableColumnCount.ToString() + " \n wiersze: " +
-                            availableRowCount.ToString() + " \nmiejsca:" + place.ToString());
-
-
-          //  return infoAboutHall;
+            
+             
         }
         
         private void ChangeNumerationInTable(int rows, int columns)
@@ -557,6 +554,8 @@ namespace CinemaManager.Pages
                     MessageBox.Show("Podczas usuwania wystąpił błąd");
                 }
             }
+            hallNameComboBox.Items.Clear();
+            FIllComboBox();
         }
 
         private void CheckButtonEnable()
@@ -595,31 +594,44 @@ namespace CinemaManager.Pages
         private void AddRowButton_Click(object sender, EventArgs e)
         {
             // dodawanie wierszy
-        
+
+
             string newMatrix = "";
             int countOfCharInMatrix = 0;
 
             string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
 
-            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) + 1).ToString() + "," + (tableOfButtonsAfterChange[1]);
-            int g = 2;
+            int rows = 0;
+            int.TryParse(tableOfButtonsAfterChange[0], out rows);
 
-            for (int u = 2; u < tableOfButtonsAfterChange.Length; u++)
+            if (rows > 26)
             {
-                newMatrix += "," + tableOfButtonsAfterChange[u];
+                MessageBox.Show("Maksymalna ilość rzedów to 25.", "Zbyt duża liczba rzędów",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-
-            for (int y = 1; y < buttons[0].Count - 1; y++)
+            else
             {
+                newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) + 1).ToString() + "," +
+                             (tableOfButtonsAfterChange[1]);
+                int g = 2;
 
-                newMatrix += ",1";
+                for (int u = 2; u < tableOfButtonsAfterChange.Length; u++)
+                {
+                    newMatrix += "," + tableOfButtonsAfterChange[u];
+                }
 
+                for (int y = 1; y < buttons[0].Count - 1; y++)
+                {
+
+                    newMatrix += ",1";
+
+                }
+
+                temporaryMatrix = newMatrix;
+                GenerateTable(newMatrix);
             }
-
-            temporaryMatrix = newMatrix;
-            GenerateTable(newMatrix);
-            
-            }
+        }
 
         private void HallCreateTableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
         {
@@ -629,27 +641,32 @@ namespace CinemaManager.Pages
         {
 
             // usuwanie wierszy
-
-            string newMatrix = "";
-            int countOfCharInMatrix = 0;
-
             string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
 
-            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) - 1).ToString() + "," + (tableOfButtonsAfterChange[1]);
-            int g = 2;
-
-            for (int i = 1; i < buttons.Count - 1; i++)
+          
+            if ((Convert.ToInt32(tableOfButtonsAfterChange[0])) <= 2) MessageBox.Show("Nie można skasować wszystkich rzędów");
+            else
             {
-                for (int y = 1; y < buttons[0].Count - 1; y++)
+                string newMatrix = "";
+                int countOfCharInMatrix = 0;
+
+               
+                newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) - 1).ToString() + "," +
+                             (tableOfButtonsAfterChange[1]);
+                int g = 2;
+
+                for (int i = 1; i < buttons.Count - 1; i++)
                 {
-                    newMatrix += "," + tableOfButtonsAfterChange[g];
-                    g++;
+                    for (int y = 1; y < buttons[0].Count - 1; y++)
+                    {
+                        newMatrix += "," + tableOfButtonsAfterChange[g];
+                        g++;
+                    }
                 }
+
+                temporaryMatrix = newMatrix;
+                GenerateTable(newMatrix);
             }
-
-            temporaryMatrix = newMatrix;
-            GenerateTable(newMatrix);
-
         }
 
         private void AddColumnButton_Click(object sender, EventArgs e)
@@ -658,53 +675,72 @@ namespace CinemaManager.Pages
             string newMatrix = "";
             int countOfCharInMatrix = 0;
             string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+            int columns = 0;
+      
+            int.TryParse(tableOfButtonsAfterChange[1], out columns);
 
-            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) + 1);
-            int g = 2;
-
-            for (int i = 1; i < buttons.Count; i++)
+            if (columns > 37)
             {
-                for (int y = 1; y < buttons[0].Count; y++)
+                MessageBox.Show("Maksymalna ilosć kolumn to 35.", "Zbyt duża liczba kolumn",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) + 1);
+                int g = 2;
+
+                for (int i = 1; i < buttons.Count; i++)
                 {
-                    if (y != buttons[0].Count - 1)
+                    for (int y = 1; y < buttons[0].Count; y++)
                     {
-                        newMatrix += "," + tableOfButtonsAfterChange[g];
-                        g++;
-                    }
-                    else
-                    {
-                        newMatrix += ",1";
+                        if (y != buttons[0].Count - 1)
+                        {
+                            newMatrix += "," + tableOfButtonsAfterChange[g];
+                            g++;
+                        }
+                        else
+                        {
+                            newMatrix += ",1";
+                        }
                     }
                 }
+                temporaryMatrix = newMatrix;
+                GenerateTable(newMatrix);
+
             }
-            temporaryMatrix = newMatrix;
-            GenerateTable(newMatrix);
-        
         }
 
         private void SubColumnButton_Click(object sender, EventArgs e)
         {
 
+
             // odejmowanie kolumn
             string newMatrix = "";
             int countOfCharInMatrix = 0;
             string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
-
-            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) - 1);
-            int g = 2;
-
-            for (int i = 1; i < buttons.Count; i++)
+            if ((Convert.ToInt32(tableOfButtonsAfterChange[1])) <= 3)
+                MessageBox.Show("Nie można skasować wszystkich kolumn");
+            else
             {
-                for (int y = 1; y < buttons[0].Count - 1; y++)
-                {
-                    if (y != buttons[0].Count - 2)
-                    { newMatrix += "," + tableOfButtonsAfterChange[g]; }
-                    g++;
+                newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) - 1);
+                int g = 2;
 
+                for (int i = 1; i < buttons.Count; i++)
+                {
+                    for (int y = 1; y < buttons[0].Count - 1; y++)
+                    {
+                        if (y != buttons[0].Count - 2)
+                        {
+                            newMatrix += "," + tableOfButtonsAfterChange[g];
+                        }
+                        g++;
+
+                    }
                 }
+                temporaryMatrix = newMatrix;
+                GenerateTable(newMatrix);
             }
-            temporaryMatrix = newMatrix;
-            GenerateTable(newMatrix);
         }
 
         private void button5_Click(object sender, EventArgs e)

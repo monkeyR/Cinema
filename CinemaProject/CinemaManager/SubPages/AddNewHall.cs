@@ -253,7 +253,7 @@ namespace CinemaManager.SubPages
         {
             for (int i = 1; i < rows; i++)
             {
-                if (buttons[i][0].BackColor != Color.FromArgb(123, 156, 204) || buttons[i][columns - 1].BackColor != Color.FromArgb(123, 156, 204))
+                if (buttons[i][0].BackColor != Color.FromArgb(123, 156, 205) || buttons[i][columns - 1].BackColor != Color.FromArgb(123, 156, 205))
                     if (nameOfButtonRowList.Count != 0)
                     {
                         buttons[i][0].Text = nameOfButtonRowList.First();
@@ -265,7 +265,7 @@ namespace CinemaManager.SubPages
 
             for (int i = 1; i < columns - 1; i++)
             {
-                if (buttons[0][i].BackColor != Color.FromArgb(123, 156, 204))
+                if (buttons[0][i].BackColor != Color.FromArgb(123, 156, 205))
                     if (nameOfButtonColumnList.Count != 0)
                     {
                         buttons[0][i].Text = nameOfButtonColumnList.First();
@@ -273,6 +273,10 @@ namespace CinemaManager.SubPages
                     }
 
             }
+
+            nameOfButtonRowList.Clear();
+            nameOfButtonColumnList.Clear();
+            
         }
 
 
@@ -308,14 +312,14 @@ namespace CinemaManager.SubPages
                         {
                             // "wyłączenie" z widoku skrajnie lewej kolumny 
                             (buttons[i][a]).Name = buttons[i - 1][a].Name.ToString();
-                            (buttons[i][a]).BackColor = Color.FromArgb(123,156,204);
+                            (buttons[i][a]).BackColor = Color.FromArgb(123,156,205);
                             (buttons[i][a]).Text = string.Format(" ");
-                            (buttons[i][a]).ForeColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][a]).ForeColor = Color.FromArgb(123, 156, 205);
                           
                             // "wyłączenie" z widoku skrajnie prawej kolumny
-                            (buttons[i][columnCount - 1]).BackColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][columnCount - 1]).BackColor = Color.FromArgb(123, 156, 205);
                             (buttons[i][columnCount - 1]).Text = string.Format(" ");
-                            (buttons[i][columnCount - 1]).ForeColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][columnCount - 1]).ForeColor = Color.FromArgb(123, 156, 205);
                            
 
 
@@ -326,9 +330,9 @@ namespace CinemaManager.SubPages
                         else
                         {
                             (buttons[i][a]).Name = buttons[i][a - 1].Name.ToString();
-                            (buttons[i][a]).BackColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][a]).BackColor = Color.FromArgb(123, 156, 205);
                             (buttons[i][a]).Text = string.Format(" ");
-                            (buttons[i][a]).ForeColor = Color.FromArgb(123, 156, 204);
+                            (buttons[i][a]).ForeColor = Color.FromArgb(123, 156, 205);
 
 
 
@@ -518,6 +522,7 @@ namespace CinemaManager.SubPages
 
         private void HallCreateAddHallButton_Click_1(object sender, EventArgs e)
         {
+           
             string hallString = "";
             HallCreateTableGenerateFinishedTable();
 
