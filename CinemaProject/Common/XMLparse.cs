@@ -84,8 +84,8 @@ namespace Common
                     Button cmd = new Button
                     {
                         Text = string.Format(" "),
-                        Width = 27,
-                        Height = 27,
+                        Width = 30,
+                        Height = 30,
                         Margin = new System.Windows.Forms.Padding(0, 0, 0, 0),
                         Padding = new Padding(0, 0, 0, 0),
                         TextAlign = ContentAlignment.MiddleCenter,
@@ -158,7 +158,7 @@ namespace Common
                             else if (matrixChar[nextButtonInMatrix] == 0.ToString())
                             {
                                 cmd.BackColor = Color.FromArgb(123, 156, 204);
-                                cmd.Hide();
+                               
                             }
                             nextButtonInMatrix++;
                         }

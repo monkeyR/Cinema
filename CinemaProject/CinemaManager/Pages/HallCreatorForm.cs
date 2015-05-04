@@ -29,8 +29,9 @@ namespace CinemaManager.Pages
         private string hallName = "";
         private int numberOfHall=0;
         private string temporaryMatrix;
-       private string matrix;
+        private string matrix;
         private int hallId;
+        private int activePlace = 0;
 
         private void FIllComboBox()
         {
@@ -60,28 +61,32 @@ namespace CinemaManager.Pages
             FIllComboBox();
         }
 
-        private bool checkIfEquals(CinemaModel.Halls editedHall, string matr)
-        {
-            if (editedHall.matrix == matr)
-               return true;
-            return false;
-        }
-
-        CinemaModel.Halls hall;
-
         private void HallEditSaveToDatabase(int hallID, string hallMatrix)
         {
             // zapis zmian w sali do bazy danych
-            CinemaModel.Halls hall1;
-            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+
+            try
+            {
+                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                {
+
+                    var halls = (from t in ctx.Halls
+
+                        where t.hallID == hallID
+                        select new {t}).Single();
+                    halls.t.matrix = hallMatrix;
+                    ctx.SaveChanges();
+                }
+
+                MessageBox.Show("Zmiana została wykonana", "Informacja", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
             {
 
-                var halls = (from t in ctx.Halls
+                MessageBox.Show("Błąd podczas zapisu do bazy", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
-                             where t.hallID == hallID
-                             select new { t }).Single();
-                halls.t.matrix = hallMatrix;
-                ctx.SaveChanges();
             }
 
 
@@ -126,14 +131,15 @@ namespace CinemaManager.Pages
                     matrix = halls.t.matrix;
                     hallId = halls.t.hallID;
                 }}
-            
+
         private void displayHallButton_Click(object sender, EventArgs e)
         {
             HallCreateTableLayoutPanel.Controls.Clear();
             HallCreateTableLayoutPanel.ColumnStyles.Clear();
             HallCreateTableLayoutPanel.RowStyles.Clear();
+            HallEditPanel.Show();
 
-          
+
 
 
             if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
@@ -142,17 +148,76 @@ namespace CinemaManager.Pages
                 Matrix();
                 temporaryMatrix = matrix;
             }
-                HallNameLabel.Text = "Nazwa sali: " + hallName;
-                NumberOfHallLabel.Text = "Numer sali: " + numberOfHall.ToString();
-                tableOfButtons = matrix.Split(',');
-            
-                NumberOfRowsLabel.Text = "Rzędy " + (Convert.ToInt32(tableOfButtons[0])-1);;
-                NumberOfColumnsLabel.Text = "Kolumny: " + (Convert.ToInt32(tableOfButtons[1])-2);
-                
-                GenerateTable(matrix);
-            
-           
 
+            NumberOfHallLabel.Text = "Sala: " + numberOfHall.ToString() + " - \"" + hallName + "\"";
+            tableOfButtons = matrix.Split(',');
+
+            NumberOfRowsLabel.Text = "Rzędy " + (Convert.ToInt32(tableOfButtons[0]) - 1);
+            NumberOfColumnsLabel.Text = "Kolumny: " + (Convert.ToInt32(tableOfButtons[1]) - 2);
+            PlaceCount.Text = "Razem miejsc: " + (Convert.ToInt32(tableOfButtons[0]) - 1) * (Convert.ToInt32(tableOfButtons[1]) - 2);
+            DisplayInfoAboutHall(matrix);
+            GenerateTable(matrix); 
+
+        }
+
+        private void DisplayInfoAboutHall(string matrix)
+        {
+            char[] infoAboutHall = new char[3];
+            string[] table = matrix.Split(',');
+
+            int place = 0;
+            int availableRow = 0;
+            int availableColumn = 0;
+            int availableRowCount = 0;
+            int availableColumnCount = 0;
+
+            int u = (Convert.ToInt32(table[0]) - 1);
+            int o = (Convert.ToInt32(table[1])) - 2;
+            // zliczenie realnie dostępnych wierszy 
+            for (var y = 1; y < u; y++)
+            {
+                for (var x = 1; x <o ; x++)
+                {
+                    if (buttons[y][x].BackColor != Color.Gray)
+                    {
+                        availableRow++;
+                        place++;
+                    }
+                    else { }
+                }
+
+                if (availableRow != 0) 
+                {
+                    availableRowCount++;
+                }
+                availableRow = 0;
+
+            }
+
+            // zliczenie realnie dostępnych kolumn
+            for (int y = 1; y < (Convert.ToInt32(table[1]))-1; y++)
+            {
+                for (int x = 1; x < (Convert.ToInt32(table[0])); x++)
+                {
+                    if (buttons[x][y].BackColor == Color.Gray)
+                    {
+                        availableColumn++;
+                    }
+                }
+
+                if (availableColumn != 0)
+                {
+                    availableColumnCount++;
+                }
+                availableColumn = 0;
+
+            }
+
+            MessageBox.Show("Kolumny: " + availableColumnCount.ToString() + " \n wiersze: " +
+                            availableRowCount.ToString() + " \nmiejsca:" + place.ToString());
+
+
+          //  return infoAboutHall;
         }
         
         private void ChangeNumerationInTable(int rows, int columns)
@@ -183,7 +248,7 @@ namespace CinemaManager.Pages
 
         private void DisplayScreenLabel(int columnCount)
         {
-            ScreenLabel.Size = new Size(columnCount * 27, 35);
+            ScreenLabel.Size = new Size(columnCount * 30, 35);
             ScreenLabel.AutoSize = false;
             ScreenLabel.TextAlign = ContentAlignment.TopCenter;
             ScreenLabel.BackColor = Color.FromArgb(123, 156, 204);
@@ -230,7 +295,8 @@ namespace CinemaManager.Pages
                 for (int x = 0; x < columnCount; x++)
                 {
                     HallCreateTableLayoutPanel.Controls.Add(buttons[y][x], x, y);
-                    buttons[y][x].Enabled = false;
+                    buttons[y][x].Enabled = true;
+                    buttons[y][x].Click += btn_Click;
                     if (buttons[y][x].BackColor == Color.Gray) enableButtonInRowsCount++;
                 }
 
@@ -311,9 +377,9 @@ namespace CinemaManager.Pages
         protected void btn_Click(object sender, EventArgs e)
         {
 
-            Button nb = (Button)sender;
-            
-           
+            Button nb = (Button) sender;
+
+
 
             //sprawdza numer kolumny zaznaczonej komórki
             string numberOfColumn = new String(nb.Name.ToCharArray().Where(c => Char.IsDigit(c)).ToArray());
@@ -321,7 +387,7 @@ namespace CinemaManager.Pages
 
             // liczba wierszy i kolumn w macierzy 
             int rowsCount = buttons.Count;
-            int columnCount =  buttons[0].Count;
+            int columnCount = buttons[0].Count;
 
             string[] nameOfButton = new string[2];
 
@@ -330,12 +396,12 @@ namespace CinemaManager.Pages
 
             /* w nameOfButton[0] przechowywany jest nr kolumny 
                w nameOfButton[1] przechowywany jest nr rzędu*/
-            if (nb.Name.Length==3)
+            if (nb.Name.Length == 3)
             {
                 nameOfButton[0] = nb.Name[0].ToString() + nb.Name[1].ToString();
                 nameOfButton[1] = nb.Name[2].ToString();
             }
-            else if(nb.Name.Length==2)
+            else if (nb.Name.Length == 2)
             {
                 nameOfButton[0] = nb.Name[1].ToString();
                 nameOfButton[1] = nb.Name[0].ToString();
@@ -356,14 +422,14 @@ namespace CinemaManager.Pages
             }
 
 
-           
 
-            if (!bNum && nameOfButton[1]!=" " && nb.Name.Length!=1)
+
+            if (!bNum && nameOfButton[1] != " " && nb.Name.Length != 1)
             {
                 // kliknięcie w pojedyńczą komórkę, która nie jest rzędem lub kolumną 
-                if (nb.BackColor == Color.FromArgb(123, 156, 204) )
+                if (nb.BackColor == Color.FromArgb(123, 156, 204))
                 {
-                   nb.BackColor = Color.Gray;
+                    nb.BackColor = Color.Gray;
                 }
                 else if (nb.BackColor == Color.Gray)
                 {
@@ -376,10 +442,10 @@ namespace CinemaManager.Pages
 
                 if (nb.BackColor == Color.FromArgb(123, 156, 204))
                     nb.BackColor = Color.FromArgb(255, 220, 19, 60);
-            
-               for (int d = 1; d < rowsCount; d++)
+
+                for (int d = 1; d < rowsCount; d++)
                 {
-                    if (buttons[d][0].BackColor == Color.Crimson   && buttons[d][0].Name == nb.Name)
+                    if (buttons[d][0].BackColor == Color.Crimson && buttons[d][0].Name == nb.Name)
                     {
                         for (int i = 1; i < columnCount - 1; i++)
                         {
@@ -388,7 +454,7 @@ namespace CinemaManager.Pages
                         buttons[d][0].BackColor = Color.FromArgb(255, 220, 19, 60);
                         buttons[d][columnCount - 1].BackColor = Color.FromArgb(255, 220, 19, 60);
                     }
-                    else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60)  && buttons[d][0].Name == nb.Name)
+                    else if (buttons[d][0].BackColor == Color.FromArgb(255, 220, 19, 60) && buttons[d][0].Name == nb.Name)
                     {
 
                         for (int i = 1; i < columnCount - 1; i++)
@@ -398,7 +464,7 @@ namespace CinemaManager.Pages
                         buttons[d][0].BackColor = Color.Crimson;
                         buttons[d][columnCount - 1].BackColor = Color.Crimson;
                     }
-                    else  if (buttons[d][columnCount-1].BackColor == Color.Crimson && buttons[d][0].Name == nb.Name)
+                    else if (buttons[d][columnCount - 1].BackColor == Color.Crimson && buttons[d][0].Name == nb.Name)
                     {
                         for (int i = 1; i < columnCount - 1; i++)
                         {
@@ -407,7 +473,8 @@ namespace CinemaManager.Pages
                         buttons[d][0].BackColor = Color.FromArgb(255, 220, 19, 60);
                         buttons[d][columnCount - 1].BackColor = Color.FromArgb(255, 220, 19, 60);
                     }
-                    else if (buttons[d][columnCount - 1].BackColor == Color.FromArgb(255, 220, 19, 60) && buttons[d][0].Name == nb.Name)
+                    else if (buttons[d][columnCount - 1].BackColor == Color.FromArgb(255, 220, 19, 60) &&
+                             buttons[d][0].Name == nb.Name)
                     {
                         for (int i = 1; i < columnCount - 1; i++)
                         {
@@ -417,37 +484,40 @@ namespace CinemaManager.Pages
                         buttons[d][columnCount - 1].BackColor = Color.Crimson;
                     }
                 }
-                
+
             }
             else
             {
 
                 // kliknięcie w numer kolumny
-                if(nb.BackColor == Color.FromArgb(123, 156, 204))
+                if (nb.BackColor == Color.FromArgb(123, 156, 204))
                     nb.BackColor = Color.FromArgb(255, 220, 19, 60);
-               
-               
-                    if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.Crimson )
+
+
+                if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.Crimson)
+                {
+                    for (int i = 1; i < rowsCount; i++)
                     {
-                        for (int i = 1; i < rowsCount; i++)
-                        {
-                            (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
-                        }
-                        buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
-
+                        (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
                     }
-                    else if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60) )
+                    buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
+
+                }
+                else if (buttons[0][Convert.ToInt32(numberOfColumn)].BackColor == Color.FromArgb(255, 220, 19, 60))
+                {
+                    for (int i = 1; i < rowsCount; i++)
                     {
-                        for (int i = 1; i < rowsCount; i++)
-                        {
-                            (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.Gray;
-                        }
-                        buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.Crimson;
-
+                        (buttons[i][Convert.ToInt32(numberOfColumn)]).BackColor = Color.Gray;
                     }
+                    buttons[0][Convert.ToInt32(numberOfColumn)].BackColor = Color.Crimson;
 
-                
+                }
+
+
             }
+            Common.XMLparse stringParse = new XMLparse();
+            temporaryMatrix = stringParse.ParseToString(buttons);
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -489,65 +559,43 @@ namespace CinemaManager.Pages
             }
         }
 
-        private void HallEditButton_Click(object sender, EventArgs e )
+        private void CheckButtonEnable()
         {
+
             for (int y = 0; y < buttons.Count; y++)
             {
                 for (int x = 0; x < buttons[0].Count; x++)
                 {
                     if (buttons[y][x].Name != "0" && buttons[y][x].Name != buttons[0].Count.ToString())
                     {
-                       if(y==0 && x==0)
-                       {}
-                       else
-                       if (y == 0 && x == buttons[0].Count-1)
-                       { }
-                       else
-                       {
-                           buttons[y][x].Enabled = true;
-                             buttons[y][x].Show();
-                       }
-                    }
-                }
-            }
-            //HallCreateTableLayoutPanel.Controls.Clear();
-            //HallCreateTableLayoutPanel.ColumnStyles.Clear();
-            //HallCreateTableLayoutPanel.RowStyles.Clear();
-
-            string hallName = "";
-            int n = 0;
-            int row = 0;
-            int col = 0;
-
-            if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
-            else
-            {
-                if (buttons.Count != 0)
-                {
-                    HallEditPanel.Show();
-
-
-                    for (int y = 0; y < buttons.Count; y++)
-                    {
-                        for (int x = 0; x < buttons[0].Count; x++)
+                        if (y == 0 && x == 0)
                         {
-                            
-                            buttons[y][x].Enabled = true;
-                            buttons[y][x].Click += btn_Click;
-
                         }
-
+                        else if (y == 0 && x == buttons[0].Count - 1)
+                        {
+                        }
+                        else
+                        {
+                            buttons[y][x].Enabled = true;
+                            buttons[y][x].Show();
+                        }
                     }
                 }
-                else MessageBox.Show("Aby edytować salę, najpierw ją wyświetl!");
-
-
             }
+        }
+
+       
+        private void HallEditButton_Click(object sender, EventArgs e )
+        {
+
+            HallEditSaveToDatabase(hallId, temporaryMatrix);
+                           
         }
 
         private void AddRowButton_Click(object sender, EventArgs e)
         {
             // dodawanie wierszy
+        
             string newMatrix = "";
             int countOfCharInMatrix = 0;
 
@@ -581,6 +629,7 @@ namespace CinemaManager.Pages
         {
 
             // usuwanie wierszy
+
             string newMatrix = "";
             int countOfCharInMatrix = 0;
 
@@ -660,7 +709,8 @@ namespace CinemaManager.Pages
 
         private void button5_Click(object sender, EventArgs e)
         {
-            HallEditSaveToDatabase(hallId,temporaryMatrix);
+            
+           
         }
         
     }

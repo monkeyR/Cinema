@@ -64,8 +64,8 @@ namespace CinemaManager.SubPages
                     Button cmd = new Button
                     {
                         Text = string.Format(" "),
-                        Width = 27,
-                        Height = 27,
+                        Width = 30,
+                        Height = 30,
                         Margin = new System.Windows.Forms.Padding(0, 0, 0, 0),
                         Padding = new Padding(0, 0, 0, 0),
                         TextAlign = ContentAlignment.MiddleCenter,
@@ -167,14 +167,15 @@ namespace CinemaManager.SubPages
             {
 
                 // kliknięcie w pojedyńczą komórkę
-                if (nb.BackColor == Color.LavenderBlush)
+                if (nb.BackColor == Color.FromArgb(123, 156, 204)) 
+                
                 {
                     nb.BackColor = Color.Gray;
 
                 }
                 else
                 {
-                    nb.BackColor = Color.LavenderBlush;
+                    nb.BackColor = Color.FromArgb(123, 156, 204);
                 }
             }
             else
@@ -189,7 +190,7 @@ namespace CinemaManager.SubPages
                     {
                         for (int i = 1; i < rowsCount; i++)
                         {
-                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.LavenderBlush;
+                            (buttons[i][Convert.ToInt32(numerOfColumn)]).BackColor = Color.FromArgb(123, 156, 204);
                         }
                         buttons[0][Convert.ToInt32(numerOfColumn)].BackColor = Color.FromArgb(255, 220, 19, 60);
 
@@ -213,7 +214,7 @@ namespace CinemaManager.SubPages
                         {
                             for (int i = 1; i < columnCount - 1; i++)
                             {
-                                (buttons[d][i]).BackColor = Color.LavenderBlush;
+                                (buttons[d][i]).BackColor = Color.FromArgb(123, 156, 204);
                             }
                             buttons[d][0].BackColor = Color.FromArgb(255, 220, 19, 60);
                         }
@@ -346,7 +347,7 @@ namespace CinemaManager.SubPages
                     buttons[i][a].Enabled = false;
 
 
-                    if (buttons[i][a].BackColor == Color.LavenderBlush)
+                    if (buttons[i][a].BackColor == Color.FromArgb(123, 156, 204))
                     {
 
                         buttons[i][a].Hide();
