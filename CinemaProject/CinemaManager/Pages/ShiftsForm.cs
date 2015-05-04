@@ -18,16 +18,26 @@ namespace CinemaManager.Pages
 
             fillWeeks();
 
-            //DO WYJEBANIA
-            //**************************************************************
+            Cursor.Current = Cursors.WaitCursor;
+            fillShifts();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void fillShifts()
+        {
+            shiftsFlowLayoutPanel.Controls.Clear();
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-                var emp = ctx.Employees.First(x => x.employeeID.Equals(1));
-                shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(false, emp, shiftsFlowLayoutPanel));
+                var shifts = ctx.Shifts;
+                var actualWeek = ((ComboboxItem)weeksComboBox.SelectedItem).Value;
+                foreach (var shift in shifts)
+                {
+                    if (shift.shiftWeek.Equals(actualWeek))
+                    {
+                        shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, shiftsFlowLayoutPanel));
+                    }
+                }
             }
-            //DO WYJEBANIA
-            //**************************************************************
-
         }
 
         private void fillWeeks()
@@ -61,6 +71,9 @@ namespace CinemaManager.Pages
         {
             SubPages.AddShiftForm form = new SubPages.AddShiftForm(((ComboboxItem)weeksComboBox.SelectedItem).Value);
             form.ShowDialog();
+            Cursor.Current = Cursors.WaitCursor;
+            fillShifts();
+            Cursor.Current = Cursors.Default;
         }
 
         public class ComboboxItem
@@ -72,6 +85,13 @@ namespace CinemaManager.Pages
             {
                 return Text;
             }
+        }
+
+        private void weeksComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            fillShifts();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

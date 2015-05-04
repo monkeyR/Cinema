@@ -80,12 +80,12 @@
             // moMCheckBox
             // 
             this.moMCheckBox.AutoSize = true;
+            this.moMCheckBox.Enabled = false;
             this.moMCheckBox.Location = new System.Drawing.Point(71, 65);
             this.moMCheckBox.Name = "moMCheckBox";
             this.moMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.moMCheckBox.TabIndex = 2;
             this.moMCheckBox.UseVisualStyleBackColor = true;
-            this.moMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label1
             // 
@@ -117,12 +117,12 @@
             // moACheckBox
             // 
             this.moACheckBox.AutoSize = true;
+            this.moACheckBox.Enabled = false;
             this.moACheckBox.Location = new System.Drawing.Point(71, 85);
             this.moACheckBox.Name = "moACheckBox";
             this.moACheckBox.Size = new System.Drawing.Size(15, 14);
             this.moACheckBox.TabIndex = 6;
             this.moACheckBox.UseVisualStyleBackColor = true;
-            this.moACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label4
             // 
@@ -136,42 +136,42 @@
             // tuACheckBox
             // 
             this.tuACheckBox.AutoSize = true;
+            this.tuACheckBox.Enabled = false;
             this.tuACheckBox.Location = new System.Drawing.Point(95, 85);
             this.tuACheckBox.Name = "tuACheckBox";
             this.tuACheckBox.Size = new System.Drawing.Size(15, 14);
             this.tuACheckBox.TabIndex = 9;
             this.tuACheckBox.UseVisualStyleBackColor = true;
-            this.tuACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // tuMCheckBox
             // 
             this.tuMCheckBox.AutoSize = true;
+            this.tuMCheckBox.Enabled = false;
             this.tuMCheckBox.Location = new System.Drawing.Point(95, 65);
             this.tuMCheckBox.Name = "tuMCheckBox";
             this.tuMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.tuMCheckBox.TabIndex = 8;
             this.tuMCheckBox.UseVisualStyleBackColor = true;
-            this.tuMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // thACheckBox
             // 
             this.thACheckBox.AutoSize = true;
+            this.thACheckBox.Enabled = false;
             this.thACheckBox.Location = new System.Drawing.Point(141, 85);
             this.thACheckBox.Name = "thACheckBox";
             this.thACheckBox.Size = new System.Drawing.Size(15, 14);
             this.thACheckBox.TabIndex = 15;
             this.thACheckBox.UseVisualStyleBackColor = true;
-            this.thACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // thMCheckBox
             // 
             this.thMCheckBox.AutoSize = true;
+            this.thMCheckBox.Enabled = false;
             this.thMCheckBox.Location = new System.Drawing.Point(141, 65);
             this.thMCheckBox.Name = "thMCheckBox";
             this.thMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.thMCheckBox.TabIndex = 14;
             this.thMCheckBox.UseVisualStyleBackColor = true;
-            this.thMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label5
             // 
@@ -185,12 +185,12 @@
             // weACheckBox
             // 
             this.weACheckBox.AutoSize = true;
+            this.weACheckBox.Enabled = false;
             this.weACheckBox.Location = new System.Drawing.Point(117, 85);
             this.weACheckBox.Name = "weACheckBox";
             this.weACheckBox.Size = new System.Drawing.Size(15, 14);
             this.weACheckBox.TabIndex = 12;
             this.weACheckBox.UseVisualStyleBackColor = true;
-            this.weACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label6
             // 
@@ -204,32 +204,32 @@
             // weMCheckBox
             // 
             this.weMCheckBox.AutoSize = true;
+            this.weMCheckBox.Enabled = false;
             this.weMCheckBox.Location = new System.Drawing.Point(117, 65);
             this.weMCheckBox.Name = "weMCheckBox";
             this.weMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.weMCheckBox.TabIndex = 10;
             this.weMCheckBox.UseVisualStyleBackColor = true;
-            this.weMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // saACheckBox
             // 
             this.saACheckBox.AutoSize = true;
+            this.saACheckBox.Enabled = false;
             this.saACheckBox.Location = new System.Drawing.Point(186, 85);
             this.saACheckBox.Name = "saACheckBox";
             this.saACheckBox.Size = new System.Drawing.Size(15, 14);
             this.saACheckBox.TabIndex = 21;
             this.saACheckBox.UseVisualStyleBackColor = true;
-            this.saACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // saMCheckBox
             // 
             this.saMCheckBox.AutoSize = true;
+            this.saMCheckBox.Enabled = false;
             this.saMCheckBox.Location = new System.Drawing.Point(186, 65);
             this.saMCheckBox.Name = "saMCheckBox";
             this.saMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.saMCheckBox.TabIndex = 20;
             this.saMCheckBox.UseVisualStyleBackColor = true;
-            this.saMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label7
             // 
@@ -243,12 +243,12 @@
             // frACheckBox
             // 
             this.frACheckBox.AutoSize = true;
+            this.frACheckBox.Enabled = false;
             this.frACheckBox.Location = new System.Drawing.Point(162, 85);
             this.frACheckBox.Name = "frACheckBox";
             this.frACheckBox.Size = new System.Drawing.Size(15, 14);
             this.frACheckBox.TabIndex = 18;
             this.frACheckBox.UseVisualStyleBackColor = true;
-            this.frACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label8
             // 
@@ -262,22 +262,22 @@
             // frMCheckBox
             // 
             this.frMCheckBox.AutoSize = true;
+            this.frMCheckBox.Enabled = false;
             this.frMCheckBox.Location = new System.Drawing.Point(162, 65);
             this.frMCheckBox.Name = "frMCheckBox";
             this.frMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.frMCheckBox.TabIndex = 16;
             this.frMCheckBox.UseVisualStyleBackColor = true;
-            this.frMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // suACheckBox
             // 
             this.suACheckBox.AutoSize = true;
+            this.suACheckBox.Enabled = false;
             this.suACheckBox.Location = new System.Drawing.Point(208, 85);
             this.suACheckBox.Name = "suACheckBox";
             this.suACheckBox.Size = new System.Drawing.Size(15, 14);
             this.suACheckBox.TabIndex = 24;
             this.suACheckBox.UseVisualStyleBackColor = true;
-            this.suACheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // label10
             // 
@@ -291,12 +291,12 @@
             // suMCheckBox
             // 
             this.suMCheckBox.AutoSize = true;
+            this.suMCheckBox.Enabled = false;
             this.suMCheckBox.Location = new System.Drawing.Point(208, 65);
             this.suMCheckBox.Name = "suMCheckBox";
             this.suMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.suMCheckBox.TabIndex = 22;
             this.suMCheckBox.UseVisualStyleBackColor = true;
-            this.suMCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxes_CheckedChanged);
             // 
             // ShiftUserControl
             // 

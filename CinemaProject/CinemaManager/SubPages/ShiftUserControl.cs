@@ -13,119 +13,80 @@ namespace CinemaManager.SubPages
     public partial class ShiftUserControl : UserControl
     {
         private FlowLayoutPanel parentPanel;
+        CheckBox[,] daysCheckboxes = new CheckBox[7, 2];
+        CinemaModel.Shifts shift;
 
         public ShiftUserControl()
         {
             InitializeComponent();
         }
 
-        public ShiftUserControl(bool activated, CinemaModel.Employees emp, FlowLayoutPanel parentPanel)
+        public ShiftUserControl( CinemaModel.Shifts shift, FlowLayoutPanel parentPanel)
         {
+            this.shift = shift;
+
             InitializeComponent();
 
+            fillDaysArray();
+
             this.parentPanel = parentPanel;
-
-            if (!activated)
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-                moACheckBox.Enabled = false;
-                moMCheckBox.Enabled = false;
-                tuACheckBox.Enabled = false;
-                tuMCheckBox.Enabled = false;
-                weACheckBox.Enabled = false;
-                weMCheckBox.Enabled = false;
-                thACheckBox.Enabled = false;
-                thMCheckBox.Enabled = false;
-                frACheckBox.Enabled = false;
-                frMCheckBox.Enabled = false;
-                saACheckBox.Enabled = false;
-                saMCheckBox.Enabled = false;
-                suACheckBox.Enabled = false;
-                suMCheckBox.Enabled = false;
-            }
+                CinemaModel.Employees emp = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
 
-            employeeName.Text = emp.name + " " + emp.surname;
+                for (int i = 0; i < 7; i++)
+                {
+                    if (shift.typeShift.ElementAt(i).ToString() == "M")
+                    {                        
+                        daysCheckboxes[i, 0].Checked = true;
+                    }
+                    else if (shift.typeShift.ElementAt(i).ToString() == "A")
+                    {
+                        daysCheckboxes[i, 1].Checked = true;
+                    }
+                }
+                employeeName.Text = emp.name + " " + emp.surname;
+            }
+        }
+
+        private void fillDaysArray()
+        {
+            daysCheckboxes[0, 0] = moMCheckBox;
+            daysCheckboxes[0, 1] = moACheckBox;
+
+            daysCheckboxes[1, 0] = tuMCheckBox;
+            daysCheckboxes[1, 1] = tuACheckBox;
+
+            daysCheckboxes[2, 0] = weMCheckBox;
+            daysCheckboxes[2, 1] = weACheckBox;
+
+            daysCheckboxes[3, 0] = thMCheckBox;
+            daysCheckboxes[3, 1] = thACheckBox;
+
+            daysCheckboxes[4, 0] = frMCheckBox;
+            daysCheckboxes[4, 1] = frACheckBox;
+
+            daysCheckboxes[5, 0] = saMCheckBox;
+            daysCheckboxes[5, 1] = saACheckBox;
+
+            daysCheckboxes[6, 0] = suMCheckBox;
+            daysCheckboxes[6, 1] = suACheckBox;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                ctx.Entry(shift).State = System.Data.Entity.EntityState.Deleted;
+                ctx.SaveChanges();
+            }
+
             parentPanel.Controls.Remove(this);
         }
 
         public void ChangeLabel(CinemaModel.Employees emp)
         {
             employeeName.Text = emp.name + " " + emp.surname;
-        }
-
-        private void CheckBoxes_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox checkBox = (CheckBox)sender;
-
-            if(checkBox.Checked){
-                if (checkBox.Equals(moMCheckBox))
-                {
-                    moACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(moACheckBox))
-                {
-                    moMCheckBox.Checked = false;
-                }
-
-                if (checkBox.Equals(tuMCheckBox))
-                {
-                    tuACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(tuACheckBox))
-                {
-                    tuMCheckBox.Checked = false;
-                }
-
-                if (checkBox.Equals(weMCheckBox))
-                {
-                    weACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(weACheckBox))
-                {
-                    weMCheckBox.Checked = false;
-                }
-
-                if (checkBox.Equals(thMCheckBox))
-                {
-                    thACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(thACheckBox))
-                {
-                    thMCheckBox.Checked = false;
-                }
-
-
-                if (checkBox.Equals(frMCheckBox))
-                {
-                    frACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(frACheckBox))
-                {
-                    frMCheckBox.Checked = false;
-                }
-
-
-                if (checkBox.Equals(saMCheckBox))
-                {
-                    saACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(saACheckBox))
-                {
-                    saMCheckBox.Checked = false;
-                }
-
-                if (checkBox.Equals(suMCheckBox))
-                {
-                    suACheckBox.Checked = false;
-                }
-                if (checkBox.Equals(suACheckBox))
-                {
-                    suMCheckBox.Checked = false;
-                }
-            }
         }
     }
 }

@@ -51,6 +51,7 @@
             this.weeksComboBox.Name = "weeksComboBox";
             this.weeksComboBox.Size = new System.Drawing.Size(121, 21);
             this.weeksComboBox.TabIndex = 5;
+            this.weeksComboBox.SelectedIndexChanged += new System.EventHandler(this.weeksComboBox_SelectedIndexChanged);
             // 
             // shiftsFlowLayoutPanel
             // 
