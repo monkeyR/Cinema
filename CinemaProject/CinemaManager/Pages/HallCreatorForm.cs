@@ -60,7 +60,6 @@ namespace CinemaManager.Pages
             FIllComboBox();
         }
 
-
         private bool checkIfEquals(CinemaModel.Halls editedHall, string matr)
         {
             if (editedHall.matrix == matr)
@@ -68,44 +67,24 @@ namespace CinemaManager.Pages
             return false;
         }
 
+        CinemaModel.Halls hall;
 
         private void HallEditSaveToDatabase(int hallID, string hallMatrix)
         {
             // zapis zmian w sali do bazy danych
-            // zapis nowej sali do bazy danych
+            CinemaModel.Halls hall1;
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-                CinemaModel.Halls editHall = new CinemaModel.Halls();
 
-                //editHall.matrix = hallMatrix;
-                editHall.hallID = hallID;
-               
-               
-                if (!checkIfEquals(editHall, hallMatrix))
-                {
-                    if (hallMatrix!="")
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
+                var halls = (from t in ctx.Halls
 
-                        editHall.matrix = hallMatrix;
-                        ctx.Entry(hallMatrix).State = System.Data.Entity.EntityState.Modified;
-                        ctx.SaveChanges();
-
-                        MessageBox.Show("Zmiana została wykonana", "Informacja", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-                        Cursor.Current = Cursors.Default;
-
-                        this.Close();
-                    }
-
-                    else
-                        MessageBox.Show("Błąd podczas zapisu do bazy", "Informacja", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                }
-
-
+                             where t.hallID == hallID
+                             select new { t }).Single();
+                halls.t.matrix = hallMatrix;
+                ctx.SaveChanges();
             }
+
+
         }
 
         private void AddHall_Click(object sender, EventArgs e)
