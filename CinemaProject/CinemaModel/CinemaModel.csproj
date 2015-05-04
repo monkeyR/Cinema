@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4DA6A160-1E15-491A-91E7-52A534930742}</ProjectGuid>
+    <ProjectGuid>{7AF9D942-AD40-4078-A57C-0B58F9004EE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CinemaModel</RootNamespace>

@@ -54,6 +54,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.moMCheckBox = new System.Windows.Forms.CheckBox();
             this.employeesComboBox = new System.Windows.Forms.ComboBox();
+            this.workpositionComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -300,16 +301,25 @@
             // employeesComboBox
             // 
             this.employeesComboBox.FormattingEnabled = true;
-            this.employeesComboBox.Location = new System.Drawing.Point(99, 10);
+            this.employeesComboBox.Location = new System.Drawing.Point(34, 10);
             this.employeesComboBox.Name = "employeesComboBox";
             this.employeesComboBox.Size = new System.Drawing.Size(121, 21);
             this.employeesComboBox.TabIndex = 48;
+            // 
+            // workpositionComboBox
+            // 
+            this.workpositionComboBox.FormattingEnabled = true;
+            this.workpositionComboBox.Location = new System.Drawing.Point(166, 10);
+            this.workpositionComboBox.Name = "workpositionComboBox";
+            this.workpositionComboBox.Size = new System.Drawing.Size(85, 21);
+            this.workpositionComboBox.TabIndex = 49;
             // 
             // AddShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 131);
+            this.Controls.Add(this.workpositionComboBox);
             this.Controls.Add(this.employeesComboBox);
             this.Controls.Add(this.suACheckBox);
             this.Controls.Add(this.label10);
@@ -372,5 +382,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox moMCheckBox;
         private System.Windows.Forms.ComboBox employeesComboBox;
+        private System.Windows.Forms.ComboBox workpositionComboBox;
     }
 }

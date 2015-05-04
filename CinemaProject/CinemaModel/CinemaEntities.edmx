@@ -88,8 +88,8 @@
           <Property Name="shiftID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="workpositionID" Type="int" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
-          <Property Name="dateShift" Type="date" Nullable="false" />
-          <Property Name="typeShift" Type="int" Nullable="false" />
+          <Property Name="shiftWeek" Type="datetime" Nullable="false" />
+          <Property Name="typeShift" Type="varchar" MaxLength="7" />
         </EntityType>
         <EntityType Name="Shows">
           <Key>
@@ -98,8 +98,8 @@
           <Property Name="showID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="movieID" Type="int" Nullable="false" />
           <Property Name="hallID" Type="int" Nullable="false" />
-          <Property Name="dateStart" Type="date" Nullable="false" />
-          <Property Name="dateEnd" Type="date" Nullable="false" />
+          <Property Name="dateStart" Type="smalldatetime" Nullable="false" />
+          <Property Name="dateEnd" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -407,8 +407,8 @@
           <Property Name="shiftID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="workpositionID" Type="Int32" Nullable="false" />
           <Property Name="employeeID" Type="Int32" Nullable="false" />
-          <Property Name="dateShift" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="typeShift" Type="Int32" Nullable="false" />
+          <Property Name="shiftWeek" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="typeShift" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Shifts__employee__2A4B4B5E" FromRole="Shifts" ToRole="Employees" />
           <NavigationProperty Name="Workpositions" Relationship="Self.FK__Shifts__typeShif__29572725" FromRole="Shifts" ToRole="Workpositions" />
         </EntityType>
@@ -724,7 +724,7 @@
                 <ScalarProperty Name="shiftID" ColumnName="shiftID" />
                 <ScalarProperty Name="workpositionID" ColumnName="workpositionID" />
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
-                <ScalarProperty Name="dateShift" ColumnName="dateShift" />
+                <ScalarProperty Name="shiftWeek" ColumnName="shiftWeek" />
                 <ScalarProperty Name="typeShift" ColumnName="typeShift" />
               </MappingFragment>
             </EntityTypeMapping>

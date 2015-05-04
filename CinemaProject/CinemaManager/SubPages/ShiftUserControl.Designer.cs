@@ -59,7 +59,7 @@
             // 
             this.employeeName.AutoSize = true;
             this.employeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.employeeName.Location = new System.Drawing.Point(54, 17);
+            this.employeeName.Location = new System.Drawing.Point(54, 13);
             this.employeeName.Name = "employeeName";
             this.employeeName.Size = new System.Drawing.Size(130, 20);
             this.employeeName.TabIndex = 0;
