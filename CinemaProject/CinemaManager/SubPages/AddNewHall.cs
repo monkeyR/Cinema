@@ -36,12 +36,7 @@ namespace CinemaManager.SubPages
             buttons.Clear();
 
             // wyświetlenie napisu EKRAN na środku wygenerowanej sali
-            ScreenLabel.Size = new Size(columnCount * 27, 35);
-            ScreenLabel.AutoSize = false;
-            ScreenLabel.TextAlign = ContentAlignment.MiddleCenter;
-            ScreenLabel.BackColor = Color.FromArgb(123, 156, 204);
-            
-            ScreenLabel.Show();
+            DisplayScreenLabel(columnCount);
 
             // wyczyszczenie poprzednich wyświetleń sali
             HallCreateTableLayoutPanel.Controls.Clear();
@@ -439,6 +434,15 @@ namespace CinemaManager.SubPages
         {
 
         }
+        private void DisplayScreenLabel(int columnCount)
+        {
+            ScreenLabel.Size = new Size(columnCount * 30, 35);
+            ScreenLabel.AutoSize = false;
+            ScreenLabel.TextAlign = ContentAlignment.TopCenter;
+            ScreenLabel.BackColor = Color.FromArgb(123, 156, 204);
+
+            ScreenLabel.Show();
+        }
 
         private void CreateHallONButton_Click_2(object sender, EventArgs e)
         {
@@ -463,36 +467,49 @@ namespace CinemaManager.SubPages
             }
             else if (!String.IsNullOrEmpty(HallCreatorColumsNumberTextBox.Text) || !String.IsNullOrEmpty(HallCreatorRowsNumberTextBox.Text) || !String.IsNullOrEmpty(HallCreatorHallNameTextBox.Text))
             {
-                if (!int.TryParse(HallCreatorColumsNumberTextBox.Text, out columns) || !int.TryParse(HallCreatorRowsNumberTextBox.Text, out rows))
+                if (!int.TryParse(HallCreatorColumsNumberTextBox.Text, out columns) ||
+                    !int.TryParse(HallCreatorRowsNumberTextBox.Text, out rows))
                 {
                     MessageBox.Show(new MessageStrings().NoNumberValue);
                     return;
                 }
                 else
                 {
-                    bool IfHallNameExist = false;
-                    hallName = HallCreatorHallNameTextBox.Text;
-                    using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                    // sprawdzenie czy nie przekroczono maksymalnej liczby kolumn i wierszy 
+                    // maksyymalnie 25 wierszy i 35 kolumn
+                    int.TryParse(HallCreatorColumsNumberTextBox.Text, out columns);
+                    int.TryParse(HallCreatorRowsNumberTextBox.Text, out rows);
+                    if (columns>36 || rows>25)
                     {
-
-                        var halls = (from t in ctx.Halls
-                                     where t.title.Equals(hallName)
-                                     select t);
-                        IfHallNameExist = (halls.Count() > 0);
-                    }
-
-                    if (IfHallNameExist)
-                    {
-                        MessageBox.Show("Sala kinowa o takiej nazwie juz istnieje.");
+                        MessageBox.Show("Maksymalnie możesz dodać 35 kolumn i 25 rzędów.", "Zbyt duża liczba kolumn lub rzędów", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
                     }
                     else
                     {
-                        HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
-                        RowsLabel.Text = "Liczba wierszy: " + HallCreatorRowsNumberTextBox.Text;
-                        ColumnsLabel.Text = "Liczba kolumn: " + HallCreatorColumsNumberTextBox.Text;
-                        ScreenLabel.Show();
-                        GenerateTable(columns + 2, rows + 1);
+                        bool IfHallNameExist = false;
+                        hallName = HallCreatorHallNameTextBox.Text;
+                        using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                        {
 
+                            var halls = (from t in ctx.Halls
+                                where t.title.Equals(hallName)
+                                select t);
+                            IfHallNameExist = (halls.Count() > 0);
+                        }
+
+                        if (IfHallNameExist)
+                        {
+                            MessageBox.Show("Sala kinowa o takiej nazwie juz istnieje.");
+                        }
+                        else
+                        {
+                            HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
+                            RowsLabel.Text = "Rzędy: " + HallCreatorRowsNumberTextBox.Text;
+                            ColumnsLabel.Text = "Kolumny: " + HallCreatorColumsNumberTextBox.Text;
+                            DisplayScreenLabel(Convert.ToInt32(HallCreatorColumsNumberTextBox.Text));
+                            GenerateTable(columns + 2, rows + 1);
+
+                        }
                     }
                 }
             }

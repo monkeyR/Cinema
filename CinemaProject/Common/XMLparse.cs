@@ -158,7 +158,6 @@ namespace Common
                             else if (matrixChar[nextButtonInMatrix] == 0.ToString())
                             {
                                 cmd.BackColor = Color.FromArgb(123, 156, 204);
-                               
                             }
                             nextButtonInMatrix++;
                         }
