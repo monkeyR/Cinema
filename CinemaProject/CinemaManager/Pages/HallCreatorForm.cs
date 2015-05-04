@@ -26,8 +26,10 @@ namespace CinemaManager.Pages
         private List<String> nameOfButtonColumnList = new List<string>();
         private List<String> nameOfButtonRowList = new List<string>();
         private string[] tableOfButtons;
-       
-
+        private string hallName = "";
+        private int numberOfHall=0;
+        private string temporaryMatrix;
+       private string matrix;
 
         private void FIllComboBox()
         {
@@ -111,22 +113,9 @@ namespace CinemaManager.Pages
         }
 
 
-
-        private void displayHallButton_Click(object sender, EventArgs e)
-        {
-            HallCreateTableLayoutPanel.Controls.Clear();
-            HallCreateTableLayoutPanel.ColumnStyles.Clear();
-            HallCreateTableLayoutPanel.RowStyles.Clear();
-
-            string hallName = "";
-            int numberOfHall=0;
-
-            string matrix;
-
-            if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
-            else
-            {
-                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+      private void Matrix()
+      {
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                 {
                     var halls = (from t in ctx.Halls
                                  where t.title == hallNameComboBox.Text
@@ -136,8 +125,23 @@ namespace CinemaManager.Pages
                     hallName = halls.t.title;
                     numberOfHall = halls.t.number;
                     matrix = halls.t.matrix;
-                   
-                }
+      }}
+            
+        private void displayHallButton_Click(object sender, EventArgs e)
+        {
+            HallCreateTableLayoutPanel.Controls.Clear();
+            HallCreateTableLayoutPanel.ColumnStyles.Clear();
+            HallCreateTableLayoutPanel.RowStyles.Clear();
+
+          
+
+
+            if (hallNameComboBox.Text == "") MessageBox.Show("Nie wybrano sali.");
+            else
+            {
+                Matrix();
+                temporaryMatrix = matrix;
+            }
                 HallNameLabel.Text = "Nazwa sali: " + hallName;
                 NumberOfHallLabel.Text = "Numer sali: " + numberOfHall.ToString();
                 tableOfButtons = matrix.Split(',');
@@ -146,7 +150,7 @@ namespace CinemaManager.Pages
                 NumberOfColumnsLabel.Text = "Kolumny: " + (Convert.ToInt32(tableOfButtons[1])-2);
                 
                 GenerateTable(matrix);
-            }
+            
            
 
         }
@@ -200,6 +204,7 @@ namespace CinemaManager.Pages
 
         private void GenerateTable( string matrix)
         {
+            tableOfButtons = matrix.Split(',');
             int columnCount = Convert.ToInt32(tableOfButtons[1]);
             int rowCount = Convert.ToInt32(tableOfButtons[0]);
             int enableButtonInRowsCount = 0;
@@ -539,6 +544,91 @@ namespace CinemaManager.Pages
 
 
             }
+        }
+
+        private void AddRowButton_Click(object sender, EventArgs e)
+        {
+            // dodawanie kolumn
+            string newMatrix = "";
+            int countOfCharInMatrix = 0;
+            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+
+            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) + 1);
+            int g = 2;
+
+            for (int i = 1; i < buttons.Count; i++)
+            {
+                for (int y = 1; y < buttons[0].Count; y++)
+                {
+                    if (y != buttons[0].Count - 1)
+                    {
+                        newMatrix += "," + tableOfButtonsAfterChange[g];
+                        g++;
+                    }
+                    else 
+                    {
+                        newMatrix += ",1";
+                    }
+                }
+            }
+            temporaryMatrix = newMatrix;
+            GenerateTable(newMatrix);
+        }
+
+        private void HallCreateTableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+           }
+
+        private void SubtractRowButton_Click(object sender, EventArgs e)
+        {
+
+            // odejmowanie kolumn
+            string newMatrix = "";
+            int countOfCharInMatrix = 0;
+            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+
+            newMatrix += tableOfButtonsAfterChange[0] + "," + (Convert.ToInt32(tableOfButtonsAfterChange[1]) -1);
+            int g = 2;
+
+            for (int i = 1; i < buttons.Count; i++)
+            {
+                for (int y = 1; y < buttons[0].Count-1; y++)
+                {
+                    if (y != buttons[0].Count - 2)
+                    { newMatrix += "," + tableOfButtonsAfterChange[g];}
+                    g++;
+
+                }
+            }
+           temporaryMatrix = newMatrix;
+           GenerateTable(newMatrix);
+        }
+
+        private void AddColumnButton_Click(object sender, EventArgs e)
+        {
+            // dodawanie wierszy
+            string newMatrix = "";
+            int countOfCharInMatrix = 0;
+            string[] tableOfButtonsAfterChange = temporaryMatrix.Split(',');
+
+            newMatrix += (Convert.ToInt32(tableOfButtonsAfterChange[0]) + 1 )+ "," + (tableOfButtonsAfterChange[1]);
+            int g = 2;
+
+            for (int u = 2; u < matrix.Length; u++)
+            {
+                newMatrix += matrix[u];
+            }
+           
+                for (int y = 1; y < buttons[0].Count-1; y++)
+                {
+                    
+                        newMatrix += ",1";
+                    
+                }
+            
+            temporaryMatrix = newMatrix;
+            MessageBox.Show(newMatrix);
+            //GenerateTable(newMatrix);
         }
         
     }
