@@ -26,15 +26,28 @@ namespace CinemaManager.Pages
         private void fillShifts()
         {
             shiftsFlowLayoutPanel.Controls.Clear();
+
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-                var shifts = ctx.Shifts;
                 var actualWeek = ((ComboboxItem)weeksComboBox.SelectedItem).Value;
-                foreach (var shift in shifts)
+                var shifts = (
+                        from s in ctx.Shifts
+                        where s.shiftWeek == actualWeek
+                        select s
+                    );
+
+                if (shifts.Count() == 0)
                 {
-                    if (shift.shiftWeek.Equals(actualWeek))
+                    shiftsFlowLayoutPanel.Controls.Add(label1);
+                }
+                else
+                {
+                    foreach (var shift in shifts)
                     {
-                        shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, shiftsFlowLayoutPanel));
+                        if (shift.shiftWeek.Equals(actualWeek))
+                        {
+                            shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, shiftsFlowLayoutPanel));
+                        }
                     }
                 }
             }

@@ -72,10 +72,10 @@ namespace CinemaManager.SubPages
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 var employees = ctx.Employees;
-
+                var shifts = ctx.Shifts;
                 foreach (var employee in employees)
                 {
-                    if (!(bool)employee.isFired)
+                    if (!(bool)employee.isFired && shifts.FirstOrDefault(x => x.employeeID.Equals(employee.employeeID) && x.shiftWeek.Equals(mondayOfWeek)) == null)
                     {
                         ComboboxItem item = new ComboboxItem();
                         item.Text = string.Format("{0} {1}", employee.name, employee.surname);

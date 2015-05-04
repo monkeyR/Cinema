@@ -80,13 +80,21 @@ namespace CinemaManager.SubPages
                 ctx.Entry(shift).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();
             }
-
             parentPanel.Controls.Remove(this);
-        }
 
-        public void ChangeLabel(CinemaModel.Employees emp)
-        {
-            employeeName.Text = emp.name + " " + emp.surname;
+            if (parentPanel.Controls.Count == 0)
+            {
+                Label emptyControlLabel = new Label();
+                emptyControlLabel.AutoSize = true;
+                emptyControlLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+                emptyControlLabel.Location = new System.Drawing.Point(3, 0);
+                emptyControlLabel.Name = "emptyControlLabel";
+                emptyControlLabel.Size = new System.Drawing.Size(231, 20);
+                emptyControlLabel.TabIndex = 7;
+                emptyControlLabel.Text = "  Brak zmian w tym tygodniu";
+
+                parentPanel.Controls.Add(emptyControlLabel);
+            }
         }
     }
 }

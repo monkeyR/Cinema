@@ -31,6 +31,8 @@
             this.addEmployeeButton = new System.Windows.Forms.Button();
             this.weeksComboBox = new System.Windows.Forms.ComboBox();
             this.shiftsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.shiftsFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // addEmployeeButton
@@ -55,10 +57,22 @@
             // 
             // shiftsFlowLayoutPanel
             // 
+            this.shiftsFlowLayoutPanel.Controls.Add(this.label1);
+            this.shiftsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.shiftsFlowLayoutPanel.Location = new System.Drawing.Point(12, 75);
             this.shiftsFlowLayoutPanel.Name = "shiftsFlowLayoutPanel";
             this.shiftsFlowLayoutPanel.Size = new System.Drawing.Size(247, 370);
             this.shiftsFlowLayoutPanel.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "  Brak zmian w tym tygodniu";
             // 
             // ShiftsForm
             // 
@@ -72,6 +86,8 @@
             this.Name = "ShiftsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShiftsForm";
+            this.shiftsFlowLayoutPanel.ResumeLayout(false);
+            this.shiftsFlowLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -81,6 +97,7 @@
         private System.Windows.Forms.Button addEmployeeButton;
         private System.Windows.Forms.ComboBox weeksComboBox;
         private System.Windows.Forms.FlowLayoutPanel shiftsFlowLayoutPanel;
+        private System.Windows.Forms.Label label1;
 
     }
 }
