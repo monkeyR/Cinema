@@ -37,10 +37,10 @@
             // 
             // addEmployeeButton
             // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(138, 11);
-            this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addEmployeeButton.Location = new System.Drawing.Point(184, 14);
+            this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(121, 46);
+            this.addEmployeeButton.Size = new System.Drawing.Size(161, 57);
             this.addEmployeeButton.TabIndex = 4;
             this.addEmployeeButton.Text = "Dodaj pracownika";
             this.addEmployeeButton.UseVisualStyleBackColor = true;
@@ -49,40 +49,48 @@
             // weeksComboBox
             // 
             this.weeksComboBox.FormattingEnabled = true;
-            this.weeksComboBox.Location = new System.Drawing.Point(12, 25);
+            this.weeksComboBox.Location = new System.Drawing.Point(16, 31);
+            this.weeksComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.weeksComboBox.Name = "weeksComboBox";
-            this.weeksComboBox.Size = new System.Drawing.Size(121, 21);
+            this.weeksComboBox.Size = new System.Drawing.Size(160, 24);
             this.weeksComboBox.TabIndex = 5;
             this.weeksComboBox.SelectedIndexChanged += new System.EventHandler(this.weeksComboBox_SelectedIndexChanged);
             // 
             // shiftsFlowLayoutPanel
             // 
+            this.shiftsFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.shiftsFlowLayoutPanel.AutoScroll = true;
             this.shiftsFlowLayoutPanel.Controls.Add(this.label1);
-            this.shiftsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.shiftsFlowLayoutPanel.Location = new System.Drawing.Point(12, 75);
+            this.shiftsFlowLayoutPanel.Location = new System.Drawing.Point(16, 92);
+            this.shiftsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.shiftsFlowLayoutPanel.Name = "shiftsFlowLayoutPanel";
-            this.shiftsFlowLayoutPanel.Size = new System.Drawing.Size(247, 370);
+            this.shiftsFlowLayoutPanel.Size = new System.Drawing.Size(931, 383);
             this.shiftsFlowLayoutPanel.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 20);
+            this.label1.Size = new System.Drawing.Size(280, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "  Brak zmian w tym tygodniu";
             // 
             // ShiftsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 457);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(960, 562);
             this.Controls.Add(this.shiftsFlowLayoutPanel);
             this.Controls.Add(this.weeksComboBox);
             this.Controls.Add(this.addEmployeeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ShiftsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShiftsForm";
