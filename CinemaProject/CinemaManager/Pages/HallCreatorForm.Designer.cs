@@ -283,8 +283,7 @@
             this.NumberOfRowsLabel.Size = new System.Drawing.Size(56, 17);
             this.NumberOfRowsLabel.TabIndex = 1;
             this.NumberOfRowsLabel.Text = "Rzędy: ";
-            this.NumberOfRowsLabel.Click += new System.EventHandler(this.label5_Click);
-            // 
+           // 
             // HallEditButton
             // 
             this.HallEditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
@@ -367,7 +366,6 @@
             this.HallCreateTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(772, 366);
             this.HallCreateTableLayoutPanel.TabIndex = 14;
-            this.HallCreateTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.HallCreateTableLayoutPanel_Paint_1);
             // 
             // panel3
             // 
@@ -407,7 +405,6 @@
             this.Name = "HallCreatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HallCreatorForm";
-            this.Load += new System.EventHandler(this.HallCreatorForm_Load);
             this.panel1.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.HallMenagePanel.ResumeLayout(false);
