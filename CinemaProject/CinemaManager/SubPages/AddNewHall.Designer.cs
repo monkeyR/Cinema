@@ -35,27 +35,27 @@
             this.ScreenLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.HallInfo = new System.Windows.Forms.Panel();
-            this.ColumnsLabel = new System.Windows.Forms.Label();
-            this.HallCreatorHallNameTextBox = new System.Windows.Forms.TextBox();
-            this.RowsLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.HallNameLabel = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.CreateHallONButton = new System.Windows.Forms.Button();
-            this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.HallCreatorHallNameTextBox = new System.Windows.Forms.TextBox();
             this.HallCreatorRowsNumberTextBox = new System.Windows.Forms.TextBox();
-            this.HallCreateAddHallButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.HallCreatorColumsNumberTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PlaceCount = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.ColumnsLabel = new System.Windows.Forms.Label();
+            this.HallNameLabel = new System.Windows.Forms.Label();
+            this.RowsLabel = new System.Windows.Forms.Label();
+            this.HallCreateAddHallButton = new System.Windows.Forms.Button();
             this.HallAddNewPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.HallCreatePanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.HallInfo.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // HallAddNewPanel
@@ -143,52 +143,21 @@
             this.HallInfo.Size = new System.Drawing.Size(996, 107);
             this.HallInfo.TabIndex = 7;
             // 
-            // ColumnsLabel
+            // panel3
             // 
-            this.ColumnsLabel.AutoSize = true;
-            this.ColumnsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ColumnsLabel.Location = new System.Drawing.Point(127, 41);
-            this.ColumnsLabel.Name = "ColumnsLabel";
-            this.ColumnsLabel.Size = new System.Drawing.Size(70, 18);
-            this.ColumnsLabel.TabIndex = 2;
-            this.ColumnsLabel.Text = "Kolumny:";
-            // 
-            // HallCreatorHallNameTextBox
-            // 
-            this.HallCreatorHallNameTextBox.Location = new System.Drawing.Point(111, 1);
-            this.HallCreatorHallNameTextBox.Name = "HallCreatorHallNameTextBox";
-            this.HallCreatorHallNameTextBox.Size = new System.Drawing.Size(97, 22);
-            this.HallCreatorHallNameTextBox.TabIndex = 6;
-            this.HallCreatorHallNameTextBox.Text = "Siema";
-            // 
-            // RowsLabel
-            // 
-            this.RowsLabel.AutoSize = true;
-            this.RowsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RowsLabel.Location = new System.Drawing.Point(14, 41);
-            this.RowsLabel.Name = "RowsLabel";
-            this.RowsLabel.Size = new System.Drawing.Size(58, 18);
-            this.RowsLabel.TabIndex = 1;
-            this.RowsLabel.Text = "Rzędy: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nazwa sali:";
-            // 
-            // HallNameLabel
-            // 
-            this.HallNameLabel.AutoSize = true;
-            this.HallNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.HallNameLabel.Location = new System.Drawing.Point(14, 5);
-            this.HallNameLabel.Name = "HallNameLabel";
-            this.HallNameLabel.Size = new System.Drawing.Size(88, 18);
-            this.HallNameLabel.TabIndex = 0;
-            this.HallNameLabel.Text = "Nazwa sali: ";
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.CreateHallONButton);
+            this.panel3.Controls.Add(this.HallCreatorHallNameTextBox);
+            this.panel3.Controls.Add(this.HallCreatorRowsNumberTextBox);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.HallCreatorColumsNumberTextBox);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(281, 107);
+            this.panel3.TabIndex = 0;
             // 
             // CreateHallONButton
             // 
@@ -204,22 +173,29 @@
             this.CreateHallONButton.UseVisualStyleBackColor = false;
             this.CreateHallONButton.Click += new System.EventHandler(this.CreateHallONButton_Click_2);
             // 
-            // HallCreatorColumsNumberTextBox
+            // HallCreatorHallNameTextBox
             // 
-            this.HallCreatorColumsNumberTextBox.Location = new System.Drawing.Point(111, 41);
-            this.HallCreatorColumsNumberTextBox.Name = "HallCreatorColumsNumberTextBox";
-            this.HallCreatorColumsNumberTextBox.Size = new System.Drawing.Size(97, 22);
-            this.HallCreatorColumsNumberTextBox.TabIndex = 4;
-            this.HallCreatorColumsNumberTextBox.Text = "16";
+            this.HallCreatorHallNameTextBox.Location = new System.Drawing.Point(111, 1);
+            this.HallCreatorHallNameTextBox.Name = "HallCreatorHallNameTextBox";
+            this.HallCreatorHallNameTextBox.Size = new System.Drawing.Size(97, 22);
+            this.HallCreatorHallNameTextBox.TabIndex = 6;
             // 
-            // label2
+            // HallCreatorRowsNumberTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ilość kolumn:";
+            this.HallCreatorRowsNumberTextBox.Location = new System.Drawing.Point(111, 81);
+            this.HallCreatorRowsNumberTextBox.Name = "HallCreatorRowsNumberTextBox";
+            this.HallCreatorRowsNumberTextBox.Size = new System.Drawing.Size(97, 22);
+            this.HallCreatorRowsNumberTextBox.TabIndex = 3;
+            this.HallCreatorRowsNumberTextBox.Text = "12";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Numer sali:";
             // 
             // label1
             // 
@@ -230,30 +206,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ilość rzędów:";
             // 
-            // HallCreatorRowsNumberTextBox
+            // label2
             // 
-            this.HallCreatorRowsNumberTextBox.Location = new System.Drawing.Point(111, 81);
-            this.HallCreatorRowsNumberTextBox.Name = "HallCreatorRowsNumberTextBox";
-            this.HallCreatorRowsNumberTextBox.Size = new System.Drawing.Size(97, 22);
-            this.HallCreatorRowsNumberTextBox.TabIndex = 3;
-            this.HallCreatorRowsNumberTextBox.Text = "12";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Ilość kolumn:";
             // 
-            // HallCreateAddHallButton
+            // HallCreatorColumsNumberTextBox
             // 
-            this.HallCreateAddHallButton.AutoSize = true;
-            this.HallCreateAddHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.HallCreateAddHallButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.HallCreateAddHallButton.ForeColor = System.Drawing.Color.White;
-            this.HallCreateAddHallButton.Image = global::CinemaManager.Properties.Resources.symbol_check_icon;
-            this.HallCreateAddHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HallCreateAddHallButton.Location = new System.Drawing.Point(1008, 18);
-            this.HallCreateAddHallButton.Name = "HallCreateAddHallButton";
-            this.HallCreateAddHallButton.Size = new System.Drawing.Size(95, 107);
-            this.HallCreateAddHallButton.TabIndex = 1;
-            this.HallCreateAddHallButton.Text = "Zatwierdź";
-            this.HallCreateAddHallButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HallCreateAddHallButton.UseVisualStyleBackColor = false;
-            this.HallCreateAddHallButton.Click += new System.EventHandler(this.HallCreateAddHallButton_Click_1);
+            this.HallCreatorColumsNumberTextBox.Location = new System.Drawing.Point(111, 41);
+            this.HallCreatorColumsNumberTextBox.Name = "HallCreatorColumsNumberTextBox";
+            this.HallCreatorColumsNumberTextBox.Size = new System.Drawing.Size(97, 22);
+            this.HallCreatorColumsNumberTextBox.TabIndex = 4;
+            this.HallCreatorColumsNumberTextBox.Text = "16";
             // 
             // panel2
             // 
@@ -278,21 +246,52 @@
             this.PlaceCount.TabIndex = 4;
             this.PlaceCount.Text = "Razem miejsc: ";
             // 
-            // panel3
+            // ColumnsLabel
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.CreateHallONButton);
-            this.panel3.Controls.Add(this.HallCreatorHallNameTextBox);
-            this.panel3.Controls.Add(this.HallCreatorRowsNumberTextBox);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.HallCreatorColumsNumberTextBox);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(281, 107);
-            this.panel3.TabIndex = 0;
+            this.ColumnsLabel.AutoSize = true;
+            this.ColumnsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ColumnsLabel.Location = new System.Drawing.Point(127, 41);
+            this.ColumnsLabel.Name = "ColumnsLabel";
+            this.ColumnsLabel.Size = new System.Drawing.Size(70, 18);
+            this.ColumnsLabel.TabIndex = 2;
+            this.ColumnsLabel.Text = "Kolumny:";
+            // 
+            // HallNameLabel
+            // 
+            this.HallNameLabel.AutoSize = true;
+            this.HallNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HallNameLabel.Location = new System.Drawing.Point(14, 5);
+            this.HallNameLabel.Name = "HallNameLabel";
+            this.HallNameLabel.Size = new System.Drawing.Size(88, 18);
+            this.HallNameLabel.TabIndex = 0;
+            this.HallNameLabel.Text = "Nazwa sali: ";
+            // 
+            // RowsLabel
+            // 
+            this.RowsLabel.AutoSize = true;
+            this.RowsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RowsLabel.Location = new System.Drawing.Point(14, 41);
+            this.RowsLabel.Name = "RowsLabel";
+            this.RowsLabel.Size = new System.Drawing.Size(58, 18);
+            this.RowsLabel.TabIndex = 1;
+            this.RowsLabel.Text = "Rzędy: ";
+            // 
+            // HallCreateAddHallButton
+            // 
+            this.HallCreateAddHallButton.AutoSize = true;
+            this.HallCreateAddHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.HallCreateAddHallButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.HallCreateAddHallButton.ForeColor = System.Drawing.Color.White;
+            this.HallCreateAddHallButton.Image = global::CinemaManager.Properties.Resources.symbol_check_icon;
+            this.HallCreateAddHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HallCreateAddHallButton.Location = new System.Drawing.Point(1008, 18);
+            this.HallCreateAddHallButton.Name = "HallCreateAddHallButton";
+            this.HallCreateAddHallButton.Size = new System.Drawing.Size(95, 107);
+            this.HallCreateAddHallButton.TabIndex = 1;
+            this.HallCreateAddHallButton.Text = "Zatwierdź";
+            this.HallCreateAddHallButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HallCreateAddHallButton.UseVisualStyleBackColor = false;
+            this.HallCreateAddHallButton.Click += new System.EventHandler(this.HallCreateAddHallButton_Click_1);
             // 
             // AddNewHall
             // 
@@ -311,10 +310,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.HallInfo.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

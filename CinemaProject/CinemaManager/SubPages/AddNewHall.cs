@@ -16,12 +16,19 @@ namespace CinemaManager.SubPages
         private List<List<Button>> buttons = new List<List<Button>>();
         private List<String> nameOfButtonColumnList = new List<string>();
         private List<String> nameOfButtonRowList = new List<string>();
+
         private bool ifClicked = false;
+        private int hall_number = 0;
+        private string hall_name = "";
+
+       
+
         public AddNewHall()
         {
             InitializeComponent();
+            hall_number = GenerateNumberOfHall();
+            HallCreatorHallNameTextBox.Text = hall_number.ToString();
             panel1.Refresh();
-            HallCreatorHallNameTextBox.Text = "Nazwa sali";
             HallCreatorColumsNumberTextBox.Text = 10.ToString();
             HallCreatorRowsNumberTextBox.Text = 8.ToString();
             HallCreateTableLayoutPanel.Controls.Clear();
@@ -134,7 +141,6 @@ namespace CinemaManager.SubPages
         // obsługa klikania w tabelę 
         protected void btn_Click(object sender, EventArgs e)
         {
-
             Button nb = (Button)sender;
 
             //sprawdza numer columny zaznaczonej komórki
@@ -203,7 +209,7 @@ namespace CinemaManager.SubPages
             }
         }
         
-        private void HallCreateSaveToDatabase(string title, string matrix)
+        private void HallCreateSaveToDatabase(string title, string matrix, int number)
         {
             // zapis nowej sali do bazy danych
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
@@ -212,7 +218,7 @@ namespace CinemaManager.SubPages
 
                 hall.title = title;
                 hall.matrix = matrix;
-                hall.number = 4;
+                hall.number = number;
                 hall.isEnable = 1;
 
                 ctx.Halls.Add(hall);
@@ -321,6 +327,36 @@ namespace CinemaManager.SubPages
             ScreenLabel.Show();
         }
 
+        private int GenerateNumberOfHall()
+        {
+            int i = 1;
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var halls = (from t in ctx.Halls
+                    where t.isEnable == 1
+                    orderby t.number
+                    select t);
+                foreach (var hall in halls)
+                {
+                    if (i == hall.number) i++;
+                    else return i;
+                }
+            }
+            return i;
+        }
+
+        private bool ifNumberOfHallExist(int number)
+        {
+           using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+           {
+                var halls = (from t in ctx.Halls
+                    where t.number == number && t.isEnable==1
+                    select new {t}).SingleOrDefault();
+               if (halls == null) return false;
+           }
+           return true;
+        }
+
         private void CreateHallONButton_Click_2(object sender, EventArgs e)
         {
             HallCreatePanel.Show();
@@ -334,8 +370,7 @@ namespace CinemaManager.SubPages
 
             int rows = 0;
             int columns = 0;
-            string hallName = null;
-
+            
             if (String.IsNullOrEmpty(HallCreatorColumsNumberTextBox.Text) ||
                 String.IsNullOrEmpty(HallCreatorRowsNumberTextBox.Text) ||
                 String.IsNullOrEmpty(HallCreatorHallNameTextBox.Text))
@@ -366,19 +401,14 @@ namespace CinemaManager.SubPages
                     }
                     else
                     {
-                        bool IfHallNameExist = false;
-                        hallName = HallCreatorHallNameTextBox.Text;
-                        using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
-                        {
-                            var halls = (from t in ctx.Halls
-                                where t.title.Equals(hallName)
-                                select t);
-                            IfHallNameExist = (halls.Count() > 0);
-                        }
-                        if (IfHallNameExist) MessageBox.Show("Sala kinowa o takiej nazwie juz istnieje.");
+                        bool ifHallNameExist = ifNumberOfHallExist(Convert.ToInt32(HallCreatorHallNameTextBox.Text));
+                        
+                        hall_name = "Sala " + HallCreatorHallNameTextBox.Text;
+                       
+                        if (ifHallNameExist) MessageBox.Show("Sala kinowa o tym numerze juz istnieje.");
                         else
                         {
-                            HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
+                            HallNameLabel.Text = "Nazwa sali: " + hall_name;
                             RowsLabel.Text = "Rzędy: " + HallCreatorRowsNumberTextBox.Text;
                             ColumnsLabel.Text = "Kolumny: " + HallCreatorColumsNumberTextBox.Text;
                             PlaceCount.Text = "Wszystkich miejsc: " +
@@ -402,7 +432,7 @@ namespace CinemaManager.SubPages
                 HallCreateTableGenerateFinishedTable();
                 var stringParse = new XMLparse();
                 hallString = stringParse.ParseToString(buttons);
-                HallCreateSaveToDatabase(HallCreatorHallNameTextBox.Text, hallString);
+                HallCreateSaveToDatabase(hall_name, hallString, hall_number);
             }
         }   
     }
