@@ -33,6 +33,7 @@ namespace CinemaManager.SubPages
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 CinemaModel.Employees emp = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
+                employeeName.Text = emp.name + " " + emp.surname;
 
                 for (int i = 0; i < 7; i++)
                 {
@@ -44,8 +45,7 @@ namespace CinemaManager.SubPages
                     {
                         daysCheckboxes[i, 1].Checked = true;
                     }
-                }
-                employeeName.Text = emp.name + " " + emp.surname;
+                }                
             }
         }
 
@@ -95,6 +95,12 @@ namespace CinemaManager.SubPages
 
                 parentPanel.Controls.Add(emptyControlLabel);
             }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            SubPages.AddShiftForm form = new AddShiftForm(shift);
+            form.ShowDialog();
         }
     }
 }

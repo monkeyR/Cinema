@@ -106,6 +106,11 @@ namespace CinemaManager.Pages
             fillShifts();
             Cursor.Current = Cursors.Default;
         }
+
+        public override void Refresh()
+        {
+            this.fillShifts();
+        }
     }
 }
 
