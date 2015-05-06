@@ -381,6 +381,9 @@ namespace CinemaManager.SubPages
                             HallNameLabel.Text = "Nazwa sali: " + HallCreatorHallNameTextBox.Text;
                             RowsLabel.Text = "Rzędy: " + HallCreatorRowsNumberTextBox.Text;
                             ColumnsLabel.Text = "Kolumny: " + HallCreatorColumsNumberTextBox.Text;
+                            PlaceCount.Text = "Wszystkich miejsc: " +
+                                              (Convert.ToInt32(HallCreatorColumsNumberTextBox.Text)*
+                                              Convert.ToInt32(HallCreatorRowsNumberTextBox.Text)).ToString();
                             DisplayScreenLabel(Convert.ToInt32(HallCreatorColumsNumberTextBox.Text));
                             GenerateTable(columns + 2, rows + 1);
                             ifClicked = true;

@@ -61,6 +61,7 @@
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pages\CinemaStatistic.cs" />
     <Compile Include="Pages\EmployeesManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,12 @@
     </Compile>
     <Compile Include="Pages\ShowManagementForm.Designer.cs">
       <DependentUpon>ShowManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TicketStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\TicketStatistic.Designer.cs">
+      <DependentUpon>TicketStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ShowManagementForm.resx">
       <DependentUpon>ShowManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TicketStatistic.resx">
+      <DependentUpon>TicketStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
