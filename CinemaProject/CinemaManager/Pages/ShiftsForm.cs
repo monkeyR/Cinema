@@ -46,7 +46,7 @@ namespace CinemaManager.Pages
                     {
                         if (shift.shiftWeek.Equals(actualWeek))
                         {
-                            shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, shiftsFlowLayoutPanel));
+                            shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, this));
                         }
                     }
                 }
@@ -105,6 +105,11 @@ namespace CinemaManager.Pages
             Cursor.Current = Cursors.WaitCursor;
             fillShifts();
             Cursor.Current = Cursors.Default;
+        }
+
+        public override void Refresh()
+        {
+            this.fillShifts();
         }
     }
 }

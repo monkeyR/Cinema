@@ -14,6 +14,52 @@ namespace CinemaManager.SubPages
     {
         CheckBox[,] daysCheckboxes = new CheckBox[7, 2];
         DateTime mondayOfWeek;
+        CinemaModel.Shifts shift;
+
+        public AddShiftForm(CinemaModel.Shifts shift)
+        {
+            this.shift = shift;
+
+            InitializeComponent();
+            fillDaysArray();
+            this.okButton.Text = "Edytuj";
+            this.Text = "Edytuj zmianę";
+
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var employee = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
+                ComboboxItem empItem = new ComboboxItem();
+                empItem.Text = string.Format("{0} {1}", employee.name, employee.surname);
+                empItem.Value = employee.employeeID;
+                employeesComboBox.Items.Add(empItem);
+                employeesComboBox.Enabled = false;
+                employeesComboBox.SelectedIndex = 0;
+
+                var workposition = ctx.Workpositions.First(x => x.workpositionID.Equals(shift.workpositionID));
+                ComboboxItem workpositionItem = new ComboboxItem();
+                workpositionItem.Text = workposition.name;
+                workpositionItem.Value = workposition.workpositionID;
+                workpositionComboBox.Items.Add(workpositionItem);
+                workpositionComboBox.Enabled = false;
+                workpositionComboBox.SelectedIndex = 0;
+            }
+            fillCheckBoxes();
+        }
+
+        private void fillCheckBoxes()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                if (shift.typeShift.ElementAt(i).ToString() == "M")
+                {
+                    daysCheckboxes[i, 0].Checked = true;
+                }
+                else if (shift.typeShift.ElementAt(i).ToString() == "A")
+                {
+                    daysCheckboxes[i, 1].Checked = true;
+                }
+            }  
+        }
         public AddShiftForm(DateTime mondayOfWeek)
         {
             this.mondayOfWeek = mondayOfWeek;
@@ -94,32 +140,55 @@ namespace CinemaManager.SubPages
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            if (shift == null)
             {
-                CinemaModel.Shifts shift = new CinemaModel.Shifts();
-
-                shift.employeeID = ((ComboboxItem)employeesComboBox.SelectedItem).Value;
-                shift.workpositionID = ((ComboboxItem)workpositionComboBox.SelectedItem).Value;
-
-                string types = string.Empty;
-                for (int i = 0; i < 7; i++)
+                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                 {
-                    if (daysCheckboxes[i, 0].Checked)
-                        types += "M";
-                    else
-                        if (daysCheckboxes[i, 1].Checked)
-                            types += "A";
+                    CinemaModel.Shifts tempShift = new CinemaModel.Shifts();
+
+                    tempShift.employeeID = ((ComboboxItem)employeesComboBox.SelectedItem).Value;
+                    tempShift.workpositionID = ((ComboboxItem)workpositionComboBox.SelectedItem).Value;
+
+                    string types = string.Empty;
+                    for (int i = 0; i < 7; i++)
+                    {
+                        if (daysCheckboxes[i, 0].Checked)
+                            types += "M";
                         else
-                            types += "0";
+                            if (daysCheckboxes[i, 1].Checked)
+                                types += "A";
+                            else
+                                types += "0";
+                    }
+
+                    tempShift.typeShift = types;
+                    tempShift.shiftWeek = mondayOfWeek;
+
+                    ctx.Shifts.Add(tempShift);
+                    ctx.Entry(tempShift).State = System.Data.Entity.EntityState.Added;
+
+                    ctx.SaveChanges();
                 }
-
-                shift.typeShift = types;
-                shift.shiftWeek = mondayOfWeek;
-
-                ctx.Shifts.Add(shift);
-                ctx.Entry(shift).State = System.Data.Entity.EntityState.Added;
-
-                ctx.SaveChanges();
+            }
+            else
+            {
+                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                {
+                    string types = string.Empty;
+                    for (int i = 0; i < 7; i++)
+                    {
+                        if (daysCheckboxes[i, 0].Checked)
+                            types += "M";
+                        else
+                            if (daysCheckboxes[i, 1].Checked)
+                                types += "A";
+                            else
+                                types += "0";
+                    }
+                    shift.typeShift = types;
+                    ctx.Entry(shift).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();                    
+                }
             }
             this.Close();
         }

@@ -12,7 +12,7 @@ namespace CinemaManager.SubPages
 {
     public partial class ShiftUserControl : UserControl
     {
-        private FlowLayoutPanel parentPanel;
+        private Form parentForm;
         CheckBox[,] daysCheckboxes = new CheckBox[7, 2];
         CinemaModel.Shifts shift;
 
@@ -21,7 +21,7 @@ namespace CinemaManager.SubPages
             InitializeComponent();
         }
 
-        public ShiftUserControl( CinemaModel.Shifts shift, FlowLayoutPanel parentPanel)
+        public ShiftUserControl( CinemaModel.Shifts shift, Form parentForm)
         {
             this.shift = shift;
 
@@ -29,10 +29,11 @@ namespace CinemaManager.SubPages
 
             fillDaysArray();
 
-            this.parentPanel = parentPanel;
+            this.parentForm = parentForm;
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 CinemaModel.Employees emp = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
+                employeeName.Text = emp.name + " " + emp.surname;
 
                 for (int i = 0; i < 7; i++)
                 {
@@ -44,8 +45,7 @@ namespace CinemaManager.SubPages
                     {
                         daysCheckboxes[i, 1].Checked = true;
                     }
-                }
-                employeeName.Text = emp.name + " " + emp.surname;
+                }                
             }
         }
 
@@ -80,9 +80,10 @@ namespace CinemaManager.SubPages
                 ctx.Entry(shift).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();
             }
-            parentPanel.Controls.Remove(this);
+            //parentPanel.Controls.Remove(this);
+            parentForm.Controls.Find("shiftsFlowLayoutPanel",false).First().Controls.Remove(this);
 
-            if (parentPanel.Controls.Count == 0)
+            if (parentForm.Controls.Find("shiftsFlowLayoutPanel", false).First().Controls.Count == 0)
             {
                 Label emptyControlLabel = new Label();
                 emptyControlLabel.AutoSize = true;
@@ -93,8 +94,15 @@ namespace CinemaManager.SubPages
                 emptyControlLabel.TabIndex = 7;
                 emptyControlLabel.Text = "  Brak zmian w tym tygodniu";
 
-                parentPanel.Controls.Add(emptyControlLabel);
+                parentForm.Controls.Find("shiftsFlowLayoutPanel", false).First().Controls.Add(emptyControlLabel);
             }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            SubPages.AddShiftForm form = new AddShiftForm(shift);
+            form.ShowDialog();
+            parentForm.Refresh();
         }
     }
 }
