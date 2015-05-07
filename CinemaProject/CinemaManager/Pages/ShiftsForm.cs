@@ -12,12 +12,14 @@ namespace CinemaManager.Pages
 {
     public partial class ShiftsForm : Form
     {
+
+        private delegate void fillShiftsDelegate();
+ 
         public ShiftsForm()
         {
             InitializeComponent();
 
-            fillWeeks();
-
+            fillWeeks();            
             Cursor.Current = Cursors.WaitCursor;
             fillShifts();
             Cursor.Current = Cursors.Default;
@@ -46,7 +48,8 @@ namespace CinemaManager.Pages
                     {
                         if (shift.shiftWeek.Equals(actualWeek))
                         {
-                            shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, this));
+                            fillShiftsDelegate fill = new fillShiftsDelegate(fillShifts);
+                            shiftsFlowLayoutPanel.Controls.Add(new SubPages.ShiftUserControl(shift, shiftsFlowLayoutPanel, fill));
                         }
                     }
                 }

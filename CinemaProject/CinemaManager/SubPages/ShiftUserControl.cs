@@ -12,24 +12,26 @@ namespace CinemaManager.SubPages
 {
     public partial class ShiftUserControl : UserControl
     {
-        private Form parentForm;
+        private FlowLayoutPanel parentPanel;
         CheckBox[,] daysCheckboxes = new CheckBox[7, 2];
         CinemaModel.Shifts shift;
+        Delegate fill;
 
         public ShiftUserControl()
         {
             InitializeComponent();
         }
 
-        public ShiftUserControl( CinemaModel.Shifts shift, Form parentForm)
+        public ShiftUserControl( CinemaModel.Shifts shift, FlowLayoutPanel parentForm, Delegate fill)
         {
             this.shift = shift;
+            this.fill = fill;
 
             InitializeComponent();
 
             fillDaysArray();
 
-            this.parentForm = parentForm;
+            this.parentPanel = parentPanel;
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 CinemaModel.Employees emp = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
@@ -81,9 +83,9 @@ namespace CinemaManager.SubPages
                 ctx.SaveChanges();
             }
             //parentPanel.Controls.Remove(this);
-            parentForm.Controls.Find("shiftsFlowLayoutPanel",false).First().Controls.Remove(this);
+            parentPanel.Controls.Remove(this);
 
-            if (parentForm.Controls.Find("shiftsFlowLayoutPanel", false).First().Controls.Count == 0)
+            if (parentPanel.Controls.Count == 0)
             {
                 Label emptyControlLabel = new Label();
                 emptyControlLabel.AutoSize = true;
@@ -94,7 +96,7 @@ namespace CinemaManager.SubPages
                 emptyControlLabel.TabIndex = 7;
                 emptyControlLabel.Text = "  Brak zmian w tym tygodniu";
 
-                parentForm.Controls.Find("shiftsFlowLayoutPanel", false).First().Controls.Add(emptyControlLabel);
+                parentPanel.Controls.Add(emptyControlLabel);
             }
         }
 
@@ -102,7 +104,7 @@ namespace CinemaManager.SubPages
         {
             SubPages.AddShiftForm form = new AddShiftForm(shift);
             form.ShowDialog();
-            parentForm.Refresh();
+            this.fill.DynamicInvoke();
         }
     }
 }
