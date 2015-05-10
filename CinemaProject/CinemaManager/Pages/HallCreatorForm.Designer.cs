@@ -33,7 +33,7 @@
             this.AddHall = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.HallMenagePanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.HallEditPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AddColumnButton = new System.Windows.Forms.Button();
@@ -42,26 +42,26 @@
             this.SubColumnButton = new System.Windows.Forms.Button();
             this.SubtractRowButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.hallNameComboBox = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.PlaceCount = new System.Windows.Forms.Label();
             this.NumberOfHallLabel = new System.Windows.Forms.Label();
             this.NumberOfColumnsLabel = new System.Windows.Forms.Label();
             this.NumberOfRowsLabel = new System.Windows.Forms.Label();
+            this.displayHallButton = new System.Windows.Forms.Button();
             this.HallEditButton = new System.Windows.Forms.Button();
             this.RemoveHallButton = new System.Windows.Forms.Button();
-            this.displayHallButton = new System.Windows.Forms.Button();
-            this.hallNameComboBox = new System.Windows.Forms.ComboBox();
             this.HallCreatePanel = new System.Windows.Forms.Panel();
             this.ScreenLabel = new System.Windows.Forms.Label();
             this.HallCreateTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.PlaceCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.HallMenagePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.HallEditPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.HallCreatePanel.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +71,7 @@
             this.panel1.Controls.Add(this.AddHall);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(787, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(194, 609);
             this.panel1.TabIndex = 14;
@@ -79,8 +80,10 @@
             // 
             this.HallMenageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.HallMenageButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HallMenageButton.FlatAppearance.BorderSize = 0;
             this.HallMenageButton.ForeColor = System.Drawing.Color.White;
             this.HallMenageButton.Location = new System.Drawing.Point(0, 95);
+            this.HallMenageButton.Margin = new System.Windows.Forms.Padding(0);
             this.HallMenageButton.Name = "HallMenageButton";
             this.HallMenageButton.Size = new System.Drawing.Size(194, 89);
             this.HallMenageButton.TabIndex = 10;
@@ -92,8 +95,10 @@
             // 
             this.AddHall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.AddHall.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddHall.FlatAppearance.BorderSize = 0;
             this.AddHall.ForeColor = System.Drawing.Color.White;
             this.AddHall.Location = new System.Drawing.Point(0, 0);
+            this.AddHall.Margin = new System.Windows.Forms.Padding(0);
             this.AddHall.Name = "AddHall";
             this.AddHall.Size = new System.Drawing.Size(194, 95);
             this.AddHall.TabIndex = 9;
@@ -120,17 +125,21 @@
             this.HallMenagePanel.Size = new System.Drawing.Size(787, 609);
             this.HallMenagePanel.TabIndex = 16;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
-            this.panel2.Controls.Add(this.PlaceCount);
-            this.panel2.Controls.Add(this.NumberOfHallLabel);
-            this.panel2.Controls.Add(this.NumberOfColumnsLabel);
-            this.panel2.Controls.Add(this.NumberOfRowsLabel);
-            this.panel2.Location = new System.Drawing.Point(265, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(516, 55);
-            this.panel2.TabIndex = 16;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.HallEditPanel);
+            this.panel3.Controls.Add(this.hallNameComboBox);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.displayHallButton);
+            this.panel3.Controls.Add(this.HallEditButton);
+            this.panel3.Controls.Add(this.RemoveHallButton);
+            this.panel3.Location = new System.Drawing.Point(6, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(784, 171);
+            this.panel3.TabIndex = 22;
             // 
             // HallEditPanel
             // 
@@ -257,6 +266,35 @@
             this.label2.Text = "Kolumny";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hallNameComboBox
+            // 
+            this.hallNameComboBox.FormattingEnabled = true;
+            this.hallNameComboBox.Location = new System.Drawing.Point(12, 3);
+            this.hallNameComboBox.Name = "hallNameComboBox";
+            this.hallNameComboBox.Size = new System.Drawing.Size(247, 24);
+            this.hallNameComboBox.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
+            this.panel2.Controls.Add(this.PlaceCount);
+            this.panel2.Controls.Add(this.NumberOfHallLabel);
+            this.panel2.Controls.Add(this.NumberOfColumnsLabel);
+            this.panel2.Controls.Add(this.NumberOfRowsLabel);
+            this.panel2.Location = new System.Drawing.Point(265, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(516, 55);
+            this.panel2.TabIndex = 16;
+            // 
+            // PlaceCount
+            // 
+            this.PlaceCount.AutoSize = true;
+            this.PlaceCount.Location = new System.Drawing.Point(228, 25);
+            this.PlaceCount.Name = "PlaceCount";
+            this.PlaceCount.Size = new System.Drawing.Size(103, 17);
+            this.PlaceCount.TabIndex = 4;
+            this.PlaceCount.Text = "Razem miejsc: ";
+            // 
             // NumberOfHallLabel
             // 
             this.NumberOfHallLabel.AutoSize = true;
@@ -283,7 +321,20 @@
             this.NumberOfRowsLabel.Size = new System.Drawing.Size(56, 17);
             this.NumberOfRowsLabel.TabIndex = 1;
             this.NumberOfRowsLabel.Text = "Rzędy: ";
-           // 
+            // 
+            // displayHallButton
+            // 
+            this.displayHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.displayHallButton.ForeColor = System.Drawing.Color.White;
+            this.displayHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.displayHallButton.Location = new System.Drawing.Point(134, 33);
+            this.displayHallButton.Name = "displayHallButton";
+            this.displayHallButton.Size = new System.Drawing.Size(125, 54);
+            this.displayHallButton.TabIndex = 19;
+            this.displayHallButton.Text = "Wyświetl";
+            this.displayHallButton.UseVisualStyleBackColor = false;
+            this.displayHallButton.Click += new System.EventHandler(this.displayHallButton_Click);
+            // 
             // HallEditButton
             // 
             this.HallEditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
@@ -308,27 +359,6 @@
             this.RemoveHallButton.Text = "Usuń";
             this.RemoveHallButton.UseVisualStyleBackColor = false;
             this.RemoveHallButton.Click += new System.EventHandler(this.RemoveHallButton_Click_1);
-            // 
-            // displayHallButton
-            // 
-            this.displayHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.displayHallButton.ForeColor = System.Drawing.Color.White;
-            this.displayHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.displayHallButton.Location = new System.Drawing.Point(134, 33);
-            this.displayHallButton.Name = "displayHallButton";
-            this.displayHallButton.Size = new System.Drawing.Size(125, 54);
-            this.displayHallButton.TabIndex = 19;
-            this.displayHallButton.Text = "Wyświetl";
-            this.displayHallButton.UseVisualStyleBackColor = false;
-            this.displayHallButton.Click += new System.EventHandler(this.displayHallButton_Click);
-            // 
-            // hallNameComboBox
-            // 
-            this.hallNameComboBox.FormattingEnabled = true;
-            this.hallNameComboBox.Location = new System.Drawing.Point(12, 3);
-            this.hallNameComboBox.Name = "hallNameComboBox";
-            this.hallNameComboBox.Size = new System.Drawing.Size(247, 24);
-            this.hallNameComboBox.TabIndex = 18;
             // 
             // HallCreatePanel
             // 
@@ -367,31 +397,6 @@
             this.HallCreateTableLayoutPanel.Size = new System.Drawing.Size(772, 366);
             this.HallCreateTableLayoutPanel.TabIndex = 14;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.HallEditPanel);
-            this.panel3.Controls.Add(this.hallNameComboBox);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.displayHallButton);
-            this.panel3.Controls.Add(this.HallEditButton);
-            this.panel3.Controls.Add(this.RemoveHallButton);
-            this.panel3.Location = new System.Drawing.Point(6, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 171);
-            this.panel3.TabIndex = 22;
-            // 
-            // PlaceCount
-            // 
-            this.PlaceCount.AutoSize = true;
-            this.PlaceCount.Location = new System.Drawing.Point(228, 25);
-            this.PlaceCount.Name = "PlaceCount";
-            this.PlaceCount.Size = new System.Drawing.Size(103, 17);
-            this.PlaceCount.TabIndex = 4;
-            this.PlaceCount.Text = "Razem miejsc: ";
-            // 
             // HallCreatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,15 +414,15 @@
             this.panelMain.ResumeLayout(false);
             this.HallMenagePanel.ResumeLayout(false);
             this.HallMenagePanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.HallEditPanel.ResumeLayout(false);
             this.HallEditPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.HallCreatePanel.ResumeLayout(false);
             this.HallCreatePanel.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

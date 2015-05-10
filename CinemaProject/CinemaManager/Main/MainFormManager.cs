@@ -56,5 +56,15 @@ namespace CinemaManager.Main
         {
             selectPage(new ShiftsForm());
         }
+
+        private void SalesStatisticsButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new MovieStatistic());
+        }
+
+        private void MovieStatisticsButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new MovieStatistic());
+        }
     }
 }
