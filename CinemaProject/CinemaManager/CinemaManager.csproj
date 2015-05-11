@@ -168,7 +168,6 @@
       <DependentUpon>ShiftUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\AvaibleMoviesLoader.cs" />
-    <Compile Include="Utils\ShowModel.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
     </EmbeddedResource>

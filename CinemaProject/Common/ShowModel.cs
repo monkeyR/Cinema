@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 
-namespace CinemaManager.Utils
+namespace Common
 {
     public class ShowModel
     {
