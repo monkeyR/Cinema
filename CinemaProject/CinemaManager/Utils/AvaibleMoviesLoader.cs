@@ -14,6 +14,7 @@ namespace CinemaManager.Utils
             {
                 var movies =
                     (from m in ctx.Movies
+                     where m.isAvailable == true
                      orderby m.movieID descending
                      select m
                     );
