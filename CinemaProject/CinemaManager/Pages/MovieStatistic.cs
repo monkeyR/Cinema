@@ -45,39 +45,41 @@ namespace CinemaManager.Pages
             int howManyTicket = 0;
 
             MovieStatisticAllMovieTableLauotPanel.AutoSize = true;
-           
-           using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 var movies = (from t in ctx.Movies
-                              where t.isAvailable == true
-                              select t);
-                var movies_display_count = (from t in ctx.MovieSales 
-                                            join p in ctx.Movies 
-                                            on t.movieID equals p.movieID
-                                            select t);
+                    where t.isAvailable == true
+                    select t);
+
                 foreach (var movie in movies)
                 {
                     howManyRows++;
                 }
-                
-               MovieStatisticAllMovieTableLauotPanel.RowCount = howManyRows+1;
-                MovieStatisticAllMovieTableLauotPanel.ColumnCount = 3;
-                MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = "Tytuł filmu", AutoSize = true }, 0, 0);
-                MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = "Łącznie sprzedanych biletów", AutoSize = true },1,0);
-                MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = "Łącznie zrealizowanych seansów", AutoSize = true }, 2, 0);
 
-                foreach (var movie in movies)
+                MovieStatisticAllMovieTableLauotPanel.RowCount = howManyRows + 1;
+                MovieStatisticAllMovieTableLauotPanel.ColumnCount = 3;
+                MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() {Text = "Tytuł filmu", AutoSize = true},
+                    0, 0);
+                MovieStatisticAllMovieTableLauotPanel.Controls.Add(
+                    new Label() {Text = "Łącznie sprzedanych biletów", AutoSize = true}, 1, 0);
+                MovieStatisticAllMovieTableLauotPanel.Controls.Add(
+                    new Label() {Text = "Łącznie zrealizowanych seansów", AutoSize = true}, 2, 0);
+
+                foreach (var movie2 in movies)
                 {
-                   MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = movie.title, }, 0, whichRow);
-                   whichRow++;
-                }
-              whichRow = 1;
-                foreach (var movie_count in movies_display_count)
-                {
-                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() {Text = movie_count.Movies.title.Count().ToString(),}, 1, whichRow);
+
+                   var movies_display_count = (from t in ctx.MovieSales
+                                              where t.movieID == movie2.movieID
+                                               select t).Count();
+                    
+                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() {Text = movie2.title,}, 0, whichRow);
+                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = movies_display_count.ToString(), }, 2, whichRow);
+                    
                     whichRow++;
                 }
-
+                whichRow = 1;
+               
             }
         }
         private void DisplayStatisticOfMovie_Click(object sender, EventArgs e)
