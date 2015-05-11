@@ -94,6 +94,9 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tickets.cs">
+      <DependentUpon>CinemaEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Workpositions.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>

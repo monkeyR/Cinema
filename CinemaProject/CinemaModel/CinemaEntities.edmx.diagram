@@ -25,6 +25,7 @@
         <EntityTypeShape EntityType="CinemaDatabaseModel.Movies" Width="1.5" PointX="0.75" PointY="10" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__movieID__25869641" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.Tickets" Width="1.5" PointX="8.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

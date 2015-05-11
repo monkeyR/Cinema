@@ -38,6 +38,7 @@ namespace CinemaModel
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Workpositions> Workpositions { get; set; }
         public virtual DbSet<Movies> Movies { get; set; }
+        public virtual DbSet<Tickets> Tickets { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

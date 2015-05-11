@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.BarWithTickets = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MainTicketsPanel = new System.Windows.Forms.Panel();
+            this.ColumnShowsLayout = new System.Windows.Forms.Panel();
             this.ColumnHallsButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.BarWithTickets.SuspendLayout();
             this.MainTicketsPanel.SuspendLayout();
-            this.ColumnHallsButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // BarWithTickets
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BarWithTickets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(504, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 492);
-            this.panel1.TabIndex = 1;
+            this.BarWithTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
+            this.BarWithTickets.Controls.Add(this.button3);
+            this.BarWithTickets.Controls.Add(this.button2);
+            this.BarWithTickets.Controls.Add(this.button1);
+            this.BarWithTickets.Location = new System.Drawing.Point(504, 0);
+            this.BarWithTickets.Margin = new System.Windows.Forms.Padding(0);
+            this.BarWithTickets.Name = "BarWithTickets";
+            this.BarWithTickets.Size = new System.Drawing.Size(100, 492);
+            this.BarWithTickets.TabIndex = 1;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,6 +68,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Bilet VIP";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.ActiveButton);
             // 
             // button2
             // 
@@ -104,37 +105,31 @@
             this.MainTicketsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainTicketsPanel.Controls.Add(this.ColumnShowsLayout);
             this.MainTicketsPanel.Controls.Add(this.ColumnHallsButtons);
             this.MainTicketsPanel.Location = new System.Drawing.Point(0, 0);
             this.MainTicketsPanel.Name = "MainTicketsPanel";
             this.MainTicketsPanel.Size = new System.Drawing.Size(501, 492);
             this.MainTicketsPanel.TabIndex = 2;
             // 
+            // ColumnShowsLayout
+            // 
+            this.ColumnShowsLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ColumnShowsLayout.AutoScroll = true;
+            this.ColumnShowsLayout.Location = new System.Drawing.Point(103, 0);
+            this.ColumnShowsLayout.Name = "ColumnShowsLayout";
+            this.ColumnShowsLayout.Size = new System.Drawing.Size(395, 492);
+            this.ColumnShowsLayout.TabIndex = 1;
+            // 
             // ColumnHallsButtons
             // 
-            this.ColumnHallsButtons.Controls.Add(this.button4);
             this.ColumnHallsButtons.Location = new System.Drawing.Point(0, 0);
             this.ColumnHallsButtons.Margin = new System.Windows.Forms.Padding(0);
             this.ColumnHallsButtons.Name = "ColumnHallsButtons";
             this.ColumnHallsButtons.Size = new System.Drawing.Size(100, 492);
             this.ColumnHallsButtons.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.button4.Size = new System.Drawing.Size(100, 100);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "1";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // BuyTicketsForm
             // 
@@ -143,26 +138,25 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(604, 492);
             this.Controls.Add(this.MainTicketsPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BarWithTickets);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BuyTicketsForm";
             this.Text = "BuyTicketsForm";
             this.Load += new System.EventHandler(this.BuyTicketsForm_Load);
-            this.panel1.ResumeLayout(false);
+            this.BarWithTickets.ResumeLayout(false);
             this.MainTicketsPanel.ResumeLayout(false);
-            this.ColumnHallsButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel BarWithTickets;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel MainTicketsPanel;
         private System.Windows.Forms.FlowLayoutPanel ColumnHallsButtons;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel ColumnShowsLayout;
     }
 }
