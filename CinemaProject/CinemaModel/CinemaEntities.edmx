@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CinemaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categories">
           <Key>
             <PropertyRef Name="categoryID" />
@@ -48,7 +48,7 @@
           <Property Name="duration" Type="int" Nullable="false" />
           <Property Name="director" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="text" />
-          <Property Name="isAvailable" Type="bit" />
+          <Property Name="isAvailable" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MovieSales">
           <Key>
@@ -306,8 +306,7 @@
             <End Role="Shows" EntitySet="Shows" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CinemaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -349,20 +348,6 @@
           <NavigationProperty Name="MovieSales" Relationship="Self.FK__MovieSale__hallI__182C9B23" FromRole="Halls" ToRole="MovieSales" />
           <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__hallID__267ABA7A" FromRole="Halls" ToRole="Shows" />
         </EntityType>
-        <EntityType Name="Movies">
-          <Key>
-            <PropertyRef Name="movieID" />
-          </Key>
-          <Property Name="movieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="duration" Type="Int32" Nullable="false" />
-          <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="isAvailable" Type="Boolean" />
-          <NavigationProperty Name="MovieSales" Relationship="Self.FK__MovieSale__posit__173876EA" FromRole="Movies" ToRole="MovieSales" />
-          <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__movieID__25869641" FromRole="Movies" ToRole="Shows" />
-        </EntityType>
         <EntityType Name="MovieSales">
           <Key>
             <PropertyRef Name="moviesalesID" />
@@ -373,7 +358,7 @@
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="position" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Halls" Relationship="Self.FK__MovieSale__hallI__182C9B23" FromRole="MovieSales" ToRole="Halls" />
-          <NavigationProperty Name="Movies" Relationship="Self.FK__MovieSale__posit__173876EA" FromRole="MovieSales" ToRole="Movies" />
+          <NavigationProperty Name="Movies" Relationship="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" FromRole="MovieSales" ToRole="Movies" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -422,7 +407,7 @@
           <Property Name="dateStart" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateEnd" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Halls" Relationship="Self.FK__Shows__hallID__267ABA7A" FromRole="Shows" ToRole="Halls" />
-          <NavigationProperty Name="Movies" Relationship="Self.FK__Shows__movieID__25869641" FromRole="Shows" ToRole="Movies" />
+          <NavigationProperty Name="Movies" Relationship="CinemaDatabaseModel.FK__Shows__movieID__25869641" FromRole="Shows" ToRole="Movies" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -502,30 +487,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MovieSale__posit__173876EA">
-          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-          <End Role="MovieSales" Type="Self.MovieSales" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movies">
-              <PropertyRef Name="movieID" />
-            </Principal>
-            <Dependent Role="MovieSales">
-              <PropertyRef Name="movieID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Shows__movieID__25869641">
-          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-          <End Role="Shows" Type="Self.Shows" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movies">
-              <PropertyRef Name="movieID" />
-            </Principal>
-            <Dependent Role="Shows">
-              <PropertyRef Name="movieID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__ProductSa__sales__6FE99F9F">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
           <End Role="ProductSales" Type="Self.ProductSales" Multiplicity="*" />
@@ -554,7 +515,6 @@
           <EntitySet Name="Categories" EntityType="Self.Categories" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="Halls" EntityType="Self.Halls" />
-          <EntitySet Name="Movies" EntityType="Self.Movies" />
           <EntitySet Name="MovieSales" EntityType="Self.MovieSales" />
           <EntitySet Name="Products" EntityType="Self.Products" />
           <EntitySet Name="ProductSales" EntityType="Self.ProductSales" />
@@ -580,14 +540,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__Shows__hallID__267ABA7A" Association="Self.FK__Shows__hallID__267ABA7A">
             <End Role="Halls" EntitySet="Halls" />
-            <End Role="Shows" EntitySet="Shows" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MovieSale__posit__173876EA" Association="Self.FK__MovieSale__posit__173876EA">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="MovieSales" EntitySet="MovieSales" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shows__movieID__25869641" Association="Self.FK__Shows__movieID__25869641">
-            <End Role="Movies" EntitySet="Movies" />
             <End Role="Shows" EntitySet="Shows" />
           </AssociationSet>
           <AssociationSet Name="FK__ProductSa__sales__6FE99F9F" Association="Self.FK__ProductSa__sales__6FE99F9F">
@@ -628,7 +580,54 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Movies" EntityType="CinemaDatabaseModel.Movies" />
+          <AssociationSet Name="FK__MovieSale__posit__173876EA" Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="MovieSales" EntitySet="MovieSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shows__movieID__25869641" Association="CinemaDatabaseModel.FK__Shows__movieID__25869641">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Shows" EntitySet="Shows" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="movieID" />
+          </Key>
+          <Property Name="movieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MovieSales" Relationship="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" FromRole="Movies" ToRole="MovieSales" />
+          <NavigationProperty Name="Shows" Relationship="CinemaDatabaseModel.FK__Shows__movieID__25869641" FromRole="Movies" ToRole="Shows" />
+        </EntityType>
+        <Association Name="FK__MovieSale__posit__173876EA">
+          <End Type="CinemaDatabaseModel.Movies" Role="Movies" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.MovieSales" Role="MovieSales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieID" />
+            </Principal>
+            <Dependent Role="MovieSales">
+              <PropertyRef Name="movieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shows__movieID__25869641">
+          <End Type="CinemaDatabaseModel.Movies" Role="Movies" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.Shows" Role="Shows" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieID" />
+            </Principal>
+            <Dependent Role="Shows">
+              <PropertyRef Name="movieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -668,19 +667,6 @@
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="matrix" ColumnName="matrix" />
                 <ScalarProperty Name="isEnable" ColumnName="isEnable" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Movies">
-            <EntityTypeMapping TypeName="CinemaDatabaseModel.Movies">
-              <MappingFragment StoreEntitySet="Movies">
-                <ScalarProperty Name="movieID" ColumnName="movieID" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="duration" ColumnName="duration" />
-                <ScalarProperty Name="director" ColumnName="director" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -766,6 +752,19 @@
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CinemaDatabaseModel.Store.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CinemaDatabaseModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CinemaDatabaseModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="CinemaDatabaseModel.Movies">
+              <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="director" ColumnName="director" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="movieID" ColumnName="movieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

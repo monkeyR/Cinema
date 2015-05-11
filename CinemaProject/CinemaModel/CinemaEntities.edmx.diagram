@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="CinemaDatabaseModel.Categories" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Employees" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Halls" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinemaDatabaseModel.Movies" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.MovieSales" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Products" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.ProductSales" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
@@ -21,10 +20,11 @@
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shifts__employee__2A4B4B5E" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__MovieSale__hallI__182C9B23" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__hallID__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" ManuallyRouted="false" />
-        <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__movieID__25869641" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__ProductSa__sales__6FE99F9F" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shifts__typeShif__29572725" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.Movies" Width="1.5" PointX="0.75" PointY="10" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__MovieSale__posit__173876EA" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__movieID__25869641" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
