@@ -13,7 +13,9 @@ namespace CinemaSales.Main
 {
     public partial class BuyTicketsForm : Form
     {
-        private List<modelTicket> Tickets = new List<modelTicket>(); 
+        private List<modelTicket> AllTickets = new List<modelTicket>();
+        private int activeTicketId = 0;
+
         public BuyTicketsForm()
         {
             InitializeComponent();
@@ -142,37 +144,53 @@ namespace CinemaSales.Main
 
         private void DisplayTickets()
         {
+            var Tickets = getTickets();
+
+            this.SuspendLayoutAll();
+
+            foreach (var ticket in Tickets)
+            {
+                modelTicket new_ticket = new modelTicket(ticket.ticektID, ticket.name, ticket.price, ticket.description_ticket);
+                addButtonToTicketColumn(new_ticket);
+                AllTickets.Add(new_ticket);
+            }
+
+            this.ResumeLayoutAll();
 
         }
 
-        private void addButtonToTicketColumn(String name, DateTime time, int ShowID, int HallID, int i)
+        private void addButtonToTicketColumn(modelTicket ticket)
         {
             Button btn = new System.Windows.Forms.Button();
 
 
             btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            btn.AutoSize = true;
+            btn.Cursor = System.Windows.Forms.Cursors.Hand;
             btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            btn.FlatAppearance.BorderSize = 3;
+            btn.FlatAppearance.BorderSize = 0;
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("Palatino Linotype", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(184)))), ((int)(((byte)(162)))));
-            btn.Location = new System.Drawing.Point(0, 0);
+            btn.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.Location = new System.Drawing.Point(0, BarWithTickets.Controls.Count * 65);
             btn.Margin = new System.Windows.Forms.Padding(0);
-            btn.Name = "buttonShows" + ShowID.ToString();
-            btn.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            btn.Size = new System.Drawing.Size(100, 80);
+            btn.Name = "buttonTicket" + ticket.ticketID.ToString();
+            btn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            btn.Size = new System.Drawing.Size(100, 60);
             btn.MaximumSize = new System.Drawing.Size(400, 80);
-            btn.TabIndex = (ShowID + 1);
-            btn.Text = name + "\n\n" + time.ToString("HH:mm");
+            btn.TabIndex = (ticket.ticketID + 1);
+            btn.Text = ticket.name;
+            btn.Tag = ticket.ticketID;
             btn.UseVisualStyleBackColor = false;
             btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            //btn.Click += new System.EventHandler(this.ActiveButton);
+            btn.Click += new System.EventHandler(this.ActiveTicket);
 
-            //flowLayoutPanel1.Controls.Add(btn, HallID);
-            hookButtonToShows(btn, HallID);
+            BarWithTickets.Controls.Add(btn);
         }
-        
+
+        private void hookButtonToTicketBar(Button btn)
+        {
+
+        }
 
         private void SuspendLayoutAll()
         {
@@ -190,8 +208,9 @@ namespace CinemaSales.Main
             MainTicketsPanel.ResumeLayout();
         }
 
-        private void ActiveButton(object sender, EventArgs e)
+        private void ActiveTicket(object sender, EventArgs e)
         {
+            this.activeTicketId = (int)((Button)sender).Tag;
 
             foreach (var item in this.BarWithTickets.Controls)
             {
@@ -237,6 +256,15 @@ namespace CinemaSales.Main
             }
         }
 
+        private CinemaModel.Tickets[] getTickets()
+        {
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var Tickets = (from t in ctx.Tickets
+                             select t).ToArray();
+                return Tickets;
+            }
+        }
 
     }
 
@@ -253,8 +281,16 @@ namespace CinemaSales.Main
     {
         public int ticketID { get; set; }
         public string name { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
         public string description_ticket { get; set; }
+
+        public modelTicket(int t, string n, decimal p, string d_t)
+        {
+            this.ticketID = t;
+            this.name = n;
+            this.price = p;
+            this.description_ticket = d_t;
+        }
     }
 
 }
