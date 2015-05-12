@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaManager.Utils;
+using Common;
 
 namespace CinemaManager.SubPages
 {
@@ -228,6 +229,7 @@ namespace CinemaManager.SubPages
         public override string ToString()
         {
             String toBeReturned = title;
+            toBeReturned = StringUtils.getTrunctedTextWithEllipsis(toBeReturned, 32);
             toBeReturned += " (" + duration + ")";
             return toBeReturned;
         }

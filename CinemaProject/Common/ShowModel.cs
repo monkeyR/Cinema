@@ -24,6 +24,5 @@ namespace Common
             toBeReturned += show.dateEnd.ToString(movieDateFormat);
             return toBeReturned;
         }
-
     }
 }

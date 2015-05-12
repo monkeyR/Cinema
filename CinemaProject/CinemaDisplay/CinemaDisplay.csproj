@@ -58,8 +58,12 @@
     <Compile Include="Main\MainFormDisplay.Designer.cs">
       <DependentUpon>MainFormDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieModel.cs" />
     <Compile Include="MyLoginForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NonFilckeringPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
