@@ -10,17 +10,20 @@ using System.Windows.Forms;
 using Common;
 using System.Data.Entity;
 using System.Threading;
+using System.Configuration;
 
 namespace CinemaDisplay.Main
 {
     public partial class MainFormDisplay : Form
     {
+        private static String UISettingsIntervalTag = "UIRefresh";
+        private static String DataRefreshTag = "DataRefresh";
         private static String movieDateFormat = "HH:mm";
         private DateTime dateTime = DateTime.Now;
         private int flowLayoutHeight = 60;
         private int maxMoviesAtOnce = 0;
-        private int UITimerInterval = 5000;
-        private int modelsTimerInterval = 6000;
+        private int UITimerInterval = 10000;
+        private int modelsTimerInterval = 30000;
         private int position = 0;
 
         private Dictionary<MovieModel, List<ShowModel>> updatedGroupedShows;
@@ -33,8 +36,19 @@ namespace CinemaDisplay.Main
         public MainFormDisplay()
         {
             InitializeComponent();
-
+            initializeSettings();
             startLoadingShows();
+        }
+
+        private void initializeSettings()
+        {
+            try
+            {
+                UITimerInterval = Int32.Parse(ConfigurationManager.AppSettings[UISettingsIntervalTag]);
+                modelsTimerInterval = Int32.Parse(ConfigurationManager.AppSettings[DataRefreshTag]);
+            }
+            catch(Exception ex)
+            {}
         }
 
         private void initializeMaxMoviesAtOnce()
@@ -167,7 +181,8 @@ namespace CinemaDisplay.Main
         {
             Button button = getBaseButton();
             button.AutoSize = true;
-            button.Size = new Size(200, flowLayoutHeight);
+            button.Size = new Size(400, flowLayoutHeight);
+            button.MaximumSize = new Size(400, flowLayoutHeight);
             button.FlatAppearance.BorderSize = 0;
             button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
