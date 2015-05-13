@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.grTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.addButton);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.grTextbox);
             this.panel1.Controls.Add(this.label3);
@@ -72,6 +72,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(374, 411);
             this.panel1.TabIndex = 3;
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.Location = new System.Drawing.Point(283, 365);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(89, 44);
+            this.addButton.TabIndex = 33;
+            this.addButton.Text = "Dodaj";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(2, 365);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(89, 44);
+            this.cancelButton.TabIndex = 34;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label4
             // 
@@ -224,42 +253,17 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(283, 365);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(89, 44);
-            this.addButton.TabIndex = 33;
-            this.addButton.Text = "Dodaj";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(2, 365);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 44);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Anuluj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
             // AddNewMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(396, 433);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AddNewMovieForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj nowy film";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -286,6 +290,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox grTextbox;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
