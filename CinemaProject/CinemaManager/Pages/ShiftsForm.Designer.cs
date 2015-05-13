@@ -38,10 +38,11 @@
             // weeksComboBox
             // 
             this.weeksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.weeksComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.weeksComboBox.FormattingEnabled = true;
-            this.weeksComboBox.Location = new System.Drawing.Point(12, 25);
+            this.weeksComboBox.Location = new System.Drawing.Point(12, 20);
             this.weeksComboBox.Name = "weeksComboBox";
-            this.weeksComboBox.Size = new System.Drawing.Size(121, 21);
+            this.weeksComboBox.Size = new System.Drawing.Size(166, 28);
             this.weeksComboBox.TabIndex = 5;
             this.weeksComboBox.SelectedIndexChanged += new System.EventHandler(this.weeksComboBox_SelectedIndexChanged);
             // 
@@ -71,8 +72,9 @@
             // 
             this.addEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addEmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addEmployeeButton.ForeColor = System.Drawing.Color.White;
-            this.addEmployeeButton.Location = new System.Drawing.Point(140, 12);
+            this.addEmployeeButton.Location = new System.Drawing.Point(183, 12);
             this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
             this.addEmployeeButton.Name = "addEmployeeButton";
             this.addEmployeeButton.Size = new System.Drawing.Size(106, 44);

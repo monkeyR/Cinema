@@ -46,10 +46,10 @@
             // 
             this.MainPanel.AutoScroll = true;
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Location = new System.Drawing.Point(285, 12);
+            this.MainPanel.Location = new System.Drawing.Point(228, 10);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1026, 734);
+            this.MainPanel.Size = new System.Drawing.Size(821, 587);
             this.MainPanel.TabIndex = 0;
             // 
             // SalesStatisticsButton
@@ -57,10 +57,10 @@
             this.SalesStatisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.SalesStatisticsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.SalesStatisticsButton.ForeColor = System.Drawing.Color.White;
-            this.SalesStatisticsButton.Location = new System.Drawing.Point(2, 17);
+            this.SalesStatisticsButton.Location = new System.Drawing.Point(2, 15);
             this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.SalesStatisticsButton.Name = "SalesStatisticsButton";
-            this.SalesStatisticsButton.Size = new System.Drawing.Size(264, 74);
+            this.SalesStatisticsButton.Size = new System.Drawing.Size(210, 59);
             this.SalesStatisticsButton.TabIndex = 0;
             this.SalesStatisticsButton.Text = "Statystyki sprzedaży";
             this.SalesStatisticsButton.UseVisualStyleBackColor = false;
@@ -71,10 +71,10 @@
             this.MovieStatisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.MovieStatisticsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MovieStatisticsButton.ForeColor = System.Drawing.Color.White;
-            this.MovieStatisticsButton.Location = new System.Drawing.Point(2, 91);
+            this.MovieStatisticsButton.Location = new System.Drawing.Point(2, 74);
             this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieStatisticsButton.Name = "MovieStatisticsButton";
-            this.MovieStatisticsButton.Size = new System.Drawing.Size(264, 74);
+            this.MovieStatisticsButton.Size = new System.Drawing.Size(210, 59);
             this.MovieStatisticsButton.TabIndex = 1;
             this.MovieStatisticsButton.Text = "Statystyki filmów";
             this.MovieStatisticsButton.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@
             this.EmployeesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.EmployeesButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.EmployeesButton.ForeColor = System.Drawing.Color.White;
-            this.EmployeesButton.Location = new System.Drawing.Point(2, 165);
+            this.EmployeesButton.Location = new System.Drawing.Point(2, 133);
             this.EmployeesButton.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Size = new System.Drawing.Size(264, 74);
+            this.EmployeesButton.Size = new System.Drawing.Size(210, 59);
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Pracownicy";
             this.EmployeesButton.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@
             this.ShiftsAndPositionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.ShiftsAndPositionsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ShiftsAndPositionsButton.ForeColor = System.Drawing.Color.White;
-            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(2, 239);
+            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(2, 192);
             this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShiftsAndPositionsButton.Name = "ShiftsAndPositionsButton";
-            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(264, 74);
+            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(210, 59);
             this.ShiftsAndPositionsButton.TabIndex = 3;
             this.ShiftsAndPositionsButton.Text = "Stanowiska i dyżury";
             this.ShiftsAndPositionsButton.UseVisualStyleBackColor = false;
@@ -113,10 +113,10 @@
             this.MovieHallsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.MovieHallsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MovieHallsButton.ForeColor = System.Drawing.Color.White;
-            this.MovieHallsButton.Location = new System.Drawing.Point(2, 313);
+            this.MovieHallsButton.Location = new System.Drawing.Point(2, 251);
             this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieHallsButton.Name = "MovieHallsButton";
-            this.MovieHallsButton.Size = new System.Drawing.Size(264, 74);
+            this.MovieHallsButton.Size = new System.Drawing.Size(210, 59);
             this.MovieHallsButton.TabIndex = 4;
             this.MovieHallsButton.Text = "Sale";
             this.MovieHallsButton.UseVisualStyleBackColor = false;
@@ -127,10 +127,10 @@
             this.MovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.MovieButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MovieButton.ForeColor = System.Drawing.Color.White;
-            this.MovieButton.Location = new System.Drawing.Point(2, 387);
+            this.MovieButton.Location = new System.Drawing.Point(2, 310);
             this.MovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.MovieButton.Name = "MovieButton";
-            this.MovieButton.Size = new System.Drawing.Size(264, 74);
+            this.MovieButton.Size = new System.Drawing.Size(210, 59);
             this.MovieButton.TabIndex = 5;
             this.MovieButton.Text = "Filmy";
             this.MovieButton.UseVisualStyleBackColor = false;
@@ -141,10 +141,10 @@
             this.HallCreatorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.HallCreatorButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.HallCreatorButton.ForeColor = System.Drawing.Color.White;
-            this.HallCreatorButton.Location = new System.Drawing.Point(2, 461);
+            this.HallCreatorButton.Location = new System.Drawing.Point(2, 369);
             this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(2);
             this.HallCreatorButton.Name = "HallCreatorButton";
-            this.HallCreatorButton.Size = new System.Drawing.Size(264, 74);
+            this.HallCreatorButton.Size = new System.Drawing.Size(210, 59);
             this.HallCreatorButton.TabIndex = 6;
             this.HallCreatorButton.Text = "Kreator sal";
             this.HallCreatorButton.UseVisualStyleBackColor = false;
@@ -155,10 +155,10 @@
             this.ProductsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ProductsButton.ForeColor = System.Drawing.Color.White;
-            this.ProductsButton.Location = new System.Drawing.Point(2, 535);
+            this.ProductsButton.Location = new System.Drawing.Point(2, 428);
             this.ProductsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(264, 74);
+            this.ProductsButton.Size = new System.Drawing.Size(210, 59);
             this.ProductsButton.TabIndex = 7;
             this.ProductsButton.Text = "Produkty ";
             this.ProductsButton.UseVisualStyleBackColor = false;
@@ -168,10 +168,10 @@
             this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoutButton.ForeColor = System.Drawing.Color.White;
-            this.LogoutButton.Location = new System.Drawing.Point(2, 609);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(5);
+            this.LogoutButton.Location = new System.Drawing.Point(2, 487);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(264, 70);
+            this.LogoutButton.Size = new System.Drawing.Size(210, 56);
             this.LogoutButton.TabIndex = 8;
             this.LogoutButton.Text = "Wyloguj";
             this.LogoutButton.UseVisualStyleBackColor = false;
@@ -193,24 +193,24 @@
             this.ButtonGroup.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonGroup.Name = "ButtonGroup";
             this.ButtonGroup.Padding = new System.Windows.Forms.Padding(2);
-            this.ButtonGroup.Size = new System.Drawing.Size(268, 754);
+            this.ButtonGroup.Size = new System.Drawing.Size(214, 603);
             this.ButtonGroup.TabIndex = 1;
             this.ButtonGroup.TabStop = false;
             // 
             // MainFormManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1311, 754);
+            this.ClientSize = new System.Drawing.Size(1049, 603);
             this.Controls.Add(this.ButtonGroup);
             this.Controls.Add(this.MainPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainFormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainFormMenager";
+            this.Text = "Panel kierownika";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ButtonGroup.ResumeLayout(false);
             this.ResumeLayout(false);
