@@ -22,7 +22,7 @@ namespace CinemaManager.SubPages
             InitializeComponent();
         }
 
-        public ShiftUserControl( CinemaModel.Shifts shift, FlowLayoutPanel parentForm, Delegate fill)
+        public ShiftUserControl(CinemaModel.Shifts shift, FlowLayoutPanel parentPanel, Delegate fill)
         {
             this.shift = shift;
             this.fill = fill;
@@ -36,18 +36,27 @@ namespace CinemaManager.SubPages
             {
                 CinemaModel.Employees emp = ctx.Employees.First(x => x.employeeID.Equals(shift.employeeID));
                 employeeName.Text = emp.name + " " + emp.surname;
+                switch (emp.position)
+                {
+                    case (int)Common.EmployeeTypes.Types.Manager:
+                        positionLabel.Text = "Manager";
+                        break;
+                    case (int)Common.EmployeeTypes.Types.Saler:
+                        positionLabel.Text = "Sprzedawca";
+                        break;
+                }
 
                 for (int i = 0; i < 7; i++)
                 {
                     if (shift.typeShift.ElementAt(i).ToString() == "M")
-                    {                        
+                    {
                         daysCheckboxes[i, 0].Checked = true;
                     }
                     else if (shift.typeShift.ElementAt(i).ToString() == "A")
                     {
                         daysCheckboxes[i, 1].Checked = true;
                     }
-                }                
+                }
             }
         }
 
@@ -82,7 +91,6 @@ namespace CinemaManager.SubPages
                 ctx.Entry(shift).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();
             }
-            //parentPanel.Controls.Remove(this);
             parentPanel.Controls.Remove(this);
 
             if (parentPanel.Controls.Count == 0)

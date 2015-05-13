@@ -63,7 +63,7 @@ namespace CinemaManager.Pages
                     }
                     listItem.Add(employee.login);
 
-                    
+
 
                     if ((bool)employee.isFired)
                     {

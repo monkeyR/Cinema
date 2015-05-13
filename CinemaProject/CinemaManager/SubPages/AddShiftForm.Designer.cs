@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
             this.suACheckBox = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.suMCheckBox = new System.Windows.Forms.CheckBox();
@@ -54,33 +52,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.moMCheckBox = new System.Windows.Forms.CheckBox();
             this.employeesComboBox = new System.Windows.Forms.ComboBox();
-            this.workpositionComboBox = new System.Windows.Forms.ComboBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.okButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(12, 95);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "Anuluj";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // okButton
-            // 
-            this.okButton.Location = new System.Drawing.Point(197, 95);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 2;
-            this.okButton.Text = "Zapisz";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // suACheckBox
             // 
             this.suACheckBox.AutoSize = true;
-            this.suACheckBox.Location = new System.Drawing.Point(236, 70);
+            this.suACheckBox.Location = new System.Drawing.Point(284, 95);
             this.suACheckBox.Name = "suACheckBox";
             this.suACheckBox.Size = new System.Drawing.Size(15, 14);
             this.suACheckBox.TabIndex = 47;
@@ -90,16 +69,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(233, 33);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(278, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 13);
+            this.label10.Size = new System.Drawing.Size(29, 20);
             this.label10.TabIndex = 46;
             this.label10.Text = "Nd";
             // 
             // suMCheckBox
             // 
             this.suMCheckBox.AutoSize = true;
-            this.suMCheckBox.Location = new System.Drawing.Point(236, 50);
+            this.suMCheckBox.Location = new System.Drawing.Point(284, 75);
             this.suMCheckBox.Name = "suMCheckBox";
             this.suMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.suMCheckBox.TabIndex = 45;
@@ -109,7 +90,7 @@
             // saACheckBox
             // 
             this.saACheckBox.AutoSize = true;
-            this.saACheckBox.Location = new System.Drawing.Point(214, 70);
+            this.saACheckBox.Location = new System.Drawing.Point(255, 95);
             this.saACheckBox.Name = "saACheckBox";
             this.saACheckBox.Size = new System.Drawing.Size(15, 14);
             this.saACheckBox.TabIndex = 44;
@@ -119,7 +100,7 @@
             // saMCheckBox
             // 
             this.saMCheckBox.AutoSize = true;
-            this.saMCheckBox.Location = new System.Drawing.Point(214, 50);
+            this.saMCheckBox.Location = new System.Drawing.Point(255, 75);
             this.saMCheckBox.Name = "saMCheckBox";
             this.saMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.saMCheckBox.TabIndex = 43;
@@ -129,16 +110,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(211, 34);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(249, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(20, 13);
+            this.label7.Size = new System.Drawing.Size(29, 20);
             this.label7.TabIndex = 42;
             this.label7.Text = "So";
             // 
             // frACheckBox
             // 
             this.frACheckBox.AutoSize = true;
-            this.frACheckBox.Location = new System.Drawing.Point(190, 70);
+            this.frACheckBox.Location = new System.Drawing.Point(226, 95);
             this.frACheckBox.Name = "frACheckBox";
             this.frACheckBox.Size = new System.Drawing.Size(15, 14);
             this.frACheckBox.TabIndex = 41;
@@ -148,16 +131,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(187, 34);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(221, 49);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 13);
+            this.label8.Size = new System.Drawing.Size(24, 20);
             this.label8.TabIndex = 40;
             this.label8.Text = "Pt";
             // 
             // frMCheckBox
             // 
             this.frMCheckBox.AutoSize = true;
-            this.frMCheckBox.Location = new System.Drawing.Point(190, 50);
+            this.frMCheckBox.Location = new System.Drawing.Point(226, 75);
             this.frMCheckBox.Name = "frMCheckBox";
             this.frMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.frMCheckBox.TabIndex = 39;
@@ -167,7 +152,7 @@
             // thACheckBox
             // 
             this.thACheckBox.AutoSize = true;
-            this.thACheckBox.Location = new System.Drawing.Point(169, 70);
+            this.thACheckBox.Location = new System.Drawing.Point(197, 95);
             this.thACheckBox.Name = "thACheckBox";
             this.thACheckBox.Size = new System.Drawing.Size(15, 14);
             this.thACheckBox.TabIndex = 38;
@@ -177,7 +162,7 @@
             // thMCheckBox
             // 
             this.thMCheckBox.AutoSize = true;
-            this.thMCheckBox.Location = new System.Drawing.Point(169, 50);
+            this.thMCheckBox.Location = new System.Drawing.Point(197, 75);
             this.thMCheckBox.Name = "thMCheckBox";
             this.thMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.thMCheckBox.TabIndex = 37;
@@ -187,16 +172,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 34);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(191, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
+            this.label5.Size = new System.Drawing.Size(28, 20);
             this.label5.TabIndex = 36;
             this.label5.Text = "Cz";
             // 
             // weACheckBox
             // 
             this.weACheckBox.AutoSize = true;
-            this.weACheckBox.Location = new System.Drawing.Point(145, 70);
+            this.weACheckBox.Location = new System.Drawing.Point(167, 95);
             this.weACheckBox.Name = "weACheckBox";
             this.weACheckBox.Size = new System.Drawing.Size(15, 14);
             this.weACheckBox.TabIndex = 35;
@@ -206,16 +193,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(142, 34);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(163, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 13);
+            this.label6.Size = new System.Drawing.Size(25, 20);
             this.label6.TabIndex = 34;
             this.label6.Text = "Śr";
             // 
             // weMCheckBox
             // 
             this.weMCheckBox.AutoSize = true;
-            this.weMCheckBox.Location = new System.Drawing.Point(145, 50);
+            this.weMCheckBox.Location = new System.Drawing.Point(167, 75);
             this.weMCheckBox.Name = "weMCheckBox";
             this.weMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.weMCheckBox.TabIndex = 33;
@@ -225,7 +214,7 @@
             // tuACheckBox
             // 
             this.tuACheckBox.AutoSize = true;
-            this.tuACheckBox.Location = new System.Drawing.Point(123, 70);
+            this.tuACheckBox.Location = new System.Drawing.Point(140, 95);
             this.tuACheckBox.Name = "tuACheckBox";
             this.tuACheckBox.Size = new System.Drawing.Size(15, 14);
             this.tuACheckBox.TabIndex = 32;
@@ -235,7 +224,7 @@
             // tuMCheckBox
             // 
             this.tuMCheckBox.AutoSize = true;
-            this.tuMCheckBox.Location = new System.Drawing.Point(123, 50);
+            this.tuMCheckBox.Location = new System.Drawing.Point(140, 75);
             this.tuMCheckBox.Name = "tuMCheckBox";
             this.tuMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.tuMCheckBox.TabIndex = 31;
@@ -245,16 +234,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(120, 34);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(133, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.Size = new System.Drawing.Size(29, 20);
             this.label4.TabIndex = 30;
             this.label4.Text = "Wt";
             // 
             // moACheckBox
             // 
             this.moACheckBox.AutoSize = true;
-            this.moACheckBox.Location = new System.Drawing.Point(99, 70);
+            this.moACheckBox.Location = new System.Drawing.Point(112, 95);
             this.moACheckBox.Name = "moACheckBox";
             this.moACheckBox.Size = new System.Drawing.Size(15, 14);
             this.moACheckBox.TabIndex = 29;
@@ -264,34 +255,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 70);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(19, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 28;
             this.label3.Text = "Popołudnie";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 50);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(60, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 27;
             this.label2.Text = "Rano";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 34);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(105, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
+            this.label1.Size = new System.Drawing.Size(28, 20);
             this.label1.TabIndex = 26;
             this.label1.Text = "Pn";
             // 
             // moMCheckBox
             // 
             this.moMCheckBox.AutoSize = true;
-            this.moMCheckBox.Location = new System.Drawing.Point(99, 50);
+            this.moMCheckBox.Location = new System.Drawing.Point(112, 75);
             this.moMCheckBox.Name = "moMCheckBox";
             this.moMCheckBox.Size = new System.Drawing.Size(15, 14);
             this.moMCheckBox.TabIndex = 25;
@@ -300,26 +297,50 @@
             // 
             // employeesComboBox
             // 
+            this.employeesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.employeesComboBox.FormattingEnabled = true;
-            this.employeesComboBox.Location = new System.Drawing.Point(34, 10);
+            this.employeesComboBox.Location = new System.Drawing.Point(12, 12);
             this.employeesComboBox.Name = "employeesComboBox";
-            this.employeesComboBox.Size = new System.Drawing.Size(121, 21);
+            this.employeesComboBox.Size = new System.Drawing.Size(170, 28);
             this.employeesComboBox.TabIndex = 48;
             // 
-            // workpositionComboBox
+            // cancelButton
             // 
-            this.workpositionComboBox.FormattingEnabled = true;
-            this.workpositionComboBox.Location = new System.Drawing.Point(166, 10);
-            this.workpositionComboBox.Name = "workpositionComboBox";
-            this.workpositionComboBox.Size = new System.Drawing.Size(85, 21);
-            this.workpositionComboBox.TabIndex = 49;
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(11, 132);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(89, 44);
+            this.cancelButton.TabIndex = 50;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // okButton
+            // 
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.okButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.okButton.ForeColor = System.Drawing.Color.White;
+            this.okButton.Location = new System.Drawing.Point(210, 132);
+            this.okButton.Margin = new System.Windows.Forms.Padding(2);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(89, 44);
+            this.okButton.TabIndex = 51;
+            this.okButton.Text = "Zapisz";
+            this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // AddShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 131);
-            this.Controls.Add(this.workpositionComboBox);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.ClientSize = new System.Drawing.Size(308, 186);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.employeesComboBox);
             this.Controls.Add(this.suACheckBox);
             this.Controls.Add(this.label10);
@@ -344,11 +365,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.moMCheckBox);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
             this.Name = "AddShiftForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddShiftForm";
+            this.Text = "Dodaj nową zmianę";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,8 +375,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.CheckBox suACheckBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox suMCheckBox;
@@ -382,6 +399,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox moMCheckBox;
         private System.Windows.Forms.ComboBox employeesComboBox;
-        private System.Windows.Forms.ComboBox workpositionComboBox;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button okButton;
     }
 }

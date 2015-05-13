@@ -33,8 +33,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.loginTextbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,18 +40,20 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.positionsCombobox = new System.Windows.Forms.ComboBox();
             this.nameTextbox = new System.Windows.Forms.TextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.okButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.cancelButton);
+            this.panel1.Controls.Add(this.okButton);
             this.panel1.Controls.Add(this.passwordTextbox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.loginTextbox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.addButton);
-            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -105,28 +105,6 @@
             this.label4.Size = new System.Drawing.Size(64, 21);
             this.label4.TabIndex = 21;
             this.label4.Text = "Pozycja";
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(168, 263);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(90, 44);
-            this.addButton.TabIndex = 20;
-            this.addButton.Text = "Dodaj";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(2, 263);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(90, 44);
-            this.cancelButton.TabIndex = 19;
-            this.cancelButton.Text = "Anuluj";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label3
             // 
@@ -199,11 +177,39 @@
             this.nameTextbox.Size = new System.Drawing.Size(121, 26);
             this.nameTextbox.TabIndex = 1;
             // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(2, 263);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(89, 44);
+            this.cancelButton.TabIndex = 32;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // okButton
+            // 
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.okButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.okButton.ForeColor = System.Drawing.Color.White;
+            this.okButton.Location = new System.Drawing.Point(162, 263);
+            this.okButton.Margin = new System.Windows.Forms.Padding(2);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(89, 44);
+            this.okButton.TabIndex = 32;
+            this.okButton.Text = "Dodaj";
+            this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
             // AddNewEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(284, 340);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewEmployeeForm";
@@ -219,8 +225,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox loginTextbox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -230,5 +234,7 @@
         private System.Windows.Forms.TextBox nameTextbox;
         private System.Windows.Forms.TextBox passwordTextbox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button okButton;
     }
 }

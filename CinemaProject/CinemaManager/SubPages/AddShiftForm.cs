@@ -23,6 +23,7 @@ namespace CinemaManager.SubPages
             InitializeComponent();
             fillDaysArray();
             this.okButton.Text = "Edytuj";
+
             this.Text = "Edytuj zmianę";
 
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
@@ -34,14 +35,6 @@ namespace CinemaManager.SubPages
                 employeesComboBox.Items.Add(empItem);
                 employeesComboBox.Enabled = false;
                 employeesComboBox.SelectedIndex = 0;
-
-                var workposition = ctx.Workpositions.First(x => x.workpositionID.Equals(shift.workpositionID));
-                ComboboxItem workpositionItem = new ComboboxItem();
-                workpositionItem.Text = workposition.name;
-                workpositionItem.Value = workposition.workpositionID;
-                workpositionComboBox.Items.Add(workpositionItem);
-                workpositionComboBox.Enabled = false;
-                workpositionComboBox.SelectedIndex = 0;
             }
             fillCheckBoxes();
         }
@@ -58,7 +51,7 @@ namespace CinemaManager.SubPages
                 {
                     daysCheckboxes[i, 1].Checked = true;
                 }
-            }  
+            }
         }
         public AddShiftForm(DateTime mondayOfWeek)
         {
@@ -69,7 +62,6 @@ namespace CinemaManager.SubPages
             fillDaysArray();
 
             fillEmployees();
-            fillWorkpositions();
         }
 
         private void fillDaysArray()
@@ -94,23 +86,6 @@ namespace CinemaManager.SubPages
 
             daysCheckboxes[6, 0] = suMCheckBox;
             daysCheckboxes[6, 1] = suACheckBox;
-        }
-
-        private void fillWorkpositions()
-        {
-            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
-            {
-                var workpositions = ctx.Workpositions;
-
-                foreach (var workposition in workpositions)
-                {
-                    ComboboxItem item = new ComboboxItem();
-                    item.Text = workposition.name;
-                    item.Value = workposition.workpositionID;
-                    workpositionComboBox.Items.Add(item);
-                }
-                workpositionComboBox.SelectedIndex = 0;
-            }
         }
 
         private void fillEmployees()
@@ -147,7 +122,6 @@ namespace CinemaManager.SubPages
                     CinemaModel.Shifts tempShift = new CinemaModel.Shifts();
 
                     tempShift.employeeID = ((ComboboxItem)employeesComboBox.SelectedItem).Value;
-                    tempShift.workpositionID = ((ComboboxItem)workpositionComboBox.SelectedItem).Value;
 
                     string types = string.Empty;
                     for (int i = 0; i < 7; i++)
@@ -163,7 +137,7 @@ namespace CinemaManager.SubPages
 
                     tempShift.typeShift = types;
                     tempShift.shiftWeek = mondayOfWeek;
-
+                    tempShift.workpositionID = 1;
                     ctx.Shifts.Add(tempShift);
                     ctx.Entry(tempShift).State = System.Data.Entity.EntityState.Added;
 
@@ -187,7 +161,7 @@ namespace CinemaManager.SubPages
                     }
                     shift.typeShift = types;
                     ctx.Entry(shift).State = System.Data.Entity.EntityState.Modified;
-                    ctx.SaveChanges();                    
+                    ctx.SaveChanges();
                 }
             }
             this.Close();

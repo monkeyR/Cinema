@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.addEmployeeButton = new System.Windows.Forms.Button();
             this.weeksComboBox = new System.Windows.Forms.ComboBox();
             this.shiftsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.addEmployeeButton = new System.Windows.Forms.Button();
             this.shiftsFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // addEmployeeButton
-            // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(138, 11);
-            this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(121, 46);
-            this.addEmployeeButton.TabIndex = 4;
-            this.addEmployeeButton.Text = "Dodaj pracownika";
-            this.addEmployeeButton.UseVisualStyleBackColor = true;
-            this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
-            // 
             // weeksComboBox
             // 
+            this.weeksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.weeksComboBox.FormattingEnabled = true;
             this.weeksComboBox.Location = new System.Drawing.Point(12, 25);
             this.weeksComboBox.Name = "weeksComboBox";
@@ -77,15 +67,30 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "  Brak zmian w tym tygodniu";
             // 
+            // addEmployeeButton
+            // 
+            this.addEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.addEmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addEmployeeButton.ForeColor = System.Drawing.Color.White;
+            this.addEmployeeButton.Location = new System.Drawing.Point(140, 12);
+            this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addEmployeeButton.Name = "addEmployeeButton";
+            this.addEmployeeButton.Size = new System.Drawing.Size(106, 44);
+            this.addEmployeeButton.TabIndex = 31;
+            this.addEmployeeButton.Text = "Dodaj pracownika";
+            this.addEmployeeButton.UseVisualStyleBackColor = false;
+            this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
+            // 
             // ShiftsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(720, 457);
+            this.Controls.Add(this.addEmployeeButton);
             this.Controls.Add(this.shiftsFlowLayoutPanel);
             this.Controls.Add(this.weeksComboBox);
-            this.Controls.Add(this.addEmployeeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShiftsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -98,10 +103,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button addEmployeeButton;
         private System.Windows.Forms.ComboBox weeksComboBox;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.FlowLayoutPanel shiftsFlowLayoutPanel;
+        private System.Windows.Forms.Button addEmployeeButton;
 
     }
 }

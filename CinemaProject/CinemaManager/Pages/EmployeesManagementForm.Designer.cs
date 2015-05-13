@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addNewEmployeeButton = new System.Windows.Forms.Button();
             this.employeeListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +43,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.addNewEmployeeButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,17 +59,6 @@
             this.panel2.Size = new System.Drawing.Size(762, 263);
             this.panel2.TabIndex = 17;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // addNewEmployeeButton
-            // 
-            this.addNewEmployeeButton.Location = new System.Drawing.Point(670, 2);
-            this.addNewEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addNewEmployeeButton.Name = "addNewEmployeeButton";
-            this.addNewEmployeeButton.Size = new System.Drawing.Size(90, 44);
-            this.addNewEmployeeButton.TabIndex = 18;
-            this.addNewEmployeeButton.Text = "Dodaj nowego";
-            this.addNewEmployeeButton.UseVisualStyleBackColor = true;
-            this.addNewEmployeeButton.Click += new System.EventHandler(this.addNewEmployeeButton_Click);
             // 
             // employeeListView
             // 
@@ -190,6 +179,20 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Lista zwolnionych";
             // 
+            // addNewEmployeeButton
+            // 
+            this.addNewEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.addNewEmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addNewEmployeeButton.ForeColor = System.Drawing.Color.White;
+            this.addNewEmployeeButton.Location = new System.Drawing.Point(665, 2);
+            this.addNewEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addNewEmployeeButton.Name = "addNewEmployeeButton";
+            this.addNewEmployeeButton.Size = new System.Drawing.Size(94, 44);
+            this.addNewEmployeeButton.TabIndex = 21;
+            this.addNewEmployeeButton.Text = "Dodaj nowego";
+            this.addNewEmployeeButton.UseVisualStyleBackColor = false;
+            this.addNewEmployeeButton.Click += new System.EventHandler(this.addNewEmployeeButton_Click);
+            // 
             // EmployeesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -217,7 +220,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button addNewEmployeeButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView firedListView;
@@ -226,6 +228,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Button addNewEmployeeButton;
 
     }
 }

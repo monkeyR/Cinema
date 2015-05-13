@@ -38,13 +38,13 @@
             this.durationLabel = new System.Windows.Forms.Label();
             this.zlTextbox = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.editButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.directorLabel = new System.Windows.Forms.Label();
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.addButton);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.grTextbox);
             this.panel1.Controls.Add(this.label3);
@@ -61,8 +63,6 @@
             this.panel1.Controls.Add(this.durationLabel);
             this.panel1.Controls.Add(this.zlTextbox);
             this.panel1.Controls.Add(this.priceLabel);
-            this.panel1.Controls.Add(this.editButton);
-            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.directorLabel);
             this.panel1.Controls.Add(this.directorTextbox);
@@ -175,34 +175,12 @@
             this.priceLabel.TabIndex = 23;
             this.priceLabel.Text = "Cena";
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(269, 357);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(90, 44);
-            this.editButton.TabIndex = 7;
-            this.editButton.Text = "Zmień";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(17, 357);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(90, 44);
-            this.cancelButton.TabIndex = 8;
-            this.cancelButton.Text = "Anuluj";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 25);
             this.label2.TabIndex = 6;
@@ -246,15 +224,43 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.Location = new System.Drawing.Point(283, 365);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(89, 44);
+            this.addButton.TabIndex = 33;
+            this.addButton.Text = "Dodaj";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(2, 365);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 44);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Anuluj";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // AddNewMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(396, 433);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewMovieForm";
-            this.Text = "AddNewMovieForm";
+            this.Text = "Dodaj nowy film";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).EndInit();
@@ -269,8 +275,6 @@
         private System.Windows.Forms.Label durationLabel;
         private System.Windows.Forms.TextBox zlTextbox;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label directorLabel;
         private System.Windows.Forms.TextBox directorTextbox;
@@ -281,5 +285,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox grTextbox;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button button1;
     }
 }

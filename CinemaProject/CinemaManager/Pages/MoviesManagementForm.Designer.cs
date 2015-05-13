@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.expiredMoviesListView);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 362);
@@ -104,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 25);
@@ -113,7 +113,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.addMovieButton);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.MoviesListflowLayoutPanel);
@@ -124,20 +124,23 @@
             // 
             // addMovieButton
             // 
-            this.addMovieButton.Location = new System.Drawing.Point(669, 9);
+            this.addMovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.addMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addMovieButton.ForeColor = System.Drawing.Color.White;
+            this.addMovieButton.Location = new System.Drawing.Point(484, 2);
             this.addMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.addMovieButton.Name = "addMovieButton";
-            this.addMovieButton.Size = new System.Drawing.Size(90, 31);
-            this.addMovieButton.TabIndex = 29;
+            this.addMovieButton.Size = new System.Drawing.Size(94, 44);
+            this.addMovieButton.TabIndex = 30;
             this.addMovieButton.Text = "Dodaj nowy";
-            this.addMovieButton.UseVisualStyleBackColor = true;
+            this.addMovieButton.UseVisualStyleBackColor = false;
             this.addMovieButton.Click += new System.EventHandler(this.addMovieButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 25);
@@ -147,9 +150,9 @@
             // MoviesListflowLayoutPanel
             // 
             this.MoviesListflowLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(100, 45);
+            this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(8, 51);
             this.MoviesListflowLayoutPanel.Name = "MoviesListflowLayoutPanel";
-            this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(570, 296);
+            this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(570, 290);
             this.MoviesListflowLayoutPanel.TabIndex = 1;
             // 
             // MoviesManagementForm

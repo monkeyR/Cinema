@@ -60,6 +60,7 @@ namespace CinemaManager.SubPages
                             newMovie.director = directorTextbox.Text;
                             newMovie.description = descriptionTextbox.Text;
                             newMovie.duration = Convert.ToInt32(durationNumericUpDown.Value);
+                            newMovie.isAvailable = true;
 
                             ctx.Movies.Add(newMovie);
                             ctx.SaveChanges();

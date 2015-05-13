@@ -33,8 +33,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.loginTextbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.editButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,18 +40,20 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.positionsCombobox = new System.Windows.Forms.ComboBox();
             this.nameTextbox = new System.Windows.Forms.TextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.cancelButton);
+            this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.passwordTextbox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.loginTextbox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.editButton);
-            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -63,7 +63,7 @@
             this.panel1.Controls.Add(this.nameTextbox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 301);
+            this.panel1.Size = new System.Drawing.Size(260, 290);
             this.panel1.TabIndex = 0;
             // 
             // passwordTextbox
@@ -104,28 +104,6 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Pozycja";
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(168, 250);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(90, 44);
-            this.editButton.TabIndex = 20;
-            this.editButton.Text = "Zmień";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(2, 250);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(90, 44);
-            this.cancelButton.TabIndex = 19;
-            this.cancelButton.Text = "Anuluj";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -142,7 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(5, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 25);
             this.label2.TabIndex = 6;
@@ -196,12 +174,40 @@
             this.nameTextbox.Size = new System.Drawing.Size(121, 26);
             this.nameTextbox.TabIndex = 1;
             // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(2, 244);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(89, 44);
+            this.cancelButton.TabIndex = 33;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(169, 244);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(89, 44);
+            this.editButton.TabIndex = 34;
+            this.editButton.Text = "Edytuj";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // EditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(284, 325);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.ClientSize = new System.Drawing.Size(284, 309);
             this.Controls.Add(this.panel1);
             this.Name = "EditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -222,11 +228,11 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox loginTextbox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox passwordTextbox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button editButton;
     }
 }

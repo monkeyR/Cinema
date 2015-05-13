@@ -33,9 +33,9 @@
             this.DirectorLabel = new System.Windows.Forms.Label();
             this.durationLabel = new System.Windows.Forms.Label();
             this.descriptionTextbox = new System.Windows.Forms.TextBox();
-            this.editButton = new System.Windows.Forms.Button();
             this.priceLabel = new System.Windows.Forms.Label();
             this.expireMovieButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -81,16 +81,6 @@
             this.descriptionTextbox.TabIndex = 4;
             this.descriptionTextbox.Text = resources.GetString("descriptionTextbox.Text");
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(5, 3);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(92, 34);
-            this.editButton.TabIndex = 6;
-            this.editButton.Text = "Edytuj";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
@@ -104,23 +94,40 @@
             // 
             // expireMovieButton
             // 
-            this.expireMovieButton.Location = new System.Drawing.Point(7, 45);
+            this.expireMovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.expireMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.expireMovieButton.ForeColor = System.Drawing.Color.White;
+            this.expireMovieButton.Location = new System.Drawing.Point(6, 41);
             this.expireMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.expireMovieButton.Name = "expireMovieButton";
-            this.expireMovieButton.Size = new System.Drawing.Size(90, 31);
-            this.expireMovieButton.TabIndex = 28;
+            this.expireMovieButton.Size = new System.Drawing.Size(89, 33);
+            this.expireMovieButton.TabIndex = 35;
             this.expireMovieButton.Text = "Zdejmij";
-            this.expireMovieButton.UseVisualStyleBackColor = true;
+            this.expireMovieButton.UseVisualStyleBackColor = false;
             this.expireMovieButton.Click += new System.EventHandler(this.expireMovieButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(6, 4);
+            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(89, 33);
+            this.editButton.TabIndex = 36;
+            this.editButton.Text = "Edytuj";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // MovieListElement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(104)))), ((int)(((byte)(113)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.expireMovieButton);
             this.Controls.Add(this.priceLabel);
-            this.Controls.Add(this.editButton);
             this.Controls.Add(this.descriptionTextbox);
             this.Controls.Add(this.durationLabel);
             this.Controls.Add(this.DirectorLabel);
@@ -139,8 +146,8 @@
         private System.Windows.Forms.Label DirectorLabel;
         private System.Windows.Forms.Label durationLabel;
         private System.Windows.Forms.TextBox descriptionTextbox;
-        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button expireMovieButton;
+        private System.Windows.Forms.Button editButton;
     }
 }
