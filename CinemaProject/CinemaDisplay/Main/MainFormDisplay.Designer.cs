@@ -43,6 +43,7 @@
             this.label1.Size = new System.Drawing.Size(254, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Dzisiejszy repertuar";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // mainPanel
             // 
@@ -50,6 +51,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.mainPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mainPanel.ForeColor = System.Drawing.Color.Maroon;
             this.mainPanel.Location = new System.Drawing.Point(11, 83);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.Name = "mainPanel";
@@ -60,10 +63,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1049, 603);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mainPanel);
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainFormDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -20,7 +20,8 @@ namespace CinemaDisplay.Main
         private static String DataRefreshTag = "DataRefresh";
         private static String movieDateFormat = "HH:mm";
         private DateTime dateTime = DateTime.Now;
-        private int flowLayoutHeight = 60;
+        int margin = 5;
+        private int flowLayoutHeight = 63;
         private int maxMoviesAtOnce = 0;
         private int UITimerInterval = 10000;
         private int modelsTimerInterval = 30000;
@@ -53,7 +54,7 @@ namespace CinemaDisplay.Main
 
         private void initializeMaxMoviesAtOnce()
         {
-            maxMoviesAtOnce = mainPanel.Size.Height / (flowLayoutHeight * 2);
+            maxMoviesAtOnce = mainPanel.Size.Height / ((flowLayoutHeight * 2) + margin);
         }
 
         private void startLoadingShows()
@@ -109,14 +110,16 @@ namespace CinemaDisplay.Main
         {
             if (position == 0) //starting position in cycle
                 checkoutUpdatedShows();
-
             int startingPosition = position * maxMoviesAtOnce;
             List<Control> controlsToAdd = new List<Control>();
+            
             for (int i = startingPosition; i < groupedShows.Count && i < maxMoviesAtOnce * (position + 1); i++)
             {
                 var item = groupedShows.ElementAt(i);
                 FlowLayoutPanel panel = getLayoutPanel();
-                panel.Location = new Point(0, (i - position * maxMoviesAtOnce) * 2 * flowLayoutHeight);
+
+                int temp = i - position * maxMoviesAtOnce;
+                panel.Location = new Point(0, temp * 2 * flowLayoutHeight + temp * margin);
                 Button movieButton = getMovieButton();
                 movieButton.Text = item.Key.Title;
                 panel.Controls.Add(movieButton);
@@ -152,9 +155,10 @@ namespace CinemaDisplay.Main
         {
             foreach (var show in shows)
             {
-                Button button = getShowButton();
-                button.Text = getDateString(show);
-                panel.Controls.Add(button);
+                //Button button = getShowButton();
+                //button.Text = getDateString(show);
+                Control showControl = getShowPanel(getDateString(show), show.hall.title);
+                panel.Controls.Add(showControl);
             }
         }
 
@@ -167,14 +171,34 @@ namespace CinemaDisplay.Main
             return toBeReturned;
         }
 
-        private Button getShowButton()
+        private Panel getShowPanel(String time, String hallTitle)
         {
-            Button button = getBaseButton();
-            button.AutoSize = true;
-            button.FlatAppearance.BorderSize = 1;
-            button.Margin = new Padding(4, 1, 4, 1);
-            button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            return button;
+            Label hallLabel = new Label();
+            hallLabel.AutoEllipsis = true;
+            hallLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            hallLabel.TextAlign = this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            hallLabel.Location = new System.Drawing.Point(30, 36);
+            hallLabel.Size = new System.Drawing.Size(160, 17);
+            hallLabel.Text = hallTitle;
+
+            Label showLabel = new Label();
+            showLabel.AutoSize = true;
+            showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            showLabel.ForeColor = System.Drawing.Color.White;
+            showLabel.Location = new System.Drawing.Point(0, 5);
+            showLabel.Size = new System.Drawing.Size(127, 25);
+            showLabel.Text = time;
+
+            Panel showPanel = new Panel();
+            showPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            showPanel.Controls.Add(hallLabel);
+            showPanel.Controls.Add(showLabel);
+            showPanel.ForeColor = System.Drawing.Color.White;
+            int margin = 3;
+            showPanel.Margin = new System.Windows.Forms.Padding(margin, margin, margin, margin);
+            showPanel.Size = new System.Drawing.Size(200, flowLayoutHeight - margin * 2);
+            
+            return showPanel;
         }
 
         private Button getMovieButton()
@@ -204,6 +228,7 @@ namespace CinemaDisplay.Main
         private FlowLayoutPanel getLayoutPanel()
         {
             FlowLayoutPanel panel = new FlowLayoutPanel();
+            panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             panel.Location = new System.Drawing.Point(0, 0);
             panel.Margin = new System.Windows.Forms.Padding(2);
             panel.Size = new System.Drawing.Size(mainPanel.Size.Width, flowLayoutHeight * 2);
