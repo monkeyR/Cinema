@@ -85,12 +85,14 @@
             // 
             // DisplayStatisticOfFilm
             // 
+            this.DisplayStatisticOfFilm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.DisplayStatisticOfFilm.ForeColor = System.Drawing.Color.White;
             this.DisplayStatisticOfFilm.Location = new System.Drawing.Point(168, 54);
             this.DisplayStatisticOfFilm.Name = "DisplayStatisticOfFilm";
             this.DisplayStatisticOfFilm.Size = new System.Drawing.Size(367, 32);
             this.DisplayStatisticOfFilm.TabIndex = 1;
             this.DisplayStatisticOfFilm.Text = "Wyswietl statystyki z tego okresu";
-            this.DisplayStatisticOfFilm.UseVisualStyleBackColor = true;
+            this.DisplayStatisticOfFilm.UseVisualStyleBackColor = false;
             // 
             // MovieComboBox
             // 
@@ -120,12 +122,14 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(541, 39);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(309, 47);
             this.button3.TabIndex = 5;
             this.button3.Text = "Wyświetl statystyki filmu";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -147,23 +151,28 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(87, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 77);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ostatni tydzień";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(9, 9);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 77);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ostatni miesiąc";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MovieStatistic
             // 

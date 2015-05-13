@@ -65,6 +65,8 @@ namespace CinemaManager.Pages
                     new Label() {Text = "Łącznie sprzedanych biletów", AutoSize = true}, 1, 0);
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(
                     new Label() {Text = "Łącznie zrealizowanych seansów", AutoSize = true}, 2, 0);
+                MovieStatisticAllMovieTableLauotPanel.BackColor = Color.Lavender;
+                //MovieStatisticAllMovieTableLauotPanel.Text
 
                 foreach (var movie2 in movies)
                 {
@@ -72,9 +74,14 @@ namespace CinemaManager.Pages
                    var movies_display_count = (from t in ctx.MovieSales
                                               where t.movieID == movie2.movieID
                                                select t).Count();
+
+                   var movies_seance_count = (from k in ctx.Shows
+                                               where k.movieID == movie2.movieID
+                                               select k).Count();
                     
                     MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() {Text = movie2.title,}, 0, whichRow);
-                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = movies_display_count.ToString(), }, 2, whichRow);
+                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = movies_display_count.ToString(), }, 1, whichRow);
+                    MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = movies_seance_count.ToString(), }, 2, whichRow);
                     
                     whichRow++;
                 }
@@ -88,6 +95,11 @@ namespace CinemaManager.Pages
         }
 
         private void MovieStaisticDisplayPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
