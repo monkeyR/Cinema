@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bin.cs" />
+    <Compile Include="LocationObject.cs" />
+    <Compile Include="modelTicket.cs" />
     <Compile Include="Pages\BuyProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +76,12 @@
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pages\ChoiceOfLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ChoiceOfLocationForm.Designer.cs">
+      <DependentUpon>ChoiceOfLocationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\MainFormSales.resx">
       <DependentUpon>MainFormSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ChoiceOfLocationForm.resx">
+      <DependentUpon>ChoiceOfLocationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

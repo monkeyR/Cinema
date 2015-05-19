@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BarWithTickets = new System.Windows.Forms.Panel();
             this.MainTicketsPanel = new System.Windows.Forms.Panel();
             this.ColumnShowsLayout = new System.Windows.Forms.Panel();
             this.ColumnHallsButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.MainTicketsPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BarWithTickets
-            // 
-            this.BarWithTickets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BarWithTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
-            this.BarWithTickets.Location = new System.Drawing.Point(504, 0);
-            this.BarWithTickets.Margin = new System.Windows.Forms.Padding(0);
-            this.BarWithTickets.Name = "BarWithTickets";
-            this.BarWithTickets.Size = new System.Drawing.Size(100, 492);
-            this.BarWithTickets.TabIndex = 1;
             // 
             // MainTicketsPanel
             // 
@@ -55,7 +43,7 @@
             this.MainTicketsPanel.Controls.Add(this.ColumnHallsButtons);
             this.MainTicketsPanel.Location = new System.Drawing.Point(0, 0);
             this.MainTicketsPanel.Name = "MainTicketsPanel";
-            this.MainTicketsPanel.Size = new System.Drawing.Size(501, 492);
+            this.MainTicketsPanel.Size = new System.Drawing.Size(603, 492);
             this.MainTicketsPanel.TabIndex = 2;
             // 
             // ColumnShowsLayout
@@ -66,7 +54,7 @@
             this.ColumnShowsLayout.AutoScroll = true;
             this.ColumnShowsLayout.Location = new System.Drawing.Point(103, 0);
             this.ColumnShowsLayout.Name = "ColumnShowsLayout";
-            this.ColumnShowsLayout.Size = new System.Drawing.Size(395, 492);
+            this.ColumnShowsLayout.Size = new System.Drawing.Size(500, 492);
             this.ColumnShowsLayout.TabIndex = 1;
             // 
             // ColumnHallsButtons
@@ -84,7 +72,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(604, 492);
             this.Controls.Add(this.MainTicketsPanel);
-            this.Controls.Add(this.BarWithTickets);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BuyTicketsForm";
             this.Text = "BuyTicketsForm";
@@ -96,7 +83,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel BarWithTickets;
         private System.Windows.Forms.Panel MainTicketsPanel;
         private System.Windows.Forms.FlowLayoutPanel ColumnHallsButtons;
         private System.Windows.Forms.Panel ColumnShowsLayout;
