@@ -18,17 +18,19 @@ namespace CinemaSales.Pages
         private int ThisShowID;
         private int ThisHallID;
 
+        public EventHandler<List<LocationObject>> onLocationChange;
+
         public ChoiceOfLocationForm()
         {
             InitializeComponent();
             DisplayTickets();
         }
 
-        public ChoiceOfLocationForm(String title, int[] IDs, List<LocationObject> ChoiceLocations)
+        public ChoiceOfLocationForm(String title, int[] IDs)
         {
             InitializeComponent();
             this.Text = title;
-            this.ChoiceLocations = ChoiceLocations;
+            this.ChoiceLocations = new List<LocationObject>();
             this.ThisShowID = IDs[0];
             this.ThisHallID = IDs[1];
 
@@ -123,8 +125,8 @@ namespace CinemaSales.Pages
 
                 string[] split = Hall.matrix.Split(new Char[] { ',' });
 
-                int rows = Convert.ToInt32(split[0]);
-                int columns = Convert.ToInt32(split[1]);
+                int rows = (Convert.ToInt32(split[0]) - 1);
+                int columns = (Convert.ToInt32(split[1]) - 2);
 
                 places = new int[rows, columns];
 
@@ -176,7 +178,7 @@ namespace CinemaSales.Pages
             }
             catch (Exception)
             {
-                
+                MessageBox.Show("Problem z wyświetleniem sali.");
             }
             
 
@@ -198,7 +200,7 @@ namespace CinemaSales.Pages
             
             btn.FlatAppearance.BorderSize = 0;
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btn.Font = new System.Drawing.Font("Palatino Linotype", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btn.ForeColor = System.Drawing.Color.White;
             btn.Location = new System.Drawing.Point(position[0], position[1]);
             btn.Margin = new System.Windows.Forms.Padding(0);
@@ -238,7 +240,6 @@ namespace CinemaSales.Pages
                 removePlace(ClickedBtn.Text);
             }
 
-            this.Text = ChoiceLocations.Count.ToString();
         }
 
         private void removePlace(string place)
@@ -284,6 +285,20 @@ namespace CinemaSales.Pages
 
                 return (CinemaModel.Halls)Hall;
             }
+        }
+
+        private void choiceLocationsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            onLocationChange(this, this.ChoiceLocations);
+
+            this.Close();
+        }
+
+        private void cancelWindowButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
 
     }

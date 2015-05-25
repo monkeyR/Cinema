@@ -26,7 +26,7 @@ namespace CinemaSales.Main
             this.ClearBinButtton.Click += new System.EventHandler(MBin.ClearBin);
             this.BackLastOperationButton.Click += new System.EventHandler(MBin.ClearLastOperation);
 
-            this.TicketsForm = new BuyTicketsForm();
+            this.TicketsForm = new BuyTicketsForm(this.MBin);
             this.ProductsForm = new BuyProductsForm(this.MBin);
 
             this.BarTabButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(98)))));

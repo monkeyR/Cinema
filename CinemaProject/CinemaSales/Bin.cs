@@ -27,6 +27,7 @@ namespace CinemaSales
     public class Bin
     {
         private List<Product> Products;
+        private List<LocationObject> Tickets;
         private List<HistoryItem> HistoryOperation;
         private System.Windows.Forms.ListBox ListProducts;
         private System.Windows.Forms.Label AllCostLabel;
@@ -35,7 +36,19 @@ namespace CinemaSales
         {
             Products = new List<Product>();
             HistoryOperation = new List<HistoryItem>();
+            this.Tickets = new List<LocationObject>();
         }
+
+        public void AddTickets(List<LocationObject> ticketsList)
+        {
+            foreach (var item in ticketsList)
+            {
+                this.Tickets.Add(item);
+            }
+            RefreshBin();
+        }
+
+
 
         public void SetListProducts(System.Windows.Forms.ListBox l)
         {
@@ -95,6 +108,10 @@ namespace CinemaSales
         {
             ListProducts.Items.Clear();
             foreach (var item in Products)
+            {
+                ListProducts.Items.Add(item.show());
+            }
+            foreach (var item in Tickets)
             {
                 ListProducts.Items.Add(item.show());
             }

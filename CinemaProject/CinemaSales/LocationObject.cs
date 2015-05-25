@@ -14,7 +14,7 @@ namespace CinemaSales
         private int X;
         private int Y;
         private modelTicket ticket;
-
+        public int count = 1; 
         LocationObject()
         {
 
@@ -27,10 +27,19 @@ namespace CinemaSales
             this.ticket = t;
         }
 
+        public string show()
+        {
+            return this.ticket.name;
+        }
+
         public bool checkLocation(string l)
         {
             if (l == this.location) return true;
             else return false;
+        }
+
+        public modelTicket getTicket(){
+            return this.ticket;
         }
     }
 }

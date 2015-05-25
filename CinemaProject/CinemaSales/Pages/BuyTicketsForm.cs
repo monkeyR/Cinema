@@ -14,12 +14,14 @@ namespace CinemaSales.Main
     public partial class BuyTicketsForm : Form
     {
         private List<LocationObject> ChoiceLocations = new List<LocationObject>();
-        
+        private Bin MainBin;
 
-        public BuyTicketsForm()
+        public BuyTicketsForm(Bin B)
         {
             InitializeComponent();
+            this.MainBin = B;
             DisplayShowsScreen();
+
         }
 
         private void BuyTicketsForm_Load(object sender, EventArgs e)
@@ -162,10 +164,25 @@ namespace CinemaSales.Main
 
         private void OpenChoiceOfLocationForm(object sender, EventArgs e)
         {
-            CinemaSales.Pages.ChoiceOfLocationForm LocationForm = new Pages.ChoiceOfLocationForm(((Button)sender).Text, ((int[])((Button)sender).Tag), ChoiceLocations );
-
+            CinemaSales.Pages.ChoiceOfLocationForm LocationForm = new Pages.ChoiceOfLocationForm(((Button)sender).Text, ((int[])((Button)sender).Tag) );
+            LocationForm.onLocationChange += SaveChangeLocation;
             LocationForm.ShowDialog();
 
+        }
+
+        private void SaveChangeLocation(object sender, List<LocationObject> locations)
+        {
+            /*
+            string tickets = "";
+            foreach (var item in locations)
+            {
+                tickets += item.getTicket().name + ", ";
+            }
+
+            MessageBox.Show(tickets);
+             * */
+
+            MainBin.AddTickets(locations);
         }
 
         // MODELS
