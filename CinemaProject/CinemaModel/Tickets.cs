@@ -14,7 +14,7 @@ namespace CinemaModel
     
     public partial class Tickets
     {
-        public int ticektID { get; set; }
+        public int ticketID { get; set; }
         public string name { get; set; }
         public decimal price { get; set; }
         public string description_ticket { get; set; }

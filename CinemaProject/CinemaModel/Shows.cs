@@ -19,6 +19,7 @@ namespace CinemaModel
         public int hallID { get; set; }
         public System.DateTime dateStart { get; set; }
         public System.DateTime dateEnd { get; set; }
+        public string matrix { get; set; }
     
         public virtual Halls Halls { get; set; }
         public virtual Movies Movies { get; set; }
