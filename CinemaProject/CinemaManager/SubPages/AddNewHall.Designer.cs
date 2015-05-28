@@ -68,7 +68,7 @@
             this.HallAddNewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HallAddNewPanel.Location = new System.Drawing.Point(0, 0);
             this.HallAddNewPanel.Name = "HallAddNewPanel";
-            this.HallAddNewPanel.Size = new System.Drawing.Size(1106, 583);
+            this.HallAddNewPanel.Size = new System.Drawing.Size(1182, 583);
             this.HallAddNewPanel.TabIndex = 0;
             // 
             // panel1
@@ -80,7 +80,7 @@
             this.panel1.Controls.Add(this.HallCreateTableLayoutPanel);
             this.panel1.Location = new System.Drawing.Point(0, 171);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1103, 409);
+            this.panel1.Size = new System.Drawing.Size(1179, 409);
             this.panel1.TabIndex = 12;
             // 
             // HallCreateTableLayoutPanel
@@ -101,9 +101,9 @@
             this.HallCreatePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.HallCreatePanel.Controls.Add(this.ScreenLabel);
             this.HallCreatePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HallCreatePanel.Location = new System.Drawing.Point(0, 128);
+            this.HallCreatePanel.Location = new System.Drawing.Point(0, 146);
             this.HallCreatePanel.Name = "HallCreatePanel";
-            this.HallCreatePanel.Size = new System.Drawing.Size(1106, 43);
+            this.HallCreatePanel.Size = new System.Drawing.Size(1182, 43);
             this.HallCreatePanel.TabIndex = 11;
             // 
             // ScreenLabel
@@ -121,13 +121,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.groupBox1.Controls.Add(this.HallInfo);
             this.groupBox1.Controls.Add(this.HallCreateAddHallButton);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1106, 128);
+            this.groupBox1.Size = new System.Drawing.Size(1182, 146);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -140,13 +141,11 @@
             this.HallInfo.Controls.Add(this.panel2);
             this.HallInfo.Location = new System.Drawing.Point(6, 18);
             this.HallInfo.Name = "HallInfo";
-            this.HallInfo.Size = new System.Drawing.Size(996, 107);
+            this.HallInfo.Size = new System.Drawing.Size(1072, 107);
             this.HallInfo.TabIndex = 7;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.CreateHallONButton);
             this.panel3.Controls.Add(this.HallCreatorHallNameTextBox);
             this.panel3.Controls.Add(this.HallCreatorRowsNumberTextBox);
@@ -154,20 +153,22 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.HallCreatorColumsNumberTextBox);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(281, 107);
+            this.panel3.Size = new System.Drawing.Size(286, 107);
             this.panel3.TabIndex = 0;
             // 
             // CreateHallONButton
             // 
+            this.CreateHallONButton.AutoSize = true;
             this.CreateHallONButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.CreateHallONButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CreateHallONButton.ForeColor = System.Drawing.Color.White;
             this.CreateHallONButton.Location = new System.Drawing.Point(215, 0);
             this.CreateHallONButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateHallONButton.Name = "CreateHallONButton";
-            this.CreateHallONButton.Size = new System.Drawing.Size(65, 103);
+            this.CreateHallONButton.Size = new System.Drawing.Size(67, 103);
             this.CreateHallONButton.TabIndex = 0;
             this.CreateHallONButton.Text = "Dalej";
             this.CreateHallONButton.UseVisualStyleBackColor = false;
@@ -231,9 +232,9 @@
             this.panel2.Controls.Add(this.HallNameLabel);
             this.panel2.Controls.Add(this.RowsLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(287, 0);
+            this.panel2.Location = new System.Drawing.Point(292, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(709, 107);
+            this.panel2.Size = new System.Drawing.Size(780, 107);
             this.panel2.TabIndex = 17;
             // 
             // PlaceCount
@@ -284,9 +285,9 @@
             this.HallCreateAddHallButton.ForeColor = System.Drawing.Color.White;
             this.HallCreateAddHallButton.Image = global::CinemaManager.Properties.Resources.symbol_check_icon;
             this.HallCreateAddHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HallCreateAddHallButton.Location = new System.Drawing.Point(1008, 18);
+            this.HallCreateAddHallButton.Location = new System.Drawing.Point(1084, 18);
             this.HallCreateAddHallButton.Name = "HallCreateAddHallButton";
-            this.HallCreateAddHallButton.Size = new System.Drawing.Size(95, 107);
+            this.HallCreateAddHallButton.Size = new System.Drawing.Size(95, 125);
             this.HallCreateAddHallButton.TabIndex = 1;
             this.HallCreateAddHallButton.Text = "Zatwierdź";
             this.HallCreateAddHallButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -300,7 +301,7 @@
             this.AutoSize = true;
             this.Controls.Add(this.HallAddNewPanel);
             this.Name = "AddNewHall";
-            this.Size = new System.Drawing.Size(1106, 583);
+            this.Size = new System.Drawing.Size(1182, 583);
             this.HallAddNewPanel.ResumeLayout(false);
             this.HallAddNewPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
