@@ -41,14 +41,29 @@ namespace CinemaSales
 
         public void AddTickets(List<LocationObject> ticketsList)
         {
+            CleanTickets();
             foreach (var item in ticketsList)
             {
+                CurrentCost += item.getTicket().price;
                 this.Tickets.Add(item);
             }
             RefreshBin();
         }
 
+        public void CleanTickets()
+        {
+            foreach (var ticket in this.Tickets)
+            {
+                this.CurrentCost -= ticket.getTicket().price;
+            }
+            this.Tickets.Clear();
+        }
 
+        public void ResetTickets(object sender, EventArgs e)
+        {
+            CleanTickets();
+            RefreshBin();
+        }
 
         public void SetListProducts(System.Windows.Forms.ListBox l)
         {
@@ -85,6 +100,7 @@ namespace CinemaSales
 
         public void ClearBin(object sender, EventArgs e)
         {
+            Tickets.Clear();
             Products.Clear();
             HistoryOperation.Clear();
             CurrentCost = 0;

@@ -192,7 +192,7 @@ namespace CinemaSales.Main
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 // testowo data 
-                day = new DateTime(2015, 04, 23);
+                //day = new DateTime(2015,05,25);
 
                 var shows =
                     (from s in ctx.Shows

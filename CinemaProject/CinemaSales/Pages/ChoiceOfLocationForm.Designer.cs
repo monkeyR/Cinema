@@ -41,10 +41,11 @@
             this.HallPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.HallPanel.Location = new System.Drawing.Point(1, 0);
-            this.HallPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.HallPanel.AutoScroll = true;
+            this.HallPanel.Location = new System.Drawing.Point(29, 29);
+            this.HallPanel.Margin = new System.Windows.Forms.Padding(20);
             this.HallPanel.Name = "HallPanel";
-            this.HallPanel.Size = new System.Drawing.Size(632, 459);
+            this.HallPanel.Size = new System.Drawing.Size(584, 402);
             this.HallPanel.TabIndex = 0;
             // 
             // BarWithTickets
@@ -61,6 +62,7 @@
             // 
             // choiceLocationsButton
             // 
+            this.choiceLocationsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.choiceLocationsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.choiceLocationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.choiceLocationsButton.FlatAppearance.BorderSize = 0;
@@ -78,6 +80,7 @@
             // 
             // cancelWindowButton
             // 
+            this.cancelWindowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelWindowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.cancelWindowButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelWindowButton.FlatAppearance.BorderSize = 0;
@@ -116,9 +119,11 @@
             this.Controls.Add(this.buttonsPanel);
             this.Controls.Add(this.BarWithTickets);
             this.Controls.Add(this.HallPanel);
+            this.MinimumSize = new System.Drawing.Size(749, 499);
             this.Name = "ChoiceOfLocationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChoiceOfLocationForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.buttonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -36,6 +36,7 @@
             this.FinalButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BinPanel = new System.Windows.Forms.Panel();
+            this.ResetTicketsButton = new System.Windows.Forms.Button();
             this.ClearBinButtton = new System.Windows.Forms.Button();
             this.BackLastOperationButton = new System.Windows.Forms.Button();
             this.AllCostLabel = new System.Windows.Forms.Label();
@@ -88,6 +89,7 @@
             this.MainSalesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainSalesPanel.AutoScroll = true;
             this.MainSalesPanel.Location = new System.Drawing.Point(9, 60);
             this.MainSalesPanel.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.MainSalesPanel.Name = "MainSalesPanel";
@@ -169,6 +171,7 @@
             this.BinPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.BinPanel.Controls.Add(this.ResetTicketsButton);
             this.BinPanel.Controls.Add(this.ClearBinButtton);
             this.BinPanel.Controls.Add(this.BackLastOperationButton);
             this.BinPanel.Controls.Add(this.AllCostLabel);
@@ -181,8 +184,25 @@
             this.BinPanel.Size = new System.Drawing.Size(157, 377);
             this.BinPanel.TabIndex = 5;
             // 
+            // ResetTicketsButton
+            // 
+            this.ResetTicketsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetTicketsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.ResetTicketsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ResetTicketsButton.FlatAppearance.BorderSize = 0;
+            this.ResetTicketsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetTicketsButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ResetTicketsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.ResetTicketsButton.Location = new System.Drawing.Point(0, 273);
+            this.ResetTicketsButton.Name = "ResetTicketsButton";
+            this.ResetTicketsButton.Size = new System.Drawing.Size(157, 29);
+            this.ResetTicketsButton.TabIndex = 6;
+            this.ResetTicketsButton.Text = "Resetuj bilety";
+            this.ResetTicketsButton.UseVisualStyleBackColor = false;
+            // 
             // ClearBinButtton
             // 
+            this.ClearBinButtton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearBinButtton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.ClearBinButtton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearBinButtton.FlatAppearance.BorderSize = 0;
@@ -198,6 +218,7 @@
             // 
             // BackLastOperationButton
             // 
+            this.BackLastOperationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BackLastOperationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.BackLastOperationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackLastOperationButton.FlatAppearance.BorderSize = 0;
@@ -213,10 +234,11 @@
             // 
             // AllCostLabel
             // 
+            this.AllCostLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AllCostLabel.AutoSize = true;
             this.AllCostLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllCostLabel.ForeColor = System.Drawing.Color.White;
-            this.AllCostLabel.Location = new System.Drawing.Point(79, 279);
+            this.AllCostLabel.Location = new System.Drawing.Point(77, 243);
             this.AllCostLabel.Margin = new System.Windows.Forms.Padding(5);
             this.AllCostLabel.Name = "AllCostLabel";
             this.AllCostLabel.Size = new System.Drawing.Size(31, 22);
@@ -225,10 +247,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(5, 279);
+            this.label3.Location = new System.Drawing.Point(3, 243);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 22);
@@ -261,7 +284,7 @@
             this.BinListBox.Location = new System.Drawing.Point(6, 35);
             this.BinListBox.Margin = new System.Windows.Forms.Padding(5);
             this.BinListBox.Name = "BinListBox";
-            this.BinListBox.Size = new System.Drawing.Size(146, 234);
+            this.BinListBox.Size = new System.Drawing.Size(146, 198);
             this.BinListBox.TabIndex = 0;
             // 
             // MainFormSales
@@ -278,6 +301,7 @@
             this.Name = "MainFormSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel sprzedawcy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.BinPanel.ResumeLayout(false);
@@ -302,5 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BackLastOperationButton;
         private System.Windows.Forms.Button ClearBinButtton;
+        private System.Windows.Forms.Button ResetTicketsButton;
     }
 }

@@ -48,12 +48,12 @@ namespace CinemaSales.Pages
 
             foreach (var ticket in Tickets)
             {
-                modelTicket new_ticket = new modelTicket(ticket.ticektID, ticket.name, ticket.price, ticket.description_ticket);
+                modelTicket new_ticket = new modelTicket(ticket.ticketID, ticket.name, ticket.price, ticket.description_ticket);
                 addButtonToTicketColumn(new_ticket);
                 AllTickets.Add(new_ticket);
                 if (activeTicketId == 0)
                 {
-                    activeTicketId = ticket.ticektID;
+                    activeTicketId = ticket.ticketID;
                     BarWithTickets.Controls[0].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(98)))));
                 }
             }
@@ -107,7 +107,7 @@ namespace CinemaSales.Pages
             // START OPTIONS
 
             int margin = 3;
-            string[] alpha = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O" };
+            string[] alpha = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "W", "Y", "Z" };
             int widthOfBtn = 40;
             int heightOfBtn = 40;
             int startX = 50;
@@ -117,13 +117,15 @@ namespace CinemaSales.Pages
 
             // END OPTIONS
     
-            CinemaModel.Halls Hall = getHall(this.ThisHallID);
+            //CinemaModel.Halls Hall = getHall(this.ThisHallID);
+
+            CinemaModel.Shows Show = getShow(this.ThisShowID);
 
             try
             {
-                string matrix = Hall.matrix;
+                string matrix = Show.matrix;
 
-                string[] split = Hall.matrix.Split(new Char[] { ',' });
+                string[] split = Show.matrix.Split(new Char[] { ',' });
 
                 int rows = (Convert.ToInt32(split[0]) - 1);
                 int columns = (Convert.ToInt32(split[1]) - 2);
@@ -152,25 +154,30 @@ namespace CinemaSales.Pages
                     {
                         if (places[i, j] == 1)
                         {
-                            Button btn = CreatePlace(currentPosition, new OnePlace(j,i, alpha[i], (j - columnOffset)), new int[]{widthOfBtn, heightOfBtn});
+                            Button btn = CreatePlace(currentPosition, new OnePlace(j, i, alpha[i - rowOffset], (j - columnOffset)), new int[] { widthOfBtn, heightOfBtn });
                             this.HallPanel.Controls.Add(btn);
                         }
                         else if(places[i,j] == 2)
                         {
-                            Button btn = CreatePlace(currentPosition, new OnePlace(j, i, alpha[i], (j - columnOffset)), new int[] { widthOfBtn, heightOfBtn }, false);
+                            Button btn = CreatePlace(currentPosition, new OnePlace(j, i, alpha[i - rowOffset], (j - columnOffset)), new int[] { widthOfBtn, heightOfBtn }, false);
                             this.HallPanel.Controls.Add(btn);
                         }
-                        if (places[i, j] != 0 && !wasColumn) wasColumn = true;
+                        if (places[i, j] != 0 ) { wasColumn = true; wasRow = true; }
 
                         if (!wasColumn)
                         {
-                            columnOffset = 1;
+                            columnOffset += 1;
                         }
 
 
                         currentPosition[0] += (widthOfBtn + margin);
                         wasColumn = false;
                     }
+                    if (!wasRow)
+                    {
+                        rowOffset++;
+                    }
+                    wasRow = false;
                     columnOffset = 0;
                     currentPosition[0] = startX;
                     currentPosition[1] += (heightOfBtn + margin);
@@ -287,6 +294,18 @@ namespace CinemaSales.Pages
             }
         }
 
+        private CinemaModel.Shows getShow(int ShowID)
+        {
+            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+            {
+                var Show = (from t in ctx.Shows
+                            where t.showID == ShowID
+                            select t).FirstOrDefault();
+
+                return (CinemaModel.Shows)Show;
+            }
+        }
+
         private void choiceLocationsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -317,7 +336,7 @@ namespace CinemaSales.Pages
         {
             this.X = x;
             this.Y = y;
-            this.name = row + column.ToString();
+            this.name = row + (column+1).ToString();
         }
     }
 }

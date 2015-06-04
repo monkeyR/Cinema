@@ -39,6 +39,7 @@
             this.MainTicketsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainTicketsPanel.AutoScroll = true;
             this.MainTicketsPanel.Controls.Add(this.ColumnShowsLayout);
             this.MainTicketsPanel.Controls.Add(this.ColumnHallsButtons);
             this.MainTicketsPanel.Location = new System.Drawing.Point(0, 0);
@@ -59,6 +60,8 @@
             // 
             // ColumnHallsButtons
             // 
+            this.ColumnHallsButtons.AutoSize = true;
+            this.ColumnHallsButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.ColumnHallsButtons.Location = new System.Drawing.Point(0, 0);
             this.ColumnHallsButtons.Margin = new System.Windows.Forms.Padding(0);
             this.ColumnHallsButtons.Name = "ColumnHallsButtons";
@@ -69,6 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(604, 492);
             this.Controls.Add(this.MainTicketsPanel);
@@ -77,6 +81,7 @@
             this.Text = "BuyTicketsForm";
             this.Load += new System.EventHandler(this.BuyTicketsForm_Load);
             this.MainTicketsPanel.ResumeLayout(false);
+            this.MainTicketsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
