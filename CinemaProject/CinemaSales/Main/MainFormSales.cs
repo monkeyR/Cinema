@@ -23,7 +23,7 @@ namespace CinemaSales.Main
             this.MBin.SetListProducts(this.BinListBox);
             this.MBin.SetCostLabel(this.AllCostLabel);
 
-            this.ClearBinButtton.Click += new System.EventHandler(MBin.ClearBin);
+            this.ClearBinButtton.Click += new System.EventHandler(MBin.ClearBinEvent);
             this.BackLastOperationButton.Click += new System.EventHandler(MBin.ClearLastOperation);
             this.ResetTicketsButton.Click += new System.EventHandler(MBin.ResetTickets);
 
@@ -76,7 +76,14 @@ namespace CinemaSales.Main
 
         private void FinalButton_Click(object sender, EventArgs e)
         {
-            
+            if (this.MBin.FinalTransaction())
+            {
+                MessageBox.Show("Kupione! Bilety wydrukowane!");
+            }
+            else
+            {
+                MessageBox.Show("Koszyk jest pusty!");
+            }
         }
 
 

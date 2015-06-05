@@ -12,18 +12,18 @@ namespace CinemaModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Tickets
+    public partial class Transations
     {
-        public Tickets()
+        public Transations()
         {
             this.TicketSales = new HashSet<TicketSales>();
         }
     
-        public int ticketID { get; set; }
-        public string name { get; set; }
-        public decimal price { get; set; }
-        public string description_ticket { get; set; }
+        public int transationID { get; set; }
+        public Nullable<int> showID { get; set; }
+        public System.DateTime transationDate { get; set; }
     
+        public virtual Shows Shows { get; set; }
         public virtual ICollection<TicketSales> TicketSales { get; set; }
     }
 }

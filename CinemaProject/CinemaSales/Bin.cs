@@ -28,35 +28,55 @@ namespace CinemaSales
     {
         private List<Product> Products;
         private List<LocationObject> Tickets;
+        private List<TicketBin> BinTickets;
         private List<HistoryItem> HistoryOperation;
         private System.Windows.Forms.ListBox ListProducts;
         private System.Windows.Forms.Label AllCostLabel;
         private decimal CurrentCost = 0;
+        private int currentShowId;
         public Bin()
         {
             Products = new List<Product>();
             HistoryOperation = new List<HistoryItem>();
             this.Tickets = new List<LocationObject>();
+            this.BinTickets = new List<TicketBin>();
         }
 
-        public void AddTickets(List<LocationObject> ticketsList)
+        public void AddTickets(List<LocationObject> ticketsList, int ShowID)
         {
+            this.currentShowId = ShowID;
             CleanTickets();
             foreach (var item in ticketsList)
             {
-                CurrentCost += item.getTicket().price;
-                this.Tickets.Add(item);
+                this.CurrentCost += item.getTicket().price;
+                if (!CheckAvailabilityTicket(item))
+                {
+                    this.BinTickets.Add(new TicketBin(item));
+                }
             }
             RefreshBin();
         }
 
+        private bool CheckAvailabilityTicket(LocationObject ticket)
+        {
+            foreach (var item in this.BinTickets)
+            {
+                if (item.getId() == ticket.getTicket().ticketID) {
+                    item.IncrementAmount();
+                    return true; 
+                }
+            }
+            return false;
+        }
+
         public void CleanTickets()
         {
-            foreach (var ticket in this.Tickets)
+            foreach (var ticket in this.BinTickets)
             {
-                this.CurrentCost -= ticket.getTicket().price;
+                this.CurrentCost -= ticket.getPrice();
             }
-            this.Tickets.Clear();
+
+            this.BinTickets.Clear();
         }
 
         public void ResetTickets(object sender, EventArgs e)
@@ -98,13 +118,17 @@ namespace CinemaSales
 
         }
 
-        public void ClearBin(object sender, EventArgs e)
+        public void ClearBinEvent(object sender, EventArgs e)
         {
-            Tickets.Clear();
+            this.ClearBin();
+        }
+
+        private void ClearBin()
+        {
+            this.BinTickets.Clear();
             Products.Clear();
             HistoryOperation.Clear();
             CurrentCost = 0;
-            HistoryOperation.Clear();
             RefreshBin();
         }
 
@@ -127,7 +151,8 @@ namespace CinemaSales
             {
                 ListProducts.Items.Add(item.show());
             }
-            foreach (var item in Tickets)
+
+            foreach (var item in BinTickets)
             {
                 ListProducts.Items.Add(item.show());
             }
@@ -191,9 +216,75 @@ namespace CinemaSales
                     Products.Remove(p);
                 }
             }
-
-
         }
 
+        public bool FinalTransaction()
+        {
+            if (this.CurrentCost == 0) return false;
+            else
+            {
+                InsertTransitions();
+                this.ClearBin();
+                return true;
+            }
+        }
+
+        public void InsertTransitions()
+        {
+            try
+            {
+                using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
+                {
+
+                    if (this.currentShowId != 0)
+                    {
+                        CinemaModel.Transations newTransition = new CinemaModel.Transations();
+                        newTransition.showID = this.currentShowId;
+                        newTransition.transationDate = DateTime.Now;
+                        ctx.Transations.Add(newTransition);
+
+                        ctx.SaveChanges();
+
+                        CinemaModel.TicketSales newTicket;
+
+                        foreach (var item in this.BinTickets)
+                        {
+                            newTicket = new CinemaModel.TicketSales();
+                            newTicket.ticketID = item.IdTicket;
+                            newTicket.transationID = newTransition.transationID;
+                            newTicket.amount = item.getAmount();
+
+                            ctx.TicketSales.Add(newTicket);
+                            ctx.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        CinemaModel.Transations newTransition = new CinemaModel.Transations();
+                        newTransition.showID = null;
+                        ctx.Transations.Add(newTransition);
+
+                        ctx.SaveChanges();
+                    }
+
+                    CinemaModel.ProductSales newProduct;
+
+                    foreach (var item in this.Products)
+                    {
+                        newProduct = new CinemaModel.ProductSales();
+                        newProduct.productID = item.ID;
+                        newProduct.amount = item.Amount;
+                        newProduct.salesDate = DateTime.Now;
+                        ctx.ProductSales.Add(newProduct);
+                        ctx.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd przy kupowaniu!");
+            }
+
+        }
     }
 }

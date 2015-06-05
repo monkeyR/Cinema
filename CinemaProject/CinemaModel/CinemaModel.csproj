@@ -97,6 +97,12 @@
     <Compile Include="Tickets.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="TicketSales.cs">
+      <DependentUpon>CinemaEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transations.cs">
+      <DependentUpon>CinemaEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Workpositions.cs">
       <DependentUpon>CinemaEntities.tt</DependentUpon>
     </Compile>

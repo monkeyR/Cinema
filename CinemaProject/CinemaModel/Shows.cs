@@ -14,6 +14,11 @@ namespace CinemaModel
     
     public partial class Shows
     {
+        public Shows()
+        {
+            this.Transations = new HashSet<Transations>();
+        }
+    
         public int showID { get; set; }
         public int movieID { get; set; }
         public int hallID { get; set; }
@@ -23,5 +28,6 @@ namespace CinemaModel
     
         public virtual Halls Halls { get; set; }
         public virtual Movies Movies { get; set; }
+        public virtual ICollection<Transations> Transations { get; set; }
     }
 }

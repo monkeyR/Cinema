@@ -172,17 +172,7 @@ namespace CinemaSales.Main
 
         private void SaveChangeLocation(object sender, List<LocationObject> locations)
         {
-            /*
-            string tickets = "";
-            foreach (var item in locations)
-            {
-                tickets += item.getTicket().name + ", ";
-            }
-
-            MessageBox.Show(tickets);
-             * */
-
-            MainBin.AddTickets(locations);
+            MainBin.AddTickets(locations, ((CinemaSales.Pages.ChoiceOfLocationForm)sender).ThisShowID);
         }
 
         // MODELS

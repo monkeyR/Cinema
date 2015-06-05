@@ -39,6 +39,8 @@ namespace CinemaModel
         public virtual DbSet<Movies> Movies { get; set; }
         public virtual DbSet<Shows> Shows { get; set; }
         public virtual DbSet<Tickets> Tickets { get; set; }
+        public virtual DbSet<TicketSales> TicketSales { get; set; }
+        public virtual DbSet<Transations> Transations { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

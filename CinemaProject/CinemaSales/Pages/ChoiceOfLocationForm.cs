@@ -15,7 +15,7 @@ namespace CinemaSales.Pages
         private List<modelTicket> AllTickets;
         private int activeTicketId = 0;
         private List<LocationObject> ChoiceLocations;
-        private int ThisShowID;
+        public int ThisShowID;
         private int ThisHallID;
 
         public EventHandler<List<LocationObject>> onLocationChange;
