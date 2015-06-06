@@ -22,7 +22,9 @@ namespace CinemaModel
         public int transationID { get; set; }
         public Nullable<int> showID { get; set; }
         public System.DateTime transationDate { get; set; }
+        public int employeeID { get; set; }
     
+        public virtual Employees Employees { get; set; }
         public virtual Shows Shows { get; set; }
         public virtual ICollection<TicketSales> TicketSales { get; set; }
     }

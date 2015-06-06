@@ -137,6 +137,7 @@
           <Property Name="transationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="showID" Type="int" />
           <Property Name="transationDate" Type="date" Nullable="false" />
+          <Property Name="employeeID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Workpositions">
           <Key>
@@ -277,6 +278,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Transatio__emplo__42E1EEFE">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Transations" Type="Self.Transations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Transations">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Transatio__trans__3D2915A8">
           <End Role="Shows" Type="Self.Shows" Multiplicity="0..1" />
           <End Role="Transations" Type="Self.Transations" Multiplicity="*" />
@@ -379,6 +392,10 @@
             <End Role="Transations" EntitySet="Transations" />
             <End Role="TicketSales" EntitySet="TicketSales" />
           </AssociationSet>
+          <AssociationSet Name="FK__Transatio__emplo__42E1EEFE" Association="Self.FK__Transatio__emplo__42E1EEFE">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Transations" EntitySet="Transations" />
+          </AssociationSet>
           <AssociationSet Name="FK__Transatio__trans__3D2915A8" Association="Self.FK__Transatio__trans__3D2915A8">
             <End Role="Shows" EntitySet="Shows" />
             <End Role="Transations" EntitySet="Transations" />
@@ -413,6 +430,7 @@
           <Property Name="isFired" Type="Boolean" />
           <Property Name="firedDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Shifts" Relationship="Self.FK__Shifts__employee__2A4B4B5E" FromRole="Employees" ToRole="Shifts" />
+          <NavigationProperty Name="Transations" Relationship="CinemaDatabaseModel.FK__Transatio__emplo__42E1EEFE" FromRole="Employees" ToRole="Transations" />
         </EntityType>
         <EntityType Name="Halls">
           <Key>
@@ -645,14 +663,18 @@
           </AssociationSet>
           <EntitySet Name="Tickets" EntityType="CinemaDatabaseModel.Tickets" />
           <EntitySet Name="TicketSales" EntityType="CinemaDatabaseModel.TicketSales" />
-          <EntitySet Name="Transations" EntityType="CinemaDatabaseModel.Transations" />
-          <AssociationSet Name="FK__Transatio__trans__3D2915A8" Association="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8">
-            <End Role="Shows" EntitySet="Shows" />
-            <End Role="Transations" EntitySet="Transations" />
-          </AssociationSet>
           <AssociationSet Name="FK__TicketSal__amoun__40058253" Association="CinemaDatabaseModel.FK__TicketSal__amoun__40058253">
             <End Role="Tickets" EntitySet="Tickets" />
             <End Role="TicketSales" EntitySet="TicketSales" />
+          </AssociationSet>
+          <EntitySet Name="Transations" EntityType="CinemaDatabaseModel.Transations" />
+          <AssociationSet Name="FK__Transatio__emplo__42E1EEFE" Association="CinemaDatabaseModel.FK__Transatio__emplo__42E1EEFE">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Transations" EntitySet="Transations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transatio__trans__3D2915A8" Association="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8">
+            <End Role="Shows" EntitySet="Shows" />
+            <End Role="Transations" EntitySet="Transations" />
           </AssociationSet>
           <AssociationSet Name="FK__TicketSal__trans__40F9A68C" Association="CinemaDatabaseModel.FK__TicketSal__trans__40F9A68C">
             <End Role="Transations" EntitySet="Transations" />
@@ -744,28 +766,6 @@
           <NavigationProperty Name="Tickets" Relationship="CinemaDatabaseModel.FK__TicketSal__amoun__40058253" FromRole="TicketSales" ToRole="Tickets" />
           <NavigationProperty Name="Transations" Relationship="CinemaDatabaseModel.FK__TicketSal__trans__40F9A68C" FromRole="TicketSales" ToRole="Transations" />
         </EntityType>
-        <EntityType Name="Transations">
-          <Key>
-            <PropertyRef Name="transationID" />
-          </Key>
-          <Property Name="transationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="showID" Type="Int32" />
-          <Property Name="transationDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Shows" Relationship="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8" FromRole="Transations" ToRole="Shows" />
-          <NavigationProperty Name="TicketSales" Relationship="CinemaDatabaseModel.FK__TicketSal__trans__40F9A68C" FromRole="Transations" ToRole="TicketSales" />
-        </EntityType>
-        <Association Name="FK__Transatio__trans__3D2915A8">
-          <End Type="CinemaDatabaseModel.Shows" Role="Shows" Multiplicity="0..1" />
-          <End Type="CinemaDatabaseModel.Transations" Role="Transations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shows">
-              <PropertyRef Name="showID" />
-            </Principal>
-            <Dependent Role="Transations">
-              <PropertyRef Name="showID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TicketSal__amoun__40058253">
           <End Type="CinemaDatabaseModel.Tickets" Role="Tickets" Multiplicity="1" />
           <End Type="CinemaDatabaseModel.TicketSales" Role="TicketSales" Multiplicity="*" />
@@ -775,6 +775,42 @@
             </Principal>
             <Dependent Role="TicketSales">
               <PropertyRef Name="ticketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Transations">
+          <Key>
+            <PropertyRef Name="transationID" />
+          </Key>
+          <Property Name="transationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="showID" Type="Int32" />
+          <Property Name="transationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="employeeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="CinemaDatabaseModel.FK__Transatio__emplo__42E1EEFE" FromRole="Transations" ToRole="Employees" />
+          <NavigationProperty Name="Shows" Relationship="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8" FromRole="Transations" ToRole="Shows" />
+          <NavigationProperty Name="TicketSales" Relationship="CinemaDatabaseModel.FK__TicketSal__trans__40F9A68C" FromRole="Transations" ToRole="TicketSales" />
+        </EntityType>
+        <Association Name="FK__Transatio__emplo__42E1EEFE">
+          <End Type="CinemaDatabaseModel.Employees" Role="Employees" Multiplicity="1" />
+          <End Type="CinemaDatabaseModel.Transations" Role="Transations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Transations">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transatio__trans__3D2915A8">
+          <End Type="CinemaDatabaseModel.Shows" Role="Shows" Multiplicity="0..1" />
+          <End Type="CinemaDatabaseModel.Transations" Role="Transations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shows">
+              <PropertyRef Name="showID" />
+            </Principal>
+            <Dependent Role="Transations">
+              <PropertyRef Name="showID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -950,6 +986,7 @@
           <EntitySetMapping Name="Transations">
             <EntityTypeMapping TypeName="CinemaDatabaseModel.Transations">
               <MappingFragment StoreEntitySet="Transations">
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
                 <ScalarProperty Name="transationDate" ColumnName="transationDate" />
                 <ScalarProperty Name="showID" ColumnName="showID" />
                 <ScalarProperty Name="transationID" ColumnName="transationID" />

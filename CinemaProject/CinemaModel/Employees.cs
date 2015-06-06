@@ -17,6 +17,7 @@ namespace CinemaModel
         public Employees()
         {
             this.Shifts = new HashSet<Shifts>();
+            this.Transations = new HashSet<Transations>();
         }
     
         public int employeeID { get; set; }
@@ -29,5 +30,6 @@ namespace CinemaModel
         public Nullable<System.DateTime> firedDate { get; set; }
     
         public virtual ICollection<Shifts> Shifts { get; set; }
+        public virtual ICollection<Transations> Transations { get; set; }
     }
 }

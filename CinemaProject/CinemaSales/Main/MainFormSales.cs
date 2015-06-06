@@ -15,13 +15,23 @@ namespace CinemaSales.Main
         public Bin MBin;
         private BuyTicketsForm TicketsForm = null;
         private BuyProductsForm ProductsForm = null;
-        public MainFormSales()
+        //private CinemaModel.Employees LoginUser = null;
+        public static CinemaModel.Employees LoginUser = null;
+
+        public static string LastChooseLocations = null;
+        public static int LastChooseShow = 0;
+
+        public MainFormSales(CinemaModel.Employees user)
         {
             InitializeComponent();
 
             this.MBin = new Bin();
             this.MBin.SetListProducts(this.BinListBox);
             this.MBin.SetCostLabel(this.AllCostLabel);
+            MainFormSales.LoginUser = user;
+
+            this.LoginUserLabel.Text = "Zalogowany jako:\n" + user.name;
+
 
             this.ClearBinButtton.Click += new System.EventHandler(MBin.ClearBinEvent);
             this.BackLastOperationButton.Click += new System.EventHandler(MBin.ClearLastOperation);

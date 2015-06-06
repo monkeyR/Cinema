@@ -17,6 +17,12 @@ namespace CinemaSales.Pages
         private List<LocationObject> ChoiceLocations;
         public int ThisShowID;
         private int ThisHallID;
+        private Button InstanceButton;
+
+        private int rows = 0;
+        private int columns = 0;
+        private int[,] places;
+        public String returnLocations = "";
 
         public EventHandler<List<LocationObject>> onLocationChange;
 
@@ -35,6 +41,7 @@ namespace CinemaSales.Pages
             this.ThisHallID = IDs[1];
 
             this.AllTickets = new List<modelTicket>();
+            this.InstanceButton = InstanceButtonLocation();
 
             DisplayTickets();
             CreateHall();
@@ -113,7 +120,7 @@ namespace CinemaSales.Pages
             int startX = 50;
             int startY = 50;
             int[] currentPosition = new int[]{startX, startY};
-            int[,] places;
+            //int[,] places;
 
             // END OPTIONS
     
@@ -127,18 +134,18 @@ namespace CinemaSales.Pages
 
                 string[] split = Show.matrix.Split(new Char[] { ',' });
 
-                int rows = (Convert.ToInt32(split[0]) - 1);
-                int columns = (Convert.ToInt32(split[1]) - 2);
+                this.rows = (Convert.ToInt32(split[0]) - 1);
+                this.columns = (Convert.ToInt32(split[1]) - 2);
 
-                places = new int[rows, columns];
+                this.places = new int[this.rows, this.columns];
 
                 int iterator = 2;
 
-                for (int i = 0; i < rows; i++)
+                for (int i = 0; i < this.rows; i++)
                 {
-                    for (int j = 0; j < columns; j++)
+                    for (int j = 0; j < this.columns; j++)
                     {
-                        places[i, j] = Convert.ToInt32(split[iterator]);
+                        this.places[i, j] = Convert.ToInt32(split[iterator]);
                         iterator++;
                     }
                 }
@@ -148,21 +155,21 @@ namespace CinemaSales.Pages
                 bool wasRow = false;
                 bool wasColumn = false;
 
-                for (int i = 0; i < rows; i++)
+                for (int i = 0; i < this.rows; i++)
                 {
-                    for (int j = 0; j < columns; j++)
+                    for (int j = 0; j < this.columns; j++)
                     {
-                        if (places[i, j] == 1)
+                        if (this.places[i, j] == 1)
                         {
                             Button btn = CreatePlace(currentPosition, new OnePlace(j, i, alpha[i - rowOffset], (j - columnOffset)), new int[] { widthOfBtn, heightOfBtn });
                             this.HallPanel.Controls.Add(btn);
                         }
-                        else if(places[i,j] == 2)
+                        else if (this.places[i, j] == 2)
                         {
                             Button btn = CreatePlace(currentPosition, new OnePlace(j, i, alpha[i - rowOffset], (j - columnOffset)), new int[] { widthOfBtn, heightOfBtn }, false);
                             this.HallPanel.Controls.Add(btn);
                         }
-                        if (places[i, j] != 0 ) { wasColumn = true; wasRow = true; }
+                        if (this.places[i, j] != 0) { wasColumn = true; wasRow = true; }
 
                         if (!wasColumn)
                         {
@@ -191,9 +198,26 @@ namespace CinemaSales.Pages
 
         }
 
-        private Button CreatePlace(int[] position, OnePlace cord, int[] size, bool enable = true)
+        private Button InstanceButtonLocation()
         {
             Button btn = new System.Windows.Forms.Button();
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("Palatino Linotype", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.TabIndex = 1;
+            btn.UseVisualStyleBackColor = false;
+
+            return btn;
+        }
+
+        private Button CreatePlace(int[] position, OnePlace cord, int[] size, bool enable = true)
+        {
+            //Button btn = new System.Windows.Forms.Button();
+            Button btn = this.InstanceButtonLocation();
 
             if (enable)
                 btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
@@ -202,24 +226,15 @@ namespace CinemaSales.Pages
                 btn.BackColor = System.Drawing.Color.Red;
                 btn.Enabled = false;
             }
-            btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            
-            btn.FlatAppearance.BorderSize = 0;
-            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("Palatino Linotype", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btn.ForeColor = System.Drawing.Color.White;
+
+
             btn.Location = new System.Drawing.Point(position[0], position[1]);
-            btn.Margin = new System.Windows.Forms.Padding(0);
             btn.Name = "button," + cord.name;
             btn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             btn.Size = new System.Drawing.Size(size[0], size[1]);
-            btn.MaximumSize = new System.Drawing.Size(400, 80);
-            btn.TabIndex = 1;
             btn.Text = cord.name;
             btn.Tag = cord;
-            btn.UseVisualStyleBackColor = false;
-            btn.Cursor = System.Windows.Forms.Cursors.Hand;
+
             btn.Click += new System.EventHandler(this.SelectPlace);
             return btn;
         }
@@ -309,8 +324,22 @@ namespace CinemaSales.Pages
         private void choiceLocationsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            onLocationChange(this, this.ChoiceLocations);
 
+            
+            this.returnLocations += (this.rows + 1).ToString() + "," + (this.columns + 2).ToString();
+
+            foreach (var item in this.ChoiceLocations)
+            {
+                this.places[item.getY(), item.getX()] = 2;
+
+            }
+
+            foreach (var item in this.places)
+            {
+                this.returnLocations += "," + item.ToString();
+            }
+
+            onLocationChange(this, this.ChoiceLocations);
             this.Close();
         }
 

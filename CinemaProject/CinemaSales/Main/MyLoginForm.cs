@@ -24,7 +24,7 @@ namespace CinemaSales.Main
             if (user == null)
                 MessageBox.Show(new MessageStrings().NoSuchUser);
             else
-                showMainForm();
+                showMainForm(user);
         }
 
         /*private void test()
@@ -42,11 +42,11 @@ namespace CinemaSales.Main
             return user;
         }
 
-        private void showMainForm()
+        private void showMainForm(CinemaModel.Employees user)
         {
             try
             {
-                MainFormSales mainForm = new MainFormSales();
+                MainFormSales mainForm = new MainFormSales(user);
                 this.Hide();
                 mainForm.ShowDialog();
                 this.Close();

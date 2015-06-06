@@ -27,6 +27,16 @@ namespace CinemaSales
             this.ticket = t;
         }
 
+        public int getX()
+        {
+            return this.X;
+        }
+
+        public int getY()
+        {
+            return this.Y;
+        }
+
         public string show()
         {
             return this.ticket.name;

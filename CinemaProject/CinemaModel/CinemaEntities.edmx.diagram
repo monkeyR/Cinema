@@ -27,9 +27,10 @@
         <AssociationConnector Association="CinemaDatabaseModel.FK__Shows__movieID__25869641" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.Tickets" Width="1.5" PointX="5.375" PointY="4.75" />
         <EntityTypeShape EntityType="CinemaDatabaseModel.TicketSales" Width="1.5" PointX="7.625" PointY="7.75" />
-        <EntityTypeShape EntityType="CinemaDatabaseModel.Transations" Width="1.5" PointX="5.25" PointY="10.75" />
-        <AssociationConnector Association="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__TicketSal__amoun__40058253" />
+        <EntityTypeShape EntityType="CinemaDatabaseModel.Transations" Width="1.5" PointX="11" PointY="5.875" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__Transatio__emplo__42E1EEFE" />
+        <AssociationConnector Association="CinemaDatabaseModel.FK__Transatio__trans__3D2915A8" />
         <AssociationConnector Association="CinemaDatabaseModel.FK__TicketSal__trans__40F9A68C" />
         </Diagram>
     </edmx:Diagrams>

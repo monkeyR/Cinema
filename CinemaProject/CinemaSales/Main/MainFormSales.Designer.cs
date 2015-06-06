@@ -34,7 +34,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.FinalButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LoginUserLabel = new System.Windows.Forms.Label();
             this.BinPanel = new System.Windows.Forms.Panel();
             this.ResetTicketsButton = new System.Windows.Forms.Button();
             this.ClearBinButtton = new System.Windows.Forms.Button();
@@ -122,7 +122,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.FinalButton, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.LoginUserLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.BinPanel, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(618, 9);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -153,18 +153,18 @@
             this.FinalButton.UseVisualStyleBackColor = false;
             this.FinalButton.Click += new System.EventHandler(this.FinalButton_Click);
             // 
-            // label1
+            // LoginUserLabel
             // 
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(151, 114);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Dane\r\n     Sprzedawcy";
+            this.LoginUserLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginUserLabel.ForeColor = System.Drawing.Color.White;
+            this.LoginUserLabel.Location = new System.Drawing.Point(3, 3);
+            this.LoginUserLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.LoginUserLabel.Name = "LoginUserLabel";
+            this.LoginUserLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.LoginUserLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LoginUserLabel.Size = new System.Drawing.Size(151, 114);
+            this.LoginUserLabel.TabIndex = 4;
+            this.LoginUserLabel.Text = "Dane\r\n     Sprzedawcy";
             // 
             // BinPanel
             // 
@@ -318,7 +318,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button FinalButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LoginUserLabel;
         private System.Windows.Forms.Panel BinPanel;
         private System.Windows.Forms.ListBox BinListBox;
         private System.Windows.Forms.Label label2;

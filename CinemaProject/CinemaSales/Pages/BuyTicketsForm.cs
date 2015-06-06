@@ -16,6 +16,7 @@ namespace CinemaSales.Main
         private List<LocationObject> ChoiceLocations = new List<LocationObject>();
         private Bin MainBin;
 
+
         public BuyTicketsForm(Bin B)
         {
             InitializeComponent();
@@ -172,6 +173,9 @@ namespace CinemaSales.Main
 
         private void SaveChangeLocation(object sender, List<LocationObject> locations)
         {
+            CinemaSales.Main.MainFormSales.LastChooseLocations = ((CinemaSales.Pages.ChoiceOfLocationForm)sender).returnLocations;
+            CinemaSales.Main.MainFormSales.LastChooseShow = ((CinemaSales.Pages.ChoiceOfLocationForm)sender).ThisShowID;
+
             MainBin.AddTickets(locations, ((CinemaSales.Pages.ChoiceOfLocationForm)sender).ThisShowID);
         }
 
@@ -196,7 +200,7 @@ namespace CinemaSales.Main
                          showID = s.showID,
                          HallID = s.hallID
                      }).ToList();
-
+                
                 return shows;
             }
         }

@@ -235,12 +235,14 @@ namespace CinemaSales
             {
                 using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                 {
+                    //CinemaSales.Main.MainFormSales.LoginUser.employeeID;
 
                     if (this.currentShowId != 0)
                     {
                         CinemaModel.Transations newTransition = new CinemaModel.Transations();
                         newTransition.showID = this.currentShowId;
                         newTransition.transationDate = DateTime.Now;
+                        newTransition.employeeID = CinemaSales.Main.MainFormSales.LoginUser.employeeID;
                         ctx.Transations.Add(newTransition);
 
                         ctx.SaveChanges();
@@ -257,11 +259,18 @@ namespace CinemaSales
                             ctx.TicketSales.Add(newTicket);
                             ctx.SaveChanges();
                         }
+
+                        CinemaModel.Shows updateShow = ctx.Shows.FirstOrDefault(x => x.showID.Equals(currentShowId));
+                        updateShow.matrix = CinemaSales.Main.MainFormSales.LastChooseLocations;
+                        ctx.Entry(updateShow).State = System.Data.Entity.EntityState.Modified;
+                        ctx.SaveChanges();
+
                     }
                     else
                     {
                         CinemaModel.Transations newTransition = new CinemaModel.Transations();
                         newTransition.showID = null;
+                        newTransition.employeeID = CinemaSales.Main.MainFormSales.LoginUser.employeeID;
                         ctx.Transations.Add(newTransition);
 
                         ctx.SaveChanges();
