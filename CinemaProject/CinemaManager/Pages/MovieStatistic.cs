@@ -18,25 +18,9 @@ namespace CinemaManager.Pages
         public MovieStatistic()
         {
             InitializeComponent();
-            FIllComboBox();
+           
             FIllTable();
             OneMovieStatistic_tableLayoutPanel.Hide();
-        }
-        private void FIllComboBox()
-        {
-            using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
-            {
-                var movies = (from t in ctx.Movies
-                    where t.isAvailable == true
-                    select t);
-                foreach (var movie in movies)
-                {
-                    Common.UISynchronizer.synchronizeWithUI(MovieComboBox, x => MovieComboBox.Items.Add(x),
-                        movie.title);
-                }
-                MovieComboBox.Sorted = true;
-               if(MovieComboBox.Items.Count!=0) MovieComboBox.SelectedIndex = 0;
-            }
         }
 
         private void FIllTable()
@@ -165,9 +149,9 @@ namespace CinemaManager.Pages
 
                     howManyDisplay += movies_seance_count;
                     ile = allTicket;
-                    whichRow++;
+                  //  whichRow++;
                 }
-                whichRow = 1;
+                //whichRow = 1;
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = ile.ToString(), }, 0, 1);
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = howManyDisplay.ToString(),}, 1, 1);
                 //MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = howManyTicket.ToString(), }, 1, howManyRows + 1);

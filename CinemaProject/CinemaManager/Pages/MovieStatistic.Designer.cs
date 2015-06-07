@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.From_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.To_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MovieStaisticDisplayPanel = new System.Windows.Forms.Panel();
@@ -40,8 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.LastMonthStatistic = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.MovieStaisticDisplayPanel.SuspendLayout();
+            this.OneMovieStatistic_tableLayoutPanel.SuspendLayout();
             this.MovieStatisticPropertisPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // From_dateTimePicker
@@ -73,6 +79,7 @@
             // 
             this.OneMovieStatistic_tableLayoutPanel.ColumnCount = 1;
             this.OneMovieStatistic_tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.OneMovieStatistic_tableLayoutPanel.Controls.Add(this.chart1, 0, 0);
             this.OneMovieStatistic_tableLayoutPanel.Location = new System.Drawing.Point(12, 209);
             this.OneMovieStatistic_tableLayoutPanel.Name = "OneMovieStatistic_tableLayoutPanel";
             this.OneMovieStatistic_tableLayoutPanel.RowCount = 1;
@@ -179,6 +186,22 @@
             this.LastMonthStatistic.UseVisualStyleBackColor = false;
             this.LastMonthStatistic.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 232);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            // 
             // MovieStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,8 +213,10 @@
             this.Name = "MovieStatistic";
             this.Text = "Statystyki filmów";
             this.MovieStaisticDisplayPanel.ResumeLayout(false);
+            this.OneMovieStatistic_tableLayoutPanel.ResumeLayout(false);
             this.MovieStatisticPropertisPanel.ResumeLayout(false);
             this.MovieStatisticPropertisPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,5 +235,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel OneMovieStatistic_tableLayoutPanel;
         private System.Windows.Forms.Button thisMothButton;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
