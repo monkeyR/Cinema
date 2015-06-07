@@ -34,14 +34,12 @@
             this.OneMovieStatistic_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.MovieStatisticAllMovieTableLauotPanel = new System.Windows.Forms.TableLayoutPanel();
             this.DisplayStatisticOfFilm = new System.Windows.Forms.Button();
-            this.MovieComboBox = new System.Windows.Forms.ComboBox();
             this.MovieStatisticPropertisPanel = new System.Windows.Forms.Panel();
-            this.OneMovieStatistic_button = new System.Windows.Forms.Button();
+            this.thisMothButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.LastMonthStatistic = new System.Windows.Forms.Button();
-            this.thisMothButton = new System.Windows.Forms.Button();
             this.MovieStaisticDisplayPanel.SuspendLayout();
             this.MovieStatisticPropertisPanel.SuspendLayout();
             this.SuspendLayout();
@@ -75,11 +73,11 @@
             // 
             this.OneMovieStatistic_tableLayoutPanel.ColumnCount = 1;
             this.OneMovieStatistic_tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.OneMovieStatistic_tableLayoutPanel.Location = new System.Drawing.Point(645, 120);
+            this.OneMovieStatistic_tableLayoutPanel.Location = new System.Drawing.Point(12, 209);
             this.OneMovieStatistic_tableLayoutPanel.Name = "OneMovieStatistic_tableLayoutPanel";
             this.OneMovieStatistic_tableLayoutPanel.RowCount = 1;
             this.OneMovieStatistic_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.OneMovieStatistic_tableLayoutPanel.Size = new System.Drawing.Size(472, 292);
+            this.OneMovieStatistic_tableLayoutPanel.Size = new System.Drawing.Size(627, 238);
             this.OneMovieStatistic_tableLayoutPanel.TabIndex = 1;
             // 
             // MovieStatisticAllMovieTableLauotPanel
@@ -89,12 +87,12 @@
             this.MovieStatisticAllMovieTableLauotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.MovieStatisticAllMovieTableLauotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.MovieStatisticAllMovieTableLauotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.MovieStatisticAllMovieTableLauotPanel.Location = new System.Drawing.Point(12, 152);
+            this.MovieStatisticAllMovieTableLauotPanel.Location = new System.Drawing.Point(12, 120);
             this.MovieStatisticAllMovieTableLauotPanel.Name = "MovieStatisticAllMovieTableLauotPanel";
             this.MovieStatisticAllMovieTableLauotPanel.RowCount = 2;
             this.MovieStatisticAllMovieTableLauotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.MovieStatisticAllMovieTableLauotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MovieStatisticAllMovieTableLauotPanel.Size = new System.Drawing.Size(588, 51);
+            this.MovieStatisticAllMovieTableLauotPanel.Size = new System.Drawing.Size(627, 83);
             this.MovieStatisticAllMovieTableLauotPanel.TabIndex = 0;
             this.MovieStatisticAllMovieTableLauotPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MovieStatisticAllMovieTableLauotPanel_Paint);
             // 
@@ -109,21 +107,11 @@
             this.DisplayStatisticOfFilm.Text = "Wyswietl statystyki z tego okresu";
             this.DisplayStatisticOfFilm.UseVisualStyleBackColor = false;
             // 
-            // MovieComboBox
-            // 
-            this.MovieComboBox.FormattingEnabled = true;
-            this.MovieComboBox.Location = new System.Drawing.Point(620, 9);
-            this.MovieComboBox.Name = "MovieComboBox";
-            this.MovieComboBox.Size = new System.Drawing.Size(309, 24);
-            this.MovieComboBox.TabIndex = 0;
-            // 
             // MovieStatisticPropertisPanel
             // 
             this.MovieStatisticPropertisPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.MovieStatisticPropertisPanel.Controls.Add(this.thisMothButton);
-            this.MovieStatisticPropertisPanel.Controls.Add(this.OneMovieStatistic_button);
             this.MovieStatisticPropertisPanel.Controls.Add(this.DisplayStatisticOfFilm);
-            this.MovieStatisticPropertisPanel.Controls.Add(this.MovieComboBox);
             this.MovieStatisticPropertisPanel.Controls.Add(this.label2);
             this.MovieStatisticPropertisPanel.Controls.Add(this.label1);
             this.MovieStatisticPropertisPanel.Controls.Add(this.button2);
@@ -136,17 +124,16 @@
             this.MovieStatisticPropertisPanel.Size = new System.Drawing.Size(1129, 89);
             this.MovieStatisticPropertisPanel.TabIndex = 8;
             // 
-            // OneMovieStatistic_button
+            // thisMothButton
             // 
-            this.OneMovieStatistic_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.OneMovieStatistic_button.ForeColor = System.Drawing.Color.White;
-            this.OneMovieStatistic_button.Location = new System.Drawing.Point(620, 39);
-            this.OneMovieStatistic_button.Name = "OneMovieStatistic_button";
-            this.OneMovieStatistic_button.Size = new System.Drawing.Size(309, 47);
-            this.OneMovieStatistic_button.TabIndex = 5;
-            this.OneMovieStatistic_button.Text = "Wyświetl statystyki filmu";
-            this.OneMovieStatistic_button.UseVisualStyleBackColor = false;
-            this.OneMovieStatistic_button.Click += new System.EventHandler(this.button3_Click);
+            this.thisMothButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.thisMothButton.ForeColor = System.Drawing.Color.White;
+            this.thisMothButton.Location = new System.Drawing.Point(166, 9);
+            this.thisMothButton.Name = "thisMothButton";
+            this.thisMothButton.Size = new System.Drawing.Size(75, 77);
+            this.thisMothButton.TabIndex = 6;
+            this.thisMothButton.Text = "Aktualny miesiąc";
+            this.thisMothButton.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -176,6 +163,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Ostatni tydzień";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LastMonthStatistic
             // 
@@ -190,17 +178,6 @@
             this.LastMonthStatistic.Text = "Ostatni miesiąc";
             this.LastMonthStatistic.UseVisualStyleBackColor = false;
             this.LastMonthStatistic.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // thisMothButton
-            // 
-            this.thisMothButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.thisMothButton.ForeColor = System.Drawing.Color.White;
-            this.thisMothButton.Location = new System.Drawing.Point(166, 9);
-            this.thisMothButton.Name = "thisMothButton";
-            this.thisMothButton.Size = new System.Drawing.Size(75, 77);
-            this.thisMothButton.TabIndex = 6;
-            this.thisMothButton.Text = "Aktualny miesiąc";
-            this.thisMothButton.UseVisualStyleBackColor = false;
             // 
             // MovieStatistic
             // 
@@ -226,13 +203,11 @@
         private System.Windows.Forms.Panel MovieStaisticDisplayPanel;
         private System.Windows.Forms.Panel MovieStatisticPropertisPanel;
         private System.Windows.Forms.Button DisplayStatisticOfFilm;
-        private System.Windows.Forms.ComboBox MovieComboBox;
         private System.Windows.Forms.TableLayoutPanel MovieStatisticAllMovieTableLauotPanel;
         private System.Windows.Forms.Button LastMonthStatistic;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button OneMovieStatistic_button;
         private System.Windows.Forms.TableLayoutPanel OneMovieStatistic_tableLayoutPanel;
         private System.Windows.Forms.Button thisMothButton;
     }

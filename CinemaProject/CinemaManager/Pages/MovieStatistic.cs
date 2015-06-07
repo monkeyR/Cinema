@@ -110,8 +110,6 @@ namespace CinemaManager.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int whichRow = 1;
-            int whichColumn = 0;
             int howManyRows = 0;
             int howManyDisplay = 0;
             int howManyTicket = 0;
@@ -184,6 +182,11 @@ namespace CinemaManager.Pages
         }
 
         private void MovieStatisticAllMovieTableLauotPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
