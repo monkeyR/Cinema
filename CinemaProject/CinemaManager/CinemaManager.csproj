@@ -62,7 +62,12 @@
     <Compile Include="Main\MyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CinemaStatistic.cs" />
+    <Compile Include="Pages\CinemaStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CinemaStatistic.Designer.cs">
+      <DependentUpon>CinemaStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EmployeesManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +88,7 @@
     </Compile>
     <Compile Include="Pages\QuantityOfSalesTicket.cs" />
     <Compile Include="Pages\QuantityOfSalesTicketOneMovie.cs" />
+    <Compile Include="Pages\QuantityOfSalesTicketTypeOfMovie.cs" />
     <Compile Include="Pages\SalesStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     <Compile Include="Utils\AvaibleMoviesLoader.cs" />
     <EmbeddedResource Include="Main\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CinemaStatistic.resx">
+      <DependentUpon>CinemaStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\EmployeesManagementForm.resx">
       <DependentUpon>EmployeesManagementForm.cs</DependentUpon>

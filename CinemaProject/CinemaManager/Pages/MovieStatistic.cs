@@ -15,17 +15,34 @@ namespace CinemaManager.Pages
 {
     public partial class MovieStatistic : Form
     {
+
+       public int thisMonth = DateTime.Today.Month;
+       public int lastMonts = DateTime.Today.Month - 1;
+       public int thisYear = DateTime.Today.Year;
+       public int lastYear = DateTime.Today.Year - 1;
+       int year = 0;
+       public int week = DateTime.Today.Day;
+       public List<int> nameOfMoviesList = new List<int>();
+       public List<string> nameOfMoviesListString = new List<string>();
+       public List<int> quantityOfSalesTicketsList;
+
+       private bool monthClicked = false;
+       private bool weekClicked = false;
+       private bool dateClicked = false;
+
         public MovieStatistic()
         {
             InitializeComponent();
             FIllTable();
             MonthStatisticChart.Hide();
+            MonthStatisticTypeOfMovieChart.Hide();
+            if (thisMonth == 1) { year = lastYear; }
+            else year = thisYear;
         }
         
         private void FIllTable()
         {
             int whichRow = 1;
-            int whichColumn = 0;
             int howManyRows = 0;
             int howManyDisplay = 0;
             int howManyTicket = 0;
@@ -105,71 +122,52 @@ namespace CinemaManager.Pages
         private void DisplayChart_MonthStatistic(List<QuantityOfSalesTicketOneMovie> lista)
         {
             MonthStatisticChart.Show();
-
-
-
             var s = new Series();
             s.Name = "Ilość sprzedanych biletów na dany film";
             s.ChartType = SeriesChartType.Column;
-
-            //var d = new DateTime(2013, 04, 01);
 
             foreach (var d in lista)
             {
                 s.Points.AddXY(d.MovieNameQ, d.SalesTicketQ);
             }
 
-            /*s.Points.AddXY(d, 3);
-            s.Points.AddXY(d.AddMonths(-1), 2);
-            s.Points.AddXY(d.AddMonths(-2), 1);
-            s.Points.AddXY(d.AddMonths(-3), 4);
-            */
             MonthStatisticChart.Series.Clear();
             MonthStatisticChart.Series.Add(s);
 
+        }
 
-            //MonthStatisticChart.Series[0].XValueType = ChartValueType.DateTime;
-            //MonthStatisticChart.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy-MM-dd";
-            //MonthStatisticChart.ChartAreas[0].AxisX.Interval = 1;
-            //MonthStatisticChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
-            //MonthStatisticChart.ChartAreas[0].AxisX.IntervalOffset = 1;
+        private void DisplayChart_MonthStatistic_typefMvie(List<QuantityOfSalesTicketTypeOfMovie> lista)
+        {
+            MonthStatisticTypeOfMovieChart.Show();
+            
+            var s = new Series();
+            s.Name = "Ilość sprzedanych biletów na dany typ filmu";
+            s.ChartType = SeriesChartType.Column;
 
-            //MonthStatisticChart.Series[0].XValueType = ChartValueType.DateTime;
-            //DateTime minDate = new DateTime(2013, 01, 01).AddSeconds(-1);
-            //DateTime maxDate = new DateTime(2013, 05, 01); // or DateTime.Now;
-            //MonthStatisticChart.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
-            //MonthStatisticChart.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+            foreach (var d in lista)
+            {
+                s.Points.AddXY(d.typeOfMovie, d.quantityTicket);
+            }
+
+            MonthStatisticChart.Series.Clear();
+            MonthStatisticChart.Series.Add(s);
+
         }
 
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Statistic()
         {
-            int whichRow = 1;
-            int whichColumn = 0;
-            int howManyRows = 0;
+            if (monthClicked) { }
+            else if (weekClicked) { }
+            else if (dateClicked) { }
+            else MessageBox.Show("Wystąpił niespodziewany błąd. Niepoprawne wejście do fukncji.");
             int howManyDisplay = 0;
-            int howManyTicket = 0;
 
-            List<int> nameOfMoviesList = new List<int>();
-            List<string> nameOfMoviesListString = new List<string>();
-            List<int> quantityOfSalesTicketsList;
-
-
-            int thisMonth = DateTime.Today.Month;
-            int lastMonts = DateTime.Today.Month - 1;
-            int thisYear = DateTime.Today.Year;
-            int lastYear = DateTime.Today.Year - 1;
             MovieStatisticAllMovieTableLauotPanel.Controls.Clear();
             MovieStatisticAllMovieTableLauotPanel.RowStyles.Clear();
-            int year;
             int howManySalesTicket = 0;
 
-            if (thisMonth == 1) { year = lastYear; }
-            else year = thisYear;
-
-            //InfoAboutParametrOfStatisticLabel.Text = "Statystyki z ostatniego miesiąca: " + lastMonts.ToString() + "-" + thisYear.ToString();
+            InfoAboutParametrOfStatisticLabel.Text = "Statystyki z ostatniego miesiąca: " + lastMonts.ToString() + "-" + thisYear.ToString();
             MovieStatisticAllMovieTableLauotPanel.AutoSize = true;
             int howManyDifferentMoviesInMonth = 0;
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
@@ -272,13 +270,6 @@ namespace CinemaManager.Pages
                            select new { n1 = t.showID, n2 = ts.amount });
 
 
-                int ile = 0;
-                int ile2 = 0;
-
-                //parts.Find(x => x.PartName.Contains("seat")));
-
-
-
                 List<QuantityOfSalesTicket> qstList = new List<QuantityOfSalesTicket>();
                 List<ShowMovie> showMov = new List<ShowMovie>();
 
@@ -330,17 +321,8 @@ namespace CinemaManager.Pages
 
                 }
 
-                /*
-                                foreach(var u in listOfMoviesUnique)
-                                {
-                                     var firstObject = qstMoviesList.FirstOrDefault(x => x.MovieIDQ == (int)u.movieID);
-                                     firstObject.MovieNameQ=(string)u.title;
-                                }
-                                */
-
                 MessageBox.Show(qstMoviesList[1].MovieIDQ.ToString() + " " + qstMoviesList[1].MovieNameQ.ToString() + " " + qstMoviesList[1].SalesTicketQ.ToString());
 
-                //List<ShowMovie> ShowMovieList = new List<ShowMovie>();
                 var show = (from s in ctx.Shows
                             select new { s.showID, s.movieID });
 
@@ -377,6 +359,11 @@ namespace CinemaManager.Pages
                 DisplayChart_MonthStatistic(qstMoviesList);
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            monthClicked = true;
+            Statistic();
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -386,6 +373,16 @@ namespace CinemaManager.Pages
         private void MovieStatisticAllMovieTableLauotPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // statystyki tygodniowe
         }
 
     }
