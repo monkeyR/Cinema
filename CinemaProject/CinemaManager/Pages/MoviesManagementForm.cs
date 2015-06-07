@@ -75,11 +75,12 @@ namespace CinemaManager.Pages
 
         private void fillExpiredMovies(CinemaModel.Movies movie)
         {
-            List<string> listItem = new List<string>(5);
+            List<string> listItem = new List<string>(6);
             listItem.Add(movie.title);
             listItem.Add(movie.director);
             listItem.Add(string.Format("{0:0.00}zł", movie.price));
             listItem.Add(Convert.ToString(movie.duration));
+            listItem.Add(movie.category);
             listItem.Add(movie.description);
 
             ListViewItem item = new ListViewItem(listItem.ToArray());

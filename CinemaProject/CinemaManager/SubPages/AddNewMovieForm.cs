@@ -61,6 +61,7 @@ namespace CinemaManager.SubPages
                             newMovie.description = descriptionTextbox.Text;
                             newMovie.duration = Convert.ToInt32(durationNumericUpDown.Value);
                             newMovie.isAvailable = true;
+                            newMovie.category = categoryTextbox.Text;
 
                             ctx.Movies.Add(newMovie);
                             ctx.SaveChanges();
@@ -88,7 +89,8 @@ namespace CinemaManager.SubPages
             if (titleTextbox.Text == string.Empty ||
                 zlTextbox.Text == string.Empty ||
                 directorTextbox.Text == string.Empty ||
-                durationNumericUpDown.Value == 0)
+                durationNumericUpDown.Value == 0 ||
+                categoryTextbox.Text == string.Empty)
                 return true;
             return false;
         }        

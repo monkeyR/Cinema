@@ -36,6 +36,7 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.expireMovieButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
+            this.categoryLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -73,11 +74,11 @@
             // 
             // descriptionTextbox
             // 
-            this.descriptionTextbox.Location = new System.Drawing.Point(5, 99);
+            this.descriptionTextbox.Location = new System.Drawing.Point(5, 116);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
             this.descriptionTextbox.ReadOnly = true;
-            this.descriptionTextbox.Size = new System.Drawing.Size(538, 143);
+            this.descriptionTextbox.Size = new System.Drawing.Size(538, 126);
             this.descriptionTextbox.TabIndex = 4;
             this.descriptionTextbox.Text = resources.GetString("descriptionTextbox.Text");
             // 
@@ -120,11 +121,23 @@
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
+            // categoryLabel
+            // 
+            this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.categoryLabel.ForeColor = System.Drawing.Color.White;
+            this.categoryLabel.Location = new System.Drawing.Point(121, 96);
+            this.categoryLabel.Name = "categoryLabel";
+            this.categoryLabel.Size = new System.Drawing.Size(77, 17);
+            this.categoryLabel.TabIndex = 37;
+            this.categoryLabel.Text = "Kategoria: ";
+            // 
             // MovieListElement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.expireMovieButton);
             this.Controls.Add(this.priceLabel);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button expireMovieButton;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Label categoryLabel;
     }
 }

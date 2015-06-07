@@ -127,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CinemaModel\CinemaModel.csproj">
-      <Project>{7af9d942-ad40-4078-a57c-0b58f9004ee6}</Project>
+      <Project>{5a6cc905-d1b5-4bf6-915b-eb7c7a191589}</Project>
       <Name>CinemaModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">

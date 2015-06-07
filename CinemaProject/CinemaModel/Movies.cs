@@ -27,6 +27,7 @@ namespace CinemaModel
         public string director { get; set; }
         public string description { get; set; }
         public Nullable<bool> isAvailable { get; set; }
+        public string category { get; set; }
     
         public virtual ICollection<MovieSales> MovieSales { get; set; }
         public virtual ICollection<Shows> Shows { get; set; }

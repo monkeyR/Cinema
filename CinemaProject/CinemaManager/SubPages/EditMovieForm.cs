@@ -51,6 +51,7 @@ namespace CinemaManager.SubPages
             Common.UISynchronizer.synchronizeWithUI(grTextbox, x => grTextbox.Text = x, getPrice(movie.price, false).ToString());
             Common.UISynchronizer.synchronizeWithUI(durationNumericUpDown, x => durationNumericUpDown.Value = x, movie.duration);
             Common.UISynchronizer.synchronizeWithUI(descriptionTextbox, x => descriptionTextbox.Text = x, movie.description);
+            Common.UISynchronizer.synchronizeWithUI(categoryTextbox, x => categoryTextbox.Text = x, movie.category);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace CinemaManager.SubPages
                         movie.price = price;
                         movie.duration = Convert.ToInt32(durationNumericUpDown.Value);
                         movie.description = descriptionTextbox.Text;
+                        movie.category = categoryTextbox.Text;
 
                         using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
                         {
@@ -110,7 +112,8 @@ namespace CinemaManager.SubPages
             if (titleTextbox.Text == string.Empty ||
                 zlTextbox.Text == string.Empty ||
                 directorTextbox.Text == string.Empty ||
-                durationNumericUpDown.Value == 0)
+                durationNumericUpDown.Value == 0 ||
+                categoryTextbox.Text == string.Empty)
                 return true;
             return false;
         }
@@ -122,7 +125,8 @@ namespace CinemaManager.SubPages
                     getPrice(movie.price, true) == Convert.ToDecimal(zlTextbox.Text) &&
                     getPrice(movie.price, false) == Convert.ToDecimal(grTextbox.Text) &&
                     movie.duration == Convert.ToInt32(durationNumericUpDown.Value) &&
-                    movie.description == descriptionTextbox.Text)
+                    movie.description == descriptionTextbox.Text &&
+                    movie.category == categoryTextbox.Text)
                 return false;
             return true;
         }

@@ -45,6 +45,8 @@
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.categoryTextbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +54,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.categoryTextbox);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.addButton);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label4);
@@ -70,7 +74,7 @@
             this.panel1.Controls.Add(this.titleTextbox);
             this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 411);
+            this.panel1.Size = new System.Drawing.Size(374, 481);
             this.panel1.TabIndex = 3;
             // 
             // addButton
@@ -78,7 +82,7 @@
             this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(283, 365);
+            this.addButton.Location = new System.Drawing.Point(283, 435);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(89, 44);
@@ -93,7 +97,7 @@
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(2, 365);
+            this.cancelButton.Location = new System.Drawing.Point(2, 435);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(89, 44);
@@ -143,7 +147,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 189);
+            this.label1.Location = new System.Drawing.Point(9, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 21);
             this.label1.TabIndex = 28;
@@ -152,11 +156,11 @@
             // descriptionTextbox
             // 
             this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.descriptionTextbox.Location = new System.Drawing.Point(17, 213);
+            this.descriptionTextbox.Location = new System.Drawing.Point(13, 258);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
             this.descriptionTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.descriptionTextbox.Size = new System.Drawing.Size(342, 139);
+            this.descriptionTextbox.Size = new System.Drawing.Size(345, 172);
             this.descriptionTextbox.TabIndex = 6;
             // 
             // durationNumericUpDown
@@ -253,13 +257,32 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 190);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 21);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Kategoria";
+            // 
+            // categoryTextbox
+            // 
+            this.categoryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.categoryTextbox.Location = new System.Drawing.Point(103, 185);
+            this.categoryTextbox.Name = "categoryTextbox";
+            this.categoryTextbox.Size = new System.Drawing.Size(121, 26);
+            this.categoryTextbox.TabIndex = 36;
+            // 
             // AddNewMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(396, 433);
+            this.ClientSize = new System.Drawing.Size(396, 504);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AddNewMovieForm";
@@ -291,5 +314,7 @@
         private System.Windows.Forms.TextBox grTextbox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox categoryTextbox;
+        private System.Windows.Forms.Label label5;
     }
 }

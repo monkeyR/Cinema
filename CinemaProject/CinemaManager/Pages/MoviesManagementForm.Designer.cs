@@ -40,6 +40,7 @@
             this.addMovieButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.MoviesListflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,11 +63,12 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
+            this.columnHeader5,
             this.columnHeader10});
             this.expiredMoviesListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.expiredMoviesListView.FullRowSelect = true;
             this.expiredMoviesListView.GridLines = true;
-            this.expiredMoviesListView.Location = new System.Drawing.Point(7, 49);
+            this.expiredMoviesListView.Location = new System.Drawing.Point(8, 43);
             this.expiredMoviesListView.MultiSelect = false;
             this.expiredMoviesListView.Name = "expiredMoviesListView";
             this.expiredMoviesListView.Size = new System.Drawing.Size(752, 128);
@@ -83,7 +85,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Reżyser";
-            this.columnHeader2.Width = 144;
+            this.columnHeader2.Width = 131;
             // 
             // columnHeader3
             // 
@@ -98,7 +100,7 @@
             // columnHeader10
             // 
             this.columnHeader10.Text = "Opis";
-            this.columnHeader10.Width = 349;
+            this.columnHeader10.Width = 249;
             // 
             // label1
             // 
@@ -155,6 +157,11 @@
             this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(570, 290);
             this.MoviesListflowLayoutPanel.TabIndex = 1;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Kategoria";
+            this.columnHeader5.Width = 112;
+            // 
             // MoviesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -187,6 +194,7 @@
         private System.Windows.Forms.FlowLayoutPanel MoviesListflowLayoutPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addMovieButton;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
 
     }
 }

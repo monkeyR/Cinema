@@ -32,6 +32,7 @@ namespace CinemaManager.SubPages
             Common.UISynchronizer.synchronizeWithUI(this.durationLabel, x => this.durationLabel.Text += string.Format("{0:0} min.", x), movie.duration);
             Common.UISynchronizer.synchronizeWithUI(this.descriptionTextbox, x => this.descriptionTextbox.Text = x, movie.description);
             Common.UISynchronizer.synchronizeWithUI(this.priceLabel, x => this.priceLabel.Text += string.Format("{0:0.00} zł", x), movie.price);
+            Common.UISynchronizer.synchronizeWithUI(this.categoryLabel, x => this.categoryLabel.Text += x, movie.category);
             Common.UISynchronizer.synchronizeWithUI(editButton, x => editButton.Tag = x, movie);
             Common.UISynchronizer.synchronizeWithUI(expireMovieButton, x => expireMovieButton.Tag = x, movie);
         }
