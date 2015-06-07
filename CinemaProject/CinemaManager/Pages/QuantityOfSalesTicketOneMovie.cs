@@ -16,5 +16,6 @@ namespace CinemaManager.Pages
         public int MovieIDQ { get; set; }
         public string MovieNameQ { get; set; }
         public int SalesTicketQ { get; set; }
+        public string Category { get; set; }
     }
 }
