@@ -38,29 +38,33 @@
             this.HallCreatorButton = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
-            this.ButtonGroup = new System.Windows.Forms.GroupBox();
-            this.ButtonGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.AutoScroll = true;
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Location = new System.Drawing.Point(228, 10);
+            this.MainPanel.Location = new System.Drawing.Point(216, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(821, 587);
+            this.MainPanel.Size = new System.Drawing.Size(833, 597);
             this.MainPanel.TabIndex = 0;
             // 
             // SalesStatisticsButton
             // 
             this.SalesStatisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.SalesStatisticsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SalesStatisticsButton.FlatAppearance.BorderSize = 0;
+            this.SalesStatisticsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesStatisticsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SalesStatisticsButton.ForeColor = System.Drawing.Color.White;
-            this.SalesStatisticsButton.Location = new System.Drawing.Point(2, 15);
-            this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SalesStatisticsButton.Location = new System.Drawing.Point(7, 9);
+            this.SalesStatisticsButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.SalesStatisticsButton.Name = "SalesStatisticsButton";
-            this.SalesStatisticsButton.Size = new System.Drawing.Size(210, 59);
+            this.SalesStatisticsButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.SalesStatisticsButton.Size = new System.Drawing.Size(200, 50);
             this.SalesStatisticsButton.TabIndex = 0;
             this.SalesStatisticsButton.Text = "Statystyki sprzedaży";
             this.SalesStatisticsButton.UseVisualStyleBackColor = false;
@@ -69,12 +73,14 @@
             // MovieStatisticsButton
             // 
             this.MovieStatisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.MovieStatisticsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MovieStatisticsButton.FlatAppearance.BorderSize = 0;
+            this.MovieStatisticsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovieStatisticsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MovieStatisticsButton.ForeColor = System.Drawing.Color.White;
-            this.MovieStatisticsButton.Location = new System.Drawing.Point(2, 74);
-            this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MovieStatisticsButton.Location = new System.Drawing.Point(7, 64);
+            this.MovieStatisticsButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.MovieStatisticsButton.Name = "MovieStatisticsButton";
-            this.MovieStatisticsButton.Size = new System.Drawing.Size(210, 59);
+            this.MovieStatisticsButton.Size = new System.Drawing.Size(200, 50);
             this.MovieStatisticsButton.TabIndex = 1;
             this.MovieStatisticsButton.Text = "Statystyki filmów";
             this.MovieStatisticsButton.UseVisualStyleBackColor = false;
@@ -83,12 +89,14 @@
             // EmployeesButton
             // 
             this.EmployeesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.EmployeesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EmployeesButton.FlatAppearance.BorderSize = 0;
+            this.EmployeesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeesButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.EmployeesButton.ForeColor = System.Drawing.Color.White;
-            this.EmployeesButton.Location = new System.Drawing.Point(2, 133);
-            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EmployeesButton.Location = new System.Drawing.Point(7, 119);
+            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Size = new System.Drawing.Size(210, 59);
+            this.EmployeesButton.Size = new System.Drawing.Size(200, 50);
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Pracownicy";
             this.EmployeesButton.UseVisualStyleBackColor = false;
@@ -97,12 +105,14 @@
             // ShiftsAndPositionsButton
             // 
             this.ShiftsAndPositionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.ShiftsAndPositionsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ShiftsAndPositionsButton.FlatAppearance.BorderSize = 0;
+            this.ShiftsAndPositionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShiftsAndPositionsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ShiftsAndPositionsButton.ForeColor = System.Drawing.Color.White;
-            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(2, 192);
-            this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShiftsAndPositionsButton.Location = new System.Drawing.Point(7, 174);
+            this.ShiftsAndPositionsButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.ShiftsAndPositionsButton.Name = "ShiftsAndPositionsButton";
-            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(210, 59);
+            this.ShiftsAndPositionsButton.Size = new System.Drawing.Size(200, 50);
             this.ShiftsAndPositionsButton.TabIndex = 3;
             this.ShiftsAndPositionsButton.Text = "Stanowiska i dyżury";
             this.ShiftsAndPositionsButton.UseVisualStyleBackColor = false;
@@ -111,12 +121,14 @@
             // MovieHallsButton
             // 
             this.MovieHallsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.MovieHallsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MovieHallsButton.FlatAppearance.BorderSize = 0;
+            this.MovieHallsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovieHallsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MovieHallsButton.ForeColor = System.Drawing.Color.White;
-            this.MovieHallsButton.Location = new System.Drawing.Point(2, 251);
-            this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MovieHallsButton.Location = new System.Drawing.Point(7, 229);
+            this.MovieHallsButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.MovieHallsButton.Name = "MovieHallsButton";
-            this.MovieHallsButton.Size = new System.Drawing.Size(210, 59);
+            this.MovieHallsButton.Size = new System.Drawing.Size(200, 50);
             this.MovieHallsButton.TabIndex = 4;
             this.MovieHallsButton.Text = "Sale";
             this.MovieHallsButton.UseVisualStyleBackColor = false;
@@ -125,12 +137,14 @@
             // MovieButton
             // 
             this.MovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.MovieButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MovieButton.FlatAppearance.BorderSize = 0;
+            this.MovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovieButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MovieButton.ForeColor = System.Drawing.Color.White;
-            this.MovieButton.Location = new System.Drawing.Point(2, 310);
-            this.MovieButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MovieButton.Location = new System.Drawing.Point(7, 284);
+            this.MovieButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.MovieButton.Name = "MovieButton";
-            this.MovieButton.Size = new System.Drawing.Size(210, 59);
+            this.MovieButton.Size = new System.Drawing.Size(200, 50);
             this.MovieButton.TabIndex = 5;
             this.MovieButton.Text = "Filmy";
             this.MovieButton.UseVisualStyleBackColor = false;
@@ -139,12 +153,14 @@
             // HallCreatorButton
             // 
             this.HallCreatorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.HallCreatorButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HallCreatorButton.FlatAppearance.BorderSize = 0;
+            this.HallCreatorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HallCreatorButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HallCreatorButton.ForeColor = System.Drawing.Color.White;
-            this.HallCreatorButton.Location = new System.Drawing.Point(2, 369);
-            this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.HallCreatorButton.Location = new System.Drawing.Point(7, 339);
+            this.HallCreatorButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.HallCreatorButton.Name = "HallCreatorButton";
-            this.HallCreatorButton.Size = new System.Drawing.Size(210, 59);
+            this.HallCreatorButton.Size = new System.Drawing.Size(200, 50);
             this.HallCreatorButton.TabIndex = 6;
             this.HallCreatorButton.Text = "Kreator sal";
             this.HallCreatorButton.UseVisualStyleBackColor = false;
@@ -153,49 +169,33 @@
             // ProductsButton
             // 
             this.ProductsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProductsButton.FlatAppearance.BorderSize = 0;
+            this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ProductsButton.ForeColor = System.Drawing.Color.White;
-            this.ProductsButton.Location = new System.Drawing.Point(2, 428);
-            this.ProductsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ProductsButton.Location = new System.Drawing.Point(7, 394);
+            this.ProductsButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(210, 59);
+            this.ProductsButton.Size = new System.Drawing.Size(200, 50);
             this.ProductsButton.TabIndex = 7;
             this.ProductsButton.Text = "Produkty ";
             this.ProductsButton.UseVisualStyleBackColor = false;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // LogoutButton
             // 
             this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoutButton.FlatAppearance.BorderSize = 0;
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LogoutButton.ForeColor = System.Drawing.Color.White;
-            this.LogoutButton.Location = new System.Drawing.Point(2, 487);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LogoutButton.Location = new System.Drawing.Point(7, 449);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(210, 56);
+            this.LogoutButton.Size = new System.Drawing.Size(200, 50);
             this.LogoutButton.TabIndex = 8;
             this.LogoutButton.Text = "Wyloguj";
             this.LogoutButton.UseVisualStyleBackColor = false;
-            // 
-            // ButtonGroup
-            // 
-            this.ButtonGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
-            this.ButtonGroup.Controls.Add(this.LogoutButton);
-            this.ButtonGroup.Controls.Add(this.ProductsButton);
-            this.ButtonGroup.Controls.Add(this.HallCreatorButton);
-            this.ButtonGroup.Controls.Add(this.MovieButton);
-            this.ButtonGroup.Controls.Add(this.MovieHallsButton);
-            this.ButtonGroup.Controls.Add(this.ShiftsAndPositionsButton);
-            this.ButtonGroup.Controls.Add(this.EmployeesButton);
-            this.ButtonGroup.Controls.Add(this.MovieStatisticsButton);
-            this.ButtonGroup.Controls.Add(this.SalesStatisticsButton);
-            this.ButtonGroup.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonGroup.Location = new System.Drawing.Point(0, 0);
-            this.ButtonGroup.Margin = new System.Windows.Forms.Padding(2);
-            this.ButtonGroup.Name = "ButtonGroup";
-            this.ButtonGroup.Padding = new System.Windows.Forms.Padding(2);
-            this.ButtonGroup.Size = new System.Drawing.Size(214, 603);
-            this.ButtonGroup.TabIndex = 1;
-            this.ButtonGroup.TabStop = false;
             // 
             // MainFormManager
             // 
@@ -205,14 +205,21 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(1049, 603);
-            this.Controls.Add(this.ButtonGroup);
+            this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.ProductsButton);
+            this.Controls.Add(this.MovieStatisticsButton);
+            this.Controls.Add(this.SalesStatisticsButton);
+            this.Controls.Add(this.EmployeesButton);
+            this.Controls.Add(this.HallCreatorButton);
+            this.Controls.Add(this.MovieHallsButton);
+            this.Controls.Add(this.ShiftsAndPositionsButton);
+            this.Controls.Add(this.MovieButton);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainFormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel kierownika";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.ButtonGroup.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +237,5 @@
         private System.Windows.Forms.Button HallCreatorButton;
         private System.Windows.Forms.Button ProductsButton;
         private System.Windows.Forms.Button LogoutButton;
-        private System.Windows.Forms.GroupBox ButtonGroup;
     }
 }

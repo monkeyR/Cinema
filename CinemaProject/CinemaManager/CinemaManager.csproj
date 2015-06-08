@@ -86,6 +86,12 @@
     <Compile Include="Pages\MoviesManagementForm.Designer.cs">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProductsManagmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductsManagmentForm.Designer.cs">
+      <DependentUpon>ProductsManagmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QuantityOfSalesTicket.cs" />
     <Compile Include="Pages\QuantityOfSalesTicketOneMovie.cs" />
     <Compile Include="Pages\QuantityOfSalesTicketTypeOfMovie.cs" />
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MoviesManagementForm.resx">
       <DependentUpon>MoviesManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProductsManagmentForm.resx">
+      <DependentUpon>ProductsManagmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SalesStatistic.resx">
       <DependentUpon>SalesStatistic.cs</DependentUpon>

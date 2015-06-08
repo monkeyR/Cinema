@@ -168,9 +168,9 @@ namespace CinemaSales.Main
         private System.Windows.Forms.Button CreateProductButton(CinemaModel.Products product, int tabi)
         {
             System.Windows.Forms.Button ButtonProduct = new System.Windows.Forms.Button();
-            ButtonProduct.BackgroundImage = Common.ResourcesApp.GetImg(product.slug);
+            //ButtonProduct.BackgroundImage = Common.ResourcesApp.GetImg(product.slug);
             ButtonProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            //ButtonProduct.Text = product.name;
+            ButtonProduct.Text = product.name;
             ButtonProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             ButtonProduct.FlatAppearance.BorderColor = System.Drawing.Color.White;
             ButtonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

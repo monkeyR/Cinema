@@ -66,5 +66,10 @@ namespace CinemaManager.Main
         {
             selectPage(new MovieStatistic());
         }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            selectPage(new ProductsManagmentForm());
+        }
     }
 }
