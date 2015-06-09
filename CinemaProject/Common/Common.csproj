@@ -69,6 +69,7 @@
     <Compile Include="ResourcesApp.cs" />
     <Compile Include="ShowModel.cs" />
     <Compile Include="StringUtils.cs" />
+    <Compile Include="Tool.cs" />
     <Compile Include="UISynchronizer.cs" />
     <Compile Include="XMLparse.cs" />
   </ItemGroup>

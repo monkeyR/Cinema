@@ -16,8 +16,12 @@ namespace CinemaManager.Pages
         {
             InitializeComponent();
 
+            Common.Tool.resizeColumns(this.employeeListView);
+            Common.Tool.resizeColumns(this.firedListView);
+
             startFilling();
         }
+
 
         private void startFilling()
         {
@@ -27,6 +31,7 @@ namespace CinemaManager.Pages
             Cursor.Current = Cursors.WaitCursor;
             worker.RunWorkerAsync();
         }
+
 
         private void onWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -179,9 +184,10 @@ namespace CinemaManager.Pages
 
         }
 
-        private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void EmployeesManagementForm_Resize(object sender, EventArgs e)
         {
-
+            Common.Tool.resizeColumns(this.employeeListView);
+            Common.Tool.resizeColumns(this.firedListView);
         }
     }
 }

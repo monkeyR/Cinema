@@ -18,6 +18,8 @@ namespace CinemaManager.Pages
         {
             InitializeComponent();
 
+            Common.Tool.resizeColumns(this.expiredMoviesListView);
+
             Common.UISynchronizer.synchronizeWithUI(MoviesListflowLayoutPanel, x => MoviesListflowLayoutPanel.AutoScroll = x, true);
             startFilling();
         }
@@ -30,6 +32,7 @@ namespace CinemaManager.Pages
             Cursor.Current = Cursors.WaitCursor;
             worker.RunWorkerAsync();
         }
+
 
         private void onWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -134,6 +137,11 @@ namespace CinemaManager.Pages
             Cursor.Current = Cursors.Default;
 
             startFilling();
+        }
+
+        private void MoviesManagementForm_Resize(object sender, EventArgs e)
+        {
+            Common.Tool.resizeColumns(this.expiredMoviesListView);
         }
     }
 }

@@ -50,25 +50,32 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.panel2.Controls.Add(this.addNewEmployeeButton);
             this.panel2.Controls.Add(this.employeeListView);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(0, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 263);
+            this.panel2.Size = new System.Drawing.Size(787, 294);
             this.panel2.TabIndex = 17;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // addNewEmployeeButton
             // 
+            this.addNewEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addNewEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addNewEmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addNewEmployeeButton.FlatAppearance.BorderSize = 0;
+            this.addNewEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewEmployeeButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.addNewEmployeeButton.ForeColor = System.Drawing.Color.White;
-            this.addNewEmployeeButton.Location = new System.Drawing.Point(665, 2);
+            this.addNewEmployeeButton.Location = new System.Drawing.Point(617, 11);
             this.addNewEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
             this.addNewEmployeeButton.Name = "addNewEmployeeButton";
-            this.addNewEmployeeButton.Size = new System.Drawing.Size(94, 44);
+            this.addNewEmployeeButton.Size = new System.Drawing.Size(167, 44);
             this.addNewEmployeeButton.TabIndex = 21;
             this.addNewEmployeeButton.Text = "Dodaj nowego";
             this.addNewEmployeeButton.UseVisualStyleBackColor = false;
@@ -76,23 +83,24 @@
             // 
             // employeeListView
             // 
+            this.employeeListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.employeeListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.employeeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.employeeListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.employeeListView.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.employeeListView.FullRowSelect = true;
             this.employeeListView.GridLines = true;
-            this.employeeListView.Location = new System.Drawing.Point(3, 51);
+            this.employeeListView.Location = new System.Drawing.Point(5, 74);
             this.employeeListView.MultiSelect = false;
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(757, 207);
+            this.employeeListView.Size = new System.Drawing.Size(779, 207);
             this.employeeListView.TabIndex = 6;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
-            this.employeeListView.SelectedIndexChanged += new System.EventHandler(this.employeeListView_SelectedIndexChanged);
             this.employeeListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.employeeListView_MouseUp);
             // 
             // columnHeader1
@@ -118,26 +126,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Location = new System.Drawing.Point(3, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 25);
+            this.label2.Size = new System.Drawing.Size(197, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Lista pracowników";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.panel1.Controls.Add(this.firedListView);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 281);
+            this.panel1.Location = new System.Drawing.Point(0, 295);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 252);
+            this.panel1.Size = new System.Drawing.Size(787, 262);
             this.panel1.TabIndex = 19;
             // 
             // firedListView
             // 
+            this.firedListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.firedListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firedListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
@@ -145,13 +158,13 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9});
-            this.firedListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.firedListView.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.firedListView.FullRowSelect = true;
             this.firedListView.GridLines = true;
-            this.firedListView.Location = new System.Drawing.Point(7, 49);
+            this.firedListView.Location = new System.Drawing.Point(3, 49);
             this.firedListView.MultiSelect = false;
             this.firedListView.Name = "firedListView";
-            this.firedListView.Size = new System.Drawing.Size(752, 200);
+            this.firedListView.Size = new System.Drawing.Size(781, 202);
             this.firedListView.TabIndex = 19;
             this.firedListView.UseCompatibleStateImageBehavior = false;
             this.firedListView.View = System.Windows.Forms.View.Details;
@@ -185,11 +198,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.Size = new System.Drawing.Size(185, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Lista zwolnionych";
             // 
@@ -197,12 +210,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(786, 545);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
+            this.ClientSize = new System.Drawing.Size(788, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "EmployeesManagementForm";
             this.Text = "EmployeesManagementForm";
+            this.Resize += new System.EventHandler(this.EmployeesManagementForm_Resize);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

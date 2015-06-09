@@ -79,12 +79,15 @@
             // HallMenageButton
             // 
             this.HallMenageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.HallMenageButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.HallMenageButton.FlatAppearance.BorderSize = 0;
+            this.HallMenageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HallMenageButton.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.HallMenageButton.ForeColor = System.Drawing.Color.White;
-            this.HallMenageButton.Location = new System.Drawing.Point(0, 77);
-            this.HallMenageButton.Margin = new System.Windows.Forms.Padding(0);
+            this.HallMenageButton.Location = new System.Drawing.Point(0, 80);
+            this.HallMenageButton.Margin = new System.Windows.Forms.Padding(5);
             this.HallMenageButton.Name = "HallMenageButton";
+            this.HallMenageButton.Padding = new System.Windows.Forms.Padding(4);
+            this.HallMenageButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.HallMenageButton.Size = new System.Drawing.Size(146, 72);
             this.HallMenageButton.TabIndex = 10;
             this.HallMenageButton.Text = "Zarządzaj salami";
@@ -94,12 +97,14 @@
             // AddHall
             // 
             this.AddHall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
-            this.AddHall.Dock = System.Windows.Forms.DockStyle.Top;
             this.AddHall.FlatAppearance.BorderSize = 0;
+            this.AddHall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddHall.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.AddHall.ForeColor = System.Drawing.Color.White;
             this.AddHall.Location = new System.Drawing.Point(0, 0);
-            this.AddHall.Margin = new System.Windows.Forms.Padding(0);
+            this.AddHall.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.AddHall.Name = "AddHall";
+            this.AddHall.Padding = new System.Windows.Forms.Padding(3);
             this.AddHall.Size = new System.Drawing.Size(146, 77);
             this.AddHall.TabIndex = 9;
             this.AddHall.Text = "Dodaj nową salę";
@@ -111,7 +116,7 @@
             this.panelMain.Controls.Add(this.HallMenagePanel);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(590, 495);
             this.panelMain.TabIndex = 15;
@@ -122,7 +127,7 @@
             this.HallMenagePanel.Controls.Add(this.HallCreatePanel);
             this.HallMenagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HallMenagePanel.Location = new System.Drawing.Point(0, 0);
-            this.HallMenagePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HallMenagePanel.Margin = new System.Windows.Forms.Padding(2);
             this.HallMenagePanel.Name = "HallMenagePanel";
             this.HallMenagePanel.Size = new System.Drawing.Size(590, 495);
             this.HallMenagePanel.TabIndex = 16;
@@ -139,7 +144,7 @@
             this.panel3.Controls.Add(this.HallEditButton);
             this.panel3.Controls.Add(this.RemoveHallButton);
             this.panel3.Location = new System.Drawing.Point(4, 3);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(588, 139);
             this.panel3.TabIndex = 22;
@@ -148,7 +153,7 @@
             // 
             this.HallEditPanel.Controls.Add(this.tableLayoutPanel1);
             this.HallEditPanel.Location = new System.Drawing.Point(199, 56);
-            this.HallEditPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HallEditPanel.Margin = new System.Windows.Forms.Padding(2);
             this.HallEditPanel.Name = "HallEditPanel";
             this.HallEditPanel.Size = new System.Drawing.Size(130, 57);
             this.HallEditPanel.TabIndex = 4;
@@ -170,7 +175,7 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -218,6 +223,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(34, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -265,6 +272,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -277,7 +286,7 @@
             // 
             this.hallNameComboBox.FormattingEnabled = true;
             this.hallNameComboBox.Location = new System.Drawing.Point(9, 2);
-            this.hallNameComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hallNameComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.hallNameComboBox.Name = "hallNameComboBox";
             this.hallNameComboBox.Size = new System.Drawing.Size(186, 21);
             this.hallNameComboBox.TabIndex = 18;
@@ -290,7 +299,7 @@
             this.panel2.Controls.Add(this.NumberOfColumnsLabel);
             this.panel2.Controls.Add(this.NumberOfRowsLabel);
             this.panel2.Location = new System.Drawing.Point(199, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(387, 45);
             this.panel2.TabIndex = 16;
@@ -298,52 +307,63 @@
             // PlaceCount
             // 
             this.PlaceCount.AutoSize = true;
+            this.PlaceCount.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.PlaceCount.ForeColor = System.Drawing.Color.White;
             this.PlaceCount.Location = new System.Drawing.Point(171, 20);
             this.PlaceCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PlaceCount.Name = "PlaceCount";
-            this.PlaceCount.Size = new System.Drawing.Size(78, 13);
+            this.PlaceCount.Size = new System.Drawing.Size(114, 20);
             this.PlaceCount.TabIndex = 4;
             this.PlaceCount.Text = "Razem miejsc: ";
             // 
             // NumberOfHallLabel
             // 
             this.NumberOfHallLabel.AutoSize = true;
+            this.NumberOfHallLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.NumberOfHallLabel.ForeColor = System.Drawing.Color.White;
             this.NumberOfHallLabel.Location = new System.Drawing.Point(5, 2);
             this.NumberOfHallLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NumberOfHallLabel.Name = "NumberOfHallLabel";
-            this.NumberOfHallLabel.Size = new System.Drawing.Size(34, 13);
+            this.NumberOfHallLabel.Size = new System.Drawing.Size(47, 20);
             this.NumberOfHallLabel.TabIndex = 3;
             this.NumberOfHallLabel.Text = "Sala: ";
             // 
             // NumberOfColumnsLabel
             // 
             this.NumberOfColumnsLabel.AutoSize = true;
+            this.NumberOfColumnsLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.NumberOfColumnsLabel.ForeColor = System.Drawing.Color.White;
             this.NumberOfColumnsLabel.Location = new System.Drawing.Point(77, 20);
             this.NumberOfColumnsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NumberOfColumnsLabel.Name = "NumberOfColumnsLabel";
-            this.NumberOfColumnsLabel.Size = new System.Drawing.Size(50, 13);
+            this.NumberOfColumnsLabel.Size = new System.Drawing.Size(74, 20);
             this.NumberOfColumnsLabel.TabIndex = 2;
             this.NumberOfColumnsLabel.Text = "Kolumny:";
             // 
             // NumberOfRowsLabel
             // 
             this.NumberOfRowsLabel.AutoSize = true;
+            this.NumberOfRowsLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.NumberOfRowsLabel.ForeColor = System.Drawing.Color.White;
             this.NumberOfRowsLabel.Location = new System.Drawing.Point(5, 20);
             this.NumberOfRowsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NumberOfRowsLabel.Name = "NumberOfRowsLabel";
-            this.NumberOfRowsLabel.Size = new System.Drawing.Size(43, 13);
+            this.NumberOfRowsLabel.Size = new System.Drawing.Size(60, 20);
             this.NumberOfRowsLabel.TabIndex = 1;
             this.NumberOfRowsLabel.Text = "Rzędy: ";
             // 
             // displayHallButton
             // 
             this.displayHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.displayHallButton.FlatAppearance.BorderSize = 0;
+            this.displayHallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.displayHallButton.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.displayHallButton.ForeColor = System.Drawing.Color.White;
             this.displayHallButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.displayHallButton.Location = new System.Drawing.Point(100, 27);
-            this.displayHallButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.displayHallButton.Location = new System.Drawing.Point(105, 27);
+            this.displayHallButton.Margin = new System.Windows.Forms.Padding(2);
             this.displayHallButton.Name = "displayHallButton";
-            this.displayHallButton.Size = new System.Drawing.Size(94, 44);
+            this.displayHallButton.Size = new System.Drawing.Size(90, 40);
             this.displayHallButton.TabIndex = 19;
             this.displayHallButton.Text = "Wyświetl";
             this.displayHallButton.UseVisualStyleBackColor = false;
@@ -352,11 +372,14 @@
             // HallEditButton
             // 
             this.HallEditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.HallEditButton.FlatAppearance.BorderSize = 0;
+            this.HallEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HallEditButton.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.HallEditButton.ForeColor = System.Drawing.Color.White;
-            this.HallEditButton.Location = new System.Drawing.Point(9, 69);
-            this.HallEditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HallEditButton.Location = new System.Drawing.Point(9, 73);
+            this.HallEditButton.Margin = new System.Windows.Forms.Padding(2);
             this.HallEditButton.Name = "HallEditButton";
-            this.HallEditButton.Size = new System.Drawing.Size(185, 44);
+            this.HallEditButton.Size = new System.Drawing.Size(185, 40);
             this.HallEditButton.TabIndex = 21;
             this.HallEditButton.Text = "Zatwierdź zmiany";
             this.HallEditButton.UseVisualStyleBackColor = false;
@@ -366,11 +389,14 @@
             // 
             this.RemoveHallButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.RemoveHallButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveHallButton.FlatAppearance.BorderSize = 0;
+            this.RemoveHallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveHallButton.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.RemoveHallButton.ForeColor = System.Drawing.Color.White;
             this.RemoveHallButton.Location = new System.Drawing.Point(9, 27);
-            this.RemoveHallButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RemoveHallButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveHallButton.Name = "RemoveHallButton";
-            this.RemoveHallButton.Size = new System.Drawing.Size(94, 44);
+            this.RemoveHallButton.Size = new System.Drawing.Size(90, 40);
             this.RemoveHallButton.TabIndex = 20;
             this.RemoveHallButton.Text = "Usuń";
             this.RemoveHallButton.UseVisualStyleBackColor = false;
@@ -385,7 +411,7 @@
             this.HallCreatePanel.Controls.Add(this.ScreenLabel);
             this.HallCreatePanel.Controls.Add(this.HallCreateTableLayoutPanel);
             this.HallCreatePanel.Location = new System.Drawing.Point(4, 144);
-            this.HallCreatePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HallCreatePanel.Margin = new System.Windows.Forms.Padding(2);
             this.HallCreatePanel.Name = "HallCreatePanel";
             this.HallCreatePanel.Size = new System.Drawing.Size(584, 341);
             this.HallCreatePanel.TabIndex = 17;
@@ -393,11 +419,12 @@
             // ScreenLabel
             // 
             this.ScreenLabel.AutoSize = true;
-            this.ScreenLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScreenLabel.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.ScreenLabel.ForeColor = System.Drawing.Color.White;
             this.ScreenLabel.Location = new System.Drawing.Point(4, 0);
             this.ScreenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ScreenLabel.Name = "ScreenLabel";
-            this.ScreenLabel.Size = new System.Drawing.Size(67, 18);
+            this.ScreenLabel.Size = new System.Drawing.Size(71, 23);
             this.ScreenLabel.TabIndex = 0;
             this.ScreenLabel.Text = "EKRAN";
             this.ScreenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,7 +436,7 @@
             this.HallCreateTableLayoutPanel.ColumnCount = 1;
             this.HallCreateTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.HallCreateTableLayoutPanel.Location = new System.Drawing.Point(4, 41);
-            this.HallCreateTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HallCreateTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.HallCreateTableLayoutPanel.Name = "HallCreateTableLayoutPanel";
             this.HallCreateTableLayoutPanel.RowCount = 1;
             this.HallCreateTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

@@ -34,29 +34,33 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addMovieButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.MoviesListflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.expiredMoviesListView);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 362);
+            this.panel1.Location = new System.Drawing.Point(1, 362);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(764, 180);
+            this.panel1.Size = new System.Drawing.Size(785, 183);
             this.panel1.TabIndex = 20;
             // 
             // expiredMoviesListView
             // 
+            this.expiredMoviesListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.expiredMoviesListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.expiredMoviesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -65,13 +69,13 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader10});
-            this.expiredMoviesListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.expiredMoviesListView.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.expiredMoviesListView.FullRowSelect = true;
             this.expiredMoviesListView.GridLines = true;
-            this.expiredMoviesListView.Location = new System.Drawing.Point(8, 43);
+            this.expiredMoviesListView.Location = new System.Drawing.Point(3, 43);
             this.expiredMoviesListView.MultiSelect = false;
             this.expiredMoviesListView.Name = "expiredMoviesListView";
-            this.expiredMoviesListView.Size = new System.Drawing.Size(752, 128);
+            this.expiredMoviesListView.Size = new System.Drawing.Size(779, 128);
             this.expiredMoviesListView.TabIndex = 19;
             this.expiredMoviesListView.UseCompatibleStateImageBehavior = false;
             this.expiredMoviesListView.View = System.Windows.Forms.View.Details;
@@ -97,6 +101,11 @@
             this.columnHeader4.Text = "Długość";
             this.columnHeader4.Width = 72;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Kategoria";
+            this.columnHeader5.Width = 112;
+            // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Opis";
@@ -105,34 +114,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-1, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 25);
+            this.label1.Size = new System.Drawing.Size(248, 22);
             this.label1.TabIndex = 4;
             this.label1.Text = "Lista nieaktualnych filmów";
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.addMovieButton);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.MoviesListflowLayoutPanel);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 344);
+            this.panel2.Size = new System.Drawing.Size(785, 355);
             this.panel2.TabIndex = 21;
             // 
             // addMovieButton
             // 
+            this.addMovieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addMovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addMovieButton.FlatAppearance.BorderSize = 0;
+            this.addMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addMovieButton.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.addMovieButton.ForeColor = System.Drawing.Color.White;
-            this.addMovieButton.Location = new System.Drawing.Point(484, 2);
+            this.addMovieButton.Location = new System.Drawing.Point(642, 9);
             this.addMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.addMovieButton.Name = "addMovieButton";
-            this.addMovieButton.Size = new System.Drawing.Size(94, 44);
+            this.addMovieButton.Size = new System.Drawing.Size(140, 44);
             this.addMovieButton.TabIndex = 30;
             this.addMovieButton.Text = "Dodaj nowy";
             this.addMovieButton.UseVisualStyleBackColor = false;
@@ -141,26 +157,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 25);
+            this.label2.Size = new System.Drawing.Size(220, 25);
             this.label2.TabIndex = 20;
             this.label2.Text = "Aktualna ramówka";
             // 
             // MoviesListflowLayoutPanel
             // 
-            this.MoviesListflowLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(8, 51);
+            this.MoviesListflowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MoviesListflowLayoutPanel.Location = new System.Drawing.Point(3, 56);
             this.MoviesListflowLayoutPanel.Name = "MoviesListflowLayoutPanel";
-            this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(570, 290);
+            this.MoviesListflowLayoutPanel.Size = new System.Drawing.Size(779, 290);
             this.MoviesListflowLayoutPanel.TabIndex = 1;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Kategoria";
-            this.columnHeader5.Width = 112;
             // 
             // MoviesManagementForm
             // 
@@ -172,6 +184,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MoviesManagementForm";
             this.Text = "MoviesManagementForm";
+            this.Resize += new System.EventHandler(this.MoviesManagementForm_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

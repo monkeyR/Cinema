@@ -77,7 +77,7 @@
             this.addNewProductButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addNewProductButton.FlatAppearance.BorderSize = 0;
             this.addNewProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewProductButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addNewProductButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addNewProductButton.ForeColor = System.Drawing.Color.White;
             this.addNewProductButton.Location = new System.Drawing.Point(674, 12);
             this.addNewProductButton.Margin = new System.Windows.Forms.Padding(2);
@@ -129,7 +129,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Główna kategoria";
-            this.columnHeader4.Width = 165;
+            this.columnHeader4.Width = 164;
             // 
             // columnHeader5
             // 
