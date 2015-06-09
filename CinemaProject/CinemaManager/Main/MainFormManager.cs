@@ -59,7 +59,7 @@ namespace CinemaManager.Main
 
         private void SalesStatisticsButton_Click(object sender, EventArgs e)
         {
-            selectPage(new MovieStatistic());
+            selectPage(new CinemaStatistic());
         }
 
         private void MovieStatisticsButton_Click(object sender, EventArgs e)

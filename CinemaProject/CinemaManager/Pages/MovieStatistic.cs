@@ -64,8 +64,8 @@ namespace CinemaManager.Pages
             MovieStatisticAllMovieTableLauotPanel.HorizontalScroll.Maximum = 200;
             MovieStatisticAllMovieTableLauotPanel.AutoSize = false;
             MovieStatisticAllMovieTableLauotPanel.AutoScroll = true;
-           
 
+         
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 var movies = (from t in ctx.Movies
@@ -78,8 +78,10 @@ namespace CinemaManager.Pages
                 }
                 MovieStatisticAllMovieTableLauotPanel.RowCount = howManyRows + 2;
                 MovieStatisticAllMovieTableLauotPanel.ColumnCount = 3;
+                
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = "Tytuł filmu", AutoSize = true, Margin=new Padding(5,5,5,5)},
                     0, 0);
+
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(
                     new Label() { Text = "Łącznie sprzedanych biletów", AutoSize = true, Margin = new Padding(5, 5, 5, 5) }, 1, 0);
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(
@@ -114,12 +116,15 @@ namespace CinemaManager.Pages
 
                     whichRow++;
                 }
-                MovieStatisticAllMovieTableLauotPanel.Size=new Size(950,(movies.Count()*100));
+                MovieStatisticAllMovieTableLauotPanel.Size=new Size(950,(movies.Count()*35));
                 whichRow = 1;
 
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = "SUMA", }, 0, howManyRows + 1);
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = howManyTicket.ToString(), }, 1, howManyRows + 1);
                 MovieStatisticAllMovieTableLauotPanel.Controls.Add(new Label() { Text = howManyDisplay.ToString(), }, 2, howManyRows + 1);
+
+
+              
 
             }
         }
@@ -184,8 +189,8 @@ namespace CinemaManager.Pages
             {
                 series.Points.AddXY(d2.typeOfMovie, d2.quantityTicket);
             }
-            MonthStatisticTypeOfMovieChart.Series.First().XValueMember = "X";
-            MonthStatisticTypeOfMovieChart.Series.First().YValueMembers = "Y";
+          //  MonthStatisticTypeOfMovieChart.Series.First().XValueMember = "X";
+          //  MonthStatisticTypeOfMovieChart.Series.First().YValueMembers = "Y";
 
             MonthStatisticTypeOfMovieChart.Series.Clear();
             MonthStatisticTypeOfMovieChart.Series.Add(series);
@@ -202,9 +207,12 @@ namespace CinemaManager.Pages
             MovieStatisticAllMovieTableLauotPanel.Controls.Clear();
             MovieStatisticAllMovieTableLauotPanel.RowStyles.Clear();
             MovieStatisticAllMovieTableLauotPanel.AutoSize = true;
+            MovieStatisticAllMovieTableLauotPanel.Controls.Clear();
+            MovieStatisticAllMovieTableLauotPanel.Size = new Size(950, 140);
+              
             MovieStatisticAllMovieTableLauotPanel.RowCount = 5;
             MovieStatisticAllMovieTableLauotPanel.ColumnCount = 2;
-      
+       
             MovieStatisticAllMovieTableLauotPanel.Controls.Add(
                  new Label() { Text = "Sprzedanych biletów", AutoSize = true }, 0, 0);
             MovieStatisticAllMovieTableLauotPanel.Controls.Add(
