@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7901e569-75c6-414f-bd87-34bf560b46c2"
+  name="Charting"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="61584c21-32de-48dd-8981-8db4591947f5"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Windows.Forms.DataVisualization.Charting"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b68cb08f-24ac-44d2-af62-6165ead6ca4f"
+        name="Chart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="07d3cd66-119b-4fdb-a026-e3ea8a3ec3be"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Windows.Forms.DataVisualization.dll&quot; Namespace%3DSystem.Windows.Forms.DataVisualization.Charting Type%3DChart"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d72dacd2-0dc6-4f30-a73d-2811347b2b55"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1a8d39c2-9ec5-4531-a9ad-662a189370fb">
+                <propertyInstance
+                  Id="d986552e-005a-4f9f-af05-8fc941e08173"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f454f7d6-9df0-4a83-9ef4-3214ffd4da9c">
+                <propertyInstance
+                  Id="c421eaf7-f88a-430b-ab6d-a69d2a1093fc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4d75e5d-5b62-48a8-b68e-e7aa850163a1">
+                <propertyInstance
+                  Id="28e39db7-32d1-48a7-b6fd-a3a97a5bdaeb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98f349cc-3564-4905-bdad-96fdcf6bdf39">
+                <propertyInstance
+                  Id="bfb0ea75-8034-4c71-b9ac-ec8c24f4342d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0646828f-dbf5-429e-920b-9170e63bf52c">
+                <propertyInstance
+                  Id="f2c3b5cb-6c17-4d36-a823-78beea2857de"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

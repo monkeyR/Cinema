@@ -134,6 +134,54 @@
     <Compile Include="SubPages\AddNewHall.Designer.cs">
       <DependentUpon>AddNewHall.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewProduct.Designer.cs">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\EditTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\EditTicket.Designer.cs">
+      <DependentUpon>EditTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddNewTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewTicket.Designer.cs">
+      <DependentUpon>AddNewTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddNewSubCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewSubCategory.Designer.cs">
+      <DependentUpon>AddNewSubCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\EditSubCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\EditSubCategory.Designer.cs">
+      <DependentUpon>EditSubCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\EditMainCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\EditMainCategory.Designer.cs">
+      <DependentUpon>EditMainCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubPages\AddNewMainCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPages\AddNewMainCategory.Designer.cs">
+      <DependentUpon>AddNewMainCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubPages\AddNewMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +276,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\AddNewHall.resx">
       <DependentUpon>AddNewHall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddNewProduct.resx">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\EditTicket.resx">
+      <DependentUpon>EditTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddNewTicket.resx">
+      <DependentUpon>AddNewTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddNewSubCategory.resx">
+      <DependentUpon>AddNewSubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\EditSubCategory.resx">
+      <DependentUpon>EditSubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\EditMainCategory.resx">
+      <DependentUpon>EditMainCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPages\AddNewMainCategory.resx">
+      <DependentUpon>AddNewMainCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubPages\AddNewMovieForm.resx">
       <DependentUpon>AddNewMovieForm.cs</DependentUpon>

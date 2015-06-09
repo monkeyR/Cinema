@@ -50,7 +50,7 @@
             this.MainPanel.Location = new System.Drawing.Point(216, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(833, 597);
+            this.MainPanel.Size = new System.Drawing.Size(833, 603);
             this.MainPanel.TabIndex = 0;
             // 
             // SalesStatisticsButton

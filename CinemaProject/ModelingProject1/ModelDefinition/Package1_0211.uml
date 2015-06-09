@@ -1,0 +1,2401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6d53030a-5a98-440b-8542-212c98bda8a6"
+  name="Main"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="f47f1fee-69e8-45c4-b849-38f303649577"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCinemaManager.Main"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1e89e293-d2fb-4846-99f8-c66554f4ceb4"
+        name="MyLoginForm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2b13d11e-47ea-4896-8878-468e60c83930"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d74c7088-20e8-43b4-8fc3-715c6cc6c395"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="877335d2-153c-456c-b195-0f68f7b00f87">
+                <propertyInstance
+                  Id="b3d7842a-7e1f-48b0-abf3-f57dcf982936"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3bcc1dad-3522-45c0-bd83-38e01fd57c36">
+                <propertyInstance
+                  Id="ad25afcf-8c98-4bf2-8fcb-dfd4e24e0365"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="658d31b6-8c0a-4f17-856b-74b89e6bc6c0">
+                <propertyInstance
+                  Id="2736644b-0a1d-4af3-9315-b1146e632caf"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="11b137c3-c3b8-46f8-a6d0-c35ec2aa48b4">
+                <propertyInstance
+                  Id="8c725fda-1fa0-4823-be0d-dbe59b06f070"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0406f988-2e0e-40bf-9f58-be90a7c32c98">
+                <propertyInstance
+                  Id="ff20a1c5-b1f4-45cd-815a-2116aae61827"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="a58322b9-e119-40f9-9150-e47ccdd43d20"
+            isSubstitutable="false">
+            <classMoniker
+              Id="470c10b5-62d3-4536-9a67-1780c238efbe"
+              LastKnownName="LoginForm"
+              LastKnownLocation="Package3_0211.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1e9e9b0a-6d6d-4086-85dd-9a2d0a6c1044"
+            name="onLoginActionRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="006fda27-fa28-47de-a6b2-8f27a611f351"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DonLoginActionRequest OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6f384854-b675-4343-b05b-57b3db7e7386"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19d0697c-3267-4a3b-ad4a-b8ebf76a68b7">
+                    <propertyInstance
+                      Id="3cd8cdda-28a4-481b-bb43-2378c93d14ec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20e5c227-5347-47f7-87a1-51b0ebe4730d">
+                    <propertyInstance
+                      Id="a1dc2b31-77ea-4497-8ebb-c846c99190c5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="210cc391-b8a2-44a4-b596-f5aeaa36ae86">
+                    <propertyInstance
+                      Id="b077214b-ad06-4ccd-b4ad-c9217469b921"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3c7a29a-5bca-496a-96f4-de5bc7bcf766">
+                    <propertyInstance
+                      Id="70ee6294-2961-4e3a-8382-1c7462ccca88"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e98ef47-f30f-4176-b8cc-6c3f246e0203">
+                    <propertyInstance
+                      Id="9732cc60-f093-4bbf-a029-fdae5640ba10"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ea189d8-299f-4ece-b7fb-aaf042a73a7e">
+                    <propertyInstance
+                      Id="f8afef93-d46f-4ae6-896c-1e8f46229374"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1759684-5427-43a9-940d-0eb0739efb96"
+                  name="login"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e27c35f1-d6f5-4bb2-808e-ab7d2b02648a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DonLoginActionRequest OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dlogin"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f038cb8a-fe1a-42d6-abed-ef46a3a540d3"
+                  name="password"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="77eac28d-497d-4e53-9c21-556fdd05f573"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DonLoginActionRequest OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpassword"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bdda9b45-262a-4d3b-b7b5-cb9974a15708"
+            name="findUser"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3e1cbb8d-3582-48bd-a9d9-78755b6672ce"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DfindUser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="79d3f2e6-41f0-4d49-8829-9d19a4ea65d7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc527847-8f95-4346-b4d1-46982dacfd06">
+                    <propertyInstance
+                      Id="df5250fd-03f5-4ac0-89f1-32d4938ef01c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8284cfb-bcf3-4131-a08e-34315c649aab">
+                    <propertyInstance
+                      Id="4e082d6c-c5c7-40dd-8513-96539b3ae1cc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49900b56-6163-42ab-ad6d-6ed9e9a1d0df">
+                    <propertyInstance
+                      Id="6b2d45fa-2196-46b4-9808-cc7563be21a9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e861d61-0e71-410c-9f65-9f19b081c973">
+                    <propertyInstance
+                      Id="caf5d32e-d388-4750-a79f-b2c39ef81fc8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9bd562be-e463-47b1-9aed-07f8c673d178">
+                    <propertyInstance
+                      Id="75451492-a94d-489f-9081-ee1ebe26dbbb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="854089f6-c1fa-4aae-97f8-3a677b152ea7">
+                    <propertyInstance
+                      Id="c8a6e84a-7e70-458f-bfa7-4189dbe37622"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7bce2463-1180-4b83-a0cf-c3f1abaa31c9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b2a74df3-b75f-48c5-9fba-77d781efc493"
+                      LastKnownName="Employees"
+                      LastKnownLocation="Package2_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="359da361-474d-4a29-aecb-1e3421654136"
+                  name="login"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="52852ee8-0fed-46b2-9ad8-825951c77394"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DfindUser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dlogin"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a94db3e-4293-40aa-9760-f60797b10f9b"
+                  name="password"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="cb2e9cb1-1798-4d9b-a0e7-29e35cb38863"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D(Name%3DfindUser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpassword"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5834868d-5e49-4272-aba4-16bf54e173aa"
+            name="showMainForm"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="74b38159-7567-4a21-8d63-b1c83313b5b4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3DshowMainForm"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e0e3e7e1-cde5-461d-94bd-670775a7c410"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54bc580e-ffb2-481d-aa73-a52955e81c62">
+                    <propertyInstance
+                      Id="344deb8e-1c58-4cdf-b54a-9dc7869cb36a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a3bf745-b2de-4783-8e98-838a34280261">
+                    <propertyInstance
+                      Id="bd3cad48-0409-4744-83cd-a6cbecacea1e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78304b9b-a48a-483c-bb5a-e4ebf1313801">
+                    <propertyInstance
+                      Id="ad226c49-a434-4274-bf0c-a4dcba115923"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7914a66-9bc9-4740-9921-4bbfca2a2bac">
+                    <propertyInstance
+                      Id="1939f59c-9a27-496e-ace6-8d3017c08515"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b1ee6b0-b68b-4197-a3e6-b9443e1f9734">
+                    <propertyInstance
+                      Id="87acdcd1-665f-442b-83df-0cc58ed78465"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03ec7c33-c1ee-42fc-a117-0c45a7457e10">
+                    <propertyInstance
+                      Id="75c1eca7-d308-4c4a-b09b-4e06ae07aff9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="1acfc62e-8aec-43fb-aedd-c7a7039e7bb0"
+            name="MyLoginForm"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="51632daa-d880-4be5-9eb5-ac98171ca4c9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMyLoginForm Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a7dac0a0-25b6-4ce9-a8b2-dde54320dcc9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="582d3568-ea14-402b-bd15-fa3955915a92">
+                    <propertyInstance
+                      Id="4df2de7c-6e03-4741-b10c-03836b38d0a6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfe9d6cd-2723-42d6-b3f3-c2850e7cd4e5">
+                    <propertyInstance
+                      Id="2c032002-5229-479f-8d47-7c52d75971ff"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27545da5-3232-49fd-90b5-f0c153e400e9">
+                    <propertyInstance
+                      Id="629faab0-12a3-4ac4-a292-8dc4029f5e39"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd9fab46-543d-4b04-8bc1-bde56c10d7df">
+                    <propertyInstance
+                      Id="0395681f-8530-4450-8b50-6f4d1c79c450"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80f24d3d-4f64-4060-8379-fedf3b482bc8">
+                    <propertyInstance
+                      Id="cb11ad4a-d645-48cd-989d-aa9333c59e6d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4f97d81-2b0b-4b01-859a-55b8b70d3e9c">
+                    <propertyInstance
+                      Id="02b33942-5165-4852-a10e-1a32596b4e88"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="98b9769c-b80f-44a1-8807-92415d1fdd61"
+        name="MainFormManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5fa5d5e8-198e-4deb-befb-ebdd5652303c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="05b5b74e-865c-42c8-9977-266ea965f55d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="56d43d70-9f7a-40ed-9a0e-4440d6851b7c">
+                <propertyInstance
+                  Id="0e9b4bb1-1f12-4ea3-916c-fa98d2e85a8a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="140bc062-80f6-4718-ac2f-201c28832d8f">
+                <propertyInstance
+                  Id="210e8e64-f76a-43c2-be35-d2b1cb6679a6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47a5e425-570b-41c5-adeb-0e9047792ebc">
+                <propertyInstance
+                  Id="bbb6a485-2721-4574-95f5-89fe75ef50e9"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e1ee22c4-a1f5-4575-8dba-a098685b6a4f">
+                <propertyInstance
+                  Id="374cff97-4411-49e1-b53b-40e5aeecab8f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="75c91525-4ced-4709-a804-a37d65c3f39f">
+                <propertyInstance
+                  Id="eef4e788-ca2b-4369-bf15-eace752c52e0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="77e07275-70b5-4eb5-acde-6b235b236d95"
+            isSubstitutable="false">
+            <classMoniker
+              Id="51ce1dd5-85c3-45da-9fd5-f473dea8a324"
+              LastKnownName="Form"
+              LastKnownLocation="Package6_0211.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7ef12e0c-c1a0-4ec0-bbc6-844888cf5e30"
+            name="components"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c2d7ba27-e162-4605-9e22-0a058e858291"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3Dcomponents"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="93a17df2-d81f-4724-acf2-50855d682459"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd1b524c-06b6-426b-8134-bfe243787b16">
+                    <propertyInstance
+                      Id="dc57fe5d-5e89-454f-a265-9ed98548578d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ca6cbe9-81b7-4ddc-95dd-0c08e282c19f">
+                    <propertyInstance
+                      Id="c3c3ba9a-9b03-46ed-8b56-b213c166731a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9bf538ed-1db8-4605-80da-a1701149f196">
+                    <propertyInstance
+                      Id="091218aa-0c5f-4db9-9d49-b986ae73ab6d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7864a69-a510-4e46-84df-afd3ad4c16fb">
+                    <propertyInstance
+                      Id="68a9f0c7-503a-4459-8069-7201383d68b0"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e6227543-337d-4df8-9364-a5ca20bb495c">
+                    <propertyInstance
+                      Id="f2ba1580-c7fd-463e-9ab1-8a8a30a05027"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="4e9811b2-f3a1-4111-92bd-1535d26ebf68"
+                LastKnownName="IContainer"
+                LastKnownLocation="Package7_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bd81be14-c86d-41ea-bc43-ea51296522cf"
+            name="MainPanel"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d48cbf55-e241-45cd-8b8a-1bbc0e929919"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DMainPanel"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4e4d30d7-57ab-48c0-af7f-fca95c997793"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6366934b-1bff-4de6-b8a6-e2c309b4a8e0">
+                    <propertyInstance
+                      Id="771cfaa9-5d04-47b0-b4c7-4a1d3cafe046"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="111b39ea-c327-4817-a36e-f9034fa7731f">
+                    <propertyInstance
+                      Id="329ef6ae-5d7e-4e10-b954-94acc3ad81ed"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64799a09-8389-4cf2-b00f-0ea5b3f9161a">
+                    <propertyInstance
+                      Id="ed3f3b7c-9c69-4d9d-832d-e9da69d4867e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2bb6a32-4482-4ccc-b236-6db9963f1bd7">
+                    <propertyInstance
+                      Id="01754704-e441-4e36-a905-d1431a769f67"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a5a3ece-3146-478f-b02a-3caf685ae239">
+                    <propertyInstance
+                      Id="792a8557-7544-4d7f-b6d2-5e067cf09758"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="38b3516b-c318-448f-8b38-1419a4c4419a"
+                LastKnownName="Panel"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b2315e66-1f18-4dea-ae7f-9be368322322"
+            name="SalesStatisticsButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="35918e78-253c-40fb-a7d7-b62e752a963a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DSalesStatisticsButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="69da21a8-6c7f-4f18-926a-2951b7557a67"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e8f8763-3eef-4dbf-a1d4-a1f197b022d7">
+                    <propertyInstance
+                      Id="4d654a32-a7db-464e-9bb2-3f7ebbb7c26f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="997527af-26e9-4743-8312-02c017ebe3f0">
+                    <propertyInstance
+                      Id="28a20984-e79f-4830-a00e-e3c5b22d3b53"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4890fe1-38aa-4942-a318-d78325dda3fa">
+                    <propertyInstance
+                      Id="bc4465fd-0b69-4272-99a9-16d58101cd7c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90dd58a4-9524-4b62-9527-b76b02f747e1">
+                    <propertyInstance
+                      Id="3c5abb64-d0c8-40f0-8b63-3c8db8b5089f"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad78df06-edb1-4702-b203-bde25065aacd">
+                    <propertyInstance
+                      Id="7d5f0e46-6e41-4810-83b7-69952c4915ff"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1b13d7cd-4d9f-4d54-b19e-738b16a98fc6"
+            name="MovieStatisticsButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="46677454-c4b6-4920-b654-bbcf18d39b85"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DMovieStatisticsButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="aaecce1f-0274-464d-b6ca-6636e1cd7eee"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1007b8b-3f73-45a3-a548-179a382d6deb">
+                    <propertyInstance
+                      Id="f6cca5dd-34f5-4657-a41d-ca8ec4b4b511"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8315aaec-de0a-4224-a472-8b7502c26668">
+                    <propertyInstance
+                      Id="7f2b7f50-200d-42d8-a96b-a13d2a9369c9"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffdc48f6-f070-4915-820f-28841ecdf8a5">
+                    <propertyInstance
+                      Id="190ea845-9d9d-4f69-88a6-5dda3b8db960"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80740c7d-503a-4c17-aba7-56a78065763c">
+                    <propertyInstance
+                      Id="3b90f7a1-d769-41c9-b371-db33ad5265a8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a26ae68-7aa4-4a45-9b94-5526e131dcce">
+                    <propertyInstance
+                      Id="99c91247-0423-4604-9e14-519974893714"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fb0941c4-1f49-485f-b3c3-761236024652"
+            name="EmployeesButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="88abe004-a917-4337-8f67-a915ffc44ea7"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DEmployeesButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1cfdc515-1b91-4d7c-9751-2079979c274a"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37bfd5c7-0b15-417d-96e9-fd259812ae9d">
+                    <propertyInstance
+                      Id="8fbf13cf-ec14-422d-9338-dc2e1b79f32a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee57f57c-2653-4828-a6c5-0c1d5a387634">
+                    <propertyInstance
+                      Id="7cb54903-3e3b-43a4-88af-c8f99526f26a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="185c1e61-28a3-40ae-ba2e-0f04a7c276f8">
+                    <propertyInstance
+                      Id="ac9007ce-26f1-4374-b366-5459832c8a8e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e46a4896-8101-40a5-824c-7aa300472aff">
+                    <propertyInstance
+                      Id="b053a716-7068-47bb-a60d-1eafe9c8be77"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="916ed0db-dbd2-442c-b834-5d1f79c340e7">
+                    <propertyInstance
+                      Id="5a8a0935-1db9-4d73-8953-4d000a741625"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="247992ae-4e7e-41e0-8a2d-0639f52dc906"
+            name="ShiftsAndPositionsButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1c9e2d61-f97f-4bc8-adac-2cb45392e01b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DShiftsAndPositionsButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="050c9224-12c0-4b3f-a8f4-d1a2ed2c50cc"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afa80fee-209a-4cc6-a988-cedcd04ab516">
+                    <propertyInstance
+                      Id="0040af79-3994-4211-8b32-6269690e06f2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dcd2601-2c42-4cce-bf47-03064c23c7e1">
+                    <propertyInstance
+                      Id="be04af58-1e62-4ea9-81a7-74c696173791"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3080613e-0ab1-4da3-aeb6-7c7136578e98">
+                    <propertyInstance
+                      Id="fa740e60-e977-4ce4-9a35-f5c484df733b"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af3bc28d-fb30-41ab-8ba8-8b653b7d5486">
+                    <propertyInstance
+                      Id="d016225a-5be6-482e-81ee-de393f20811b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5b3e819-badf-4af3-a683-a49fa4a5e5f0">
+                    <propertyInstance
+                      Id="ed2c246f-e2fc-44d3-a682-023afa2b794f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f8b4ef07-5ba3-487c-ae6d-4b6e0073400b"
+            name="MovieHallsButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="93cf9e73-6c6e-44cb-b517-d54b07cf6a8c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DMovieHallsButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="25bca7b5-d253-4fd0-aead-16aa0b2848b3"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c39cd28-11f9-440a-a35d-1beffc68d8d0">
+                    <propertyInstance
+                      Id="03e1f752-dcda-4d12-93b3-ae05c7c2f4ed"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c059864b-5d54-4876-8c09-cb9672debc07">
+                    <propertyInstance
+                      Id="b2a21959-40ae-41af-8d48-c1ae00b25950"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1072c1f4-0b3b-42d4-8528-2f62878c03e6">
+                    <propertyInstance
+                      Id="b43ee816-4b90-4a74-9ac9-5b2b9d00cc00"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33e720b5-d1d8-41b0-8bce-0734b0402451">
+                    <propertyInstance
+                      Id="f468f513-b3f1-4301-84be-474062dc6fda"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b9c5852-0ae6-42b4-bac9-8654607b7af2">
+                    <propertyInstance
+                      Id="a1cadb74-2f2f-43e6-bb21-556ef09adce6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cab78008-ba63-49af-bdc0-85f83d6d8cb9"
+            name="MovieButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="883795b1-347b-4463-ae09-89866c7eb62c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DMovieButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d265f92c-7b79-4c11-bb7b-4bb7d1265727"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6238d5ac-60b8-42d2-a372-2116bfd08370">
+                    <propertyInstance
+                      Id="ce874cb1-53cf-4dc7-b524-aa527fc67b7e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0409c6c6-1e16-46eb-b9e2-45b0e098d4f4">
+                    <propertyInstance
+                      Id="06e23489-5b80-40e0-91e9-48154991e118"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41af3429-520e-46e8-b356-ba2530cfceff">
+                    <propertyInstance
+                      Id="cc9a8a42-3c46-4845-9748-9d9caffdd5fc"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc22b62c-d585-4719-b027-a230cd407739">
+                    <propertyInstance
+                      Id="b9ccf854-e69f-4d8c-a703-769ec99cb469"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d778a67d-1af3-4bc0-9ac6-619b7c724166">
+                    <propertyInstance
+                      Id="8b800234-4e71-4718-bb8d-5e9251ff6133"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ba9fe2f7-d70f-4070-8e25-3dde541cb441"
+            name="HallCreatorButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ad7dcff4-9998-4353-a095-23484e800799"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DHallCreatorButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ec64b52e-1296-4874-855b-b1a856aa1df6"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5456a749-b61c-4473-b769-f4e39a26de93">
+                    <propertyInstance
+                      Id="c5f17fe5-804f-4a31-bb95-9adfb6a448c8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2db8c050-a9b6-42e5-b435-3e8f7f07624e">
+                    <propertyInstance
+                      Id="ef6c43bf-f573-4363-8543-66cc9f7ce4da"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec36d13a-3c6b-40ed-833c-4ae1e1d97a2a">
+                    <propertyInstance
+                      Id="6776101f-4bff-4736-9534-de6680b0a863"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1178cee-4fe9-4351-b143-c67f9e959a86">
+                    <propertyInstance
+                      Id="d88fc1e8-243f-4f58-b66d-14ded4eb18e7"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5042de7-9400-417d-91fa-7c807142e1f2">
+                    <propertyInstance
+                      Id="08571011-57e0-42a0-8c9c-0a9a6628cf4d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="89ae0120-0d3a-46cc-ae02-8ffba477b400"
+            name="ProductsButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6ef44b6b-0b8a-4695-9774-66d3322c5cbe"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DProductsButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="063617c8-5269-427c-8c39-8dea6eea036f"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="750d1a69-6c89-4945-aa8b-fcb03a6c2f4f">
+                    <propertyInstance
+                      Id="ae0eca75-400d-4c3f-8dcc-b19b67d2352c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cca73b7b-b5bb-4f4e-82c1-3314edd54473">
+                    <propertyInstance
+                      Id="118637a9-5955-45f0-a480-e786dc3b8bd6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77c6a504-1328-42c3-934d-4388ce208109">
+                    <propertyInstance
+                      Id="a4b6f3fd-61f9-42a9-8ab5-ee7b09873801"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06f07a05-a828-4d84-a411-f9ccea2da75c">
+                    <propertyInstance
+                      Id="7eec3cd7-5f7a-4de5-be7b-5b2815ec21d5"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7f1ba02-8b38-4b2d-9b7d-21b1b5376e8c">
+                    <propertyInstance
+                      Id="8ae3c284-657f-4340-800d-3af643b2d84b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="33404467-0a44-4e04-be77-239657ae65c8"
+            name="LogoutButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9523fc8d-b89b-4fac-b2df-0b17f38e6256"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DLogoutButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="86a18759-7cd1-4d74-9363-f74c695d80a5"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3274d54c-cb78-4fb3-807a-73497806fa35">
+                    <propertyInstance
+                      Id="8d371931-faa5-494e-8d69-44f8310864b3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b65d3efb-654e-4ee5-9e32-61ffd3f1786a">
+                    <propertyInstance
+                      Id="2c1c2e28-a776-4386-9465-0ac89bee55a0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d186068-d372-46bd-996a-27c390cc1d26">
+                    <propertyInstance
+                      Id="aaeda70a-86c3-479c-8134-b7cd4d242591"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4d883e5-9e81-4138-a770-5e7e0fec07db">
+                    <propertyInstance
+                      Id="916e8076-d7be-432e-9978-899ff3089895"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8f487ab-2298-4241-8df9-b4e842bcd522">
+                    <propertyInstance
+                      Id="222389ba-0394-4476-82f9-d70f2bab8cd2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1f3bab34-ad9a-4819-a423-252cdce72234"
+                LastKnownName="Button"
+                LastKnownLocation="Package6_0211.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="fc12dff1-f60b-473f-bf59-db26f1e3702f"
+            name="selectPage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7b0fb5cf-6760-49c2-b945-1a3baf60e8b7"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DselectPage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Windows.Forms.dll&quot; Namespace%3DSystem.Windows.Forms Type%3DForm)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="84b31c23-e59d-4bf1-a947-3883f2ea85bb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3744754-5b86-43b3-bd87-81d11b1676e1">
+                    <propertyInstance
+                      Id="ce3def85-ec73-4891-adbd-baa0e65104f8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5445dcb2-4e36-46ea-ab05-2ade44f21b97">
+                    <propertyInstance
+                      Id="fedacbcf-e099-4b2c-9ad5-1dda72a7594f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59863b92-da49-4563-bbfd-9dde986178a7">
+                    <propertyInstance
+                      Id="0aeea811-fc39-45b6-a6b2-c0c2b6303670"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="413a2958-39c4-4dce-8db3-1db1264960a4">
+                    <propertyInstance
+                      Id="0c3108fe-e930-44f1-88d4-c83e227bdeaf"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a67cf50-e7f2-4bc9-9978-401e487c92d2">
+                    <propertyInstance
+                      Id="018b4cbc-cb6f-4924-82d5-89363667c21e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a39df08d-6c5f-494c-bb3e-5424eec5b2cd">
+                    <propertyInstance
+                      Id="cc4b368d-6728-4663-9d93-ceb232532409"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1b3bff7-48c2-4b11-bbed-eb6f65aa8f90"
+                  name="page"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b25aa8bd-8552-45b3-a4fb-7fd628f00494"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DselectPage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Windows.Forms.dll&quot; Namespace%3DSystem.Windows.Forms Type%3DForm)]) ParameterIdentifier%3Dpage"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="51ce1dd5-85c3-45da-9fd5-f473dea8a324"
+                      LastKnownName="Form"
+                      LastKnownLocation="Package6_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3310d891-45eb-413c-b912-9a5e12734879"
+            name="HallCreatorButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cbc2746d-5860-43db-833f-958b97e25c9f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DHallCreatorButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="be90671a-43a8-4a48-b13f-fdda8a748250"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1e57932-c7cc-442a-a323-465dc95ff6e2">
+                    <propertyInstance
+                      Id="e40fc2c5-50ac-4d4b-aba8-e4bc33c23080"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3361c4e9-c084-4840-a32c-cfabda79d7ee">
+                    <propertyInstance
+                      Id="49c58a44-be34-41ff-ab44-21e2a5c93570"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="991d6469-2e9b-43d9-ae20-9546e8a273c2">
+                    <propertyInstance
+                      Id="0b01578f-e2b9-4c30-86f7-5f8155c873bc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30d8e010-436a-4f39-a443-36077e89d674">
+                    <propertyInstance
+                      Id="7846a18d-1a8b-4542-9b0d-9863592b9b93"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3685eed6-8758-474d-bcbd-6d29c8ee9afc">
+                    <propertyInstance
+                      Id="39ec95f3-6568-4145-9ac8-ad9fbc2fe024"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53de793c-453a-4086-848f-974f33d51a38">
+                    <propertyInstance
+                      Id="c63d9ded-196a-4aad-b856-7be22aa703c7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3f59bced-572a-4d6f-a3ff-e7a5ffe7d572"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="542216a8-c048-434d-b786-a3fe7fd7df32"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DHallCreatorButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a372df14-97a5-47fe-8c65-46a5bea174b1"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="58d4f026-f618-4d17-b0f3-79e9bce035a8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DHallCreatorButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1cb58043-88d1-40ae-b3e1-cd9a217837aa"
+            name="EmployeesButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b16108bc-1ab6-497e-85e0-167068e1e327"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DEmployeesButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="eefa5034-29ce-481f-a613-c9fb939f4157"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f2707e7-7497-40e2-b1be-0181676ab5cc">
+                    <propertyInstance
+                      Id="eb313e07-2832-4605-950b-6cbda33fbf3e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce2d4ba1-25b8-459b-ba6b-106e778d663b">
+                    <propertyInstance
+                      Id="64436030-f42a-4a02-b613-f95ab9310c45"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6dc13d7-a2b0-4f1e-a0ab-a2ecb5ac521b">
+                    <propertyInstance
+                      Id="a1deb2d1-f408-46e8-9e6d-7a33f6bb0985"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bea33177-a954-4002-b456-08aeb53f4c99">
+                    <propertyInstance
+                      Id="e47379cf-c9f0-4a6d-a2ff-06993e6ea03c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02830752-9a6c-4424-8650-61b30968208b">
+                    <propertyInstance
+                      Id="41d2f333-a2c6-49c3-bc47-15c55b2b1a6c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d7e5116-e916-477d-97cc-8a641c8bb6c8">
+                    <propertyInstance
+                      Id="69760aba-262f-4ea5-9d8b-4230a31aba86"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d65aa45-c503-4f1c-a200-2a6a390a7fea"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5db29d7b-9794-4beb-9f30-bcd449ba2630"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DEmployeesButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9ed12536-7d81-4a4d-96dc-2f31926a9f95"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="31a80add-c963-486d-b439-0932d8e6787b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DEmployeesButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7911c5ad-cddf-4854-bc61-5b38280e5e78"
+            name="MovieButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e21b703a-2df7-4665-a08d-cd2cd121bb1a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="24bb5332-68a7-48be-8c06-218a86fb5f58"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57cd5b5f-e125-48f1-992b-25e1b05baab0">
+                    <propertyInstance
+                      Id="f5b4d4da-75be-43ef-bed7-bae10a537676"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8712b21-b297-4366-8793-490454a7b826">
+                    <propertyInstance
+                      Id="bcac73ab-f691-4c76-905d-216b72eb51eb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57ca3161-8990-46e6-98b6-810a963e1789">
+                    <propertyInstance
+                      Id="0afb3bdd-c2b7-4a49-b939-08fa7cce6e0d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="60994dd1-f359-4f5f-add7-bbbc43953df8">
+                    <propertyInstance
+                      Id="96ef4e7e-e456-415a-8e80-001b2d73479b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9c80856-b420-4f8f-a89c-03e715d07e9f">
+                    <propertyInstance
+                      Id="b1131255-a476-4fb2-bd24-11e9390550ee"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89585c52-9e7d-49e9-93f8-d7070fe868e0">
+                    <propertyInstance
+                      Id="b3d33f79-4889-41bb-a34c-252b9fb91c00"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="70b3065c-b3de-4f09-a843-0e56fa5eaf71"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="af8dc965-c412-402f-89cc-be74ee3ba2b3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e9098a8-683e-42da-a576-866bd147afa0"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="18518786-a3a2-4508-88a1-915ab2757c85"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="88c6166d-3735-4a04-9451-a8a6b67eb491"
+            name="MovieHallsButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ded7f862-4ee8-476c-8c4b-b36e2b56dbdd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieHallsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="10d0c9f0-3442-4500-a94f-3fff709d1ca9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48ee6173-220a-4d6a-8b05-d8936c20a1da">
+                    <propertyInstance
+                      Id="462ee3dd-853b-40ba-aaa6-13bc14be54e8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87e1ad4e-57fc-424d-a236-f771f0f71abf">
+                    <propertyInstance
+                      Id="fd6f1e30-bf77-4819-994b-41553de56ee2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0922f41-e9c0-4ca5-b112-1d41b25b108a">
+                    <propertyInstance
+                      Id="d46e419d-f4d3-4b4f-8d20-8a2ec4f5c27a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b115a863-570a-45a7-a6fc-b0badd3812ea">
+                    <propertyInstance
+                      Id="ab513f0f-1435-4914-be14-95dd2f41b25e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ca99d04-d290-41d0-b582-e2bad54e3057">
+                    <propertyInstance
+                      Id="18dd1b14-2c2a-4e01-aada-db2963f60007"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14921736-6b8d-4463-92e0-7b1f21583ac1">
+                    <propertyInstance
+                      Id="48f1bc09-b1ea-4116-b631-a8b3991cbf91"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="41181e46-d9e7-4a9c-8c84-1bbced3462ad"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="17afa3b8-58a1-4562-b520-3e2a74cff784"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieHallsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4c580dbb-1a32-4b28-99b5-25c2e27f5caa"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a11732f3-9aef-451d-871a-d7888217f3c3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieHallsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a8a4c8be-c285-420d-8fb6-5e296336dd02"
+            name="ShiftsAndPositionsButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="17a0710c-80f3-4a0d-bf5f-ec64b9e2d7f4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DShiftsAndPositionsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0bd54ff4-0ccb-46bf-b376-5fb3aef51894"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6d81698-d69b-42a4-9e7f-9115ea52383c">
+                    <propertyInstance
+                      Id="0cb7aa6c-3183-4bb2-97e9-31805f6c082d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87f82756-1787-4ec5-acec-a054d4059b35">
+                    <propertyInstance
+                      Id="a6fbce26-0ff3-45eb-81e4-591e68820223"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c6bad95-0e0f-471a-b209-f79e58d46c60">
+                    <propertyInstance
+                      Id="0579511e-5863-4491-aa83-001b9fb85888"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f380ce8-9107-4151-bcf2-62db457a37dd">
+                    <propertyInstance
+                      Id="e80ceecf-2696-4f51-bb43-372652dd6a90"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8949b142-1837-457d-8686-22d308715893">
+                    <propertyInstance
+                      Id="1d8ba0a9-a8e5-43b3-a71c-47c7d064b0fb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea02922a-ed47-483a-9580-4269434f96fc">
+                    <propertyInstance
+                      Id="185ed5b4-a3ee-4b48-a29b-bfc8d9db3cf0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b56fd6e6-6448-4e8b-bb63-1b4ab2fe5578"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="43fff6e2-a4fd-431c-ae3e-339fe7c200fc"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DShiftsAndPositionsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7a3b549-03fd-4e07-b67e-2771f72ca9a2"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6b9003da-e99a-44c7-9eb5-29082f0236e0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DShiftsAndPositionsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="94f12159-b994-4763-9939-36ca0226ea95"
+            name="SalesStatisticsButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="65c1aeb2-fca8-4c81-bae7-8d5db9c9c69d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DSalesStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b67851bd-a9fa-45f5-9e43-ba32b60b927c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1902a23-1683-48bc-aac2-fd49dd9dc0e8">
+                    <propertyInstance
+                      Id="24fd1859-f052-45a9-984b-b8e2b145ccb4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="556e0a83-024a-44be-9250-e94c39ce1896">
+                    <propertyInstance
+                      Id="cc9645da-422a-4f12-9dd5-a780ee59c7c3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dca41eac-dec7-4094-bca5-a9e41428bc32">
+                    <propertyInstance
+                      Id="28514252-a1d4-46ea-8c8a-81e11bd0e647"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d418f74a-f144-4ec4-815f-d0e765410575">
+                    <propertyInstance
+                      Id="a4878fd0-4465-44bd-9718-323e1b6420b5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a56a14f-604a-4c92-9ee4-0c8d09c140af">
+                    <propertyInstance
+                      Id="bcabf73c-7c63-4514-9860-08bf82061872"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b9ec4fe-a4e4-4e14-a883-8d7e70e31ea2">
+                    <propertyInstance
+                      Id="66dfd2ac-e040-4d31-9330-c5238eb046db"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0383740b-20a3-4adc-8d95-077cb8ec839d"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fe542a6c-8f62-49d4-adf7-2af1803324d3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DSalesStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d9f8d22-79cd-403c-8d3e-120fee09eea4"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="507b7965-4e43-49e7-85c2-8e5739a46383"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DSalesStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8b6dab49-defc-42fd-ae00-bd3804a92522"
+            name="MovieStatisticsButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b691aba6-8657-43e8-be54-42012b194a02"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7ea9097a-3e99-4988-b4ee-0ef97062a742"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c6fce52-5ea2-411b-bcd5-0b0a14bb4608">
+                    <propertyInstance
+                      Id="af544a75-c777-432d-b784-5ac7e3a07999"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aefb3d83-0094-4989-80ec-06b2f1435df4">
+                    <propertyInstance
+                      Id="a7492fab-891f-465a-a748-2bf1fb439a07"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e62b194a-fdb6-4b00-813f-5af65e45a89c">
+                    <propertyInstance
+                      Id="94b02b21-ff3b-485b-aa2c-0a771c16063c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5fc0a4f4-185d-4f4c-b943-b5779b3373f5">
+                    <propertyInstance
+                      Id="5c98b957-b7e0-46f3-9993-1cb86ec67142"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ab67dfd-7a16-40ed-9a29-aef745378437">
+                    <propertyInstance
+                      Id="cb5fbcec-f9ee-4c16-997f-de1ddf509758"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a56e6c1a-c0f9-4ff3-9a48-58c139dd573d">
+                    <propertyInstance
+                      Id="225113d0-a373-4254-bad6-b884e1fb6fad"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="036fa434-6cbb-455d-aafc-23066607a216"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3d647fab-753a-42a1-89b8-58fa07c7e670"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="89282857-eb9c-46ab-907e-0fb0aae7447f"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c7163ad0-fc57-4eea-93fc-3a11e368bca1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DMovieStatisticsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="954cdba5-683f-4501-9c5a-7147924fcd3d"
+            name="ProductsButton_Click"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5cb82207-495f-4304-b8c5-d0f4c0fc39d9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DProductsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e939f9b2-41bf-49c2-a048-ab0aacf58679"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2485c91c-e7ca-4c40-b81b-a9e8bfc0e310">
+                    <propertyInstance
+                      Id="dd8de1fd-6ae0-4b4b-aa3d-df3dc8c5a6a4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58e291e0-6e04-4a24-b81f-db27e2137ef7">
+                    <propertyInstance
+                      Id="7e76f75d-1e7a-414a-b14a-fabf45d962b6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e512576-a449-47c3-a257-ed6195d78a7b">
+                    <propertyInstance
+                      Id="3d040b0d-c678-4413-9009-d6833274c3aa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9851577d-d8be-48d6-b106-69dc3e333c41">
+                    <propertyInstance
+                      Id="b4645732-f96a-4dd1-876c-e6b32ad4806d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8da9f9ad-baa5-4a80-aed3-53654da782ec">
+                    <propertyInstance
+                      Id="b11dbc56-4e08-4a8d-bc26-01d0ab227649"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e85c9a06-b1b2-4a2e-a4a6-adbb73766d37">
+                    <propertyInstance
+                      Id="2a2653b2-e9a3-4ef8-82ce-0575d46daaa5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="864b3c2f-22d4-4f2e-9ddd-734167eaacd0"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="09611ad3-0d46-434b-9e44-4ef4bfc9bfae"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DProductsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a79395be-71d1-47ee-a57e-2cb41a273002"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0dc01e24-453f-4ae8-bdb3-167acf601360"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2a8d5b0c-1301-4e04-9005-3e7aed7eae47"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DProductsButton_Click OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f585ba67-602c-41ba-a9a1-028110b378df"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package4_0211.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c495ec41-41d2-4504-8fc6-5af611b0c580"
+            name="Dispose"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b1bdd0f1-0996-4389-924a-00b9645264a0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DDispose OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="627b51f1-16ce-423d-aa1e-061fc437a5de"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8b7aeab-ba1d-4c2b-9bfd-c960b4628534">
+                    <propertyInstance
+                      Id="ac85a344-27f8-437a-a003-49fa9b7cd674"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df3a9326-21ff-4549-9221-c1e92293310a">
+                    <propertyInstance
+                      Id="a7655c91-4d59-481b-a445-fe527df5b5da"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a74f92a-3a01-4ff8-9595-d05e62b155fd">
+                    <propertyInstance
+                      Id="b75a48d1-7cd8-4956-b914-0ac4f751e16d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8246bc5-586e-4a88-86a2-f44caf422393">
+                    <propertyInstance
+                      Id="82648504-8aa4-4f8f-bfb6-c3e73fdb649d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9bde2a9a-6f1d-452f-81b5-5b9c99abaf13">
+                    <propertyInstance
+                      Id="10ffa615-c5c6-4957-8d37-0a3b040bd9e6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d54a09f4-3fd0-4100-9e20-9b7a12363a2e">
+                    <propertyInstance
+                      Id="1c10c247-3ed5-44bf-876e-48918b054577"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="18d2e9b8-9a10-41c0-81fa-fb44490496a0"
+                  name="disposing"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="762565f4-18b3-474a-b421-17060b5b1d25"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D(Name%3DDispose OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Ddisposing"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1ab51d79-df01-466e-a2cf-3f383ea0450a"
+            name="InitializeComponent"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="21fa1e0c-ab49-491f-b172-3735e64adf53"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7748067d-4b51-4cd9-8d3f-07644dd70113"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd867bed-b738-49b0-b8b3-9c3c9986167d">
+                    <propertyInstance
+                      Id="13252f09-4507-44d5-b655-0d2fb379537f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5ebd89e-4e93-4d58-b95e-3820dce81969">
+                    <propertyInstance
+                      Id="8d7d2171-d3bb-43a7-be97-264a0a5c32d7"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0529b583-cd57-4fc1-83a4-b442a39eeb8e">
+                    <propertyInstance
+                      Id="2d736f8f-2fc3-48f5-9627-f0d34269f2bc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="180a7b1f-52ea-4cdf-8908-7130f7159cab">
+                    <propertyInstance
+                      Id="1cb712e5-2a06-4d17-b0bf-34449abcc3c8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a7c8fc6-cb22-4e7a-84b1-8481a5e12caa">
+                    <propertyInstance
+                      Id="779fd02f-c64c-40ec-8191-79d1820d7b72"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9cef95b-bffa-4103-8d99-48d26fd707e1">
+                    <propertyInstance
+                      Id="83e8ceff-e270-421c-b9a0-e37063c0f363"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="00adbedb-da9b-48ad-bf12-d7a44809f791"
+            name="MainFormManager"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d668806c-6592-4543-9df8-1a600a1ea489"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Main Type%3DMainFormManager Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9c04dc99-cbf9-429c-8dd7-47d03ba8b393"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77bb9b7a-738f-4b1f-afb3-31a1aacfcff2">
+                    <propertyInstance
+                      Id="a39f6fae-6369-4119-97bf-73c6a845e00b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e611929-e4e7-4564-9c44-9f6728500147">
+                    <propertyInstance
+                      Id="103eb01a-5c62-45bd-92af-3963d77b3076"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57c51baa-c972-45b9-863b-2ae9a094445b">
+                    <propertyInstance
+                      Id="a344eb20-6d92-403e-9816-f85443a6c3a8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="887c373c-7130-4a53-8cbf-0b0f4cd0d71f">
+                    <propertyInstance
+                      Id="57725dd1-7315-4906-806e-053a378c9b98"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21e9b8a0-7b83-43bf-ae6c-d4e97c3c2988">
+                    <propertyInstance
+                      Id="2f79eaa7-9150-4e6d-a607-88e70cb29df0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b87e5bb-40bd-4e68-b317-328ef890e752">
+                    <propertyInstance
+                      Id="465dec80-9c35-4d30-80f0-e6f6cd27a14c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f9ae3a44-6a80-449b-a4b3-434ce538db05"
+  name="Utils"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="20615188-8f61-442a-b183-b716675836e0"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCinemaManager.Utils"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1fb3788b-c12f-4423-9a31-5453522ea63d"
+        name="AvaibleMoviesLoader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c0ddb132-9932-476f-a93c-542c565c3fbb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Utils Type%3DAvaibleMoviesLoader"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6fbefcc4-18ec-4f5b-ac81-c1d4171da774"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ef255e8-6688-4aa6-b48d-6af8f60278a6">
+                <propertyInstance
+                  Id="9bb0b81c-b2b5-434b-9726-e4038f588322"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8c59eb4c-8a18-4dca-bd5b-b77e1a9b5f40">
+                <propertyInstance
+                  Id="588fa600-9c82-4911-a4b7-9977ff0f9c2d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="49d0b4a8-5b11-4e69-a9ae-4eccf528852a">
+                <propertyInstance
+                  Id="29108705-cd8a-4249-a79d-540ead5d627b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="630bfb15-37b1-4a77-930d-6becbd0c4ea1">
+                <propertyInstance
+                  Id="8253cfbf-a40f-4e3f-9974-7585034625df"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca00c5a9-bd71-4107-81b3-dc26770d95f5">
+                <propertyInstance
+                  Id="156fcd09-79a6-4485-8c92-bc6cde9221c3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="57ca0eae-d166-42f3-a675-92487c36d89d"
+            name="AvaibleMoviesLoader"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e29cbe05-e980-4011-b4c8-97de632ca342"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Utils Type%3DAvaibleMoviesLoader Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2b8163a1-e171-423d-9a8b-37a8ff0058a6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92bd356b-5fde-456a-a8bd-bc3068c6398f">
+                    <propertyInstance
+                      Id="a290f45e-75fa-4eb3-8daf-5dc1eb327801"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf3729eb-cf8d-4065-865f-af78fdcccead">
+                    <propertyInstance
+                      Id="1f10175b-21da-4aa6-8a9c-924a7b16cbf3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="831a0fba-a9bf-405a-9087-837191e18cba">
+                    <propertyInstance
+                      Id="eb036541-c847-4fa5-9cac-9b21bfd871bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0277d6d1-e62f-4238-aa17-843e9fd34d14">
+                    <propertyInstance
+                      Id="2d8df651-d230-46e2-89ac-592db05dce85"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8bbf1990-1901-44a5-924a-6c630110c03a">
+                    <propertyInstance
+                      Id="4b624767-231c-40ad-80bf-9487b9f8e96e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6af0561-f699-40ea-ae2c-df3fae12b2da">
+                    <propertyInstance
+                      Id="7fa1231f-3bac-45d3-93d0-c0b450a31d83"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f9a1c163-e29a-4981-b417-f87cf31e0dde"
+            name="load"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a9195846-87ba-4e3d-8cd7-725aa88168b4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaManager%2Fbin%2FDebug%2FCinemaManager.exe Namespace%3DCinemaManager.Utils Type%3DAvaibleMoviesLoader Member%3Dload"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ff9a8bf1-730a-41d0-866e-e422341fcc07"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4b12cfa-3a77-43f9-a2a8-247fc241c96d">
+                    <propertyInstance
+                      Id="d9746eed-bb1b-4e3e-817f-40bfad6756f5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99d60222-18c3-4e11-a1e6-0c1cc482d0ab">
+                    <propertyInstance
+                      Id="2da86d98-56b9-46f7-afeb-553f9d695f6d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03eef27f-e877-480a-8fae-7dccd30a9de4">
+                    <propertyInstance
+                      Id="2faaef67-467a-4df5-990f-6234d9a505dd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fdbce3f-eb2f-43a6-9cd6-f28679e34f12">
+                    <propertyInstance
+                      Id="d65845b4-b806-4a62-a90d-8635eb5f3b4f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ffd87e2-f6e3-49e8-8a6a-e36cde10c3c6">
+                    <propertyInstance
+                      Id="8d5616c6-89a7-41fd-adab-69fe22d6e036"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5b25452-7452-4950-b526-81886fc86180">
+                    <propertyInstance
+                      Id="d05e4333-f65d-483f-8114-44f4202b3ed5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d23df13d-bc44-4635-b23d-a415fb147345"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7d13b026-42e6-4ef9-b2f3-e87ac757d5ac"
+                      LastKnownName="List&lt;Movies‎&gt;"
+                      LastKnownLocation="Package3_0216.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

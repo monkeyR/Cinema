@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d2a11f87-5b17-4599-a464-dfc13b2786ce"
+  name="CinemaModel"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="23f58a8d-6202-4fb5-9a7e-a669bde9d807"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCinemaModel"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="1e483635-9930-4f9a-9736-3d845f2d59ec">
+      <profileInstance
+        Id="bdc81c8d-f62c-4272-9e5e-d40d87b1ee13"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b2a74df3-b75f-48c5-9fba-77d781efc493"
+        name="Employees"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e8eee3da-4a76-411e-b63b-2fb3e8ce9705"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DEmployees"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3fe17acf-b5aa-4e14-851d-b525feb5f13e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aca18b49-9245-4551-a389-39b843b659a7">
+                <propertyInstance
+                  Id="becc3365-70d2-4960-afbd-57c01845a049"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f76deca5-613f-4896-a41b-6343a4aeacd0">
+                <propertyInstance
+                  Id="233c612f-2205-440c-888f-4ec55a13ed6a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7fad598-e7bc-4f06-bcae-d60cc677914d">
+                <propertyInstance
+                  Id="8036064e-ea59-4eae-af54-33be04c0d44d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65f970f4-d0a0-4bc0-84f4-daefecd4ba4c">
+                <propertyInstance
+                  Id="28f36419-eb12-4f9c-8438-ee7dc06b325b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7ff9870-2d82-4000-9b3f-a5220a58c5ad">
+                <propertyInstance
+                  Id="1042d290-83c1-410e-8d25-c7b2dd41c149"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5cde230f-560e-4f3e-b0bf-252782f35e9b"
+        name="Shifts"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4ea66597-f91b-4c13-890f-e087d5a25903"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DShifts"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="154f3eec-a676-42cb-a2fd-bc5933192fe7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8f0d3151-4aaf-4b0d-be05-b18a96e19224">
+                <propertyInstance
+                  Id="e2886615-0c9a-40fd-befe-309e8fb72b81"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4f6a7f7d-0c7f-4811-9bf3-978d8d4c6845">
+                <propertyInstance
+                  Id="594a3126-609e-4b28-b97d-bb3a63f8394e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03ef7acd-f751-4314-8e6c-3c9755eb932d">
+                <propertyInstance
+                  Id="f48e221b-3c7c-467a-980c-d13dc673b704"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c071298f-e360-471d-8683-aff99e6aeaad">
+                <propertyInstance
+                  Id="77f07861-be2c-4788-9914-ebc64ab32766"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d739dc6f-aa73-43c1-b0e9-02416557227a">
+                <propertyInstance
+                  Id="d87565a3-ae3a-4cf5-9105-60d8da2f5201"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fafdfab7-d37b-44db-b1b9-b668eb28d757"
+        name="Halls"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="192f52c7-6def-48fe-8730-5483b65b7ebb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DHalls"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3208ea9d-04b0-4d53-abf2-73aeae7cfa8c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="789eaa26-3c4f-4fb4-bd31-b8949d22e982">
+                <propertyInstance
+                  Id="7adbad36-7669-4ca5-9678-4a1311d35764"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a7f02aff-2122-42b1-9126-bb3caa14b56e">
+                <propertyInstance
+                  Id="ad8dcde7-9acf-493f-b81f-56a69ad0a83f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28e7ade5-5ad5-44bd-875b-e362dbb987c1">
+                <propertyInstance
+                  Id="a132a75e-f0cd-48d2-afc4-d4445c90b5ea"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="826a70be-b7ee-48d0-8304-01ae7eb05436">
+                <propertyInstance
+                  Id="bc57fd7a-a684-407d-8383-c78c7a719c67"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9025992-9274-4bf9-960e-003591620afb">
+                <propertyInstance
+                  Id="b5ca037e-529f-4677-a0c3-39ec1eb05cd8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2b637584-b8fa-4069-a0ea-f70ef74e7954"
+        name="Movies"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b8f6f763-d5ef-42d7-aaea-79887c5fd7ea"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DMovies"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f8f068cd-784b-48ce-a1ef-96a071342eac"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4c018a94-9417-408e-9691-7ee3b8bd66b6">
+                <propertyInstance
+                  Id="7c8bba7d-2a89-4e8f-9013-70d0dad251c4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="79bc32a5-ddc4-4c90-a095-b3b70ab7f2a9">
+                <propertyInstance
+                  Id="c4a208bb-fe55-42aa-a7d2-7a942bd78a1b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="35c2f865-b488-4576-8a09-63d5db717f09">
+                <propertyInstance
+                  Id="06030d8c-f385-4fe7-adc4-25ddbac5878c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68de7fd7-b137-4e5f-bce2-c98762248345">
+                <propertyInstance
+                  Id="7d8853f4-58ea-40c2-9f7b-bb7f1464d214"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cdcab56d-9c43-48de-a06e-2751eb0d6de4">
+                <propertyInstance
+                  Id="19b92c25-18e4-4b20-a4da-180d74bd73b9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a43da22c-8938-4f5c-a505-0f315c766dc7"
+        name="Categories"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7961134d-09a6-4ed6-a261-d54b5f8ec634"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DCategories"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="48261349-7b91-4873-8dc5-a3e645942762"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6be11059-5373-48f1-9355-4049817c091a">
+                <propertyInstance
+                  Id="82034328-6143-424f-875b-b7d5770dc732"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="71e35d4b-549c-458e-a0ec-120c16bbd5d1">
+                <propertyInstance
+                  Id="54797e76-b48a-44b3-808b-340c77dc9a59"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9bb1d840-e65c-4f23-abcd-4f5338c2a8bf">
+                <propertyInstance
+                  Id="0cd65b74-ac23-46af-ace8-06d5b0172ff5"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65c597b4-d92f-4375-99ba-7c05d86c9a6d">
+                <propertyInstance
+                  Id="e43ed7a8-165e-48f3-b75e-b0a33b9133a9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="177aa5f5-e90a-4677-b0fc-8fc5c5528054">
+                <propertyInstance
+                  Id="4f1ec740-182d-4f18-a8f3-b1d82f4048ad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e52ba289-b976-4364-ae2c-84cfef244ed8"
+        name="Products"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d7aee42f-f5d3-4ac9-9126-04029ec2ff54"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3D(Name%3DProducts ArrayRank%3D1 ParentType%3DProducts)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0ee4ff79-ef30-408d-bd67-d388a8af907a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3841ace7-b79d-46a9-9201-df717aa7c50d">
+                <propertyInstance
+                  Id="920fbab1-f6bc-49de-baa3-5bcb9f1fa4a0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d911df1f-1574-44a0-a327-0c635461f8ca">
+                <propertyInstance
+                  Id="e047d33d-b9e9-452f-9995-2a68fec9702b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f35a680b-c696-41f2-bc0a-f5703abd06ee">
+                <propertyInstance
+                  Id="568cca7d-8190-4dda-a4d0-dbfbf5e77021"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dee13f9b-4ba5-41a2-9cf3-08c35c5112ad">
+                <propertyInstance
+                  Id="2cf7e8ee-9281-4039-a80d-8c75b075fda3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da92af6d-2b89-4c95-8f7c-a4262d17be47">
+                <propertyInstance
+                  Id="0e95f8bc-5ca6-4980-bccd-cb77894a995a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="93511de1-aa28-41a2-a958-173a1cdb7842"
+        name="Tickets"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b31924c7-ef1e-4d1d-a02c-469c98e68aae"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3D(Name%3DTickets ArrayRank%3D1 ParentType%3DTickets)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ad1cd39d-9da9-4889-a098-740872e0635e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6eed90e0-bde6-472a-a00e-0d8bae5ca405">
+                <propertyInstance
+                  Id="0165fb42-a1fa-4ebe-a75c-eaa151848b9e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b03b124c-443f-4e55-b888-19c9c323db54">
+                <propertyInstance
+                  Id="97905e18-f35f-437e-b9af-6bc3e070fd20"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="10e15950-310c-4213-ae4f-8e51f9a360bc">
+                <propertyInstance
+                  Id="f6cad49f-651c-4650-8511-29cd33b6cb73"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="536f5daa-c102-4c15-a4f4-477a87cc132e">
+                <propertyInstance
+                  Id="1ff44457-c6b8-463b-8c4a-a3bb27221551"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8ee0839d-09ac-4724-9a90-1f7d6efc137b">
+                <propertyInstance
+                  Id="ece2f292-f6a4-49e7-afd0-300adecff3c7"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="52efd393-9322-4038-9a09-b90593315383"
+        name="Shows"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="00efb18d-e431-4ea7-a954-a142c05ade00"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FE:%2FDATA%2FDokumenty%2FGitHub%2FCinema%2FCinemaProject%2FCinemaModel%2Fbin%2FDebug%2FCinemaModel.dll Namespace%3DCinemaModel Type%3DShows"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3a39926a-b8e8-4088-91cf-6a3e1efe2f4a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="607b1bfa-894b-4398-95a4-e2a8ba952452">
+                <propertyInstance
+                  Id="d5109a24-d366-437f-9c68-ccdda97855cd"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ed5ee196-60eb-42dd-b07e-c46f66038cd9">
+                <propertyInstance
+                  Id="9fd0f066-deaa-404c-94c1-ae5200f63e9c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="715aa39b-c32b-4847-8f25-d01a9cfbcdf3">
+                <propertyInstance
+                  Id="6a39dcc4-f8ab-48c4-a4a1-27f1540df542"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8bb7b270-23c1-4c7e-ae15-72e1fa5354aa">
+                <propertyInstance
+                  Id="d15fda19-af62-4881-a056-65d2abaa218c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a3e866a-947d-4d64-bb8f-abcd391977ca">
+                <propertyInstance
+                  Id="d7435432-60b7-444d-a63f-661ff315e7b3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
