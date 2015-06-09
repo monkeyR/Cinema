@@ -62,6 +62,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(25, 9);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(25, 9, 25, 9);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(150, 24);
             this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
