@@ -37,11 +37,12 @@ namespace CinemaManager.Pages
 
        private bool monthClicked = false;
        private bool dateClicked = false;
-
+       
         public MovieStatistic()
         {
             InitializeComponent();
             FillTable();
+            
             MonthStatisticTypeOfMovieChart.Hide();
             MonthStatisticChart.Hide();
             if (thisMonth == 1) { year = lastYear; }
@@ -64,7 +65,7 @@ namespace CinemaManager.Pages
             MovieStatisticAllMovieTableLauotPanel.HorizontalScroll.Maximum = 200;
             MovieStatisticAllMovieTableLauotPanel.AutoSize = false;
             MovieStatisticAllMovieTableLauotPanel.AutoScroll = true;
-
+            MovieStatisticAllMovieTableLauotPanel.BackColor = Color.Transparent;
          
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
