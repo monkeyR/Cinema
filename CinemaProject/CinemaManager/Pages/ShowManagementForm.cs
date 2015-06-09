@@ -198,7 +198,7 @@ namespace CinemaManager.Pages
         private Button getStaticButton()
         {
             Button button = getBaseButton();
-            button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             return button;
         }
 
@@ -206,7 +206,7 @@ namespace CinemaManager.Pages
         {
             Button button = getBaseButton();
             button.AutoSize = true;
-            button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            button.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             return button;
         }
 
@@ -220,6 +220,7 @@ namespace CinemaManager.Pages
             button.Margin = new System.Windows.Forms.Padding(2);
             button.Size = new System.Drawing.Size(45, 45);
             button.UseVisualStyleBackColor = false;
+            button.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             return button;
         }
 

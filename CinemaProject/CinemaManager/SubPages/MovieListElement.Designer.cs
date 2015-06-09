@@ -42,38 +42,39 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(100, 5);
+            this.titleLabel.Location = new System.Drawing.Point(105, 7);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(58, 26);
+            this.titleLabel.Size = new System.Drawing.Size(54, 22);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Tytuł";
             // 
             // DirectorLabel
             // 
             this.DirectorLabel.AutoSize = true;
-            this.DirectorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DirectorLabel.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.DirectorLabel.ForeColor = System.Drawing.Color.White;
-            this.DirectorLabel.Location = new System.Drawing.Point(130, 45);
+            this.DirectorLabel.Location = new System.Drawing.Point(138, 45);
             this.DirectorLabel.Name = "DirectorLabel";
-            this.DirectorLabel.Size = new System.Drawing.Size(68, 17);
+            this.DirectorLabel.Size = new System.Drawing.Size(57, 17);
             this.DirectorLabel.TabIndex = 2;
             this.DirectorLabel.Text = "Reżyser: ";
             // 
             // durationLabel
             // 
             this.durationLabel.AutoSize = true;
-            this.durationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.durationLabel.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.durationLabel.ForeColor = System.Drawing.Color.White;
-            this.durationLabel.Location = new System.Drawing.Point(102, 62);
+            this.durationLabel.Location = new System.Drawing.Point(106, 62);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(96, 17);
+            this.durationLabel.Size = new System.Drawing.Size(89, 17);
             this.durationLabel.TabIndex = 3;
             this.durationLabel.Text = "Czas trwania: ";
             // 
             // descriptionTextbox
             // 
+            this.descriptionTextbox.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.descriptionTextbox.Location = new System.Drawing.Point(5, 116);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
@@ -85,11 +86,11 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.priceLabel.ForeColor = System.Drawing.Color.White;
             this.priceLabel.Location = new System.Drawing.Point(149, 79);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(49, 17);
+            this.priceLabel.Size = new System.Drawing.Size(46, 17);
             this.priceLabel.TabIndex = 7;
             this.priceLabel.Text = "Cena: ";
             // 
@@ -97,6 +98,9 @@
             // 
             this.expireMovieButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.expireMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.expireMovieButton.FlatAppearance.BorderSize = 0;
+            this.expireMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.expireMovieButton.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.expireMovieButton.ForeColor = System.Drawing.Color.White;
             this.expireMovieButton.Location = new System.Drawing.Point(6, 41);
             this.expireMovieButton.Margin = new System.Windows.Forms.Padding(2);
@@ -111,6 +115,9 @@
             // 
             this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editButton.FlatAppearance.BorderSize = 0;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.editButton.ForeColor = System.Drawing.Color.White;
             this.editButton.Location = new System.Drawing.Point(6, 4);
             this.editButton.Margin = new System.Windows.Forms.Padding(2);
@@ -124,11 +131,11 @@
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.categoryLabel.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.categoryLabel.ForeColor = System.Drawing.Color.White;
             this.categoryLabel.Location = new System.Drawing.Point(121, 96);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(77, 17);
+            this.categoryLabel.Size = new System.Drawing.Size(73, 17);
             this.categoryLabel.TabIndex = 37;
             this.categoryLabel.Text = "Kategoria: ";
             // 
@@ -136,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(126)))), ((int)(((byte)(174)))));
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.expireMovieButton);

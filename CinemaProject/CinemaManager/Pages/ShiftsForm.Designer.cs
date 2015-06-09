@@ -53,18 +53,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.shiftsFlowLayoutPanel.AutoScroll = true;
             this.shiftsFlowLayoutPanel.Controls.Add(this.label1);
-            this.shiftsFlowLayoutPanel.Location = new System.Drawing.Point(12, 75);
+            this.shiftsFlowLayoutPanel.Location = new System.Drawing.Point(4, 75);
             this.shiftsFlowLayoutPanel.Name = "shiftsFlowLayoutPanel";
-            this.shiftsFlowLayoutPanel.Size = new System.Drawing.Size(698, 311);
+            this.shiftsFlowLayoutPanel.Size = new System.Drawing.Size(383, 378);
             this.shiftsFlowLayoutPanel.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 20);
+            this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "  Brak zmian w tym tygodniu";
             // 
@@ -72,12 +73,14 @@
             // 
             this.addEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addEmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.addEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addEmployeeButton.FlatAppearance.BorderSize = 0;
+            this.addEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmployeeButton.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.addEmployeeButton.ForeColor = System.Drawing.Color.White;
-            this.addEmployeeButton.Location = new System.Drawing.Point(183, 12);
+            this.addEmployeeButton.Location = new System.Drawing.Point(233, 12);
             this.addEmployeeButton.Margin = new System.Windows.Forms.Padding(2);
             this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(106, 44);
+            this.addEmployeeButton.Size = new System.Drawing.Size(154, 44);
             this.addEmployeeButton.TabIndex = 31;
             this.addEmployeeButton.Text = "Dodaj pracownika";
             this.addEmployeeButton.UseVisualStyleBackColor = false;
