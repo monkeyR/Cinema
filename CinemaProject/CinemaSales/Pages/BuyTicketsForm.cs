@@ -209,8 +209,8 @@ namespace CinemaSales.Main
         {
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
-                var Halls = (from t in ctx.Halls
-                             select t).ToArray();
+                var Halls = (from t in ctx.Halls where t.isEnable == 1
+                             select t).OrderBy(x => x.number).ToArray();
                 return Halls;
             }
         }

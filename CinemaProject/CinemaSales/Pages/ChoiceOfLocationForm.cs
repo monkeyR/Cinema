@@ -79,7 +79,7 @@ namespace CinemaSales.Pages
             btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(156)))), ((int)(((byte)(204)))));
             btn.FlatAppearance.BorderSize = 0;
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btn.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             btn.ForeColor = System.Drawing.Color.White;
             btn.Location = new System.Drawing.Point(0, BarWithTickets.Controls.Count * 65);
             btn.Margin = new System.Windows.Forms.Padding(0);

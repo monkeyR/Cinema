@@ -71,5 +71,10 @@ namespace CinemaManager.Main
         {
             selectPage(new ProductsManagmentForm());
         }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

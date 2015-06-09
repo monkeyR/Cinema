@@ -55,7 +55,7 @@
             this.TicketTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TicketTabButton.FlatAppearance.BorderSize = 0;
             this.TicketTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketTabButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TicketTabButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.TicketTabButton.ForeColor = System.Drawing.Color.White;
             this.TicketTabButton.Location = new System.Drawing.Point(0, 0);
             this.TicketTabButton.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -73,7 +73,7 @@
             this.BarTabButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BarTabButton.FlatAppearance.BorderSize = 0;
             this.BarTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BarTabButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BarTabButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.BarTabButton.ForeColor = System.Drawing.Color.White;
             this.BarTabButton.Location = new System.Drawing.Point(305, 0);
             this.BarTabButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -142,7 +142,7 @@
             this.FinalButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FinalButton.FlatAppearance.BorderSize = 0;
             this.FinalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FinalButton.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FinalButton.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.FinalButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.FinalButton.Location = new System.Drawing.Point(0, 497);
             this.FinalButton.Margin = new System.Windows.Forms.Padding(0);
@@ -155,7 +155,7 @@
             // 
             // LoginUserLabel
             // 
-            this.LoginUserLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginUserLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.LoginUserLabel.ForeColor = System.Drawing.Color.White;
             this.LoginUserLabel.Location = new System.Drawing.Point(3, 3);
             this.LoginUserLabel.Margin = new System.Windows.Forms.Padding(3);
@@ -191,7 +191,7 @@
             this.ResetTicketsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ResetTicketsButton.FlatAppearance.BorderSize = 0;
             this.ResetTicketsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetTicketsButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ResetTicketsButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ResetTicketsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.ResetTicketsButton.Location = new System.Drawing.Point(0, 273);
             this.ResetTicketsButton.Name = "ResetTicketsButton";
@@ -207,7 +207,7 @@
             this.ClearBinButtton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearBinButtton.FlatAppearance.BorderSize = 0;
             this.ClearBinButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearBinButtton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ClearBinButtton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ClearBinButtton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.ClearBinButtton.Location = new System.Drawing.Point(0, 344);
             this.ClearBinButtton.Name = "ClearBinButtton";
@@ -223,7 +223,7 @@
             this.BackLastOperationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackLastOperationButton.FlatAppearance.BorderSize = 0;
             this.BackLastOperationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackLastOperationButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BackLastOperationButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.BackLastOperationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.BackLastOperationButton.Location = new System.Drawing.Point(0, 309);
             this.BackLastOperationButton.Name = "BackLastOperationButton";
@@ -236,12 +236,12 @@
             // 
             this.AllCostLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AllCostLabel.AutoSize = true;
-            this.AllCostLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllCostLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.AllCostLabel.ForeColor = System.Drawing.Color.White;
             this.AllCostLabel.Location = new System.Drawing.Point(77, 243);
             this.AllCostLabel.Margin = new System.Windows.Forms.Padding(5);
             this.AllCostLabel.Name = "AllCostLabel";
-            this.AllCostLabel.Size = new System.Drawing.Size(31, 22);
+            this.AllCostLabel.Size = new System.Drawing.Size(32, 21);
             this.AllCostLabel.TabIndex = 3;
             this.AllCostLabel.Text = "0zł";
             // 
@@ -249,24 +249,24 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 243);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 22);
+            this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Razem:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 22);
+            this.label2.Size = new System.Drawing.Size(158, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Wybrane produkty:";
             // 
@@ -277,14 +277,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BinListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.BinListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BinListBox.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
+            this.BinListBox.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.BinListBox.ForeColor = System.Drawing.Color.White;
             this.BinListBox.FormattingEnabled = true;
-            this.BinListBox.ItemHeight = 18;
+            this.BinListBox.ItemHeight = 21;
             this.BinListBox.Location = new System.Drawing.Point(6, 35);
             this.BinListBox.Margin = new System.Windows.Forms.Padding(5);
             this.BinListBox.Name = "BinListBox";
-            this.BinListBox.Size = new System.Drawing.Size(146, 198);
+            this.BinListBox.Size = new System.Drawing.Size(146, 189);
             this.BinListBox.TabIndex = 0;
             // 
             // MainFormSales

@@ -67,7 +67,7 @@
             this.choiceLocationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.choiceLocationsButton.FlatAppearance.BorderSize = 0;
             this.choiceLocationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.choiceLocationsButton.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.choiceLocationsButton.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.choiceLocationsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.choiceLocationsButton.Location = new System.Drawing.Point(0, 0);
             this.choiceLocationsButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
@@ -85,7 +85,7 @@
             this.cancelWindowButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelWindowButton.FlatAppearance.BorderSize = 0;
             this.cancelWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelWindowButton.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cancelWindowButton.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.cancelWindowButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.cancelWindowButton.Location = new System.Drawing.Point(0, 53);
             this.cancelWindowButton.Margin = new System.Windows.Forms.Padding(0);

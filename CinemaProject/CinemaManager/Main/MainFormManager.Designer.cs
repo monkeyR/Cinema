@@ -196,6 +196,7 @@
             this.LogoutButton.TabIndex = 8;
             this.LogoutButton.Text = "Wyloguj";
             this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // MainFormManager
             // 

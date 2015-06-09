@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.From_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.To_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MovieStaisticDisplayPanel = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             // From_dateTimePicker
             // 
             this.From_dateTimePicker.Location = new System.Drawing.Point(172, 21);
-            this.From_dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.From_dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.From_dateTimePicker.Name = "From_dateTimePicker";
             this.From_dateTimePicker.Size = new System.Drawing.Size(129, 20);
             this.From_dateTimePicker.TabIndex = 2;
@@ -64,20 +64,21 @@
             // To_dateTimePicker
             // 
             this.To_dateTimePicker.Location = new System.Drawing.Point(320, 21);
-            this.To_dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.To_dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.To_dateTimePicker.Name = "To_dateTimePicker";
             this.To_dateTimePicker.Size = new System.Drawing.Size(128, 20);
             this.To_dateTimePicker.TabIndex = 3;
             // 
             // MovieStaisticDisplayPanel
             // 
+            this.MovieStaisticDisplayPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(205)))));
             this.MovieStaisticDisplayPanel.Controls.Add(this.MonthStatisticTypeOfMovieChart);
             this.MovieStaisticDisplayPanel.Controls.Add(this.MonthStatisticChart);
             this.MovieStaisticDisplayPanel.Controls.Add(this.InfoAboutParametrOfStatisticLabel);
             this.MovieStaisticDisplayPanel.Controls.Add(this.MovieStatisticAllMovieTableLauotPanel);
             this.MovieStaisticDisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MovieStaisticDisplayPanel.Location = new System.Drawing.Point(0, 0);
-            this.MovieStaisticDisplayPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MovieStaisticDisplayPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MovieStaisticDisplayPanel.Name = "MovieStaisticDisplayPanel";
             this.MovieStaisticDisplayPanel.Size = new System.Drawing.Size(847, 544);
             this.MovieStaisticDisplayPanel.TabIndex = 7;
@@ -85,34 +86,34 @@
             // 
             // MonthStatisticTypeOfMovieChart
             // 
-            chartArea15.Name = "ChartArea1";
-            this.MonthStatisticTypeOfMovieChart.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.MonthStatisticTypeOfMovieChart.Legends.Add(legend15);
+            chartArea5.Name = "ChartArea1";
+            this.MonthStatisticTypeOfMovieChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.MonthStatisticTypeOfMovieChart.Legends.Add(legend5);
             this.MonthStatisticTypeOfMovieChart.Location = new System.Drawing.Point(430, 256);
-            this.MonthStatisticTypeOfMovieChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MonthStatisticTypeOfMovieChart.Margin = new System.Windows.Forms.Padding(2);
             this.MonthStatisticTypeOfMovieChart.Name = "MonthStatisticTypeOfMovieChart";
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.MonthStatisticTypeOfMovieChart.Series.Add(series15);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.MonthStatisticTypeOfMovieChart.Series.Add(series5);
             this.MonthStatisticTypeOfMovieChart.Size = new System.Drawing.Size(412, 275);
             this.MonthStatisticTypeOfMovieChart.TabIndex = 3;
             this.MonthStatisticTypeOfMovieChart.Text = "chart1";
             // 
             // MonthStatisticChart
             // 
-            chartArea16.Name = "ChartArea1";
-            this.MonthStatisticChart.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.MonthStatisticChart.Legends.Add(legend16);
+            chartArea6.Name = "ChartArea1";
+            this.MonthStatisticChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.MonthStatisticChart.Legends.Add(legend6);
             this.MonthStatisticChart.Location = new System.Drawing.Point(14, 256);
-            this.MonthStatisticChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MonthStatisticChart.Margin = new System.Windows.Forms.Padding(2);
             this.MonthStatisticChart.Name = "MonthStatisticChart";
-            series16.ChartArea = "ChartArea1";
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.MonthStatisticChart.Series.Add(series16);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.MonthStatisticChart.Series.Add(series6);
             this.MonthStatisticChart.Size = new System.Drawing.Size(412, 275);
             this.MonthStatisticChart.TabIndex = 3;
             this.MonthStatisticChart.Text = "chart1";
@@ -120,12 +121,12 @@
             // InfoAboutParametrOfStatisticLabel
             // 
             this.InfoAboutParametrOfStatisticLabel.AutoSize = true;
-            this.InfoAboutParametrOfStatisticLabel.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.InfoAboutParametrOfStatisticLabel.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.InfoAboutParametrOfStatisticLabel.ForeColor = System.Drawing.Color.White;
-            this.InfoAboutParametrOfStatisticLabel.Location = new System.Drawing.Point(4, 81);
+            this.InfoAboutParametrOfStatisticLabel.Location = new System.Drawing.Point(3, 78);
             this.InfoAboutParametrOfStatisticLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InfoAboutParametrOfStatisticLabel.Name = "InfoAboutParametrOfStatisticLabel";
-            this.InfoAboutParametrOfStatisticLabel.Size = new System.Drawing.Size(182, 16);
+            this.InfoAboutParametrOfStatisticLabel.Size = new System.Drawing.Size(233, 19);
             this.InfoAboutParametrOfStatisticLabel.TabIndex = 2;
             this.InfoAboutParametrOfStatisticLabel.Text = "Statystyki z ostatniego miesiąca: ";
             this.InfoAboutParametrOfStatisticLabel.Click += new System.EventHandler(this.label3_Click);
@@ -141,7 +142,7 @@
             this.MovieStatisticAllMovieTableLauotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.MovieStatisticAllMovieTableLauotPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MovieStatisticAllMovieTableLauotPanel.Location = new System.Drawing.Point(9, 97);
-            this.MovieStatisticAllMovieTableLauotPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MovieStatisticAllMovieTableLauotPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MovieStatisticAllMovieTableLauotPanel.Name = "MovieStatisticAllMovieTableLauotPanel";
             this.MovieStatisticAllMovieTableLauotPanel.RowCount = 2;
             this.MovieStatisticAllMovieTableLauotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -158,7 +159,7 @@
             this.DisplayStatisticOfFilm.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.DisplayStatisticOfFilm.ForeColor = System.Drawing.Color.White;
             this.DisplayStatisticOfFilm.Location = new System.Drawing.Point(172, 43);
-            this.DisplayStatisticOfFilm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DisplayStatisticOfFilm.Margin = new System.Windows.Forms.Padding(2);
             this.DisplayStatisticOfFilm.Name = "DisplayStatisticOfFilm";
             this.DisplayStatisticOfFilm.Size = new System.Drawing.Size(275, 26);
             this.DisplayStatisticOfFilm.TabIndex = 1;
@@ -168,7 +169,7 @@
             // 
             // MovieStatisticPropertisPanel
             // 
-            this.MovieStatisticPropertisPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(123)))), ((int)(((byte)(165)))));
+            this.MovieStatisticPropertisPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(205)))));
             this.MovieStatisticPropertisPanel.Controls.Add(this.thisMothButton);
             this.MovieStatisticPropertisPanel.Controls.Add(this.DisplayStatisticOfFilm);
             this.MovieStatisticPropertisPanel.Controls.Add(this.label2);
@@ -178,7 +179,7 @@
             this.MovieStatisticPropertisPanel.Controls.Add(this.From_dateTimePicker);
             this.MovieStatisticPropertisPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MovieStatisticPropertisPanel.Location = new System.Drawing.Point(0, 0);
-            this.MovieStatisticPropertisPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MovieStatisticPropertisPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MovieStatisticPropertisPanel.Name = "MovieStatisticPropertisPanel";
             this.MovieStatisticPropertisPanel.Size = new System.Drawing.Size(847, 72);
             this.MovieStatisticPropertisPanel.TabIndex = 8;
@@ -191,7 +192,7 @@
             this.thisMothButton.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.thisMothButton.ForeColor = System.Drawing.Color.White;
             this.thisMothButton.Location = new System.Drawing.Point(88, 7);
-            this.thisMothButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thisMothButton.Margin = new System.Windows.Forms.Padding(2);
             this.thisMothButton.Name = "thisMothButton";
             this.thisMothButton.Size = new System.Drawing.Size(80, 63);
             this.thisMothButton.TabIndex = 6;
@@ -245,7 +246,7 @@
             this.ClientSize = new System.Drawing.Size(847, 544);
             this.Controls.Add(this.MovieStatisticPropertisPanel);
             this.Controls.Add(this.MovieStaisticDisplayPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MovieStatistic";
             this.Text = "Statystyki filmów";
             this.MovieStaisticDisplayPanel.ResumeLayout(false);

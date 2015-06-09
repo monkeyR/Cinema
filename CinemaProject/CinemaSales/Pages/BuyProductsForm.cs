@@ -105,7 +105,7 @@ namespace CinemaSales.Main
             ButtonCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             ButtonCat.FlatAppearance.BorderSize = 0;
             ButtonCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            ButtonCat.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ButtonCat.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             ButtonCat.ForeColor = System.Drawing.Color.White;
             ButtonCat.Margin = new System.Windows.Forms.Padding(0);
             ButtonCat.Name = slug+"Button";
