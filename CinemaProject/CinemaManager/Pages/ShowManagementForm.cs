@@ -76,7 +76,7 @@ namespace CinemaManager.Pages
         private void setupShows(object sender, DoWorkEventArgs e)
         {
             flowLayoutMaxWidth = mainPanel.Size.Width;
-            foreach(FlowLayoutPanel hallPanel in mainPanel.Controls)
+            foreach (FlowLayoutPanel hallPanel in mainPanel.Controls)
             {
                 CinemaModel.Halls hall = (CinemaModel.Halls)hallPanel.Tag;
                 addShowsToHall(hall, hallPanel);
@@ -116,7 +116,7 @@ namespace CinemaManager.Pages
 
         private void clearShows(FlowLayoutPanel hallPanel)
         {
-            while(hallPanel.Controls.Count > 2)
+            while (hallPanel.Controls.Count > 2)
             {
                 hallPanel.Controls.RemoveAt(2);
             }
@@ -148,7 +148,7 @@ namespace CinemaManager.Pages
 
         private FlowLayoutPanel getPanelWithHallId(int hallId)
         {
-            foreach(FlowLayoutPanel panel in mainPanel.Controls)
+            foreach (FlowLayoutPanel panel in mainPanel.Controls)
             {
                 CinemaModel.Halls hall = (CinemaModel.Halls)panel.Tag;
                 if (hall.hallID == hallId)
@@ -163,9 +163,10 @@ namespace CinemaManager.Pages
             {
                 var halls =
                     (from h in ctx.Halls
+                     where h.isEnable == 1
                      select h);
                 return halls.ToList();
-            }      
+            }
         }
 
         private List<ShowModel> getShows(CinemaModel.Halls h, DateTime day)
@@ -174,14 +175,15 @@ namespace CinemaManager.Pages
             {
                 var shows =
                     (from s in ctx.Shows
-                        where s.hallID.Equals(h.hallID)
-                        && DbFunctions.TruncateTime(s.dateStart) == DbFunctions.TruncateTime(day)
-                        join m in ctx.Movies on s.movieID equals m.movieID
-                        join hh in ctx.Halls on h.hallID equals hh.hallID
-                        orderby s.dateStart ascending
-                        select new ShowModel() { show = s, movieTitle = m.title, hall = hh });
+                     where s.hallID.Equals(h.hallID)
+                     && DbFunctions.TruncateTime(s.dateStart) == DbFunctions.TruncateTime(day)
+                     join m in ctx.Movies on s.movieID equals m.movieID
+                     join hh in ctx.Halls on h.hallID equals hh.hallID
+                     where hh.isEnable == 1
+                     orderby s.dateStart ascending
+                     select new ShowModel { show = s, movieTitle = m.title, hall = hh});
                 return shows.ToList();
-            } 
+            }
         }
 
         private FlowLayoutPanel getLayoutPanel()
@@ -231,12 +233,20 @@ namespace CinemaManager.Pages
 
         private void updateHallPanelsWidth()
         {
-            foreach(FlowLayoutPanel hallPanel in mainPanel.Controls)
+            foreach (FlowLayoutPanel hallPanel in mainPanel.Controls)
             {
-                if(hallPanel.Size.Width < flowLayoutMaxWidth)
+                if (hallPanel.Size.Width < flowLayoutMaxWidth)
                     hallPanel.Size = new System.Drawing.Size(flowLayoutMaxWidth, flowLayoutHeight);
             }
         }
 
+    }
+
+    class TempModel
+    {
+        public CinemaModel.Halls hall;
+        public CinemaModel.Shows show;
+        public String movieTitle;
+        public int isEnabled;
     }
 }
