@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CinemaManager.Pages
 {
@@ -31,27 +32,10 @@ namespace CinemaManager.Pages
 
             TicketStatistic();
             FillTicketTable();
-            DisplayChartStatistic(qspTicketList);
-
+            
         }
 
-       private void DisplayChartStatistic(List<QuantitySalesProduct> lista)
-        {
-
-            MonthStatisticChart.Show();
-          var s = new Series();
-            s.Name = "Ilość sprzedanych danego typu biletów  ";
-            s.ChartType = SeriesChartType.Column;
-
-            foreach (var d in lista)
-            {
-                s.Points.AddXY(d.MovieNameQ, d.SalesTicketQ);
-            }
-
-            MonthStatisticChart.Series.Clear();
-            MonthStatisticChart.Series.Add(s);
-           
-        }
+       
         
 
         private void LastMonthStatistic_Click(object sender, EventArgs e)
