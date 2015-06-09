@@ -31,15 +31,16 @@ namespace CinemaManager.Pages
 
             TicketStatistic();
             FillTicketTable();
+            DisplayChartStatistic(qspTicketList);
 
         }
 
        private void DisplayChartStatistic(List<QuantitySalesProduct> lista)
         {
 
-          /*  MonthStatisticChart.Show();
-          //  var s = new Series();
-            s.Name = "Ilość sprzedanych biletów ";
+            MonthStatisticChart.Show();
+          var s = new Series();
+            s.Name = "Ilość sprzedanych danego typu biletów  ";
             s.ChartType = SeriesChartType.Column;
 
             foreach (var d in lista)
@@ -49,7 +50,7 @@ namespace CinemaManager.Pages
 
             MonthStatisticChart.Series.Clear();
             MonthStatisticChart.Series.Add(s);
-           */
+           
         }
         
 

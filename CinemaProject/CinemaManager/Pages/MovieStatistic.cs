@@ -65,8 +65,6 @@ namespace CinemaManager.Pages
             MovieStatisticAllMovieTableLauotPanel.HorizontalScroll.Maximum = 200;
             MovieStatisticAllMovieTableLauotPanel.AutoSize = false;
             MovieStatisticAllMovieTableLauotPanel.AutoScroll = true;
-            MovieStatisticAllMovieTableLauotPanel.BackColor = Color.Transparent;
-         
             using (CinemaModel.CinemaDatabaseEntities ctx = new CinemaModel.CinemaDatabaseEntities())
             {
                 var movies = (from t in ctx.Movies
@@ -89,7 +87,7 @@ namespace CinemaManager.Pages
                     new Label() { Text = "Łącznie zrealizowanych seansów", AutoSize = true, Margin = new Padding(5, 5, 5, 5) }, 2, 0);
               
                
-                MovieStatisticAllMovieTableLauotPanel.BackColor = Color.Lavender;
+                MovieStatisticAllMovieTableLauotPanel.BackColor = Color.Transparent;
             
 
                 var howMAnyMoviesIsAvailable = (from t in ctx.Movies
