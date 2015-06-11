@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.categoryTextbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,15 +47,13 @@
             this.directorTextbox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleTextbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.categoryTextbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.durationNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.panel1.Controls.Add(this.categoryTextbox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.addButton);
@@ -77,10 +77,32 @@
             this.panel1.Size = new System.Drawing.Size(374, 481);
             this.panel1.TabIndex = 3;
             // 
+            // categoryTextbox
+            // 
+            this.categoryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.categoryTextbox.Location = new System.Drawing.Point(103, 185);
+            this.categoryTextbox.Name = "categoryTextbox";
+            this.categoryTextbox.Size = new System.Drawing.Size(121, 26);
+            this.categoryTextbox.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 190);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 21);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Kategoria";
+            // 
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.Location = new System.Drawing.Point(283, 435);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
@@ -96,6 +118,9 @@
             this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(2, 435);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
@@ -110,21 +135,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(196, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(22, 19);
+            this.label4.Size = new System.Drawing.Size(20, 17);
             this.label4.TabIndex = 31;
             this.label4.Text = "gr";
             // 
             // grTextbox
             // 
-            this.grTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.grTextbox.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.grTextbox.Location = new System.Drawing.Point(171, 116);
             this.grTextbox.MaxLength = 2;
             this.grTextbox.Name = "grTextbox";
-            this.grTextbox.Size = new System.Drawing.Size(25, 26);
+            this.grTextbox.Size = new System.Drawing.Size(25, 28);
             this.grTextbox.TabIndex = 4;
             this.grTextbox.Text = "00";
             this.grTextbox.Leave += new System.EventHandler(this.grTextbox_Leave);
@@ -134,22 +159,22 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.75F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(141, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 19);
+            this.label3.Size = new System.Drawing.Size(17, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "zł";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 234);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 21);
+            this.label1.Size = new System.Drawing.Size(47, 21);
             this.label1.TabIndex = 28;
             this.label1.Text = "Opis";
             // 
@@ -165,7 +190,7 @@
             // 
             // durationNumericUpDown
             // 
-            this.durationNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.durationNumericUpDown.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.durationNumericUpDown.Location = new System.Drawing.Point(103, 148);
             this.durationNumericUpDown.Maximum = new decimal(new int[] {
             1000,
@@ -173,18 +198,18 @@
             0,
             0});
             this.durationNumericUpDown.Name = "durationNumericUpDown";
-            this.durationNumericUpDown.Size = new System.Drawing.Size(71, 26);
+            this.durationNumericUpDown.Size = new System.Drawing.Size(71, 28);
             this.durationNumericUpDown.TabIndex = 5;
             this.durationNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.durationNumericUpDown_KeyPress);
             // 
             // durationLabel
             // 
             this.durationLabel.AutoSize = true;
-            this.durationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.durationLabel.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.durationLabel.ForeColor = System.Drawing.Color.White;
             this.durationLabel.Location = new System.Drawing.Point(26, 149);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(70, 21);
+            this.durationLabel.Size = new System.Drawing.Size(79, 21);
             this.durationLabel.TabIndex = 26;
             this.durationLabel.Text = "Długość";
             // 
@@ -200,33 +225,33 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.priceLabel.ForeColor = System.Drawing.Color.White;
             this.priceLabel.Location = new System.Drawing.Point(50, 118);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(46, 21);
+            this.priceLabel.Size = new System.Drawing.Size(57, 21);
             this.priceLabel.TabIndex = 23;
             this.priceLabel.Text = "Cena";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 25);
+            this.label2.Size = new System.Drawing.Size(140, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Dodaj nowy film";
             // 
             // directorLabel
             // 
             this.directorLabel.AutoSize = true;
-            this.directorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.directorLabel.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.directorLabel.ForeColor = System.Drawing.Color.White;
             this.directorLabel.Location = new System.Drawing.Point(30, 86);
             this.directorLabel.Name = "directorLabel";
-            this.directorLabel.Size = new System.Drawing.Size(66, 21);
+            this.directorLabel.Size = new System.Drawing.Size(69, 21);
             this.directorLabel.TabIndex = 4;
             this.directorLabel.Text = "Reżyser";
             // 
@@ -241,11 +266,11 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(49, 54);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(47, 21);
+            this.titleLabel.Size = new System.Drawing.Size(49, 21);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Tytuł";
             // 
@@ -257,30 +282,11 @@
             this.titleTextbox.Size = new System.Drawing.Size(121, 26);
             this.titleTextbox.TabIndex = 1;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 21);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Kategoria";
-            // 
-            // categoryTextbox
-            // 
-            this.categoryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.categoryTextbox.Location = new System.Drawing.Point(103, 185);
-            this.categoryTextbox.Name = "categoryTextbox";
-            this.categoryTextbox.Size = new System.Drawing.Size(121, 26);
-            this.categoryTextbox.TabIndex = 36;
-            // 
             // AddNewMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(396, 504);
             this.Controls.Add(this.panel1);

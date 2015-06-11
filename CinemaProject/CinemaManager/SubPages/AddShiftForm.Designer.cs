@@ -69,11 +69,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(278, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 20);
+            this.label10.Size = new System.Drawing.Size(29, 19);
             this.label10.TabIndex = 46;
             this.label10.Text = "Nd";
             // 
@@ -110,11 +110,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(249, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 20);
+            this.label7.Size = new System.Drawing.Size(25, 19);
             this.label7.TabIndex = 42;
             this.label7.Text = "So";
             // 
@@ -131,11 +131,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(221, 49);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 20);
+            this.label8.Size = new System.Drawing.Size(22, 19);
             this.label8.TabIndex = 40;
             this.label8.Text = "Pt";
             // 
@@ -172,11 +172,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(191, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 20);
+            this.label5.Size = new System.Drawing.Size(26, 19);
             this.label5.TabIndex = 36;
             this.label5.Text = "Cz";
             // 
@@ -193,11 +193,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(163, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 20);
+            this.label6.Size = new System.Drawing.Size(20, 19);
             this.label6.TabIndex = 34;
             this.label6.Text = "Śr";
             // 
@@ -234,11 +234,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(133, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 20);
+            this.label4.Size = new System.Drawing.Size(29, 19);
             this.label4.TabIndex = 30;
             this.label4.Text = "Wt";
             // 
@@ -255,33 +255,33 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(19, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(89, 19);
             this.label3.TabIndex = 28;
             this.label3.Text = "Popołudnie";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(60, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(46, 19);
             this.label2.TabIndex = 27;
             this.label2.Text = "Rano";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(105, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 20);
+            this.label1.Size = new System.Drawing.Size(26, 19);
             this.label1.TabIndex = 26;
             this.label1.Text = "Pn";
             // 
@@ -310,6 +310,9 @@
             this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(11, 132);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
@@ -324,6 +327,9 @@
             // 
             this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
             this.okButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.okButton.FlatAppearance.BorderSize = 0;
+            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.okButton.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.okButton.ForeColor = System.Drawing.Color.White;
             this.okButton.Location = new System.Drawing.Point(210, 132);
             this.okButton.Margin = new System.Windows.Forms.Padding(2);
@@ -338,7 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(68)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(143)))), ((int)(((byte)(195)))));
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(308, 186);
             this.Controls.Add(this.okButton);

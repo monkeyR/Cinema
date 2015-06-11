@@ -72,6 +72,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatAppearance.BorderSize = 0;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
             this.buttonCancel.Location = new System.Drawing.Point(29, 128);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
@@ -89,6 +90,7 @@
             this.buttonAddNewcategory.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonAddNewcategory.FlatAppearance.BorderSize = 0;
             this.buttonAddNewcategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddNewcategory.Font = new System.Drawing.Font("Century Gothic", 12.75F);
             this.buttonAddNewcategory.ForeColor = System.Drawing.Color.White;
             this.buttonAddNewcategory.Location = new System.Drawing.Point(160, 128);
             this.buttonAddNewcategory.Margin = new System.Windows.Forms.Padding(2);
